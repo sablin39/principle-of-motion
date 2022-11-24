@@ -1,0 +1,457 @@
+BODY {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:11px;}
+TABLE {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:11px;}
+SELECT {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;background:#FFFFFF;color:#000000;}
+INPUT {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;background:#FFFFFF;color:#000000;}
+A {text-decoration:none;}
+FIELDSET {border:none}
+LEGEND {color:#000000;}
+
+.b24-title0 {font-size:14px;font-weight:bold;color:#000000;}
+.b24-title1 {font-size:14px;font-weight:bold;color:#800000;}
+.b24-title2 {font-size:12pX;font-weight:bold;color:#000000; background:#DFE6FF;letter-spacing: .1em;text-transform: capitalize;}
+.b24-title3 {font-size:12pX;font-weight:bold;color:#000000; background:#DFE6FF;letter-spacing: .1em;text-transform: capitalize;}
+.b24-title4 {font-size:11pX;font-weight:bold;color:#000000;}
+.b24-title5 {font-size:11pX;font-weight:bold;color:#000000;background:#ffcc00;letter-spacing: .1em;}
+.b24-title6 {font-size:11pX;font-weight:bold;color:#000000;background:#efefef;letter-spacing: .1em;padding:2px;}
+.b24-title7 {font-size:10pX;font-weight:normal;color:#000000;vertical-align:middle;}
+.b24-aside {font-style:italic;color:#999999;}
+.bigbanner {font-size:18px;font-weight:bold;}
+
+.b24-searchbar {font-family:arial,helvetica,sans-serif, sans-serif;font-size:11px;color:#FFFFFF;background:#5E7ABB;}
+.b24-searchbar-link {font-weight:bold;font-size:9px;color:#FFFFFF;}
+.b24-searchbar FORM TR TD SELECT {color:#000000;background:#FFFFFF;border:none;}
+.b24-searchbox  {font-family:arial,helvetica,sans-serif, sans-serif;font-size:11px;color:#FFFFFF;background:#5E7ABB;font-weight:normal;}
+.b24-searchbox2 {font-family:arial,helvetica,sans-serif, sans-serif;font-size:11px;color:#5E7ABB;font-weight:bold;}
+
+.b24-searchresults-title {font-size:11px;font-weight:bold;color:#000000;padding-bottom:5px;background:#ffffff;}
+.b24-searchresults-item {color:#000000;font-weight:normal;font-size:11px;background:#ffffff;}
+.b24-searchresults-item a {color:#8D9BBB;font-weight:normal;font-size:11px;background:#ffffff;text-decoration:underline;}
+
+.b24-advschtitle {font-family:Arial, Verdana , Helvetica, sans-serif;font-size:12pX;font-weight:bold;color:#000000 ; letter-spacing: .1em;text-transform: capitalize;padding:2px;}
+.b24-advsearchresult-link {font-size: 11px; COLOR: #000000; font-family : italic; text-decoration : underline; PADDING-left: 5px;}
+.b24-advsearchbookbin {background:#BACFBD;}
+.b24-advsearchbookbin-item {background:#BACFBD;font-family:arial,helvetica,sans-serif, sans-serif;font-size:12px;font-weight:bold;}
+.b24-searchresults-title {font-size:11px;font-weight:bold;color:#000000;padding-bottom:5px;background:#ffffff;}
+.b24-searchresults-item {color:#000000;font-weight:normal;font-size:11px;background:#ffffff;}
+.b24-searchresults-item a {color:#8D9BBB;font-weight:normal;font-size:11px;background:#ffffff;text-decoration:underline;}
+
+.b24-didyoumean {color:#cc0000;padding:2px;}
+.b24-didyoumean A {color:blue;padding:2px;}
+.b24-didyoumean A:hover{color:blue;padding:2px;text-decoration:underline;}
+
+.b24-userbar {font-family:arial,helvetica,sans-serif;font-size:12px;}
+.b24-userbar-name {font-weight:bold;padding-left:9px;}
+.b24-userbar-date {}
+.b24-userbar-text {font-size:9px;color:#000000;}
+.b24-userbar-label {font-size:9px;color:#000000;}
+.b24-userbar-input {font-size:10px;}
+
+.b24-browsetools {text-align:right;}
+
+.b24-userbrand {font-family:arial,helvetica,sans-serif;font-size:11px;color:#0E25AB;}
+
+.b24-sortbar {font-family:arial,helvetica,sans-serif;font-size:12px; }
+.b24-sortbar-input {font-size:10px;}
+
+.b24-folderbar {font-size:10px;color:#000000;background:#ffffff;}
+.b24-folderbar-text {font-size:11px;color:#000000;}
+.b24-folderbar-label0 {background:#5E7ABB;color:#FFFFFF;}
+.b24-folderbar-label1 {background:#5E7ABB;color:#FFFFFF;font-weight:bold;}
+.b24-folderbar-label2 {background:#99CCFF;color:#000000;}
+.b24-folderbar-selected {background:#FFFFFF;border-top:solid #5E7ABB 1px;border-bottom:solid #5E7ABB 1px;border-left:solid #5E7ABB 1px;}
+.b24-folderbar-selected2 {background:#FFFFFF;border-top:solid #5E7ABB 1px;border-bottom:solid #5E7ABB 1px;}
+.b24-folderbar-selectednot {background:#CCE5FF;}
+.b24-folderbar-system {background:#CCE5FF;}
+.b24-folderbar-userfolder {background:#CCE5FF;}
+.b24-folderbar-systemflag {color:#FF0000;font-weight:bold;}
+.b24-folderbar-edit {background:#5E7ABB;color:#CCE5FF;font-weight:bold;}
+.b24-folderbar-hasbook {background:#FFEB8A;}
+
+.b24-folderitem {font-family:Verdana,Arial,Helvetica;font-size:10px;color:#808080;}
+.b24-folderitem-subtitle {font-family:Verdana,Arial,Helvetica;font-size:10px;color:#404040;}
+.b24-folderitem-title {font-family:Verdana,Arial,Helvetica;font-size:10px;color:#000000}
+.b24-folderitem-title2 {font-family:Times New Roman,serif;font-size:13px;color:#000000;font-weight:normal;}
+
+.b24-editfolderbar-link A{font-family:Verdana,arial,helvetica,sans-serif;font-size:11px;color:#FFFFFF;background:#5E7ABB;}
+
+.b24-relatedinfo {font-family:Verdana,arial,helvetica,sans-serif;font-size:11px;color:white;}
+.b24-relatedinfo-title {font-weight:bold;}
+.b24-relatedinfo-link {color:white;}
+.b24-relatedinfo-item {color:white;}
+
+.b24-topic-current {font-size:10px;font-weight:bold;color:maroon;background:#99CCFF;}
+.b24-topic1 {font-size:12px;text-indent:-15px;}
+.b24-topic2 {font-size:10px;text-indent:-15px;}
+.b24-topiclist {display:inline;}
+.b24-topictreelist {padding:3px;}
+.b24-topictitle {font-size:12px;font-weight:bold;color:#000000; background:#FFCC00;letter-spacing: .2em;padding-top:3px;}
+.b24-topictitle2 {font-family:Verdana, Arial, Helvetica;font-size:10px;font-weight:bold;color:#000000;}
+.b24-topicdescription {font-family:Verdana, Arial, Helvetica;font-size:10px;font-weight:normal;color:#000000;}
+.b24-topicitemlink {font-family:verdana, arial,helvetica;font-size:10px;color:#0E25AB;font-weight:bold;}
+.b24-topicitem {font-family:verdana, arial, helvetica;font-size:10px;color:#0E25AB;font-weight:bold;}
+.b24-topicselected {font-family:Arial, Helvetica;font-size:10px;font-weight:bold;color:#000000;}
+.b24-topiccount {font-family:Arial, Helvetica;font-size:10px;color:#666666;}
+.b24-topicsbookcount {font-family:Arial, Helvetica;font-size:10px;color:#666666;font-weight:normal;}
+
+.b24-searchquery {color:#336699;font-weight:bold;font-size:12px;}
+
+.b24-topictrail {font-family:Verdana, Arial, Helvetica;font-size:14px;color:#000000;}
+.b24-topictrail-title {font-size:14px;font-weight:bold;color:#000000;}
+.b24-topictrail-title2 {font-size:14px;font-weight:normal;color:#000000;}
+.b24-topictrail-link {font-size:14px;color:#0E25AB;font-weight:normal;}
+.b24-topictrail-link2 {font-size:12px;color:#0E25AB;font-weight:normal;}
+.b24-topictrail-item {font-size:14px;color:#0E25AB;font-weight:normal;}
+.b24-topictrail-item2 {font-size:12px;color:#0E25AB;font-weight:normal;}
+.b24-topictrail-description {font-size:14px;font-weight:normal;color:#000000;}
+.b24-topictrail-subitem {font-size:12px;color:#0E25AB;font-weight:normal;}
+
+.b24-lessonlist {font-family:Verdana, Arial, Helvetica;font-size:12px;color:#000000;}
+.b24-lessontitle {font-weight:bold;font-size:12px;}
+.b24-lessonitem {font-size:10px;}
+
+.b24-bookbin {background:#DFE6FF;}
+.b24-bookbin-item {font-size:12px;font-weight:normal;}
+
+.b24-hotbooktitle {font-size:9px;font-weight:bold;text-align:center;}
+.b24-booksmore {text-align:left;margin-left:50px; margin-top:3px;margin-bottom:3px;}
+
+.b24-bookmeta     {font-size:10px;}
+.b24-bookmetacompact {font-family:arial,helvetica,verdana,sans-serif;padding:4px;font-size:9px;}
+.b24-bookchaptertitle {font-size:11px;font-weight:bolder;color:#000000;}
+.b24-booktitle {font-weight:bold;color:#122EB2;}
+.b24-booktitle2 {color:#122EB2;}
+.b24-booktitle-summary {font-weight:normal; font-style:italic; color:#122EB2;}
+.b24-booktitle-no {font-weight:bold;color:#B22E12;}
+.b24-bookauthor {font-size:11px; color:#666666;}
+.b24-bookisbn, .b24-bookcwdate, .b24-bookpages {font-family:arial,verdana,sans-serif;font-size:9px;color:#666666;}
+.b24-bookpages {font-family:arial,verdana,sans-serif;font-size:9px;}
+.b24-bookimprint {font-size:9px;color:#333333;}
+.b24-bookpublisher, .b24-bookrights {font-size:9px;color:#666666;}
+.b24-bookeditorial {color:#666666;font-size:10px;}
+.b24-bookeditorial-byline {font-size:9px;color:#666666;}
+.b24-bookbackcover {background:#FFFFFF;}
+.b24-bookbackcover-title {font-weight:bold;color:#000000;height:35px;}
+.b24-booksynopsis {background:#FFFFFF;}
+.b24-booksynopsis-title {font-weight:bold;color:#000000;height:35px;}
+.b24-bookshelfdate {font-family:arial, helvetica, sans-serif;}
+.b24-bookarchived {color:#999999;}
+.b24-searchhit {font-family:Arial, Helvetica;size:8px;color:#000000;}
+.b24-searchhit-title {font-family:Arial, Helvetica;size:8px;color:#000000;font-weight:bold;}
+.b24-searchhit-details {font-family:Arial, Helvetica;size:8px;color:#9D9D9D;}
+
+.b24-soundview {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:9px;color:#666666;}
+
+.b24-folderbook {font-size:12px;color:#000000;background-color:#FFFFFF;}
+.b24-folderbook1 {background:#FFFFFF;}
+.b24-folderbook-edit {border:#FBFBDA 1px solid;padding:5px;background:#FBFBDA;}
+
+.b24-foldereditform {display:inline;background:transparent;font-size:10px;}
+.b24-foldereditcontrol {background:#FBFBDA;}
+.b24-foldereditsubmit {background:#FFFFFF;color:#000000;}
+.b24-folderedit {color:navy;font-weight:bold;font-size:12px;}
+.b24-folderedit-current {background:yellow;}
+.b24-folderedit-link {font-weight:bold;color:#122EB2;}
+.b24-foldereditmenu {font-family:Arial, Helvetica;font-size:10px;color:#FFFFFF;}
+.b24-foldereditmenu2 {font-family:Arial, Helvetica;font-size:10px;color:#000000;background:#FBFBDA;}
+.b24-foldereditmenu-title1 {font-size:12px;font-weight:normal;color:#FFFFFF;background:#5E7ABB;}
+.b24-foldereditmenu-title2 {font-size:12px;font-weight:normal;color:black;}
+.b24-foldereditmenu-exit {font-size:12px;font-weight:normal;color:red;}
+
+.b24-bookmanage-title {font-weight:bold;font-size:12px}
+.b24-bookmanage-formlabel {font-weight:bold}
+.b24-bookmanage-bookmeta {background:#FFEB8A;}
+.b24-bookmanage-bookmarkmenu {background:#FFFFFF;}
+.b24-bookmanage-bookmarkform {background:#FFFFB2;display:inline;}
+.b24-bookmanage-bookmarktitle {font-size:13px;font-weight:bold;}
+.b24-bookmanage-bookmarkselected {background:#FFFFB2;}
+.b24-bookmanage-bookmarklink  {text-decoration:none;}
+.b24-bookmanage-systemfolder  {border:1px black solid;padding-top:1px;padding-bottom:1px;background:#FFFFFF;}
+
+.b24-bookmark {font-family:Arial, Helvetica;size:10px;color:#000000;}
+.b24-bookmark-title {font-family:Arial, Helvetica;size:10px;color:#000000;font-weight:bold;}
+
+.b24-toctitle {font-size:12px;font-weight:bold;color:#000000;vertical-align:middle;}
+.b24-tocmenu {font-size:11px;color:#122EB2;background:#FFFFFF;border-top:solid #000000 1px;border-bottom:solid #000000 1px;padding-top:4px;padding-bottom:4px;}
+.b24-toc {font-family:arial, helvetica, verdana, sans-serif;font-size:12px;color:black;font-weight:normal;}
+.b24-toc0, .b24-toc0 A {font-weight:bold;font-size:11px;color:#000000;text-decoration:none;}
+.b24-toc1, .b24-toc1 A {font-weight:normal;text-decoration:none;color:#122EB2}
+.b24-toc2, .b24-toc2 A {font-weight:normal;font-size:10px;text-decoration:none;color:#000000;}
+
+.b24-chaptertoc {}
+.b24-chaptertoc0 {display:none;}
+.b24-chaptertoc1 {font-family:arial,verdana;font-size:9px;color:maroon;font-weight:bold;text-align:center;border-top:thin black solid;border-bottom:thin black solid;}
+.b24-chaptertoc2 {font-family:arial,verdana;font-size:10px;color:#122E76;}
+.b24-chaptertoc2-selected {font-family:verdana,arial;font-size:10px;color:#000000;font-weight:bold;}
+.b24-chaptertoc3 {font-family:arial,verdana;font-size:10px;color:#333333;}
+.b24-chaptertoctitle {text-align:center;padding-top:1px;padding-bottom:1px;background:#5E7BBA;color:#FFFFFF;font-weight:normal;font-size:10px;}
+.b24-chaptertocsub {text-align:center;padding-top:6px;padding-bottom:8px;font-family:verdana,arial;font-size:10px;color:#000000;font-weight:bold;}
+
+.b24-chapterselector {}
+
+.b24-collectionlist {font-family:Verdana, Arial, Helvetica;}
+.b24-collectionlist-left {font-family:Verdana, Arial, Helvetica;color:black;}
+.b24-collectiontitle {font-size:11px;font-weight:bold;color:black;}
+.b24-collectiontitle2 {font-size:10px;font-weight:normal;color:black;}
+.b24-collectiondescription {font-size:10px;font-weight:normal;color:black;}
+
+.b24-mfooter {background:#FFFFFF;font-size:9px;}
+.b24-mfootercolumn {background:#FFFFFF;}
+
+.b24-footer {margin-left:5px; font-family:Arial, Helvetica, sans-serif;font-size:10px;color:#000000;}
+.b24-footlink {font-family:Arial, Helvetica, sans-serif;font-size:10px;color:#CC0000;text-decoration:none;}
+
+.b24-mktfooter {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:9px;color:black;}
+.b24-mktbox_header {font-size:10px;color:#000000;font-weight:bold;padding-bottom:4px;letter-spacing:2px;word-spacing:2px;}
+.b24-mktfooter_title{font-size:10px;font-weight: bold;letter-spacing:.1em;color:#333333;padding-bottom:13px;}
+.b24-mktfooterlink {font-size:10px;color:#0000FF; text-decoration:none;padding-left:0px;padding-bottom:0px;padding-top:0px;}
+.b24-mktfooterlink:visited {font-size:10px;color:#0000FF; text-decoration:none;padding-left:0px;padding-bottom:0px;padding-top:0px;}
+.b24-mktfooterlink:hover {font-size:10px;color:#FF9900; text-decoration:underline;padding-left:0px;padding-bottom:0px;padding-top:0px;}
+.b24-mktfooterlink:active {font-size:10px;color:#CC0000; text-decoration: none;padding-left: 0px;padding-bottom: 0px;padding-top: 0px;}
+.b24-mktnavink A{color:#CC0000;text-decoration:none;}
+
+.b24-doc-title {font-family:Verdana, Arial, Helvetica;font-size:12px;font-weight:bold;color:#000000;}
+.b24-doc-para {}
+.b24-doc-ul {}
+.b24-doc-ol {}
+.b24-doc-listem {}
+.b24-doc-dl {}
+.b24-doc-dt {font-weight:bold;}
+.b24-doc-dd {}
+
+.b24-form {margin-top:0px;margin-bottom:0px;color:#000000;}
+.b24-formbg {border:solid #FFFFFF 1px;}
+.b24-formtitle {background:#5E7ABB;color:#FFFFFF;font-weight:bold;font-size:10px;font-family:Arial, Helvetica, sans-serif;}
+.b24-formtitle2 {font-weight:bold;font-size:10px;font-family:Verdana, Arial, Helvetica;}
+.b24-formtitle3 {font-weight:bold;font-size:12px;font-family:Verdana, Arial, Helvetica;}
+.b24-formdescription {font-family:Arial, Helvetica, sans-serif;color:#333333;}
+.b24-formelement {padding-left:4px;margin-left:10px;margin-right:20px;font-family:Arial, Helvetica, sans-serif;font-size:10px;}
+.b24-formseparator {size:1px;height:1px;width:100%;color:#666666;background:#CCCCCC;}
+.b24-forminput {background:#FFFFFF;}
+.b24-forminputreg {background:#FFFFCC;padding:5px;font-size:11px;}
+.b24-forminputlabel{font-size:12px;}
+.b24-forminputhelp {color:#808080;}
+.b24-formfineprint {font-size:12px;color:#404040;font-style:italic;text-align:center;}
+.b24-formrequired {color:#FF0000;font-style:italic;}
+.b24-tipslink {font-family:Arial, Helvetica, sans-serif; font-size:10px;text-align:right;}
+.b24-formrequired {color:#FF0000;font-style:italic;}
+
+
+.b24-currenthit {color:#000000; background:#FF33FF;}
+.b24-lasthit {color:#000000; background:#FF33FF;}
+
+.b24-report {font-size:12px;}
+.b24-reportitemlabel {font-size:12px;font-weight:bold;}
+.b24-reportitemdata {font-size:12px;font-weight:normal;}
+
+.b24-helpmenu {font-family:verdana, arial, helvetica, sans-serif;}
+.b24-helpmenu-title {font-size:10px;color:#000000;font-weight:bold;}
+
+/*faqquestion {font-family:verdana, arial, helvetica;font-size:11px; list-style : square;cursor:hand; padding:1px; padding-left:-5px;text-align:left;}*/
+/*faqquestion a:hover{text-decoration:underline;}*/
+UL.b24-helpheader LI {font-size:11px;list-style-image : url(images/b24-helparrow.gif);}
+
+
+.b24-boxheading {font-family:verdana,arial;color:#000000;font-size:12px;FONT-WEIGHT:bold;text-decoration:none;padding-left:0px;padding-bottom:3px;text-align:left;}
+.b24-boxheading IMG {margin-right:3px;vertical-align:top;}
+
+.b24-helpmenu-item {font-size:9px;}
+
+.b24x7_pdf1{font-size:10px;font-weight: bold;}
+.b24x7_pdfred{font-size:10px;font-weight: bold;color:#CC0000}
+.b24x7_pdf2{font-weight: bold;padding-bottom:5px}
+.b24x7_pdf3{font-size:11px;font-weight: bold;}
+
+.b24-statstitle1 {font-weight:bold;font-size:11px;padding:5px; background:#DFE6FF;color:#000000;}
+.b24-statstitle2 {font-weight:bold;font-size:11px;}
+.b24-statstotal  {font-weight:bold;font-size:11px;text-align:right;}
+
+.b24-sharelink {border:solid black 1px;padding:10px;}
+
+.b24-error {font-family:verdana, arial, helvetica;font-size:12px;font-weight:normal;color:#000000;}
+.b24-errortext {font-weight:bold;color:#FF0000;}
+.b24-errorcode {color:#FF8080;}
+
+.b24-bookRecommendationWindow {position:absolute;background:white;font-weight:normal;vertical-align:middle;width:300px;height:30px;border-color:#5e7abb;border-width:thin;border-style:solid;padding:2px;}
+.b24-bookRecommendationChoiceHR {background-color: #5e7abb;height: 1px; color: #5e7abb; border: none; }
+.b24-bookRecommendationChoiceDiv {background:#FFFFFFF;vertical-align:middle;font-size:10px;color:Gray;}
+.b24-bookRecommendationChoice {}
+.b24-bookRecommendationSombrero {position:absolute;top:-8;left:-10;height:35;width:33}  
+.b24-bookRecommendationDoubleSombrero {position:absolute;top:-8;left:-10;height:35;width:40}  
+.b24-bookRecommendationDoubleBeanie {position:absolute;top:-6;left:-8;height:27;width:33}
+.b24-bookRecommendationBeanie {position:absolute;top:-6;left:-8;height:26;width:25}
+
+.b24-login-title {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:13px;font-weight:bold;}
+.b24-login {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:11px;text-decoration:none;font-weight:normal;width:300px;}
+.b24-login2 {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;text-decoration:none;font-weight:normal;width:300px;}
+
+.b24-login A, .b24-login2 A {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:11px;text-decoration:none;font-weight:bold;}
+.b24-login A:visited, .b24-login2 A:visited {}
+.b24-login A:hover, .b24-login2 A:hover {color:#FFCC00; text-decoration:underline;}
+.b24-login A:active,.b24-login2 A:active {color:#000000;}
+
+.b24-browsetext A {padding-right:5px;}
+.b24-browsetext A:hover {padding-right:5px;background:#ceceff;}
+
+.b24-cobrand {font-family:Verdana,arial,helvetica,sans-serif;font-size:12px;color:#FFFFFF; text-align:left;}
+.b24-cobrand-title {font-weight:bold;font-size:12px;color:#ffffff;border:solid #ffffff 2px;padding:2px;text-align:center;}
+.b24-cobrand-bold {font-weight:bold;font-size:12px;color:#ffffff;padding:2px;}
+.b24-cobrand A {color:#ffcc00;text-decoration:underline;}
+
+.highlight {background:#FFFFCC;}
+.debug {font-family:comic sans ms;font-size:9px;background:#FFFFFF;color:#000000;}
+
+.debugwrite_old {font-family:comic sans ms;font-size:9px;background:#FFFFFF;color:#5E7ABB;}
+.debugwriteform_old {font-family:comic sans ms;font-size:9px;background:#5E7ABB;color:#FFFFFF;}
+.debugwritecookie_old {font-family:comic sans ms;font-size:9px;background:#BB7A5E;color:#FFFFFF;}
+.alwayswrite_old {font-family:comic sans ms;font-size:9px;background:#FFFFFF;color:#BB7A5E;}
+
+.debugwrite {font-family:comic sans ms;font-size:9px;background:#FFFFFF;color:#336699;}
+.xmldebugwrite {font-family:comic sans ms;font-size:9px;background:#FFFFFF;color:#339966;}
+.debugwriteform {font-family:comic sans ms;font-size:9px;background:#FFFFFF;color:#FFFFFF;}
+.debugwritecookie {font-family:comic sans ms;font-size:9px;background:#996633;color:#FFFFFF;}
+.alwayswrite {font-family:comic sans ms;font-size:9px;background:#FFFFFF;color:#993366;}
+.xmlalwayswrite {font-family:comic sans ms;font-size:9px;background:#FFFFFF;color:#666633;}
+
+
+.mml_green {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:11px;background:#E3EDE5;}
+.mml_form {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:11px;display:inline;}
+.b24-mmlchaptertoctitle {text-align:center;padding-left:5px;padding-top:3px;padding-bottom:3px;background:#FFFFFF;color:#000000;font-weight:bold;font-size:10px;font-family:Arial, Helvetica, sans-serif;width:100%;}
+.b24-mmlchaptertoc {font-size:10px;color:black;padding-left:0px;padding-right:2px;padding-bottom:4px;background:#FFFFFF;}
+.b24-mmlformsubmit {background:#FFFFFF;}
+.b24-mmlhelpmenu {font-family:verdana, arial, helvetica, sans-serif;}
+.b24-mmlhelpmenu-title {font-size:12px;color:#000000;font-weight:bold;}
+.b24-mmlhelpmenu-item {font-size:10px;}
+.b24-mml_headers {font-family:helvetica,verdana,arial,sans-serif;font-size:16px;color:#000000;font-weight:bold;padding-left:0px;padding-bottom:0px;padding-top:0px;letter-spacing:5px;text-transform:lowercase;word-spacing:4px;}
+.b24-mml_hr {color:#809BB2;height:3px;}
+.b24-mml_searchbar {font-family:arial,helvetica,sans-serif, sans-serif;font-size:11px;color:#000000;}
+.b24-mml_bookmanage-bookmeta {background:#FFFFFF;}
+.b24-mml_bookmanage-bookmarkform {background:#FFFFFF;display:inline;}
+
+.b24-partner_header {font-family:helvetica, verdana, arial, sans-serif;font-size:17px;text-align:center;color:#000000;font-weight:bold;letter-spacing : 2.5px;word-spacing: 1px;margin-top:0px;}
+.b24-partner_header A {font-family:helvetica, verdana, arial, sans-serif;font-size:17px;text-align:center;text-decoration:underline;color:#000000;font-weight:bold;letter-spacing : 2.5px;word-spacing: 1px;margin-top:0px;}
+.b24-partner_header A:visited{font-family:helvetica, verdana, arial, sans-serif;font-size:17px;text-align:center;text-decoration:underline;color:#000000;font-weight:bold;letter-spacing : 2.5px;word-spacing: 1px;margin-top:0px;}
+.b24-partner_header A:hover {font-family:helvetica, verdana, arial, sans-serif;font-size:17px;text-align:center;text-decoration:underline;color:#000000;font-weight:bold;letter-spacing : 2.5px;word-spacing: 1px;margin-top:0px;}
+.b24-partner_header A:active {font-family:helvetica, verdana, arial, sans-serif;font-size:17px;text-align:center;text-decoration:underline;color:#000000;font-weight:bold;letter-spacing : 2.5px;word-spacing: 1px;margin-top:0px;}
+.b24-partner_box {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#000000;text-decoration:none;margin-top:0;margin-bottom:7px;}
+.b24-partner_para {font-family:helvetica, verdana, arial, sans-serif;font-size:12px;color:#5e7abb;font-weight:bold;letter-spacing : 2.5px;}
+.b24-partner_boxlower {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;color:#2f3d97;text-decoration:none;margin-top:0;margin-bottom:7px;}
+LI.b24-partner_box {list-style-image:url(images/partner_bluedisc.gif);font-family:helvetica, Verdana, Arial, Helvetica, sans-serif;color:#2f3d97;font-size:11px;text-decoration:none;line-height:16px;margin-left:-10px;letter-spacing:1px;margin-top:5px;margin-bottom:5px;}
+LI.b24-partner_box_plain {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#000000;text-decoration:none;margin-top:3px;margin-bottom:7px;}
+.b24-partner_box A {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#2f3d97;text-decoration:none;letter-spacing : 1px;}
+.b24-partner_box A:visited {color:#2f3d97;}
+.b24-partner_box A:hover{color:#000000; text-decoration:underline;}
+.b24-partner_box A:active{color:#000000;}
+.b24-partner_list {font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#000000;text-decoration:none;letter-spacing:1px;margin-top:2px;margin-bottom:2px;list-style:none;margin-left:0;}
+
+.b24-starter_title {font-family:arial, helvetica, sans-serif;font-size:12px;font-weight:bold;color:#2F3D97;}
+.b24-starter_search {font-family:arial,helvetica,sans-serif, sans-serif;font-size:11px;color:#000000;background:#FFFFFF;}
+LI.b24-starter_list  {list-style-image:url(images/starter_arrow.gif);font-family:helvetica, Verdana, Arial, Helvetica, sans-serif;color:#000000;font-size:11px;text-decoration:none;line-height:16px;margin-left:-16px;letter-spacing:1px;margin-top:0;margin-bottom:0;}
+
+.b24-bookbrowsetree {text-align:center;}
+.b24-bookbrowsetree A {text-decoration:none;}
+.b24-bookbrowsetree A:visited {text-decoration:none;}
+.b24-bookbrowsetree IMG {border:none;}
+.b24-bookbrowsetree .item {font-family:verdana, arial,helvetica;font-size:12px;color:#0E25AB;font-weight:bold;padding:8px;}
+.b24-browsetree {font-family:verdana, arial,helvetica;font-size:11px;vertical-align:middle}
+.b24-browsetree TD {margin:0px;padding:3px;}
+.b24-browsetree A {border:none;text-decoration:none;font-size:10px}
+.b24-browsetree IMG {border:none;}
+.b24-browsetree HR {color:#5E7ABB;height:1px;width:90%;}
+.b24-browsetree .newtree {vertical-align:middle;}
+.b24-browsetree .newtree LABEL {color:#000000;vertical-align:middle;font-size:11px;font-weight:bold;}
+.b24-browsetree .newtree INPUT {color:#000000;vertical-align:middle;font-weight:normal;}
+.b24-browsetree .treename {color:#000000;vertical-align:middle;}
+.b24-browsetree .treename LABEL {color:#000000;vertical-align:top;font-size:11px;font-weight:bold;}
+.b24-browsetree .treename .label {color:#000000;vertical-align:middle;font-size:11px;font-weight:normal;}
+.b24-browsetree .treename INPUT {color:#000000;vertical-align:middle;font-weight:bold;}
+.b24-browsetree .treename A {vertical-align:middle;margin-right:10px;color:#0000FF;}
+.b24-browsetree .treename A:visited {vertical-align:middle;margin-right:10px;color:#0000FF;}
+.b24-browsetree .visible {color:#0E25AB;font-weight:bold;}
+.b24-browsetree .hidden {background-color:#DDDDDD;font-weight:bold;}
+.b24-browsetree .delete {background-color:#E7748A;font-weight:bold;}
+.b24-browsetree .newtopic {color:#0E25AB;display:none;padding:0;margin:0}
+.b24-browsetree .newtopicvisible {color:#0E25AB;display:inline;padding:0;margin:0}
+.b24-browsetree .newtopic .redplus {color:#CC0000;font-weight:bold;font-size:14px;}
+.b24-browsetree .newtopicvisible .redplus {color:#CC0000;font-weight:bold;font-size:14px;}
+.b24-browsetreemenu {position:relative;top:0;left:0;color:#000066;}
+.b24-browsetreemenu DIV {padding:0;margin:0}
+.b24-browsetreemenu TABLE {display:none;padding:0;margin:0;list-style:none;position:absolute;top:0px;left:0;background:#EFF4F7;border-right:#E4E4E7 solid 2px;border-bottom:#E4E4E7 solid 2px;}
+.b24-browsetreemenu TD {vertical-align:middle;padding:3px;margin:0px;color:#000066;}
+.b24-browsetreemenu TD A {vertical-align:middle;padding:3px;margin:0px;color:#000066;}
+.b24-browsetreemenu TD A:visited {vertical-align:middle;padding:3px;margin:0px;color:#000066;}
+.b24-browsetreemenu TD INPUT {vertical-align:middle;background:#FFFFFF;}
+.b24-browsetreemenu TD LABEL {vertical-align:middle;}
+.b24-browsetreemenu .spacer {margin:0px;padding:0px;}
+.b24-browsetreemenu .hover {background-color:#FFFFFF;color:#990102;}
+.b24-browsetreemenu .hover A {background-color:#FFFFFF;color:#990102;}
+.b24-browsetreemenu .hover A:visited {background-color:#FFFFFF;color:#990102;}
+.b24-browsetreemenu .hover INPUT {background-color:#FFFFFF;color:#990102;}
+
+.b24-videoPlayer {padding:3px;}
+.b24-videoStreamList {font-size:9px;line-height:18px;padding-left:8px;padding-top:2px;padding-bottom:3px;border-bottom:solid #99CCFF 1px; border-left:solid #99CCFF 1px;margin-left:9px;background-image : url(images/bg_videobox.gif);}
+.b24-videoStreamListEntry {font-size:9px;}
+.b24-videotitle {font-size:11px;color:#000000;font-weight:bold;padding-left:1px;}
+.b24-videotitle2 {font-size:10;color:#000000;font-weight:bold;padding-bottom:0px;}
+.b24-videoDescription {padding:9px; border-bottom:solid #99CCFF 1px; border-left:solid #99CCFF 1px;margin-left:10px;}
+.b24-videoCompanionFiles {font-size:9px;line-height:10px;padding-left:12px;padding-top:1px;padding-bottom:2px;border-bottom:solid #99CCFF 1px; border-left:solid #99CCFF 1px;margin-left:10px;}
+.b24-videoCompanionFiles FORM {display:inline;}
+.b24-videoleftmenu {color:#FFFFFF;}
+.b24-videoleftmenu A {color:#FFFFFF;}
+.b24-videoleftmenu A:visited {color:#FFFFFF;}
+.b24-videoexpiredate {font-family:Verdana;font-size:9px;color:#666666;}
+.b24-VideoViewProgram {float: right; width:135px; height:90px;}
+.b24-videodeadlink {font-family:Verdana;font-size:10px;color:#666666;}
+.b24-videomessage {font-family:Verdana;font-size:9px;color:#cc0000;line-height:10px;}
+
+.b24-event-title {font-weight:bold;}
+.b24-event-text {font-weight:normal;color:#CC0000;font-size:11px;}
+.b24-event-highlight {font-weight:bold;color:#CC0000;font-size:11px;}
+
+.b24-aboutauthor {font-family:arial; font-size:12px;}
+.b24-aboutauthor IMG {float:left; margin-right:6px; margin-bottom:2px;}  /* The author's headshot */
+
+.b24-gradienttabon {font-size:11px;text-align:center;padding-left:5px;white-space: nowrap;height:22px;color:#000000;background-image : url(images/b24-tab_gradbgnoline_on.gif);border-top:solid #5E7ABB 1px; border-left:solid #5E7ABB 1px;border-right:solid #5E7ABB 1px;} 
+.b24-gradienttaboff {font-size:11px;color:#0000FF;text-align:center;padding-left:5px;background-image : url(images/b24-tab_gradbg_off.gif);white-space: nowrap;height:22px;} 
+.b24-tabheader {font-size:11;font-weight:bold;padding-top:5px;padding-bottom:5px;}
+.b24-gradienttaboff A:visited {color:#0000FF;}
+.b24-gradienttabon A:visited {color:#000000;}
+
+
+
+.b24-whatsnewtitle {font-size:10px; color:#000000; font-weight: bold;border-bottom:solid #CC0000 1px; padding-bottom:4px;padding-top:4px;padding-right:5px;}
+.b24-whatsnew2 {font-size:10px;margin-top:3;}
+.b24-whatsnew3 {padding-left:150px;}
+
+.b24-whatsnewboxlong {width:400px;margin-left:3px;margin-right:3px;font-size:10px; color:#000000;}
+.b24-whatsnewboxlong A {color:#0000FF; text-decoration:none;}
+.b24-whatsnewboxlong A:visited {color:#0000FF; text-decoration:none;}
+.b24-whatsnewboxlong A:hover {color:#cc0000; text-decoration:underline;}
+.b24-whatsnewboxlong A:active {font-size:10px;color:#CC0000; text-decoration: none;}
+
+.b24-whatsnewboxshort {width:180px;margin-left:3px;margin-right:3px;font-size:10px; color:#000000;}
+.b24-whatsnewboxshort A {font-size:10px;color:#0000FF; text-decoration:none;}
+.b24-whatsnewboxshort A:visited {font-size:10px;color:#0000FF; text-decoration:none;}
+.b24-whatsnewboxshort A:hover {font-size:10px;color:#cc0000; text-decoration:underline;}
+.b24-whatsnewboxshort A:active {font-size:10px;color:#CC0000; text-decoration: none;}
+
+.b24_helptitle {font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 18px; font-weight: normal; color: #cc0000;}
+.b24-helplist {font-size:11px;color:#CC0000;font-weight:normal;width:175px;}
+.b24-helplist2 {color:black;}
+.b24-helplist3 {font-size:11px;width:450px;text-align:left}
+
+.b24-bubbleoutside {background-color:transparent;}
+.b24-bubblelegendheader {font-weight:bold;font-family:verdana;font-size:10px;}
+.b24-bubblelegendtext {font-family:verdana;font-size:10px;color:#333333;vertical-align:top;}
+
+.b24-download_overlay {display: none;position: absolute;top: 0;left: 0;background-color: #333333;z-index:1001;-moz-opacity: 0.7;opacity:.70;filter: alpha(opacity=35);}
+.b24-download_bubble {display: none;position: absolute;top: 120;z-index:1002;}
+.b24-download_popup {background-color:#FFFFFF;}
+td.download_n {height: 13px;background-image: url(images/download_n.gif)}
+td.download_ne {width: 17px;height: 13px;background-image: url(images/download_ne.gif)}
+td.download_e {width: 17px; background-image: url(images/download_e.gif)}
+td.download_se {width: 17px;height: 13px; background-image: url(images/download_se.gif)} 
+td.download_s {height: 13px;background-image: url(images/download_s.gif)}
+td.download_sw {width: 17px;height: 13px;background-image: url(images/download_sw.gif)} 
+td.download_w {width: 17px;background-image: url(images/download_w.gif)}
+td.download_nw {width: 17px; height: 13px; background-image: url(images/download_nw.gif)}      
+td.download_center {background-color: white}

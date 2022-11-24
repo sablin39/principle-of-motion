@@ -1,0 +1,273 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+E.4 Quaternions</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Appendix E - 
+ Representations of Orientation</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(62,28,15,15,3,16,7,0,75,89,19,42,8,43,62)
+var a1 = new Array(12,6,4)
+var a2 = new Array(11,0,9)
+var a3 = new Array(1,13,14)
+var a4 = new Array(10,7,5)
+var a5 = new Array(8,3,2)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="84.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=389621615"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="86.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:50:39 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:50:39 UTC-->
+<div class="appendix">
+<a name="ap-e0946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="1289"></a><a name="AP-ELEV1SEC40946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="section-titlelabel">E.4 </span>Quaternions</h2>
+<p class="first-para">The axis-angle parameterization described above parameterizes a rotation matrix by three parameters (given by <a class="CHAPTERJUMP" href="84.html#1288" target="_parent">(E.21)</a>). Quaternions, which are closely related to the axis-angle parameterization, can be used to define a rotation by four numbers. It is straightforward to use quaternions to define an atlas for <i class="emphasis">SO</i>(3) using only four charts. Furthermore quaternion representations are very convenient for operations such as composition of rotations and coordinate transformations. For these reasons, quaternions are a popular choice for the representation of rotations in three dimensions.</p>
+<p class="PARA">Quaternions are a generalization of the complex numbers to a four-dimensional space. For this reason, we begin with a quick review of how complex numbers can be used to represent orientation in the plane. A first introduction to complex numbers often uses the example of representing orientation in the plane using unit magnitude complex numbers of the form <i class="emphasis">a</i> + <i class="emphasis">ib</i>, in which <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="INLINEMEDIAOBJECT"><img alt="Image from book" border="0" height="21" id="IMG_2548" title="" src="figu494_5.jpg" width="82" /></span></span>. In this case, the angle <span class="UNICODE">&theta;</span> from the real axis to the vector <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="INLINEMEDIAOBJECT"><img alt="Image from book" border="0" id="IMG_2549" height="18" src="figu494_6.jpg" title="" width="113" /></span></span> is given by atan2(<i class="EMPHASIS">b, a</i>), and it is easy <a name="1290"></a><a name="idx-495"></a>to see that cos <span class="UNICODE">&theta;</span> = <i class="EMPHASIS">a</i> and sin <span class="UNICODE">&theta;</span> = <i class="emphasis">b</i>. Since <i class="emphasis">a</i>, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img alt="Image from book" border="0" height="15" id="IMG_2550" src="figu495_1.jpg" title="" width="59" /></span></span>, we can consider this as an embedding of <i class="emphasis">S</i><sup>1</sup> in the plane.</p>
+<p class="PARA">Using this representation, multiplication of two complex numbers corresponds to addition of the corresponding angles. This can be verified by direct calculation as</p>
+<div mathml="yes" class="informalequation">
+<img src="figu495_2.jpg" />
+<br />
+
+</div>
+<p class="para">While a complex number <i class="emphasis">a</i> + <i class="EMPHASIS">ib</i> defines a point in the complex plane, a quaternion defines a point in a four-dimensional complex space, <i class="emphasis">q</i><sub>0</sub> + <i class="EMPHASIS">iq</i><sub>1</sub> + <i class="EMPHASIS">jq</i><sub>2</sub> + <i class="emphasis">kq</i><sub>3</sub>. Here, <i class="EMPHASIS">i, j</i>, and <i class="emphasis">k</i> represent independent square roots of negative one. They are independent in the sense that they do not combine using the normal rules of scalar multiplication. In particular, we have</p>
+<div mathml="yes" class="EQUATION">
+<a name="1291"></a><a name="ap-eeqn220946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<table cellpadding="0" border="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="EQUATION-LABEL">(E.22)&nbsp;</span></td><td valign="top"><img src="figu495_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table cellpadding="0" border="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="EQUATION-LABEL">(E.23)&nbsp;</span></td><td valign="top"><img src="figu495_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div mathml="yes" class="EQUATION">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="equation-label">(E.24)&nbsp;</span></td><td valign="top"><img src="figu495_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div mathml="yes" class="equation">
+<a name="1292"></a><a name="AP-EEQN250946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="equation-label">(E.25)&nbsp;</span></td> <td valign="top"><img src="figu495_6.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="PARA">It is not a coincidence that multiplication of <i class="emphasis">i, j</i>, and <i class="EMPHASIS">k</i> is similar to the vector cross product for the orthogonal unit basis vectors, <i class="emphasis">i</i> = [1, 0, 0]<sup><i class="EMPHASIS">T</i></sup>, <i class="EMPHASIS">j</i> = [0, 1, 0]<sup><i class="EMPHASIS">T</i></sup>, and [0, 0, 1]<sup><i class="emphasis">T</i></sup>.</p>
+<p class="PARA">Complex numbers with unit magnitude can be used to represent orientation in the plane simply by using their representation in polar coordinates. Likewise, quaternions can be used to represent rotations in 3D. In particular, for a rotation about an axis <i class="emphasis">n</i> = [<i class="emphasis">n<sub>x</sub>, n<sub>y</sub>, n<sub>z</sub></i>]<sup><i class="emphasis">T</i></sup> by angle <span class="UNICODE">&theta;</span>, the corresponding quaternion, <i class="EMPHASIS">Q</i>, is defined as</p>
+<div mathml="yes" class="EQUATION">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="equation-label">(E.26)&nbsp;</span></td> <td valign="top"><img src="figu495_7.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">When we define the axis of rotation to be a unit vector, the corresponding quaternion has unit norm, since</p>
+<div mathml="yes" class="equation">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="equation-label">(E.27)&nbsp;</span></td> <td valign="top"><img src="figu495_8.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="PARA">Quaternions with unit norm are sometimes referred to as rotation quaternions.</p>
+<p class="PARA">
+<a name="1293"></a><a name="idx-496"></a>It is straightforward to apply the results from <a class="CHAPTERJUMP" href="84.html#1280" target="_parent">section E.3</a> to determine the rotation matrix <i class="emphasis">R</i> <span class="unicode">&#8714;</span> <i class="emphasis">SO</i>(3) that corresponds to the rotation represented by a rotation quaternion. For the quaternion <i class="emphasis">Q</i> = (<i class="EMPHASIS">q</i><sub>0</sub>, <i class="emphasis">q</i><sub>1</sub>, <i class="emphasis">q</i><sub>2</sub>, <i class="EMPHASIS">q</i><sub>3</sub>) we have</p>
+<div class="EQUATION" mathml="yes">
+<a name="1294"></a><a name="AP-EEQN280946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<table cellpadding="0" border="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="equation-label">(E.28)&nbsp;</span></td> <td valign="top"><img src="figu496_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="PARA">Quaternions can be used to define an atlas for <i class="EMPHASIS">SO</i>(3) comprising four charts, (<i class="emphasis">U<sub>i</sub></i>, <span class="UNICODE">&phi;</span><i class="EMPHASIS"><sub>i</sub></i>), with <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="INLINEMEDIAOBJECT"><img alt="Image from book" border="0" height="21" id="IMG_2559" title="" src="figu496_2.jpg" width="116" /></span></span>. This is most easily done by using two steps. First, for a rotation matrix <i class="EMPHASIS">R</i>,we determine the corresponding quaternion <i class="emphasis">Q</i>. Then, we use <i class="emphasis">Q</i> to determine which chart applies (i.e., we implicitly define the neighborhoods <i class="EMPHASIS">U<sub>i</sub></i> in terms of <i class="emphasis">Q</i>), and use the appropriate <span class="UNICODE">&phi;</span><i class="EMPHASIS"><sub>i</sub></i> to define the local coordinates.</p>
+<p class="para">Determining the quaternion that correponds to a rotation matrix amounts to solving the inverse of <a href="#ap-eeqn280946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" class="internaljump">(E.28)</a>, and this can be done by a method similar to that given for the axis-angle parameterization of <a href="84.html#1280" class="CHAPTERJUMP" target="_parent">section E.3</a>. In particular, for rotation matrices <i class="emphasis">R</i> such that <i class="emphasis">Tr</i>(<i class="emphasis">R</i>) <span class="UNICODE">&ne;</span> &plusmn; 1 we have</p>
+<div class="EQUATION" mathml="yes">
+<table cellpadding="0" border="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="EQUATION-LABEL">(E.29)&nbsp;</span></td> <td valign="top"><img src="figu496_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table cellpadding="0" border="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="EQUATION-LABEL">(E.30)&nbsp;</span></td> <td valign="top"><img src="figu496_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">To define the four charts, we first define the four neighborhoods</p>
+<div mathml="yes" class="informalequation">
+<img src="figu496_5.jpg" />
+<br />
+
+</div>
+<p class="para">These are not actually open sets (due to the nonstrict inequality in the set definitions), but they can be used to define open sets using their interiors. Now we define the coordinate maps <span class="unicode">&phi;</span><i class="emphasis"><sub>i</sub></i> as</p>
+<div class="informalequation" mathml="yes">
+<img src="figu496_6.jpg" />
+<br />
+
+</div>
+<div class="informalequation" mathml="yes">
+<img src="figu497_1.jpg" />
+<br />
+
+</div>
+<p class="para">
+<a name="1295"></a><a name="idx-497"></a>As we have seen above, <i class="emphasis">R<sub>i</sub></i> <span class="unicode">&#8714;</span> <i class="emphasis">SO</i>(3) represents a rotation, and the composition of successive rotations, say <i class="emphasis">R</i><sub>1</sub> and <i class="emphasis">R</i><sub>2</sub>, is represented by the rotation matrix <i class="emphasis">R</i> = <i class="emphasis">R</i><sub>1</sub> <i class="emphasis">R</i><sub>2</sub>. Likewise, multiplication of quaternions corresponds to the composition of successive rotations. In particular, if <i class="emphasis">Q</i><sub>1</sub> and <i class="emphasis">Q</i><sub>2</sub> are two quaternions representing a rotation by <span class="unicode">&theta;</span><sub>1</sub> about axis <i class="emphasis">n</i><sub>1</sub> and a rotation by <span class="unicode">&theta;</span><sub>2</sub> about axis <i class="emphasis">n</i><sub>2</sub>, respectively, then the result of performing these two rotations in succession is represented by the quaternion <i class="EMPHASIS">Q</i> = <i class="emphasis">Q</i><sub>1</sub> <i class="emphasis">Q</i><sub>2</sub>. Using <a href="#ap-eeqn220946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" class="INTERNALJUMP">(E.22)</a> through <a href="#ap-eeqn250946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" class="internaljump">(E.25)</a> it is straightforward to determine the quaternion product. In particular, for two quaternions, <i class="EMPHASIS">X</i> and <i class="emphasis">Y</i>, we compute their product, <i class="emphasis">Z</i> = <i class="emphasis">XY</i>, as</p>
+<div class="INFORMALEQUATION" mathml="yes">
+<img src="figu497_2.jpg" />
+<br />
+
+</div>
+<p class="PARA">By equating the real parts on both sides of the final equality, and by equating the coefficients of <i class="EMPHASIS">i, j</i>, and <i class="emphasis">k</i> on both sides of the final equality, we obtain</p>
+<div class="INFORMALEQUATION" mathml="yes">
+<img src="figu497_3.jpg" />
+<br />
+
+</div>
+<p class="para">The quaternion <i class="emphasis">Q</i> = (<i class="EMPHASIS">q</i><sub>0</sub>, <i class="emphasis">q</i><sub>1</sub>, <i class="emphasis">q</i><sub>2</sub>, <i class="EMPHASIS">q</i><sub>3</sub>) can be thought of as having the scalar component <i class="emphasis">q</i><sub>0</sub> and the vector component <i class="EMPHASIS">q</i> = [<i class="EMPHASIS">q</i><sub>1</sub>, <i class="emphasis">q</i><sub>2</sub>, <i class="emphasis">q</i><sub>3</sub>]<sup><i class="EMPHASIS">T</i></sup>. Therefore, one often represents a quaternion by a pair, <i class="emphasis">Q</i> = (<i class="EMPHASIS">q</i><sub>0</sub>, <i class="EMPHASIS">q</i>). Using this notation, <i class="emphasis">q</i><sub>0</sub> represents the real part of <i class="EMPHASIS">Q</i>, and <i class="emphasis">q</i> represents the imaginary part of <i class="EMPHASIS">Q</i>. Using this notation, the quaternion product <i class="emphasis">Z</i> = <i class="EMPHASIS">XY</i> can be represented more compactly as</p>
+<div class="informalequation" mathml="yes">
+<img src="figu497_4.jpg" />
+<br />
+
+</div>
+<p class="PARA">in which &times; denotes the vector cross product operator.</p>
+<p class="PARA">
+<a name="1296"></a><a name="idx-498"></a>For complex numbers, the conjugate of <i class="EMPHASIS">a</i> + <i class="emphasis">ib</i> is defined by <i class="emphasis">a</i> <span class="UNICODE">&minus;</span> <i class="emphasis">ib</i>. Similarly, for quaternions we denote by <i class="EMPHASIS">Q</i>* the conjugate of the quaternion <i class="emphasis">Q</i>, and define</p>
+<div class="equation" mathml="yes">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="EQUATION-LABEL">(E.31)&nbsp;</span></td> <td valign="top"><img src="figu498_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="PARA">With regard to rotation, if the quaternion <i class="emphasis">Q</i> represents a rotation by <span class="UNICODE">&theta;</span> about the axis <i class="EMPHASIS">n</i>, then its conjugate <i class="EMPHASIS">Q</i>* represents a rotation by <span class="unicode">&theta;</span> about the axis <span class="UNICODE">&minus;</span><i class="emphasis">n</i>. It is easy to see that</p>
+<div class="equation" mathml="yes">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="equation-label">(E.32)&nbsp;</span></td><td valign="top"><img src="figu498_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="PARA">and that</p>
+<div mathml="yes" class="equation">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="EQUATION-LABEL">(E.33)&nbsp;</span></td> <td valign="top"><img src="figu498_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">A quaternion, <i class="emphasis">Q</i>, with its conjugate, <i class="emphasis">Q</i>*, can be used to perform coordinate transformations. Let the point <i class="EMPHASIS">p</i> be rigidly attached to a coordinate frame <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="INLINEMEDIAOBJECT"><img border="0" alt="Image from book" id="IMG_2571" height="15" src="figu498_4.jpg" title="" width="17" /></span></span>, with local coordinates (<i class="emphasis">x, y, z</i>). If <i class="EMPHASIS">Q</i> specifies the orientation of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img border="0" alt="Image from book" id="IMG_2572" height="15" src="figu498_5.jpg" title="" width="17" /></span></span> with respect to the base frame, and <i class="emphasis">T</i> is the vector from the world frame to the origin of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="INLINEMEDIAOBJECT"><img border="0" alt="Image from book" height="15" id="IMG_2573" src="figu498_6.jpg" title="" width="17" /></span></span>, then the coordinates of <i class="emphasis">p</i> with respect to the world frame are given by</p>
+<div mathml="yes" class="equation">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="EQUATION-LABEL">(E.34)&nbsp;</span></td><td valign="top"><img src="figu498_7.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">in which (0, <i class="EMPHASIS">x, y, z</i>) is a quaternion with zero as its real component. Quaternions can also be used to transform vectors. For example, if <i class="EMPHASIS">n</i> = (<i class="EMPHASIS">n<sub>x</sub>, n<sub>y</sub>, n<sub>z</sub></i>)is the normal vector to the face of a polyhedron, then if the polyhedron is rotated by <i class="EMPHASIS">Q</i>, the new direction of the normal is given by</p>
+<div mathml="yes" class="equation">
+<table cellpadding="0" border="0" cellspacing="0">
+<tr>
+<td valign="top"><span class="EQUATION-LABEL">(E.35)&nbsp;</span></td> <td valign="top"><img src="figu498_8.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="84.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=389621615"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="86.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

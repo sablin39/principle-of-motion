@@ -1,0 +1,627 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+11.3 Direct Trajectory Planning</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Chapter 11 - 
+ Trajectory Planning</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(31,8,4,64,59,87,76,5,34,35,76,34,63,14,13)
+var a1 = new Array(7,2,1)
+var a2 = new Array(13,10,0)
+var a3 = new Array(4,9,3)
+var a4 = new Array(6,11,14)
+var a5 = new Array(5,8,12)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="63.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="65.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:34:35 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:34:37 UTC-->
+<div class="chapter">
+<a name="ch111C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="987"></a><a name="ch11lev1sec31C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">11.3 </span>Direct Trajectory Planning</h2>
+<p class="first-para">In <a href="63.html#950" target="_parent" class="chapterjump">section 11.2</a>, trajectory planning is decoupled into collision-free path planning followed by time scaling. In this section, we study methods for planning the trajectory directly in the state space. If we are interested in finding trajectories that optimize some cost function, such as motion time or expended energy, optimal control theory provides necessary conditions on the trajectories. Unfortunately, these conditions are complex for almost any robot system and cannot be solved analytically. Because of <a name="988"></a><a name="IDX-3851C14020F-F9F5-4415-973A-D906072C1A72"></a>this, we consider two numerical approaches: nonlinear optimization and grid-based search.</p>
+<p class="para">First we describe how to transform the optimal control problem to a finite-dimensional parameter optimization problem, allowing nonlinear optimization to be used to numerically solve the optimality conditions. If the problem is well formulated (e.g., the objective and constraint functions are sufficiently smooth), nonlinear optimization may result in rapid convergence to a locally optimal trajectory. The drawbacks of this approach are that the method requires an initial guess (possibly provided by a grid-based search method), and the locally optimal solution reached generally depends heavily on this guess. Also, evaluation of constraint and objective functions, and their gradients, may be computationally costly.</p>
+<p class="para">We then introduce a grid-based search method that allows the user to specify how near to time-optimal the motion plan should be, while meeting "safety" requirements on obstacle avoidance. The planned motions are approximate in that the goal state may not be exactly reached, but the user has control over how large the final error can be. An advantage is that this is a global approach, unlike gradient-based nonlinear optimization. A drawback of grid-based search is that the size of the grid grows exponentially in the dimension of the state space, making the approach impractical for high-dimensional systems.</p>
+<p class="para">A third approach is to use RRT's, as described in <a href="42.html" target="_parent" class="chapterjump">chapter 7</a>. This approach trades off optimality for planner run-time-it may be able to quickly find a feasible trajectory that is in no sense optimal.</p>
+<p class="para">Finally, a fourth approach is based on artificial potential fields (see <a href="21.html" target="_parent" class="chapterjump">chapter 4</a>). An artificial potential field is constructed to make obstacles repulsive and the goal configuration attractive. The robot senses its current configuration, calculates the gradient of the artificial potential at this configuration, and applies the gradient forces at the actuators. (Damping forces may be included to stabilize the goal configuration.) A potential field, therefore, implicitly defines a trajectory to the goal from all initial states. This approach is fundamentally different from the previous "open-loop" approaches in that a feedback law is specified for all robot states.</p>
+<div class="section">
+<h3 class="sect3-title">
+<a name="989"></a><a name="ch11lev2sec41C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">11.3.1 </span>Optimal Control</h3>
+<p class="first-para">Given a dynamic system</p>
+<div class="equation" mathml="yes">
+<a name="990"></a><a name="ch11eqn231C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.23)&nbsp;</span></td><td valign="top"><img src="figu385_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">we would like to find a solution (<i class="emphasis">q</i>(<i class="emphasis">t</i>), <i class="emphasis">u</i>(<i class="emphasis">t</i>)), <i class="emphasis">t</i> <span class="unicode">&#8714;</span> [0, <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub> ]to <a class="internaljump" href="#ch11eqn231C14020F-F9F5-4415-973A-D906072C1A72">equation (11.23)</a> that avoids obstacles and joint limits, respects actuator limits, and takes the system from the initial state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1728" src="figu385_2.jpg" height="19" width="97" title="" border="0" /></span></span> at time <i class="emphasis">t</i> = 0 to the final state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1729" src="figu385_3.jpg" height="20" width="97" title="" border="0" /></span></span> at time <i class="emphasis">t</i> = <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub>. Of all <a name="991"></a><a name="page3861C14020F-F9F5-4415-973A-D906072C1A72"></a>the trajectories that accomplish this, we might want to find one that minimizes some objective function <i class="emphasis">J</i>. In general, <i class="emphasis">J</i> might be a function of the controls, the trajectory, and the total motion time <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub>, i.e., <i class="emphasis">J</i> = <i class="emphasis">J</i>(<i class="emphasis">u</i>(<i class="emphasis">t</i>), <i class="emphasis">q</i>(<i class="emphasis">t</i>), <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub>).</p>
+<p class="para">Before proceeding further, let's express the state of the system as <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1730" src="figu386_1.jpg" height="22" width="122" title="" border="0" /></span></span> and rewrite the equations of motion in the general form</p>
+<div class="equation" mathml="yes">
+<a name="992"></a><a name="ch11eqn241C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.24)&nbsp;</span></td><td valign="top"><img src="figu386_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">where <i class="emphasis">f</i> is the vector differential equation describing the kinematics and dynamics of the system. In our case, the state equations do not change with time, so <i class="emphasis">f</i> (<i class="emphasis">x</i>, <i class="emphasis">u</i>, <i class="emphasis">t</i>) = <i class="emphasis">f</i> (<i class="emphasis">x</i>, <i class="emphasis">u</i>). The state <a class="internaljump" href="#ch11eqn241C14020F-F9F5-4415-973A-D906072C1A72">equations (11.24)</a> can be viewed as constraints defining the relationship between <i class="emphasis">x</i>(<i class="emphasis">t</i>) and <i class="emphasis">u</i>(<i class="emphasis">t</i>). Let the objective function <i class="emphasis">J</i> be written</p>
+<div class="equation" mathml="yes">
+<a name="993"></a><a name="ch11eqn251C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.25)&nbsp;</span></td><td valign="top"><img src="figu386_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">where the integrand <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1733" src="figu386_4.jpg" height="15" width="13" title="" border="0" /></span></span> is called the <i class="emphasis">Lagrangian</i>. (The Lagrangian <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1734" src="figu386_5.jpg" height="15" width="13" title="" border="0" /></span></span> for optimal control is actually a generalization of the Lagrangian <i class="emphasis">L</i> for dynamics.) A typical choice of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1735" src="figu386_6.jpg" height="15" width="13" title="" border="0" /></span></span> is "effort," modeled as a quadratic function of the control, e.g., <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1736" src="figu386_7.jpg" height="18" width="97" title="" border="0" /></span></span>, where <i class="emphasis">W</i> is a positive definite weighting matrix, e.g., the identity matrix. Another common choice is to leave <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub> free and choose <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1737" src="figu386_8.jpg" height="15" width="58" title="" border="0" /></span></span>, implying <i class="emphasis">J</i> = <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub>, a minimum-time problem.</p>
+<p class="para">For now, let us ignore the issues of actuator limits and obstacles, and assume that the final time <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub> is fixed. The problem then is to find a state and control history (<i class="emphasis">x</i>(<i class="emphasis">t</i>), <i class="emphasis">u</i>(<i class="emphasis">t</i>)), <i class="emphasis">t</i> <span class="unicode">&#8714;</span> [0, <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub>] that satisfies the constraints of <a class="internaljump" href="#ch11eqn241C14020F-F9F5-4415-973A-D906072C1A72">equation (11.24)</a>, satisfies the terminal conditions <i class="emphasis">x</i>(<i class="emphasis">t</i><sub><i class="emphasis">f</i></sub>) = <i class="emphasis">x</i><sup><i class="emphasis">f</i></sup>, and minimizes the cost in <a class="internaljump" href="#ch11eqn251C14020F-F9F5-4415-973A-D906072C1A72">equation (11.25)</a>. To write a necessary condition for optimality, we define the <i class="emphasis">Hamiltonian</i> <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1738" src="figu386_9.jpg" height="16" width="17" title="" border="0" /></span></span>
+</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.26)&nbsp;</span></td><td valign="top"><img src="figu386_10.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">where <span class="unicode">&lambda;</span>(<i class="emphasis">t</i>) is a vector of <i class="emphasis">Lagrange multipliers</i>.<sup>[<a name="ch11fnt11_41C14020F-F9F5-4415-973A-D906072C1A72" href="#ftn.ch11fnt11_41C14020F-F9F5-4415-973A-D906072C1A72">4</a>]</sup> Then the <i class="emphasis">Pontryagin minimum principle</i><sup>[<a name="ch11fnt11_51C14020F-F9F5-4415-973A-D906072C1A72" href="#ftn.ch11fnt11_51C14020F-F9F5-4415-973A-D906072C1A72">5</a>]</sup> says that at an optimal solution (<i class="emphasis">x</i>*(<i class="emphasis">t</i>), <i class="emphasis">u</i>*(<i class="emphasis">t</i>), <span class="unicode">&lambda;</span>*(<i class="emphasis">t</i>)),</p>
+<div class="equation" mathml="yes">
+<a name="996"></a><a name="ch11eqn271C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.27)&nbsp;</span></td><td valign="top"><img src="figu386_11.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">In other words, if the control history <i class="emphasis">u</i>*(<i class="emphasis">t</i>) is optimal, then at any time <i class="emphasis">t</i>,any other feasible control <i class="emphasis">u</i>(<i class="emphasis">t</i>) will give an <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1741" src="figu386_12.jpg" height="18" width="39" title="" border="0" /></span></span> greater than or equal to that of the optimal <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1742" src="figu386_13.jpg" height="18" width="47" title="" border="0" /></span></span>. In the absence of any other constraints on the state and control, then, a necessary</p>
+<p class="para">
+<a name="997"></a><a name="page3871C14020F-F9F5-4415-973A-D906072C1A72"></a>condition for optimality can be written</p>
+<div class="equation" mathml="yes">
+<a name="998"></a><a name="ch11eqn281C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.28)&nbsp;</span></td><td valign="top"><img src="figu387_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">This says that the linear sensitivity of the Hamiltonian to changes in <i class="emphasis">u</i> is zero, meaning that the control is <i class="emphasis">extremal</i>, but not necessarily optimal. A sufficient condition for local optimality of a solution is that <a class="internaljump" href="#ch11eqn281C14020F-F9F5-4415-973A-D906072C1A72">equation (11.28)</a> is satisfied and the Hessian of the Hamiltonian is positive definite along the trajectory of the solution:</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.29)&nbsp;</span></td><td valign="top"><img src="figu387_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">This is known as the convexity or Legendre-Clebsch condition. The Lagrange multipliers evolve according to the adjoint equation</p>
+<div class="equation" mathml="yes">
+<a name="999"></a><a name="ch11eqn301C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.30)&nbsp;</span></td><td valign="top"><img src="figu387_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">
+<a class="internaljump" href="#ch11eqn281C14020F-F9F5-4415-973A-D906072C1A72">Equation (11.28)</a> can sometimes be used to write <i class="emphasis">u</i> as a function of <i class="emphasis">x</i> and <span class="unicode">&lambda;</span>. In this case, optimization boils down to choosing initial conditions for <a class="internaljump" href="#ch11eqn301C14020F-F9F5-4415-973A-D906072C1A72">equation (11.30)</a> to ensure that the goal is reached.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">EXAMPLE 11.3.1</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Consider a simple double-integrator system with one degree of freedom, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1746" src="figu387_4.jpg" height="18" width="49" title="" border="0" /></span></span>, <i class="emphasis">such as a point mass on a line actuated by a force.</i> <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1747" src="figu387_5.jpg" height="24" width="228" title="" border="0" /></span></span>, so the equations of motion can be written in the form</p>
+<div class="informalequation" mathml="yes">
+<img src="figu387_6.jpg" />
+<br />
+
+</div>
+<p class="para">Choose the objective function</p>
+<div class="informalequation" mathml="yes">
+<img src="figu387_7.jpg" />
+<br />
+
+</div>
+<p class="para">Then the Hamiltonian is</p>
+<div class="informalequation" mathml="yes">
+<img src="figu387_8.jpg" />
+<br />
+
+</div>
+<p class="para">and the necessary condition <a class="internaljump" href="#ch11eqn281C14020F-F9F5-4415-973A-D906072C1A72">(11.28)</a> is written</p>
+<p class="para">
+<div class="equation" mathml="yes">
+<a name="1000"></a><a name="ch11eqn311C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.31)&nbsp;</span></td><td valign="top"><img src="figu387_9.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+</p>
+<p class="para">The adjoint <a class="internaljump" href="#ch11eqn301C14020F-F9F5-4415-973A-D906072C1A72">equation (11.30)</a> is written</p>
+<p class="para">
+<div class="equation" mathml="yes">
+<a name="1001"></a><a name="ch11eqn321C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.32)&nbsp;</span></td><td valign="top"><img src="figu387_10.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+</p>
+<p class="para">
+<a name="1002"></a><a name="page3881C14020F-F9F5-4415-973A-D906072C1A72"></a><a class="internaljump" href="#ch11eqn321C14020F-F9F5-4415-973A-D906072C1A72">Equation (11.32)</a> shows that <span class="unicode">&lambda;</span><sub>1</sub> is constant and <span class="unicode">&lambda;</span><sub>2</sub> is a linear function of time, so by <a class="internaljump" href="#ch11eqn311C14020F-F9F5-4415-973A-D906072C1A72">equation (11.31)</a>, u is also a linear function of time, e.g., u(<i class="emphasis">t</i>) = <i class="emphasis">c</i><sub>0</sub> + <i class="emphasis">c</i><sub>1</sub><i class="emphasis">t.</i>
+</p>
+<p class="para">Now we can specify the initial and final state for the system to solve for the control and state history. Let x(0) = [0, 0]<sup><i class="emphasis">T</i></sup> and x(<i class="emphasis">t</i><sub><i class="emphasis">f</i></sub>) = [<i class="emphasis">d</i>, 0]<sup><i class="emphasis">T</i></sup>, i.e., the system starts at rest and ends at rest having moved a distance d in time t<sub><i class="emphasis">f</i></sub>. Then we have the stopping conditions that the first and second integral of u(<i class="emphasis">t</i>) evaluated over [0, <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub>] be zero and d, respectively:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu388_1.jpg" />
+<br />
+
+</div>
+<p class="para">Solving, we get c<sub>0</sub> = 6<i class="emphasis">d</i>/<i class="emphasis">t</i><sup>2</sup><sub><i class="emphasis">f</i></sub>, <i class="emphasis">c</i><sub>1</sub> =<span class="unicode">&minus;</span>12<i class="emphasis">d</i>/<i class="emphasis">t</i><sup>3</sup><sub><i class="emphasis">f</i></sub> defining the extremal control history. The extremal state history is obtained by integration of the control.</p>
+<p class="last-para">To check if this extremal solution is a minimizer, we can use the convexity condition. In this case, the Hessian is the scalar <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1754" src="figu388_2.jpg" height="21" width="151" title="" border="0" /></span></span>, indicating that the solution is indeed (locally) optimal.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">In the previous example, the convexity condition is satisfied. However, if an extremum is achieved <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1755" src="figu388_3.jpg" height="19" width="114" title="" border="0" /></span></span> but convexity is not <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1756" src="figu388_4.jpg" height="22" width="75" title="" border="0" /></span></span> is only positive <i class="emphasis">semidefinite</i>), it does not mean that the control is not optimal. In this case, auxiliary conditions have to be satisfied to ensure optimality. An optimal control of this type is an example of a <i class="emphasis">singular</i> optimal control, as in the <a class="internaljump" href="#ch11lev1sec31C14020F-F9F5-4415-973A-D906072C1A72">previous section</a> with time-optimal control at zero inertia points.</p>
+<p class="para">What if there are actuator limits or obstacles? At an optimal solution, the minimum principle <a class="internaljump" href="#ch11eqn271C14020F-F9F5-4415-973A-D906072C1A72">(11.27)</a> will always be satisfied, but the control or state history may bump up against limits preventing <a class="internaljump" href="#ch11eqn281C14020F-F9F5-4415-973A-D906072C1A72">equation (11.28)</a> from being satisfied. The optimal solution may be constrained by these limits rather than the extremality condition <a class="internaljump" href="#ch11eqn281C14020F-F9F5-4415-973A-D906072C1A72">(11.28)</a>. Consider the one-degree-of-freedom double integrator above, with the actuator limits |<i class="emphasis">u</i>|&lt;<i class="emphasis">u</i><sup>max</sup>, and choose the minimum-time objective function</p>
+<div class="informalequation" mathml="yes">
+<img src="figu388_5.jpg" />
+<br />
+
+</div>
+<p class="para">where the time <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub> is left free. The Hamiltonian is <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1758" src="figu388_6.jpg" height="18" width="164" title="" border="0" /></span></span>, and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1759" src="figu388_7.jpg" height="19" width="105" title="" border="0" /></span></span> does not contain the control variable. Therefore, it provides no information on the choice of <i class="emphasis">u</i>(<i class="emphasis">t</i>). Further, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1760" src="figu388_8.jpg" height="21" width="75" title="" border="0" /></span></span> is zero, so <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1761" src="figu388_9.jpg" height="16" width="17" title="" border="0" /></span></span> is not convex. We know, however, that the optimal solution for this problem is a bang-bang trajectory, just like the bang-bang trajectories found by the time-scaling algorithm.</p>
+<p class="para">
+<a name="1003"></a><a name="IDX-3891C14020F-F9F5-4415-973A-D906072C1A72"></a>We can recover the bang-bang solution using the minimum principle <a class="internaljump" href="#ch11eqn271C14020F-F9F5-4415-973A-D906072C1A72">(11.27)</a>. We write</p>
+<div class="informalequation" mathml="yes">
+<img src="figu389_1.jpg" />
+<br />
+
+</div>
+<p class="para">Therefore, <i class="emphasis">u</i>*(<i class="emphasis">t</i>) is the maximum feasible value <i class="emphasis">u</i><sup>max</sup> when <span class="unicode">&lambda;</span>*<sub>2</sub>(<i class="emphasis">t</i>) &lt; 0 and the minimum feasible value <span class="unicode">&minus;</span><i class="emphasis">u</i><sup>max</sup> when <span class="unicode">&lambda;</span>*<sub>2</sub>(<i class="emphasis">t</i>) &gt; 0. As before, <span class="unicode">&lambda;</span><sub>2</sub> is a linear function of time, and the terminal state conditions allow us to find the complete solution.</p>
+<p class="para">Only for very simple systems is it possible to solve the extremality conditions analytically. In most cases it is necessary to resort to numerical methods to solve the conditions approximately. One such method is called <i class="emphasis">shooting.</i> The user guesses initial values for the Lagrange multipliers <span class="unicode">&lambda;</span>(0), which then are numerically integrated according to the adjoint equation <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1763" src="figu389_2.jpg" height="23" width="120" title="" border="0" /></span></span>, while the control vector <i class="emphasis">u</i> evolves according to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1764" src="figu389_3.jpg" height="19" width="100" title="" border="0" /></span></span>. After integrating for time <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub> (for fixed-time problems), if the final state is not equal to the desired final state, the initial guess of the Lagrange multipliers is modified in some reasonable way and the process repeats. In other words, by modifying the initial conditions, we "shoot" at the goal until we hit it. Typically the initial conditions are modified using an approximation of the gradient of the map taking the initial conditions to the final state.</p>
+<p class="para">Other numerical methods for approximately solving for optimal controls include dynamic programming and gradient-based nonlinear optimization. In the next subsection we discuss a nonlinear optimization approach to finding the optimal parameters of a finite parameterization of the system's trajectory or controls. In <a class="internaljump" href="#ch11lev2sec61C14020F-F9F5-4415-973A-D906072C1A72">subsection 11.3.3</a> we introduce a grid-based search method for finding near-time-optimal trajectories.</p>
+<p class="last-para">For more on optimal control, see the books by Bryson and Ho [72], Bryson [71], Kirk [236], Lewis and Syrmos [287], Stengel [396], and Pontryagin, Boltyanskii, Gamkrelidze, and Mishchenko [354].</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1004"></a><a name="ch11lev2sec51C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">11.3.2 </span>Nonlinear Optimization</h3>
+<p class="first-para">The general problem can be stated</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.33)&nbsp;</span></td><td valign="top"><img src="figu389_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.34)&nbsp;</span></td><td valign="top"><img src="figu389_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="1005"></a><a name="ch11eqn351C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.35)&nbsp;</span></td><td valign="top"><img src="figu389_6.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="1006"></a><a name="ch11eqn361C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.36)&nbsp;</span></td><td valign="top"><img src="figu389_7.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="1007"></a><a name="ch11eqn371C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.37)&nbsp;</span></td><td valign="top"><img src="figu389_8.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.38)&nbsp;</span></td><td valign="top"><img src="figu390_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.39)&nbsp;</span></td><td valign="top"><img src="figu390_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">
+<a name="1008"></a><a name="page3901C14020F-F9F5-4415-973A-D906072C1A72"></a>where <i class="emphasis">h</i>(<i class="emphasis">q</i>) <span class="unicode">&le;</span> 0 are configuration inequality constraints representing obstacles and joint limits.</p>
+<p class="para">To approximately solve this problem by nonlinear optimization, we approximate the continuous constraints <a class="internaljump" href="#ch11eqn361C14020F-F9F5-4415-973A-D906072C1A72">(11.36)</a> and <a class="internaljump" href="#ch11eqn371C14020F-F9F5-4415-973A-D906072C1A72">(11.37)</a> by a finite number of constraints. This is typically done by ensuring that the constraints are satisfied at a fixed number of points distributed evenly over the interval [0, <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub>]. We also choose a finite-parameter representation of the state and control histories. We have three choices of how to do this:</p>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">
+<i class="emphasis">Parameterize the trajectory q</i>(<i class="emphasis">t</i>). In this case, we solve for the parameterized trajectory directly. The control forces <i class="emphasis">u</i> at any time are calculated using <a class="internaljump" href="#ch11eqn351C14020F-F9F5-4415-973A-D906072C1A72">equation (11.35)</a>.</p>
+</li>
+<li class="listitem">
+<p class="first-para">
+<i class="emphasis">Parameterize the control u</i>(<i class="emphasis">t</i>). We solve for <i class="emphasis">u</i>(<i class="emphasis">t</i>) directly, and calculating the state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1772" src="figu390_3.jpg" height="19" width="93" title="" border="0" /></span></span> requires integrating the equations of motion <a class="internaljump" href="#ch11eqn351C14020F-F9F5-4415-973A-D906072C1A72">(11.35)</a>.</p>
+</li>
+<li class="listitem">
+<p class="first-para">
+<i class="emphasis">Parameterize both q</i>(<i class="emphasis">t</i>) <i class="emphasis">and u</i>(<i class="emphasis">t</i>). We have a larger number of variables, since we are parameterizing both <i class="emphasis">q</i>(<i class="emphasis">t</i>) and <i class="emphasis">u</i>(<i class="emphasis">t</i>). Also, we have a larger number of constraints, as <i class="emphasis">q</i>(<i class="emphasis">t</i>) and <i class="emphasis">u</i>(<i class="emphasis">t</i>) must satisfy the dynamic <a class="internaljump" href="#ch11eqn351C14020F-F9F5-4415-973A-D906072C1A72">equations (11.35)</a> explicitly, typically at a fixed number of points distributed evenly over the interval [0, <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub> ]. We must be careful to choose the parameterizations of <i class="emphasis">q</i>(<i class="emphasis">t</i>) and <i class="emphasis">u</i>(<i class="emphasis">t</i>)tobe consistent with each other, so that the dynamic equations can be satisfied at these points.</p>
+</li>
+</ol>
+<p class="para">A trajectory or control history can be parameterized in any number of ways. The parameters can be the coefficients of a polynomial in time, the coefficients of a truncated Fourier series, spline coefficients, wavelet coefficients, piecewise constant acceleration or force segments, etc. For example, the control <i class="emphasis">u</i><sub><i class="emphasis">i</i></sub> (<i class="emphasis">t</i>) couldberepresented by <i class="emphasis">p</i> + 1 coefficients <i class="emphasis">a</i><sub><i class="emphasis">j</i></sub> of a polynomial in time:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu390_4.jpg" />
+<br />
+
+</div>
+<p class="para">In addition to the parameters for the state or control history, the total time <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub> may be another control parameter. The choice of parameterization has implications for the efficiency of the calculation of <i class="emphasis">q</i>(<i class="emphasis">t</i>) and <i class="emphasis">u</i>(<i class="emphasis">t</i>) at a given time <i class="emphasis">t</i>. The choice of parameterization also determines the sensitivity of the state and control to the parameters, and whether each parameter affects the profiles at all times [0, <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub> ]or just on a finite-time support base. These are important factors in the stability and efficiency of the numerical optimization.</p>
+<p class="para">
+<a name="1009"></a><a name="IDX-3911C14020F-F9F5-4415-973A-D906072C1A72"></a>Let <i class="emphasis">X</i> be the vector of the control parameters to be solved. Assuming that either <i class="emphasis">q</i>(<i class="emphasis">t</i>) or <i class="emphasis">u</i>(<i class="emphasis">t</i>) has been parameterized (but not both), and that the <i class="emphasis">k</i> + 1 constraint checks are spaced at <span class="unicode">&Delta;</span><i class="emphasis">t</i> = <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub>/<i class="emphasis">k</i> intervals, the constrained nonlinear optimization can be written find <i class="emphasis">X</i>
+</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.40)&nbsp;</span></td><td valign="top"><img src="figu391_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.41)&nbsp;</span></td><td valign="top"><img src="figu391_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="1010"></a><a name="ch11eqn421C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.42)&nbsp;</span></td><td valign="top"><img src="figu391_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.43)&nbsp;</span></td><td valign="top"><img src="figu391_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.44)&nbsp;</span></td><td valign="top"><img src="figu391_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="1011"></a><a name="ch11eqn451C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.45)&nbsp;</span></td><td valign="top"><img src="figu391_6.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Avariant of this formulation approximately represents the constraints <a class="internaljump" href="#ch11eqn421C14020F-F9F5-4415-973A-D906072C1A72">(11.42)</a>-<a class="internaljump" href="#ch11eqn451C14020F-F9F5-4415-973A-D906072C1A72">(11.45)</a> by penalty functions in the objective function, allowing the use of unconstrained optimization.</p>
+<p class="para">A nonlinear program of this type can be solved by a number of methods, including sequential quadratic programming (SQP). Any solver will require the user to provide functions to take a guess <i class="emphasis">X</i> and calculate the objective function <i class="emphasis">J</i> ( <i class="emphasis">X</i>) and the constraints <a class="internaljump" href="#ch11eqn421C14020F-F9F5-4415-973A-D906072C1A72">(11.42)</a>-<a class="internaljump" href="#ch11eqn451C14020F-F9F5-4415-973A-D906072C1A72">(11.45)</a>. Often the objective function will have to be calculated by numerical integration. All solvers also need the gradients of the objective function and the constraints with respect to <i class="emphasis">X</i>. These can be calculated numerically by finite differences, or, if possible, analytically. Finally, most solvers make use of Hessians of the objective function and constraint functions with respect to <i class="emphasis">X</i>. Most solvers update a numerical approximation to these Hessians rather than requesting the user to provide these. Details on different methods for nonlinear optimization can be found in [164, 326, 338]. Code for nonlinear optimization includes FSQP and CFSQP [4], NPSOL [5], and routines in the IMSL [6], NAG [7], and MATLAB Optimization Toolbox libraries.</p>
+<p class="para">The most important point is that for any of these solvers to work, the objective and constraints must be sufficiently smooth with respect to the control parameters <i class="emphasis">X</i>. They must be at least <i class="emphasis">C</i><sup>1</sup>,but usually <i class="emphasis">C</i><sup>2</sup> so that Hessian information can be used to speed convergence. A key part of the problem formulation is ensuring this smoothness. When possible, the gradients, and even the Hessians, should be calculated analytically. This will minimize the possibility of the solver failing to converge due to numerical problems, a very real practical concern! Even if the objective function is calculated approximately by numerical integration, it may be possible to calculate the exact gradient of this approximation analytically.</p>
+<p class="last-para">Since nonlinear optimization uses local gradient information, it will converge to a locally optimal solution. For some problems, the control parameter space will be <a name="1012"></a><a name="IDX-3921C14020F-F9F5-4415-973A-D906072C1A72"></a>littered with many local optima. Therefore, the solution achieved will depend heavily on the initial guess. To ensure a good solution, the process can be started from several initial guesses, keeping the best local optimum. Nonlinear optimization can also be used as a final step to locally improve a trajectory found by some other global search method. A survey of nonlinear optimization methods for trajectory generation can be found in [49].</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1013"></a><a name="ch11lev2sec61C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">11.3.3 </span>Grid-Based Search</h3>
+<p class="first-para">An alternative approach, specifically for time-optimal trajectory planning, uses grid search. As motivation, consider the simple double-integrator system</p>
+<div class="informalequation" mathml="yes">
+<img src="figu392_1.jpg" />
+<br />
+
+</div>
+<p class="para">where <i class="emphasis">a</i> is the acceleration control. Let <i class="emphasis">q</i> be one-dimensional, so the system can be viewed as a point mass moving on a line with a control force. The time-optimal control from an initial state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1781" src="figu392_2.jpg" height="19" width="97" title="" border="0" /></span></span> to a goal state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1782" src="figu392_3.jpg" height="20" width="97" title="" border="0" /></span></span> is bang-bang-the actuator is saturated at all times.</p>
+<p class="para">Things will not be so simple when we deal with multidimensional problems with obstacles and velocity limits, so let's consider a grid-based approach that we will be able to generalize to more dimensions. First, we discretize the control set to {<span class="unicode">&minus;</span><i class="emphasis">a</i><sub>max</sub>, 0, <i class="emphasis">a</i><sub>max</sub>}. Next, we choose a timestep <i class="emphasis">h</i>. Now, beginning from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1783" src="figu392_4.jpg" height="19" width="97" title="" border="0" /></span></span>, we integrate the three controls forward in time by <i class="emphasis">h</i> to obtain three new states. Think of the initial state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1784" src="figu392_5.jpg" height="19" width="97" title="" border="0" /></span></span> as the root of a tree, and the three new states as children of the root (<a class="internaljump" href="#ch11fig081C14020F-F9F5-4415-973A-D906072C1A72">figure 11.8</a>). From each of these three, we integrate the controls forward to obtain anew level of the tree. We continue in a breadth-first fashion. If the trajectory to a new node in the tree passes through an obstacle or exceeds a velocity limit, this node <a name="1014"></a><a name="IDX-3931C14020F-F9F5-4415-973A-D906072C1A72"></a>is pruned from the tree. The search continues until a trajectory reaches a state in a specified goal region. The trajectory is specified by the piecewise-constant controls to traverse the tree from the root node to this final node. Since the search is breadth-first, exploring all reachable states at time <i class="emphasis">kh</i> before moving on to time (<i class="emphasis">k</i> + 1)<i class="emphasis">h</i>, the trajectory is time-optimal for the chosen discretization of time and controls.</p>
+<div class="figure">
+<a name="1015"></a><a name="ch11fig081C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1785','fig11-8_0.jpg','1000','425')" name="IMG_1785" target="_self"><img alt="Image from book" id="IMG_1785" src="fig11-8.jpg" height="149" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.8: </span>The search tree for three controls.</span>
+</div>
+<p class="para">We call this a grid-based search because each of the nodes reached during the growth of the tree lies on a regular grid on the <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1786" src="figu393_1.jpg" height="16" width="40" title="" border="0" /></span></span> state space. From any state, the new state obtained by integrating one of the discretized accelerations for time <i class="emphasis">h</i> will involve a change in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1787" src="figu393_2.jpg" height="19" width="10" title="" border="0" /></span></span> equal to an integral multiple of <i class="emphasis">a</i><sub>max</sub><i class="emphasis">h</i> and a change in <i class="emphasis">q</i> equal to an integral multiple of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1788" src="figu393_3.jpg" height="26" width="64" title="" border="0" /></span></span>. An example of such a grid is shown in <a class="internaljump" href="#ch11fig091C14020F-F9F5-4415-973A-D906072C1A72">figure 11.9</a>. The search tree shown on this grid is two levels deep, beginning at (0, 0). The key point here is that, given some bounds on <i class="emphasis">q</i> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1789" src="figu393_4.jpg" height="16" width="8" title="" border="0" /></span></span>, the size of the grid is easily computed, so an upper bound on the computational complexity of the search of this grid is also easily computed.</p>
+<div class="figure">
+<a name="1016"></a><a name="ch11fig091C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1790','fig11-9_0.jpg','926','600')" name="IMG_1790" target="_self"><img alt="Image from book" id="IMG_1790" src="fig11-9.jpg" height="227" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.9: </span>The search tree of <a class="internaljump" href="#ch11fig081C14020F-F9F5-4415-973A-D906072C1A72">figure 11.8</a> shown on the state space grid. The search begins at (0, 0). The actual trajectories between vertices are not straight lines, but quadratics.</span>
+</div>
+<p class="para">Let us now consider a more general problem statement. The system is described by <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1791" src="figu393_5.jpg" height="19" width="112" title="" border="0" /></span></span>, where <i class="emphasis">D</i> is a bounded subset of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1792" src="figu393_6.jpg" height="13" width="27" title="" border="0" /></span></span>, and velocity and acceleration bounds of the form</p>
+<div class="informalequation" mathml="yes">
+<img src="figu393_7.jpg" />
+<br />
+
+</div>
+<p class="para">Note that this is a very limited class of systems, as the maximum feasible <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1794" src="figu393_8.jpg" height="18" width="15" title="" border="0" /></span></span>. are constant and independent of the state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1795" src="figu393_9.jpg" height="19" width="47" title="" border="0" /></span></span>. An example of such a system might be a point in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1796" src="figu393_10.jpg" height="15" width="22" title="" border="0" /></span></span>-dimensional Euclidean space with a thruster for each degree of <a name="1017"></a><a name="IDX-3941C14020F-F9F5-4415-973A-D906072C1A72"></a>freedom, or a Cartesian robot arm consisting of all prismatic joints and actuators with state-independent bounds. The problem is to find a collision-free, approximately time-optimal trajectory from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1797" src="figu394_1.jpg" height="20" width="99" title="" border="0" /></span></span> [at or near the desired start state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1798" src="figu394_2.jpg" height="19" width="97" title="" border="0" /></span></span> to a goal state near the desired goal state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1799" src="figu394_3.jpg" height="21" width="97" title="" border="0" /></span></span>
+</p>
+<p class="para">The algorithm uses a discretized control set <i class="emphasis">A</i> consisting of the cross products of {<span class="unicode">&minus;</span><i class="emphasis">a</i><sub>max</sub>,0, <i class="emphasis">a</i><sub>max</sub>} for each degree of freedom, yielding <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1800" src="figu394_4.jpg" height="15" width="25" title="" border="0" /></span></span> distinct controls (<a class="internaljump" href="#ch11fig101C14020F-F9F5-4415-973A-D906072C1A72">figure 11.10</a>). These controls result in a regular grid on <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1801" src="figu394_5.jpg" height="19" width="32" title="" border="0" /></span></span> dimensional state space, similar to <a class="internaljump" href="#ch11fig091C14020F-F9F5-4415-973A-D906072C1A72">figure 11.9</a>. <a class="internaljump" href="#ch11al211C14020F-F9F5-4415-973A-D906072C1A72">Algorithm 21</a>, GRID SEARCH, is described in pseudocode below.</p>
+<div class="figure">
+<a name="1018"></a><a name="ch11fig101C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1802','fig11-10_0.jpg','739','708')" name="IMG_1802" target="_self"><img alt="Image from book" id="IMG_1802" src="fig11-10.jpg" height="335" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.10: </span>The control discretization for <i class="emphasis">n</i><sub><i class="emphasis">Q</i></sub> = 2.</span>
+</div>
+<p class="para">This algorithm is straightforward, except for one twist: the algorithm prunes a node if the trajectory passes <i class="emphasis">close</i> to an obstacle, not just if it passes through an obstacle. Thus the algorithm will only return trajectories that are <i class="emphasis">safe</i>. We define a trajectory to be <span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)<i class="emphasis">-safe</i> if there exists a speed-dependent ball of free configurations about each <i class="emphasis">q</i> in the trajectory, where the radius of the ball is <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1803" src="figu394_6.jpg" height="19" width="93" title="" border="0" /></span></span>. The parameters <i class="emphasis">c</i><sub>0</sub> and <i class="emphasis">c</i><sub>1</sub> are safety parameters.</p>
+<p class="para">Since the algorithm uses a finite timestep <i class="emphasis">h</i>,any trajectory it finds will only be an <i class="emphasis">approximately</i> time-optimal safe trajectory. Instead of directly choosing <i class="emphasis">h</i>, the user could have control over a parameter <span class="unicode">&epsilon;</span>, 0 &lt; <span class="unicode">&epsilon;</span> &lt; 1, which defines the crudeness of the approximation. Larger values of <span class="unicode">&epsilon;</span> correspond to cruder approximations, and the timestep <i class="emphasis">h</i> goes to zero as <span class="unicode">&epsilon;</span> goes to zero. As we will see, <span class="unicode">&epsilon;</span> may be viewed as a measure of how much we will allow <span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)-safety to be violated, giving (1 <span class="unicode">&minus;</span> <span class="unicode">&epsilon;</span>)<span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)-safety.</p>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 21: </span>GRID SEARCH</span><a name="1019"></a><a name="ch11al211C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<a name="1020"></a><a name="IDX-3951C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<b class="bold">Input:</b> Start node <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1804" src="figu395_1.jpg" height="20" width="99" title="" border="0" /></span></span>, goal region <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1805" src="figu395_2.jpg" height="17" width="12" title="" border="0" /></span></span>
+<b class="bold">Output:</b> A trajectory to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1806" src="figu395_3.jpg" height="17" width="12" title="" border="0" /></span></span> or FAILURE
+1: Place <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1807" src="figu395_4.jpg" height="20" width="99" title="" border="0" /></span></span> at root of tree <i class="emphasis">T</i> (level 0)
+2: <i class="emphasis">level</i> <span class="unicode">&larr;</span> 0, <i class="emphasis">solved</i> <span class="unicode">&larr;</span> FALSE, <i class="emphasis">ANS</i> <span class="unicode">&larr;</span> <span class="extended-unicode">&#58067;</span>
+3: <b class="bold">while</b> not <i class="emphasis">solved</i> <b class="bold">do</b>
+4:  <b class="bold">if</b> no nodes in level <i class="emphasis">level</i> of <i class="emphasis">T</i> <b class="bold">then</b>
+5:            return FAILURE
+6:  <b class="bold">end if</b>
+7:  <b class="bold">for</b> each <i class="emphasis">node</i> in level <i class="emphasis">level</i> of <i class="emphasis">T</i> <b class="bold">do</b>
+8:     <b class="bold">for</b> each control in <i class="emphasis">A</i> <b class="bold">do</b>
+9:          Integrate control for time <i class="emphasis">h</i> from <i class="emphasis">node</i>, getting <i class="emphasis">newnode</i>
+10:       <b class="bold">if</b> <i class="emphasis">newnode</i> has not been previously reached, and trajectory does not pass close to an obstacle nor exceed <span class="unicode">&#8714;</span><sub>max</sub> <b class="bold">then</b>
+11:                    add <i class="emphasis">newnode</i> to <i class="emphasis">T</i> as child of <i class="emphasis">node</i>
+12:       <b class="bold">end if</b>
+13:       <b class="bold">if</b> trajectory enters <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1808" src="figu395_5.jpg" height="17" width="12" title="" border="0" /></span></span> <b class="bold">then</b>
+14:              <i class="emphasis">solved</i> <span class="unicode">&larr;</span>
+15:       <b class="bold">end if</b>
+16:     <b class="bold">end for</b>
+17:   <b class="bold">end for</b>
+18:   <i class="emphasis">level</i> <span class="unicode">&larr;</span> <i class="emphasis">level</i> + 1
+19:  <b class="bold">end while</b>
+20:     For each node in <i class="emphasis">ANS</i>, find the trajectory that reaches <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1809" src="figu395_6.jpg" height="17" width="12" title="" border="0" /></span></span> first
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="para">Although the algorithm itself is straightforward, analysis of the algorithm is quite involved. Given a desired safety margin and <span class="unicode">&epsilon;</span>,wewould like to know how to choose <i class="emphasis">h</i> to guarantee completeness of the algorithm, and how <span class="unicode">&epsilon;</span> and the safety margin relate to the algorithm's running time. This is the problem that was studied in detail by Donald and Xavier [135], building on work by Canny, Donald, Reif, and Xavier [94, 133]. Their analysis holds for a point robot with <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1810" src="figu395_7.jpg" height="19" width="61" title="" border="0" /></span></span> or 3 moving among polygonal or polyhedral obstacles. They give us the following result.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">THEOREM 11.3.2</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Let <span class="unicode">&#8467;</span> be the diameter of the robot configuration space, c<sub>0</sub> and c<sub>1</sub> be safety parameters, and <span class="unicode">&#8714;</span><sub>max</sub> and a<sub>max</sub> be the velocity and acceleration limits. Let 0 &lt; <span class="unicode">&epsilon;</span> &lt; 1. Assume there exists a <span class="unicode">&delta;</span><sub>v</sub>(c<sub>0</sub>, c<sub>1</sub>)-safe trajectory from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1811" src="figu395_8.jpg" height="20" width="97" title="" border="0" /></span></span> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1812" src="figu395_9.jpg" height="19" width="97" title="" border="0" /></span></span> taking time T<sub>opt</sub> by some control function with <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1813" src="figu395_10.jpg" height="19" width="91" title="" border="0" /></span></span> for all i and <a name="1021"></a><a name="IDX-3961C14020F-F9F5-4415-973A-D906072C1A72"></a>t <span class="unicode">&epsilon;</span> [O, T<sub>opt</sub>]. Choose the largest h so that</p>
+<div class="informalequation" mathml="yes">
+<img src="figu396_1.jpg" />
+<br />
+
+</div>
+<p class="para">and <span class="unicode">&#8714;</span><sub>max</sub> is an integral multiple of a<sub>max</sub>h. Choose an approximate starting state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1815" src="figu396_2.jpg" height="20" width="99" title="" border="0" /></span></span> where, for each coordinate i,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu396_3.jpg" />
+<br />
+
+</div>
+<p class="para">Define the goal neighborhood to be all points within <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1817" src="figu396_4.jpg" height="28" width="132" title="" border="0" /></span></span> of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1818" src="figu396_5.jpg" height="20" width="97" title="" border="0" /></span></span> [Note that the distance from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1819" src="figu396_6.jpg" height="20" width="99" title="" border="0" /></span></span> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1820" src="figu396_7.jpg" height="19" width="97" title="" border="0" /></span></span>, and the distance from any point in the goal neighborhood to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1821" src="figu396_8.jpg" height="19" width="97" title="" border="0" /></span></span>, is O(<span class="unicode">&epsilon;</span>).] Then the algorithm outlined above is guaranteed to find a (1 <span class="unicode">&minus;</span> <span class="unicode">&epsilon;</span>)<span class="unicode">&delta;</span><sub>v</sub>(c<sub>0</sub>, c<sub>1</sub>)-safe trajectory taking at most time T<sub>opt</sub> from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1822" src="figu396_9.jpg" height="20" width="99" title="" border="0" /></span></span> to the goal neighborhood. The running time of the algorithm is</p>
+<div class="informalequation" mathml="yes">
+<img src="figu396_10.jpg" />
+<br />
+
+</div>
+<p class="last-para">where n<sub>Q</sub> = 2 or 3,c is a constant, and N is the number of faces in the obstacles. In terms of the dimension <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1824" src="figu396_11.jpg" height="15" width="22" title="" border="0" /></span></span> and the approximation variable <span class="unicode">&epsilon;</span>, the running time goes as <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1825" src="figu396_12.jpg" height="26" width="82" title="" border="0" /></span></span>, i.e., polynomial in <span class="unicode">&epsilon;</span> and exponential in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1826" src="figu396_13.jpg" height="15" width="22" title="" border="0" /></span></span>.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">The proof of this theorem is beyond the scope of this chapter, and it depends on efficient goal and safety checking between grid vertices. One important property of the algorithm is that the (1 <span class="unicode">&minus;</span> <span class="unicode">&epsilon;</span>)<span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)-safe trajectory found by the algorithm may be quite different from the time-optimal <span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)-safe trajectory. The only guarantee is that the running time of the approximate trajectory will be no greater than <i class="emphasis">T</i><sub>opt</sub>, the time for a time-optimal <span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)-safe trajectory.</p>
+<p class="para">
+<a class="internaljump" href="#ch11fig111C14020F-F9F5-4415-973A-D906072C1A72">Figure 11.11</a> shows a cartoon example of different kinds of optimal paths for a point in the plane. The true time-optimal trajectory, with no consideration for safety, is a straight-line motion between the start and the goal. In this example, the time-optimal <span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)-safe trajectory avoids the narrow passage, as it would require unacceptably slow speeds to be safe. Finally, the algorithm outlined above finds the approximately time-optimal (1 <span class="unicode">&minus;</span> <span class="unicode">&epsilon;</span>)<span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)-safe trajectory from an approximate start state to an approximate goal state.</p>
+<div class="figure">
+<a name="1022"></a><a name="ch11fig111C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1827','fig11-11_0.jpg','931','775')" name="IMG_1827" target="_self"><img alt="Image from book" id="IMG_1827" src="fig11-11.jpg" height="291" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.11: </span>A time-optimal motion, a <span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)-safe time-optimal motion, and a solution found by the algorithm. The dashed box at the goal is the the goal neighborhood projected to the configuration space.</span>
+</div>
+<p class="para">We would like to generalize the grid-search algorithm to handle more general dynamic systems of the form of <a href="58.html#882" target="_parent" class="chapterjump">equation (10.7)</a>, such as open-chain robot manipulators. Unlike the previous case, the dynamics are not decoupled generally, and the <a name="1023"></a><a name="IDX-3971C14020F-F9F5-4415-973A-D906072C1A72"></a>current state of the system affects the feasible <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1828" src="figu397_1.jpg" height="18" width="11" title="" border="0" /></span></span>
+</p>
+<div class="equation" mathml="yes">
+<a name="1024"></a><a name="ch11eqn461C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.46)&nbsp;</span></td><td valign="top"><img src="figu397_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">To simplify matters somewhat, we will assume constant bounds on the available controls, possibly different for each <i class="emphasis">i</i>:</p>
+<div class="equation" mathml="yes">
+<a name="1025"></a><a name="ch11eqn471C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.47)&nbsp;</span></td><td valign="top"><img src="figu397_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">At a given state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1831" src="figu397_4.jpg" height="19" width="47" title="" border="0" /></span></span>, <a class="internaljump" href="#ch11eqn461C14020F-F9F5-4415-973A-D906072C1A72">equation (11.46)</a> transforms the rectangular parallelepiped of feasible controls <i class="emphasis">u</i> implied by the constraints <a class="internaljump" href="#ch11eqn471C14020F-F9F5-4415-973A-D906072C1A72">(11.47)</a> to a parallelepiped in the <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1832" src="figu397_5.jpg" height="18" width="11" title="" border="0" /></span></span> space, as shown in <a class="internaljump" href="#ch11fig121C14020F-F9F5-4415-973A-D906072C1A72">figure 11.12</a>. Let <b class="bold">A</b> <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1833" src="figu397_6.jpg" height="19" width="63" title="" border="0" /></span></span> denote the state-dependent parallelepiped of feasible <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1834" src="figu397_7.jpg" height="18" width="11" title="" border="0" /></span></span>. We assume that <b class="bold">A</b>(<i class="emphasis">q</i>,0) contains the origin of the <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1835" src="figu397_8.jpg" height="18" width="11" title="" border="0" /></span></span> space in its interior for all <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1836" src="figu397_9.jpg" height="19" width="52" title="" border="0" /></span></span>, i.e., the actuators are strong enough to hold the robot stationary at any configuration.</p>
+<div class="figure">
+<a name="1026"></a><a name="ch11fig121C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1839','fig11-12_0.jpg','1000','407')" name="IMG_1839" target="_self"><img alt="Image from book" id="IMG_1839" src="fig11-12.jpg" height="142" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.12: </span>The equations of motion turn the feasible controls <i class="emphasis">u</i> into a parallelepiped <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1837" src="figu398_1.jpg" height="17" width="56" title="" border="0" /></span></span> of feasible accelerations <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1838" src="figu398_2.jpg" height="16" width="10" title="" border="0" /></span></span>.</span>
+</div>
+<p class="para">To apply the algorithm from before, imagine placing a constant grid on the <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1840" src="figu397_10.jpg" height="18" width="11" title="" border="0" /></span></span> space, as shown in <a class="internaljump" href="#ch11fig121C14020F-F9F5-4415-973A-D906072C1A72">figure 11.12</a>, discretizing the feasible accelerations. For a fixed time interval <i class="emphasis">h</i>, these controls will again create a regular grid of reachable points on the state space. For the current state, we use the <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1841" src="figu397_11.jpg" height="18" width="11" title="" border="0" /></span></span> grid points inside <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1842" src="figu397_12.jpg" height="19" width="62" title="" border="0" /></span></span> as our set of actions <i class="emphasis">A</i>. One problem is that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1843" src="figu397_13.jpg" height="19" width="63" title="" border="0" /></span></span> changes during the time interval <i class="emphasis">h</i>, so that a <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1844" src="figu397_14.jpg" height="18" width="11" title="" border="0" /></span></span> that is feasible at the beginning of the timestep may no longer be feasible at the <a name="1027"></a><a name="IDX-3981C14020F-F9F5-4415-973A-D906072C1A72"></a>end. Another problem is that it might happen that there is <i class="emphasis">no</i> grid point that is feasible at both the beginning and end of the timestep. Worse yet, if <i class="emphasis">M</i><sup>&minus;1</sup>(<i class="emphasis">q</i>) ever loses rank, then <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1845" src="figu398_3.jpg" height="19" width="63" title="" border="0" /></span></span> collapses to zero volume, and no point on a fixed grid is likely to lie in it.</p>
+<p class="para">To prevent <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1846" src="figu398_4.jpg" height="19" width="63" title="" border="0" /></span></span> from collapsing, we assume an upper bound on the largest eigen-value of <i class="emphasis">M</i>(<i class="emphasis">q</i>) during any motion. This tells us how "skinny" <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1847" src="figu398_5.jpg" height="19" width="63" title="" border="0" /></span></span> can become, providing information on how to choose the <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1848" src="figu398_6.jpg" height="18" width="11" title="" border="0" /></span></span> grid spacing so that there are always grid points inside the region. For a given timestep <i class="emphasis">h</i>, we also have to choose a conservative approximation <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1849" src="figu398_7.jpg" height="26" width="158" title="" border="0" /></span></span> such that any <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1850" src="figu398_8.jpg" height="18" width="11" title="" border="0" /></span></span> inside <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1851" src="figu398_9.jpg" height="26" width="109" title="" border="0" /></span></span> stays inside <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1852" src="figu398_10.jpg" height="19" width="192" title="" border="0" /></span></span> for all <span class="unicode">&delta;</span><i class="emphasis">t</i> <span class="unicode">&epsilon;</span> [0, <i class="emphasis">h</i>] (<a class="internaljump" href="#ch11fig131C14020F-F9F5-4415-973A-D906072C1A72">figure 11.13</a>). To construct the conservative approximation <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1853" src="figu398_11.jpg" height="25" width="63" title="" border="0" /></span></span>, we need to know how quickly <i class="emphasis">M</i>(<i class="emphasis">q</i>) can change, which can be bounded by global bounds on the derivatives of <i class="emphasis">M</i>(<i class="emphasis">q</i>) with respect to time. In other words, properties of <i class="emphasis">M</i>(<i class="emphasis">q</i>) and its derivatives must be used to avoid the problems outlined in the previous paragraph. Details can be found in [186].</p>
+<div class="figure">
+<a name="1028"></a><a name="ch11fig131C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1856','fig11-13_0.jpg','816','752')" name="IMG_1856" target="_self"><img alt="Image from book" id="IMG_1856" src="fig11-13.jpg" height="323" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.13: </span>The parallelepiped <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1854" src="figu399_1.jpg" height="17" width="56" title="" border="0" /></span></span> represents instantaneously feasible accelerations and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1855" src="figu399_2.jpg" height="24" width="56" title="" border="0" /></span></span> is a conservative approximation to the set of accelerations that are feasible over the entire timestep of duration <i class="emphasis">h</i>.</span>
+</div>
+<p class="para">The idea is to choose the <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1857" src="figu398_12.jpg" height="18" width="11" title="" border="0" /></span></span> grid spacing (which may be different for each <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1858" src="figu398_13.jpg" height="18" width="125" title="" border="0" /></span></span> and the timestep <i class="emphasis">h</i> so that any feasible trajectory of the system using the full acceleration capabilities <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1859" src="figu398_14.jpg" height="17" width="56" title="" border="0" /></span></span> can be approximately tracked by trajectories using the discretized controls <i class="emphasis">A</i>, chosen to be the <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1860" src="figu398_15.jpg" height="18" width="11" title="" border="0" /></span></span> grid points lying inside <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1861" src="figu398_16.jpg" height="25" width="76" title="" border="0" /></span></span>.<sup>[<a name="ch11fnt11_61C14020F-F9F5-4415-973A-D906072C1A72" href="#ftn.ch11fnt11_61C14020F-F9F5-4415-973A-D906072C1A72">6</a>]</sup> The allowable tracking error depends on a user-defined approximation parameter <span class="unicode">&epsilon;</span>, 0 &lt;<span class="unicode">&epsilon;</span>&lt; 1, where the allowable tracking error goes to zero as <span class="unicode">&epsilon;</span> goes to zero.</p>
+<p class="para">As before, we can define a trajectory to be <span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)-safe if all real-space obstacles are avoided by a distance of at least
+<span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1864" src="figu398_17.jpg" height="19" width="92" title="" border="0" /></span></span> at all points along the trajectory. It has been shown that if there exists a <span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)-safe trajectory from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1865" src="figu398_18.jpg" height="19" width="97" title="" border="0" /></span></span> <a name="1030"></a><a name="IDX-3991C14020F-F9F5-4415-973A-D906072C1A72"></a>to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1866" src="figu399_3.jpg" height="21" width="97" title="" border="0" /></span></span> taking time <i class="emphasis">T</i><sub>opt</sub>, then the procedure GRID SEARCH outlined in <a class="internaljump" href="#ch11al211C14020F-F9F5-4415-973A-D906072C1A72">algorithm 21</a> will find a (1 <span class="unicode">&minus;</span> <span class="unicode">&epsilon;</span>)<span class="unicode">&delta;</span><sub><i class="emphasis">v</i></sub>(<i class="emphasis">c</i><sub>0</sub>, <i class="emphasis">c</i><sub>1</sub>)-safe trajectory from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1867" src="figu399_4.jpg" height="20" width="99" title="" border="0" /></span></span> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1868" src="figu399_5.jpg" height="23" width="99" title="" border="0" /></span></span> [where the errors from the desired initial and final states are <i class="emphasis">O</i>(<span class="unicode">&epsilon;</span>)] taking no more than time (1 + <span class="unicode">&epsilon;</span>)<i class="emphasis">T</i><sub>opt</sub>. The timestep <i class="emphasis">h</i> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1869" src="figu399_6.jpg" height="18" width="11" title="" border="0" /></span></span> grid-spacing are polynomial in <span class="unicode">&epsilon;</span>, and the choice of these parameters involves lengthy calculations. The running time of the algorithm has been shown to be polynomial in <span class="unicode">&epsilon;</span> and exponential in the degrees of freedom <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1870" src="figu399_7.jpg" height="15" width="22" title="" border="0" /></span></span> [134,185,205,206].</p>
+<p class="para">The grid-search algorithm is attractive because it is possible to prove its completeness (using the concept of safe trajectories) and to understand how the running time depends on an approximation parameter <span class="unicode">&epsilon;</span>. This allows the user to trade off computation time against the quality of the trajectory. There have been no implementations of the algorithm for more than a few degrees of freedom, however, because in practice the computation time and memory requirements grow quickly with the number of degrees of freedom.</p>
+<p class="last-para">The running time of the algorithm can be improved by using nonuniform discretization of the state space [362] or search heuristics that favor first exploring from nodes close to the goal state. The RRT and EST (see <a href="42.html" target="_parent" class="chapterjump">chapter 7</a>) are methods for trajectory planning based on a heuristic that biases the search to evenly explore the state space. Like the grid-based algorithm, they discretize the controls and choose a <a name="1031"></a><a name="IDX-4001C14020F-F9F5-4415-973A-D906072C1A72"></a>constant, finite timestep. Unlike the grid-based algorithm, they give up on any notion of optimality and settle for probabilistic completeness, attempting to quickly find any feasible trajectory.</p>
+</div>
+</div>
+<div class="footnotes">
+<div class="footnote">
+<p>
+<a name="994"></a><sup>[<a name="ftn.ch11fnt11_41C14020F-F9F5-4415-973A-D906072C1A72" href="#ch11fnt11_41C14020F-F9F5-4415-973A-D906072C1A72">4</a>]</sup>These Lagrange multipliers play a similar role to those in dynamics with constraints-they are used to enforce constraints, here the state equation constraints.</p>
+</div>
+<div class="footnote">
+<p>
+<a name="995"></a><sup>[<a name="ftn.ch11fnt11_51C14020F-F9F5-4415-973A-D906072C1A72" href="#ch11fnt11_51C14020F-F9F5-4415-973A-D906072C1A72">5</a>]</sup>Often known as the Pontryagin maximum principle. In our case, we are minimizing a cost function; we could equivalently maximize a utility function, or the negative of the cost function.</p>
+</div>
+<div class="footnote">
+<p>
+<a name="1029"></a><sup>[<a name="ftn.ch11fnt11_61C14020F-F9F5-4415-973A-D906072C1A72" href="#ch11fnt11_61C14020F-F9F5-4415-973A-D906072C1A72">6</a>]</sup>Alternatively, <i class="emphasis">A</i> could consist only of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1862" src="figu398_19.jpg" height="18" width="11" title="" border="0" /></span></span> grid points near the boundary of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1863" src="figu398_20.jpg" height="22" width="51" title="" border="0" /></span></span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="63.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="65.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

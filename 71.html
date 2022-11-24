@@ -1,0 +1,760 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+12.5 Motion Planning</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Chapter 12 - 
+ Nonholonomic and Underactuated Systems</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(84,93,12,66,59,1,12,64,78,64,93,17,37,9,1)
+var a1 = new Array(14,5,13)
+var a2 = new Array(4,9,12)
+var a3 = new Array(11,7,6)
+var a4 = new Array(1,10,2)
+var a5 = new Array(0,3,8)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="70.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=937121278"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="72.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div class="chapter">
+<a name="ch12"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="1147"></a><a name="ch12lev1sec5"></a><span class="section-titlelabel">12.5 </span>Motion Planning</h2>
+<p class="first-para">Motion planning for nonholonomic and underactuated systems has been the subject of a great deal of recent research, and the results could easily fill several books (see, e.g., the books edited by Li and Canny [288] and Laumond [266]). In this section we summarize a few useful approaches. The approaches can be classified by the type of robot to which they apply (e.g., the structure of the equations of motion, and with or without control constraints or drift) or the nature of the problem (with or without obstacles or cost function to be minimized). Motion-planning approaches with roots in control theory tend to apply to systems with particular structure and no obstacles, while approaches based on search algorithms are computationally intensive and are suited to finding collision-free trajectories among obstacles. Some approaches attempt to combine the benefits of control-theoretic and search-based methods.</p>
+<p class="para">The problem is to find a motion (<i class="emphasis">x</i>(<i class="emphasis">t</i>), <i class="emphasis">u</i>(<i class="emphasis">t</i>)), <i class="emphasis">t</i> <span class="unicode">&#8714;</span> [0, <i class="emphasis">t<sub>f</sub></i>] satisfying the equations of motion <a href="68.html#1076" class="chapterjump">(12.6)</a> such that <i class="emphasis">x</i>(0) = <i class="emphasis">x</i><sub>start</sub>, <i class="emphasis">x</i>(<i class="emphasis">t<sub>f</sub></i>) = <i class="emphasis">x</i><sub>goal</sub>.In the presence of obstacles, where <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2292" src="figu440_9.jpg" height="18" width="37" title="" border="0" /></span></span> represents the free configuration space, we also require <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2293" src="figu440_10.jpg" height="19" width="98" title="" border="0" /></span></span>, <i class="emphasis">t</i> <span class="unicode">&#949;</span> [0, <i class="emphasis">t<sub>f</sub></i>].</p>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1148"></a><a name="ch12lev2sec9"></a><span class="section-titlelabel">12.5.1 </span>Optimal Control</h3>
+<p class="first-para">For some simple underactuated systems, it is possible to solve analytically for optimal controls transferring the system from one state to another using the ideas developed in the <a href="61.html" class="chapterjump">previous chapter</a>. Consider, e.g., a driftless system with <i class="emphasis">m</i> = 2 controls and <a name="1149"></a><a name="IDX-441"></a><i class="emphasis">n</i> = 3 states and the control vector fields <i class="emphasis">g</i><sub>1</sub> = [1, 0, <i class="emphasis">x</i><sub>2</sub>]<sup><i class="emphasis">T</i></sup> and <i class="emphasis">g</i><sub>2</sub> = [0, 1, 0]<sup><i class="emphasis">T</i></sup>. Optimal control for such a system was first studied by Brockett [66]. The system can be written</p>
+<div class="equation" mathml="yes">
+<a name="1150"></a><a name="ch12eqn23"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.23) </span></td><td valign="top"><img src="figu441_1.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">Assume the time of motion is fixed, <i class="emphasis">t<sub>f</sub></i> = 1, and the objective is to minimize a measure of the control input energy:</p>
+<div class="equation" mathml="yes">
+<a name="1151"></a><a name="ch12eqn24"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.24) </span></td><td valign="top"><img src="figu441_2.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">Then the Hamiltonian is written</p>
+<div class="informalequation" mathml="yes">
+<img src="figu441_3.jpg" /><br />
+</div>
+<p class="para">Solving the necessary condition <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2297" src="figu441_4.jpg" height="19" width="97" title="" border="0" /></span></span>, we get</p>
+<div class="equation" mathml="yes">
+<a name="1152"></a><a name="ch12eqn25"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.25) </span></td><td valign="top"><img src="figu441_5.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">The adjoint equation <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2299" src="figu441_6.jpg" height="22" width="117" title="" border="0" /></span></span> indicates that <span class="unicode">&#955;</span><sub>1</sub> and <span class="unicode">&#955;</span><sub>3</sub> are constant, and <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2300" src="figu441_7.jpg" height="21" width="97" title="" border="0" /></span></span>. Differentiating <a class="internaljump" href="#ch12eqn25">equation (12.25)</a> with respect to time, we get</p>
+<div class="informalequation" mathml="yes">
+<img src="figu441_8.jpg" /><br />
+</div>
+<p class="para">These differential equations imply that optimal controls <i class="emphasis">u</i><sub>1</sub>(<i class="emphasis">t</i>) and <i class="emphasis">u</i><sub>2</sub>(<i class="emphasis">t</i>) are 90-degree out-of-phase sinusoids of the same amplitude and frequency, i.e.,</p>
+<div class="equation" mathml="yes">
+<a name="1153"></a><a name="ch12eqn26"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.26) </span></td><td valign="top"><img src="figu441_9.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="1154"></a><a name="ch12eqn27"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.27) </span></td><td valign="top"><img src="figu441_10.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">Given <i class="emphasis">x</i>(0) and <i class="emphasis">x</i>(1), the integrals of the equations of motion <a class="internaljump" href="#ch12eqn23">(12.23)</a> define three equations to solve for <span class="unicode">&#955;</span><sub>3</sub>, the frequency of the sinusoids, and the constants <i class="emphasis">u</i><sub>1</sub>(0) and <i class="emphasis">u</i><sub>2</sub>(0), defining the amplitude and phase.</p>
+<p class="para">These equations may be difficult to solve generally, but one simple case is of particular interest. We will choose controls so that at the end of the motion, <i class="emphasis">x</i><sub>1</sub> and <i class="emphasis">x</i><sub>2</sub> have returned to their initial values, while <i class="emphasis">x</i><sub>3</sub> has changed from <i class="emphasis">x</i><sub>3</sub>(0) = 0 to <i class="emphasis">x</i><sub>3</sub>(1) = <i class="emphasis">x</i><sub>3,goal</sub>. In this case, <span class="unicode">&#955;</span><sup>3</sup> = 2<i class="emphasis">k</i><span class="unicode">&#960;</span>, where <i class="emphasis">k</i> is any nonzero integer. This assures that</p>
+<div class="informalequation" mathml="yes">
+<img src="figu441_11.jpg" /><br />
+</div>
+<p class="para">
+<a name="1155"></a><a name="page442"></a>so <i class="emphasis">x</i><sub>1</sub> and <i class="emphasis">x</i><sub>2</sub> return to their initial values. Plugging <span class="unicode">&#955;</span><sub>3</sub> = 2<i class="emphasis">k</i><span class="unicode">&#960;</span> into the the controls [<a class="internaljump" href="#ch12eqn26">equations (12.26)</a> and <a class="internaljump" href="#ch12eqn27">(12.27)</a>], and putting the controls into the objective function <a class="internaljump" href="#ch12eqn24">(12.24)</a>, we find that</p>
+<div class="informalequation" mathml="yes">
+<img src="figu442_1.jpg" /><br />
+</div>
+<p class="para">The cost of the motion is independent of the choice of <i class="emphasis">k</i>,sowe choose <i class="emphasis">k</i> = ±1.</p>
+<p class="para">Integrating the equation of motion for <i class="emphasis">x</i><sub>3</sub>,we find that</p>
+<div class="informalequation" mathml="yes">
+<img src="figu442_2.jpg" /><br />
+</div>
+<p class="para">for <i class="emphasis">k</i> = 1, and</p>
+<div class="informalequation" mathml="yes">
+<img src="figu442_3.jpg" /><br />
+</div>
+<p class="para">for <i class="emphasis">k</i> = <span class="unicode">&#8722;</span>1. Therefore, if <i class="emphasis">x</i><sub>3,goal</sub> &gt; 0, we choose <i class="emphasis">k</i> = <span class="unicode">&#8722;</span>1 and any choice of <i class="emphasis">u</i><sub>1</sub>(0) and <i class="emphasis">u</i><sub>2</sub>(0) satisfying the condition <i class="emphasis">x</i><sub>3</sub>(1) = <i class="emphasis">x</i><sub>3,goal</sub> (all choices have the same cost). If <i class="emphasis">x</i><sub>3,goal</sub> &lt; 0, we choose <i class="emphasis">k</i> = 1 and proceed similarly. Notice that there is a one- dimensional set of solutions in the two-dimensional (<i class="emphasis">u</i><sub>1</sub>(0), <i class="emphasis">u</i><sub>2</sub>(0)) space, as we only need to satisfy the single equation <i class="emphasis">x</i><sub>3</sub>(1) = <i class="emphasis">x</i><sub>3,goal</sub>.</p>
+<p class="para">The motion described above suggests a strategy for motion planning for a more general class of systems. First, use the controls to drive <i class="emphasis">m</i> state variables directly to their goal values. Then perform motions that return these state variables to their goal values, but cause a desired net motion in the other state variables.</p>
+<p class="para">As an example, beginning from rest, a free-floating astronaut in space can control the orientation of his body by moving his arms in a cyclic pattern. At the end of a cycle, the <i class="emphasis">shape</i> (arm joint angles) of the astronaut is restored, but the orientation of his body has changed. (Keep in mind that the astronaut's total angular momentum is zero throughout the motion since there are no external forces.) We can decompose the astronaut's configuration into <i class="emphasis">shape</i> variables (also called <i class="emphasis">base</i> variables), describing the variables over which he has direct control (the arm joint angles), and <i class="emphasis">fiber</i> variables (the orientation of his body), which are coupled to the controls in a state-dependent manner.<sup>[<a name="ch12fnt12_3" href="#ftn.ch12fnt12_3">3</a>]</sup> In the example system <a class="internaljump" href="#ch12eqn23">(12.23)</a>, the shape variables are <i class="emphasis">x</i><sub>1</sub> and <i class="emphasis">x</i><sub>2</sub> and the fiber variable is <i class="emphasis">x</i><sub>3</sub>.In the single-leg hopper system of <a href="70.html#1124" class="chapterjump">example 12.4.4</a>, the shape variables are the leg angle <i class="emphasis">q</i><sub>2</sub> and leg extension <i class="emphasis">q</i><sub>3</sub>, and the fiber variable is the body angle <i class="emphasis">q</i><sub>1</sub> (see <a class="internaljump" href="#ch12fig20">figure 12.20</a>).</p>
+<div class="figure">
+<a name="1157"></a><a name="ch12fig20"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2308','fig12-20_0.jpg','1000','403')" name="IMG_2308" target="_self"><img alt="Image from book" id="IMG_2308" src="fig12-20.jpg" height="141" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.20: </span>A closed loop in shape variables producing a net displacement in the fiber variable.</span>
+</div>
+<p class="para">
+<a name="1158"></a><a name="IDX-443"></a>Many driftless systems can be transformed to a form similar to <a class="internaljump" href="#ch12eqn23">equation (12.23)</a>, allowing the control strategy of directly steering the shape variables to their goal configurations, and then performing closed loops (e.g., sinusoids) in the shape variables to achieve desired motions in the fiber variables. For example, the unicycle can be converted to this form by performing a coordinate transformation and an input feed- back transformation. Define new coordinates <i class="emphasis">z</i> = <i class="emphasis">A</i>(<i class="emphasis">x</i>)<i class="emphasis">x</i> and transformed controls <i class="emphasis">v</i> = <i class="emphasis">B</i>(<i class="emphasis">x</i>)<i class="emphasis">u</i>, where</p>
+<div class="informalequation" mathml="yes">
+<img src="figu443_1.jpg" /><br />
+</div>
+<p class="para">Then the original unicycle system is transformed to an equivalent system of the form <a class="internaljump" href="#ch12eqn23">(12.23)</a>:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu443_2.jpg" /><br />
+</div>
+<p class="para">A system like this is an example of a broader class of <i class="emphasis">chained-form</i> systems, which are the topic of the following subsection.</p>
+<p class="last-para">The motion strategy of driving the shape variables to their goal values and then performing closed loops generally results in suboptimal motions, but it is rarely possible to solve the optimality conditions analytically. In any case, the quadratic "energy-like" objective function <a class="internaljump" href="#ch12eqn24">(12.24)</a> may not have much physical meaning for an input-transformed system such as the unicycle above. <a class="internaljump" href="#ch12lev2sec11">Section 12.5.3</a> discusses numerical methods for finding approximately optimal motion plans.</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1159"></a><a name="ch12lev2sec10"></a><span class="section-titlelabel">12.5.2 </span>Steering Chained-Form Systems Using Sinusoids</h3>
+<p class="first-para">
+<a name="1160"></a><a name="page444"></a>Consider the following system with <i class="emphasis">m</i> = 2 controls and <i class="emphasis">n</i> <span class="unicode">&#8805;</span> 3 states, generalizing the system with <i class="emphasis">n</i> = 3 described above:</p>
+<div class="equation" mathml="yes">
+<a name="1161"></a><a name="ch12eqn28"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.28) </span></td><td valign="top"><img src="figu444_1.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">Such a system is said to be in <i class="emphasis">chained form</i>. Considering a Lie product of the form [<i class="emphasis">g</i><sub>1</sub>, [<i class="emphasis">g</i><sub>1</sub>, <span class="unicode">&#8230;</span> [<i class="emphasis">g</i><sub>1</sub>, [<i class="emphasis">g</i><sub>1</sub>, <i class="emphasis">g</i><sub>2</sub>]]]], where <i class="emphasis">g</i><sub>1</sub> appears <i class="emphasis">k</i> times, we find that the Lie product has a value (<span class="unicode">&#8722;</span>1)<sup><i class="emphasis">k</i></sup> in the <i class="emphasis">k</i> + 2 component of the vector field, and zeros in all other components. Therefore, the Lie algebra Lie({<i class="emphasis">g</i><sub>1</sub>, <i class="emphasis">g</i><sub>2</sub>}) is full rank, and the system is STLC at all <i class="emphasis">x</i> for <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2312" src="figu444_2.jpg" height="18" width="63" title="" border="0" /></span></span>.</p>
+<p class="para">To steer such a system, we can generalize the approach presented previously. First, drive <i class="emphasis">x</i><sub>1</sub> and <i class="emphasis">x</i><sub>2</sub> to their final values. Then choose controls <i class="emphasis">u</i><sub>1</sub>(<i class="emphasis">t</i>) and <i class="emphasis">u</i><sub>2</sub>(<i class="emphasis">t</i>)tobe sinusoids at integrally related frequencies. For example, let</p>
+<div class="equation" mathml="yes">
+<a name="1162"></a><a name="ch12eqn29"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.29) </span></td><td valign="top"><img src="figu444_3.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="1163"></a><a name="ch12eqn30"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.30) </span></td><td valign="top"><img src="figu444_4.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">where <i class="emphasis">k</i> is a positive integer. Then <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2315" src="figu444_5.jpg" height="17" width="18" title="" border="0" /></span></span> has components at frequency 2<span class="unicode">&#960;</span>(<i class="emphasis">k</i> <span class="unicode">&#8722;</span> 1), <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2316" src="figu444_6.jpg" height="17" width="18" title="" border="0" /></span></span> has components at 2<span class="unicode">&#960;</span>(<i class="emphasis">k</i> <span class="unicode">&#8722;</span> 2), etc. Applying the controls for <i class="emphasis">t<sub>f</sub></i> = 1 will return the <i class="emphasis">x</i><sub>1</sub>, <span class="unicode">&#8230;</span>, <i class="emphasis">x</i><sub><i class="emphasis">k</i>+1</sub> variables to their initial values&#8212;the nonzero frequency means that <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2317" src="figu444_7.jpg" height="19" width="103" title="" border="0" /></span></span> integrate to zero net change over the cycle. For the variables <i class="emphasis">x</i><sub><i class="emphasis">k</i>+2</sub>, <span class="unicode">&#8230;</span>, <i class="emphasis">x<sub>n</sub></i>, however, the periodic controls will result in a nonzero DC (zero frequency) component in their time-derivatives, meaning that they will be changed over the cycle. The net change to <i class="emphasis">x</i><sub><i class="emphasis">k</i>+2</sub> can be computed to be</p>
+<div class="equation" mathml="yes">
+<a name="1164"></a><a name="ch12eqn31"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.31) </span></td><td valign="top"><img src="figu444_8.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">Therefore, an algorithm to drive the system to the goal state is the following:</p>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">Drive the variables <i class="emphasis">x</i><sub>1</sub> and <i class="emphasis">x</i><sub>2</sub> directly to their goal values.</p>
+</li>
+<li class="listitem">
+<p class="first-para">For each <i class="emphasis">k</i> = 1 <span class="unicode">&#8230;</span> <i class="emphasis">n</i> <span class="unicode">&#8722;</span> 2, in ascending order, apply the controls <a class="internaljump" href="#ch12eqn29">(12.29)</a> and <a class="internaljump" href="#ch12eqn30">(12.30)</a> for time <i class="emphasis">t<sub>f</sub></i> = 1 with <i class="emphasis">a</i> and <i class="emphasis">b</i> selected according to <a class="internaljump" href="#ch12eqn31">equation (12.31)</a> to drive <i class="emphasis">x</i><sub><i class="emphasis">k</i>+2</sub> to its desired value, leaving all <i class="emphasis">x</i><sub>1</sub>, <span class="unicode">&#8230;</span>, <i class="emphasis">x</i><sub>k+1</sub> unchanged.</p>
+</li>
+</ol>
+<p class="para">
+<a name="1165"></a><a name="IDX-445"></a>A numberof <i class="emphasis">n</i>-state2-input systems can be transformed to the chained form <a class="internaljump" href="#ch12eqn28">(12.28)</a>, including tractor-trailer systems with multiple trailers [393]. There are also other forms similar to the chained form presented here, including forms with more than two inputs; see, e.g., [85,330,332,419].</p>
+<p class="last-para">Many motion-planning algorithms based on series expansions and averaging of the equations of motion use sinusoidal inputs at appropriately chosen frequencies and phases to "tickle" the system in desired Lie bracket directions (see, e.g., [34,50,74&#8211; 76,175,279,280,327,328,333,342,422,423]). This idea also applies to mechanical systems with drift. For a locomotion system where motions of the shape variables induce motion of the fiber variables, these sinusoidal inputs generate "gaits" for the system.</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1166"></a><a name="ch12lev2sec11"></a><span class="section-titlelabel">12.5.3 </span>Nonlinear Optimization</h3>
+<p class="first-para">The <a href="61.html" class="chapterjump">previous chapter</a> outlined a method for using gradient-based nonlinear optimization to find locally optimal trajectories for fully actuated dynamic systems. A similar approach can be applied to underactuated systems [147,148,343]. We typically choose a finite parameterization of the control history <i class="emphasis">u</i>(<i class="emphasis">t</i>), since any a priori parameterization of the trajectory <i class="emphasis">q</i>(<i class="emphasis">t</i>) will likely describe trajectories that are infeasible for the system due to the underactuation constraints. Alternatively, we could solve for <i class="emphasis">q</i>(<i class="emphasis">t</i>) and enforce equality constraints at time instants throughout the trajectory to ensure that there exists a feasible <i class="emphasis">u</i>(<i class="emphasis">t</i>) for the given <i class="emphasis">q</i>(<i class="emphasis">t</i>).</p>
+<p class="para">Two features of this approach are (1) it is very general&#8212;motion planning problems for many underactuated systems, including those with drift, can be encoded as nonlinear programs; and (2) the ability to minimize an objective function may result in motions that are "efficient" in some way. Significant drawbacks, however, are as outlined in the <a href="61.html" class="chapterjump">previous chapter</a>: (1) a good initial guess must be provided to the solver, as the solver will find only a locally optimal solution; and (2) numerical difficulties, singularities, and nonconvexity may prevent the solver from converging to a solution. The generality of the approach means that it uses little information about the particular structure of the system to ensure convergence.</p>
+<p class="last-para">For convex systems, systems with particular structure [314], or particular choices of the control parameterization, it may be possible to demonstrate favorable convergence properties for nonlinear optimization. In general, however, there are no guarantees that nonlinear optimization will be able to find any solution, let alone a good solution, to a particular problem.</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1167"></a><a name="ch12lev2sec12"></a><span class="section-titlelabel">12.5.4 </span>Gradient Methods for Driftless Systems</h3>
+<p class="first-para">
+<a name="1168"></a><a name="IDX-446"></a>To improve the convergence properties of gradient-based motion planning, we focus on the class of driftless systems and give up on finding optimal motions. Let <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2319" src="figu446_1.jpg" height="23" width="161" title="" border="0" /></span></span> be a finite parameterization of the control history <i class="emphasis">u</i>(<i class="emphasis">t</i>), e.g., the coefficients of truncated Fourier series for the control inputs. Let the time of motion be <i class="emphasis">t<sub>f</sub></i> = 1, and define an end-state map <i class="emphasis">f</i> that maps the initial state <i class="emphasis">x</i><sub>start</sub> and the control <i class="emphasis">u<sup>p</sup></i> to a final state of the system <i class="emphasis">x<sub>f</sub></i>:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu446_2.jpg" /><br />
+</div>
+<p class="para">The end-state map <i class="emphasis">f</i> is typically obtained numerically.</p>
+<p class="para">Now the problem is to find a <i class="emphasis">u<sup>p</sup></i> so that the desired goal state <i class="emphasis">x</i><sub>goal</sub> is reached. Define the end-state error vector <i class="emphasis">e</i> = [<i class="emphasis">e</i><sup>1</sup>, <span class="unicode">&#8230;</span>, <i class="emphasis">e<sub>n</sub></i>] to be</p>
+<div class="informalequation" mathml="yes">
+<img src="figu446_3.jpg" /><br />
+</div>
+<p class="para">We would like to know the direction to change <i class="emphasis">u<sup>p</sup></i> to move <i class="emphasis">x<sub>f</sub></i> in the direction <span class="unicode">&#8722;</span><i class="emphasis">e</i>, to reduce the error. This direction in the <i class="emphasis">u<sup>p</sup></i> space is <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2322" src="figu446_4.jpg" height="15" width="55" title="" border="0" /></span></span>, where</p>
+<div class="informalequation" mathml="yes">
+<img src="figu446_5.jpg" /><br />
+</div>
+<p class="para">where the partial derivatives are evaluated at the current guess for <i class="emphasis">u<sup>p</sup></i>. Given a current guess <i class="emphasis">u<sup>p</sup></i>(<i class="emphasis">i</i>), we can update it as follows:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu446_6.jpg" /><br />
+</div>
+<p class="para">where <span class="unicode">&#945;</span> is a small positive constant, perhaps chosen by a line search to maximally decrease the error.We then calculate the new vector <i class="emphasis">v</i>(<i class="emphasis">i</i> + 1) for <i class="emphasis">u</i><sup><i class="emphasis">p</i></sup>(<i class="emphasis">i</i> + 1) and iterate until we reach an iteration <i class="emphasis">k</i> such that ||<i class="emphasis">f</i>(<i class="emphasis">x</i><sub>start</sub>, <i class="emphasis">u<sup>p</sup></i>(<i class="emphasis">k</i>)) <span class="unicode">&#8722;</span> <i class="emphasis">x</i><sub>goal</sub>|| &lt; <span class="unicode">&#949;</span> for a small constant <span class="unicode">&#949;</span>.</p>
+<p class="para">This algorithm is guaranteed to converge to a solution for a sufficiently small <span class="unicode">&#945;</span> if there are no state or control constraints and if <span class="unicode">&#8706;</span><i class="emphasis">f</i>/<span class="unicode">&#8706;</span><i class="emphasis">u<sup>p</sup></i> is rank <i class="emphasis">n</i> everywhere. The rank condition means that any point in a sufficiently small neighborhood of <i class="emphasis">x<sub>f</sub></i> = <i class="emphasis">f</i>(<i class="emphasis">x</i><sub>start</sub>, <i class="emphasis">u</i><sup><i class="emphasis">p</i></sup>) is reachable by a small change to <i class="emphasis">u<sup>p</sup></i>, indicating that it is possible to move the error vector <i class="emphasis">e</i> in any direction. Generically, if the system is STLC everywhere and we have a rich enough control parameterization <i class="emphasis">u<sup>p</sup></i>, the matrix <span class="unicode">&#8706;</span><i class="emphasis">f</i>/<span class="unicode">&#8706;</span><i class="emphasis">u<sup>p</sup></i> will have rank <i class="emphasis">n</i> (<a class="internaljump" href="#ch12fig21">figure 12.21</a>).</p>
+<div class="figure">
+<a name="1169"></a><a name="ch12fig21"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2325','fig12-21_0.jpg','1000','164')" name="IMG_2325" target="_self"><img alt="Image from book" id="IMG_2325" src="fig12-21.jpg" height="57" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.21: </span>The initial state <i class="emphasis">x</i><sub>start</sub>, the state <i class="emphasis">x<sub>f</sub></i> reached after applying the control <i class="emphasis">u</i><sup><i class="emphasis">p</i></sup>, and the end-state error vector <i class="emphasis">e</i>. The full-rank condition on <span class="unicode">&#8706;</span><i class="emphasis">f</i>/<span class="unicode">&#8706;</span><i class="emphasis">u<sup>p</sup></i> ensures that a neighborhood of <i class="emphasis">x<sub>f</sub></i> can be reached by a small variation in the control vector <i class="emphasis">u<sup>p</sup></i>.</span>
+</div>
+<p class="para">If <span class="unicode">&#8706;</span><i class="emphasis">f</i>/<span class="unicode">&#8706;</span><i class="emphasis">u<sup>p</sup></i> loses rank at <i class="emphasis">u<sup>p</sup></i>(<i class="emphasis">i</i>), then there are one or more directions in which we cannot move the error vector <i class="emphasis">e</i>. Such a <i class="emphasis">u<sup>p</sup></i>(<i class="emphasis">i</i>) is a singular control and could cause the algorithm to get stuck. In this case, we add a control to the end of the motion, where <a name="1170"></a><a name="page447"></a>the control is chosen randomly from the set of controls that result in no net motion of the system. Such a control is easy to generate because the system is driftless. Because such a controlis generically nonsingular, it is said to generate a <i class="emphasis">generic loop</i> for the system. If we append the random control to the control <i class="emphasis">u<sup>p</sup></i> and treat the entire thing as the new control, the control vector is no longer singular, and the algorithm can continue.</p>
+<p class="last-para">There are many possible variants of this basic approach [129, 130, 391, 392, 400, 425]. For example, we could define a path on the error space from <i class="emphasis">e</i>(0)to the origin, then choose the iterates <i class="emphasis">u<sup>p</sup></i>(<i class="emphasis">i</i>) to force the error to track this path. We could use a metric on the error coordinates other than the standard metric implicit in the approach above. We could also perform a more sophisticated search, perhaps using the Hessian <span class="unicode">&#8706;</span><sup>2</sup><i class="emphasis">f</i>/(<span class="unicode">&#8706;</span><i class="emphasis">u<sup>p</sup></i>)<sup>2</sup>, to achieve faster convergence. Certain obstacle constraints can also be incorporated. This motion-planning method has been applied to find paths for a truck pulling trailers [129,130,425].</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1171"></a><a name="ch12lev2sec13"></a><span class="section-titlelabel">12.5.5 </span>Differentially Flat Systems</h3>
+<p class="first-para">
+<i class="emphasis">Differentially flat</i> systems [152,153,309] have a structure that makes motion planning (in the absence of control and configuration constraints such as obstacles) particularly simple. For a differentially flat system with <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2326" src="figu447_1.jpg" height="15" width="58" title="" border="0" /></span></span> and <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2327" src="figu447_2.jpg" height="15" width="60" title="" border="0" /></span></span>, there exists a set of <i class="emphasis">m</i> functions <i class="emphasis">y<sub>i</sub></i>, <i class="emphasis">i</i> = 1 <span class="unicode">&#8230;</span> <i class="emphasis">m</i>, of the state, the control, and its derivatives,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu447_3.jpg" /><br />
+</div>
+<p class="para">such that the states and control inputs can be expressed as functions of <i class="emphasis">y</i> and its time-derivatives:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu447_4.jpg" /><br />
+</div>
+<p class="para">The functions <i class="emphasis">y<sub>i</sub></i> are known as the <i class="emphasis">flat outputs</i>. Armed with a set of flat outputs, the problem of finding a feasible trajectory (<i class="emphasis">x</i>(<i class="emphasis">t</i>), <i class="emphasis">u</i>(<i class="emphasis">t</i>)), <i class="emphasis">x</i>(0) = <i class="emphasis">x</i><sub>start</sub>, <i class="emphasis">x</i>(<i class="emphasis">t<sub>f</sub></i>) = <i class="emphasis">x</i><sub>goal</sub>, <i class="emphasis">t</i> <span class="unicode">&#8714;</span> [0, <i class="emphasis">t<sub>f</sub></i>] for the underactuated system is transformed to the problem of finding a curve <a name="1172"></a><a name="IDX-448"></a><i class="emphasis">y</i>(<i class="emphasis">t</i>) satisfying constraints on <i class="emphasis">y</i>(0), <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2330" src="figu448_1.jpg" height="22" width="141" title="" border="0" /></span></span> and <i class="emphasis">y</i>(<i class="emphasis">t<sub>f</sub></i>), <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2331" src="figu448_2.jpg" height="24" width="154" title="" border="0" /></span></span> specified by <i class="emphasis">x</i><sub>start</sub> and <i class="emphasis">x</i><sub>goal</sub>. In other words, the problem of finding a trajectory satisfying the underactuation constraints becomes the relatively simple algebraic problem of finding a curve to fit the start and end constraints on <i class="emphasis">y</i>.Any curve <i class="emphasis">y</i>(<i class="emphasis">t</i>) maps directly to a consistent pair of state and control histories <i class="emphasis">x</i>(<i class="emphasis">t</i>) and <i class="emphasis">u</i>(<i class="emphasis">t</i>).</p>
+<p class="para">The flat outputs for mechanical systems are often a function of configuration variables only, and sometimes are just the location of particular points on the system. Unfortunately, there is no systematic way to determine if a system is differentially flat, or what the flat outputs for a system are. Many important systems have been shown to be differentially flat, however. These systems include the unicycle, the PBWT, and chained-form systems.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">EXAMPLE 12.5.1: </span>Unicycle (cont.)</span><a name="1173"></a><a name="ch12ex05_1"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">The flat outputs for the unicycle are <i class="emphasis">y</i><sub>1</sub> = <i class="emphasis">x</i><sub>1</sub> and <i class="emphasis">y</i><sub>2</sub> = <i class="emphasis">x</i><sub>2</sub>. The state <i class="emphasis">x</i> and controls <i class="emphasis">u</i> can be derived from the flat outputs and their derivatives as follows:</p>
+<p class="para">
+<div class="equation" mathml="yes">
+<a name="1174"></a><a name="ch12eqn32"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.32) </span></td><td valign="top"><img src="figu448_3.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="1175"></a><a name="ch12eqn33"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.33) </span></td><td valign="top"><img src="figu448_4.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+</p>
+<p class="para">The orientation <i class="emphasis">x</i><sub>3</sub> and the turning control <i class="emphasis">u</i><sub>2</sub> are not well defined as a function of the flat outputs when the unicycle is not translating. Also, because <i class="emphasis">x</i><sub>3</sub> will be 45 degrees for both <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2334" src="figu448_5.jpg" height="19" width="102" title="" border="0" /></span></span> and <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2335" src="figu448_6.jpg" height="19" width="118" title="" border="0" /></span></span>, the sign of the forward-backward speed <i class="emphasis">u</i><sub>1</sub> should be consistent with the angle <i class="emphasis">x</i><sub>3</sub>.</p>
+<p class="para">Now we would like to find a feasible trajectory from <i class="emphasis">x</i><sub>start</sub> = [0, 0, 0]<sup><i class="emphasis">T</i></sup> to <i class="emphasis">x</i><sub>goal</sub> = [1, 1, 0]<sup><i class="emphasis">T</i></sup>. Since there are six state variables in the specification of the start and goal points, there are six constraints on the flat outputs <i class="emphasis">y</i> and their derivatives at the beginning and end of motion. These constraints can be written</p>
+<div class="informalequation" mathml="yes">
+<img src="figu448_7.jpg" /><br />
+</div>
+<p class="para">where the last two constraints indicate that the initial and final motion of the unicycle must be along the x-axis, indicating that the wheel is oriented with the x-axis. The simplest polynomial functions of time that have enough free coefficients to satisfy these constraints are</p>
+<div class="informalequation" mathml="yes">
+<img src="figu448_8.jpg" /><br />
+</div>
+<p class="para">
+<a name="1176"></a><a name="IDX-449"></a>Setting the time of motion <i class="emphasis">t<sub>f</sub></i> = 1 and using the constraints to solve for the polynomial coefficients, we get</p>
+<div class="informalequation" mathml="yes">
+<img src="figu449_1.jpg" /><br />
+</div>
+<p class="para">The state <i class="emphasis">x</i>(<i class="emphasis">t</i>) and control <i class="emphasis">u</i>(<i class="emphasis">t</i>) can be obtained from <a class="internaljump" href="#ch12eqn32">equations (12.32)</a> and <a class="internaljump" href="#ch12eqn33">(12.33)</a>. The unicycle motion is shown in <a class="internaljump" href="#ch12fig22">figure 12.22</a>.</p>
+<p class="last-para">
+<div class="figure">
+<a name="1177"></a><a name="ch12fig22"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2339','fig12-22_0.jpg','1000','445')" name="IMG_2339" target="_self"><img alt="Image from book" id="IMG_2339" src="fig12-22.jpg" height="156" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.22: </span>A feasible path for the unicycle from [0, 0, 0]<sup><i class="emphasis">T</i></sup> to [1, 1, 0]<sup><i class="emphasis">T</i></sup> and the controls.</span>
+</div>
+</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">In fitting a curve <i class="emphasis">y</i>(<i class="emphasis">t</i>), we must choose a family of curves with enough degrees of freedom to satisfy the initial and terminal constraints. We may choose a family of curves with more degrees of freedom, however, and use the extra degrees of freedom to, individually or severally, (1) satisfy bounds on the control <i class="emphasis">u</i>(<i class="emphasis">t</i>), (2) avoid obstacles in the configuration space, or (3) minimize a cost function. Incorporating these conditions in the calculation of <i class="emphasis">y</i>(<i class="emphasis">t</i>) typically requires resorting to numerical optimization methods, and is a topic of current research. A good way to generate an initial guess for the optimization is to solve exactly for a minimal number of coefficients to satisfy the initial and terminal constraints, setting the other coefficients to zero.</p>
+<p class="para">For the PBWT, the flat outputs are</p>
+<div class="informalequation" mathml="yes">
+<img src="figu449_2.jpg" /><br />
+</div>
+<p class="para">The flat outputs (<i class="emphasis">y</i><sub>1</sub>, <i class="emphasis">y</i><sub>2</sub>) define a point fixed to the PBWT, at the PBWT's center of percussion with respect to the location of the thrusters.</p>
+<p class="para">
+<a name="1178"></a><a name="page450"></a>For a car with steerable front wheels and parallel, fixed-orientation rear wheels, the flat outputs are the Cartesian coordinates of the point halfway between the rear wheels. If the car is towing a two-wheel trailer hitched midway between the rear wheels of the car, the flat outputs are the coordinates midway between the wheels of the trailer. If there are more trailers, all hitched midway between the wheels of the trailer in front, the coordinates of the midpoint of the wheels of the last trailer are flat outputs for the entire system. The orientation of the car and each trailer can be determined from sufficiently high time-derivatives of the evolution of these two coordinates.</p>
+<p class="last-para">The paper by Martin et al. [309] provides a catalog of systems known to be flat. Some notable results include the following. A system of the form <a href="68.html#1076" class="chapterjump">(12.6)</a> with <i class="emphasis">n</i> states and <i class="emphasis">m</i> = <i class="emphasis">n</i> <span class="unicode">&#8722;</span> 1 inputs is flat if it is STLC. A driftless system <a href="68.html#1076" class="chapterjump">(12.6)</a> with <i class="emphasis">n</i> states and <i class="emphasis">m</i> = <i class="emphasis">n</i> <span class="unicode">&#8722;</span> 2 inputs is flat if it is STLC. All chained-form systems are flat with the first and last states <i class="emphasis">x</i><sub>1</sub> and <i class="emphasis">x<sub>n</sub></i> as the flat outputs. Other example flat systems are given in [331].</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1179"></a><a name="ch12lev2sec14"></a><span class="section-titlelabel">12.5.6 </span>Cars and Cars Pulling Trailers</h3>
+<p class="first-para">From a motion-planning perspective, easily the most heavily studied examples of nonholonomic systems are the kinematic car and the car pulling one or more trailers. Because of the obvious applications of automatic motion planning to systems like these, a great deal of effort has been spent in deriving efficient and complete motion planners for these systems moving in cluttered environments. The excellent book edited by Laumond [266] is focused entirely on these systems. In this subsection, we provide a brief review of important concepts and approaches to motion planning for cars and cars pulling trailers.</p>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1180"></a><a name="ch12lev3sec1"></a>Cars</h4>
+<p class="first-para">We focus on driftless kinematic models of cars, where the inputs are velocities and the state <i class="emphasis">x</i> is simply the configuration <i class="emphasis">q</i>. Alternatively, we could consider dynamic extensions of these models, where the inputs are accelerations.</p>
+<p class="para">A kinematic model of a standard car is shown in <a class="internaljump" href="#ch12fig23">figure 12.23</a>. The location of the point midway between the rear wheels is (<i class="emphasis">x</i><sub>1</sub>, <i class="emphasis">x</i><sub>2</sub>), the steering angle is <i class="emphasis">x</i><sub>3</sub>, and the orientation of the car is <i class="emphasis">x</i><sub>4</sub>.To ensure that the wheels do not slip, each of the front wheels must be perpendicular to the line through the wheel and the rotation center of the car. Therefore, <i class="emphasis">x</i><sub>3</sub> is measured at a "virtual" wheel midway between the two front wheels. The wheelbase is <i class="emphasis">L</i>.</p>
+<div class="figure">
+<a name="1181"></a><a name="ch12fig23"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2341','fig12-23_0.jpg','955','790')" name="IMG_2341" target="_self"><img alt="Image from book" id="IMG_2341" src="fig12-23.jpg" height="290" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.23: </span>A model of a car turning at its minimum turning radius.</span>
+</div>
+<p class="para">If the control <i class="emphasis">u</i><sub>2</sub> is the rate of change of the steering angle <i class="emphasis">x</i><sub>3</sub> and <i class="emphasis">u</i><sub>1</sub> is the driving speed of the car, measured at the point midway between the rear wheels, the control <a name="1182"></a><a name="IDX-451"></a>system can be written</p>
+<div class="equation" mathml="yes">
+<a name="1183"></a><a name="ch12eqn34"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.34) </span></td><td valign="top"><img src="figu451_1.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<div class="figure">
+<a name="1184"></a><a name="ch12fig34"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2343','fig12-34_0.jpg','1000','530')" name="IMG_2343" target="_self"><img alt="Image from book" id="IMG_2343" src="fig12-34.jpg" height="186" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.34: </span>A wheel in space, then constrained to stand upright on the <i class="emphasis">z</i> = 0 plane. The notch on the wheel is used to keep track of the wheel's rolling angle.</span>
+</div>
+<p class="para">Typically the steering angle is limited to <span class="unicode">&#8722;</span><span class="unicode">&#947;</span>&lt; <i class="emphasis">x</i><sub>3</sub> &lt;<span class="unicode">&#947;</span>, <span class="unicode">&#947;</span> <span class="unicode">&#8714;</span> (0, <span class="unicode">&#960;</span>/2), giving the car a minimum turning radius <i class="emphasis">r</i><sub>min</sub> = <i class="emphasis">L/</i> tan<sup>&#8722;1</sup> <span class="unicode">&#947;</span>. The control set for this system is<span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2344" src="figu451_2.jpg" height="18" width="64" title="" border="0" /></span></span>, and this symmetric system can be shown to be STLC by the LARC. Since the car is STLC at all configurations, the steering angle limits do not affect the reachable positions and orientations of the car. Interestingly, this means that a car that cannot turn right, for instance, can reach any position and orientation among obstacles that a fully functional car can.</p>
+<p class="para">Since we are primarily concerned with the position and orientation of the body of the car, we could decide to eliminate the steering angle <i class="emphasis">x</i><sub>3</sub> from the representation of the configuration and treat the steering angle as part of the control. Consider the modified control inputs (<i class="emphasis">v, <span class="unicode">&#969;</span></i>), where <i class="emphasis">v</i> is the linear speed of the car and <span class="unicode">&#969;</span> is the angular velocity of the body of the car. In this case, the control system becomes</p>
+<div class="equation" mathml="yes">
+<a name="1185"></a><a name="ch12eqn35"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.35) </span></td><td valign="top"><img src="figu451_3.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">
+<a name="1186"></a><a name="page452"></a>which is identical to the unicycle, except that the control set satisfies the turning radius constraint |<span class="unicode">&#969;</span>| &lt; |v/<i class="emphasis">r</i><sub>min</sub>|. This does not affect the symmetry of the system, however, so it is still STLC.</p>
+<p class="para">As with the unicycle, if the car is limited to driving forward only, then it is globally controllable (in the absence of obstacles) but not STLC. In this section we will focus only on STLC models of cars.</p>
+<p class="para">Another car model of interest is the <i class="emphasis">differential-drive</i> car. In this case, the front wheels are replaced by casters that roll freely in any direction. The rear wheels are parallel and their speeds are controlled independently. If the speeds of the two rear wheels are <i class="emphasis">u</i><sub>1</sub> and <i class="emphasis">u</i><sub>2</sub>, and the configuration of the car is [<i class="emphasis">x</i><sub>1</sub>, <i class="emphasis">x</i><sub>2</sub>, <i class="emphasis">x</i><sub>4</sub>]<sup><i class="emphasis">T</i></sup> as in <a class="internaljump" href="#ch12fig23">figure 12.23</a>, the control system can be written</p>
+<div class="informalequation" mathml="yes">
+<img src="figu452_1.jpg" /><br />
+</div>
+<p class="para">With the input transformation <i class="emphasis">v</i> = (<i class="emphasis">u</i><sub>1</sub> + <i class="emphasis">u</i><sub>2</sub>)/2 and <span class="unicode">&#969;</span> = (<i class="emphasis">u</i><sub>1</sub> <span class="unicode">&#8722;</span> <i class="emphasis">u</i><sub>2</sub>)/<i class="emphasis">L</i>, the system again becomes the unicycle. The major difference from the standard car model is the lack of a turning radius constraint.</p>
+<p class="para">Small-time local controllability for these car models implies the following important consequence: if there is a free path from <i class="emphasis">q</i><sub>start</sub> to <i class="emphasis">q</i><sub>goal</sub> for the car body moving <i class="emphasis">without any nonholonomic motion constraint</i>, i.e., moving as a free-flying planar body, and if there is an open set of free space about each configuration in the path, then there is a free path for the car with the motion constraint. Stated equivalently, if<span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2347" src="figu452_2.jpg" height="18" width="37" title="" border="0" /></span></span> is connected and open so that every <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2348" src="figu452_3.jpg" height="19" width="74" title="" border="0" /></span></span> has a neighborhood of free space, then there exists a path for the car from any <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2349" src="figu452_4.jpg" height="19" width="102" title="" border="0" /></span></span> to any <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2350" src="figu452_5.jpg" height="21" width="102" title="" border="0" /></span></span>. This implies that it is possible to parallel-park your car into any parking space <span class="unicode">&#8714;</span>&gt; 0 longer than your car. However, the number of direction reversals in your parking maneuver grows proportionally to 1/<span class="unicode">&#8714;</span><sup>2</sup> [266], so you could be there a while if <span class="unicode">&#8714;</span> is small!</p>
+<p class="para">Let's turn our focus to the simplified standard car model [<a class="internaljump" href="#ch12eqn35">equation (12.35)</a>] with a limited turning radius. One question that has received considerable attention is the following: Given a start and goal configuration for the car moving in an obstacle- free space, find the path that minimizes the arclength traveled by the point midway between the rear wheels. If we assume a bound on the linear velocity |<i class="emphasis">v</i>| &lt;<i class="emphasis">v<sub>max</sub></i>, and no acceleration limits, then this path also corresponds to the minimum-time motion. This problem has been solved owing in large part to contributions by Reeds and Shepp [360], Sussmann and Tang [402], and Sou`eres and Laumond [395]. See also the chapter by Sou`eres and Boissonnat [394].</p>
+<p class="para">Reeds and Shepp [360] showed that the optimal path must be one of a discrete and computable set of paths. It turns out that each member of this set consists of a <a name="1187"></a><a name="page453"></a>concatenation of straight-line segments and circular arcs at the car's minimum turning radius. If <i class="emphasis">C</i> indicates a circular arc segment, <i class="emphasis">S</i> indicates a straight-line segment, and | indicates a cusp in the motion where the linear velocity <i class="emphasis">v</i> changes sign, the optimal path is guaranteed to be contained in the following set of path types:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu453_1.jpg" /><br />
+</div>
+<p class="para">The subscript <i class="emphasis">a</i> indicates an arc of angle <i class="emphasis">a</i>. One or more of the segments may be zero length. <a class="internaljump" href="#ch12fig24">Figure 12.24</a> illustrates three Reeds-Shepp curves.</p>
+<div class="figure">
+<a name="1188"></a><a name="ch12fig24"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2352','fig12-24_0.jpg','1000','364')" name="IMG_2352" target="_self"><img alt="Image from book" id="IMG_2352" src="fig12-24.jpg" height="127" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.24: </span>Three Reeds-Shepp curves.</span>
+</div>
+<p class="para">In the absence of obstacles, we can simply look up the optimal path from the set above using a map indexed by the goal configuration relative to the initial configuration [394,395]. Shortest paths may not be unique. Analogous results for time-optimal motions of a differential-drive car with wheel velocity limits were derived by Balkcom and Mason [35].</p>
+<p class="last-para">The following motion-planning methods apply to the case of carlike robots in the presence of obstacles.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1189"></a><a name="ch12lev3sec2"></a>Grid Search</h4>
+<p class="first-para">Barraquand and Latombe [41] developed a simple planner for cars moving in a bounded (typically rectangular) subset of the plane. Define six actions for the car to be <i class="emphasis">L</i><sub>±</sub>, <i class="emphasis">R</i><sub>±</sub>, and <i class="emphasis">S</i><sub>±</sub>, for the steering wheels turned all the way to the left, turned all the way to the right, or pointed straight ahead, with the subscripts "+" and "&#8722;" indicating forward and reverse velocity, respectively. Pseudocode is given in <a class="internaljump" href="#ch12al22">algorithm 22</a>, CAR GRID SEARCH.</p>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 22: </span>CAR GRID SEARCH</span><a name="1190"></a><a name="ch12al22"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<a name="1191"></a><a name="IDX-454"></a>
+<b class="bold">Input:</b> Start configuration <i class="emphasis">q</i><sub>start</sub>, goal region <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2353" src="figu454_1.jpg" height="21" width="62" title="" border="0" /></span></span>
+<b class="bold">Output:</b> A path from <i class="emphasis">q</i><sub>start</sub> to <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2354" src="figu454_2.jpg" height="20" width="62" title="" border="0" /></span></span> or FAILURE
+1: Initialize search tree <i class="emphasis">T</i> and list <i class="emphasis">OPEN</i> with start configuration <i class="emphasis">q</i><sub>start</sub>
+2: <b class="bold">while</b> <i class="emphasis">OPEN</i> not empty and <i class="emphasis">size</i>(<i class="emphasis">T</i>) &lt; <i class="emphasis">MAXTREESIZE</i> <b class="bold">do</b>
+3: <i class="emphasis">q</i> <span class="unicode">&#8592;</span> first in <i class="emphasis">OPEN</i>, remove from <i class="emphasis">OPEN</i>
+4: <b class="bold">if</b> <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2355" src="figu454_3.jpg" height="21" width="99" title="" border="0" /></span></span> <b class="bold">then</b>
+5:      Report SUCCESS, return path
+6: <b class="bold">end if</b>
+7: <b class="bold">if</b> <i class="emphasis">q</i> is not near a previously occupied configuration <b class="bold">then</b>
+8:   Mark <i class="emphasis">q</i> occupied
+9:  <b class="bold">for all</b> actions in {<i class="emphasis">L</i><sub>±</sub>, <i class="emphasis">R</i><sub>±</sub>, <i class="emphasis">S</i><sub>±</sub>} <b class="bold">do</b>
+10:       Integrate forward a fixed time to <i class="emphasis">q</i><sub>new</sub>
+11:      <b class="bold">if</b> path to <i class="emphasis">q</i><sub>new</sub> is collision-free <b class="bold">then</b>
+12:                Make <i class="emphasis">q</i><sub>new</sub> a successor to <i class="emphasis">q</i> in <i class="emphasis">T</i>
+13:                Compute <i class="emphasis">cost</i> of path to new configuration <i class="emphasis">q</i><sub>new</sub>
+14:                Place <i class="emphasis">q</i><sub>new</sub> in <i class="emphasis">OPEN</i>, sorted by <i class="emphasis">cost</i>
+15:           <b class="bold">end if</b>
+16:         <b class="bold">end for</b>
+17:       <b class="bold">end if</b>
+18:     <b class="bold">end while</b>
+19:  Report FAILURE
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="para">Conceptually, the planner keeps a tree <i class="emphasis">T</i> of configurations reached in the search and a list <i class="emphasis">OPEN</i> of pointers to configurations in <i class="emphasis">T</i> whose successors have not yet been generated. The pointers in the list <i class="emphasis">OPEN</i> are sorted by the costs of the paths to the associated configurations. The planner begins by making the car's initial configuration <i class="emphasis">q</i><sub>start</sub> the root of the tree <i class="emphasis">T</i> and initializing the list <i class="emphasis">OPEN</i> with a pointer to this configuration. The main loop of the planner is a simple best-first search. The planner sets the current configuration to that indicated by the minimum-cost pointer in <i class="emphasis">OPEN</i>, and it removes this pointer from <i class="emphasis">OPEN</i>. Subsequent configurations are generated by integrating each motion forward a short time, and each new collision-free configuration is added to the tree <i class="emphasis">T</i> with a record of the motion taking it there as well as a pointer to the previous configuration. Pointers to these new configurations are then inserted into the sorted list <i class="emphasis">OPEN</i>. This continues until one of the termination conditions is satisfied: (1) the list <i class="emphasis">OPEN</i> becomes empty, or the number of nodes in the tree <i class="emphasis">T</i> exceeds some user-specified value, indicating failure of the search; or (2) the planner reaches a configuration in a user-specified neighborhood <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2356" src="figu454_4.jpg" height="21" width="62" title="" border="0" /></span></span> of the <a name="1192"></a><a name="IDX-455"></a>goal configuration <i class="emphasis">q</i><sub>goal</sub>. Note that the planner is not exact, as it only finds a path to a goal neighborhood.</p>
+<p class="para">The cost of a path is a function of the number of motion steps, the number of changes in the steering direction, and the number of cusps (switches between forward and reverse linear velocity). For example, for positive weighting factors <i class="emphasis">a, b</i>, and <i class="emphasis">c</i>, the cost could be <i class="emphasis">a</i> times the number of motion steps plus <i class="emphasis">b</i> times the number of steering changes plus <i class="emphasis">c</i> times the number of reversals. For <i class="emphasis">b</i> = <i class="emphasis">c</i> = 0, the planner will find short paths, and for <i class="emphasis">a</i> = <i class="emphasis">b</i> = 0, the planner will minimize the number of cusps (see <a class="internaljump" href="#ch12fig25">figure 12.25</a>).</p>
+<div class="figure">
+<a name="1193"></a><a name="ch12fig25"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2357','fig12-25_0.jpg','1000','607')" name="IMG_2357" target="_self"><img alt="Image from book" id="IMG_2357" src="fig12-25.jpg" height="212" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.25: </span>An example search tree <i class="emphasis">T</i> and list <i class="emphasis">OPEN</i>.(To keep the tree size reasonable, this search uses only the actions <i class="emphasis">L</i><sub>+</sub>, <i class="emphasis">S</i><sub>+</sub>, <i class="emphasis">R</i><sub>+</sub>.) If the path to a configuration is not free, the node is marked gray. In this example, the cost of each motion is 1, and the cost of changing steering direction is 5, to penalize excessive steering. This explains the ordering of the nodes in the sorted list <i class="emphasis">OPEN</i>. The cost of the path to <i class="emphasis">q</i><sub>7</sub> is 3, the cost of paths to <i class="emphasis">q</i><sub>4</sub>, <i class="emphasis">q</i><sub>5</sub>, and <i class="emphasis">q</i><sub>6</sub> is 7, and the cost of the path to <i class="emphasis">q</i><sub>8</sub> is 8. Therefore, the planner will next remove <i class="emphasis">q</i><sub>7</sub> from <i class="emphasis">OPEN</i> and generate its children in <i class="emphasis">T</i>. The configuration <i class="emphasis">q</i><sub>8</sub> lies in the goal region, but the planner will not check this until <i class="emphasis">q</i><sub>8</sub> pops off the front of the list <i class="emphasis">OPEN</i>. This is to ensure finding the minimum-cost path.</span>
+</div>
+<p class="para">By choosing the weighting factors <i class="emphasis">a, b, c</i> to be non-negative integers, inserting pointers into the sorted list <i class="emphasis">OPEN</i> can be done in constant time. This is accomplished by defining a one-dimensional array with cost as the index. The configurations of cost <i class="emphasis">C</i>, then, are stored in a linked list pointed at by element <i class="emphasis">C</i> of the array. To insert a configuration of cost <i class="emphasis">C</i> into <i class="emphasis">OPEN</i>, we simply append it to the end of the linked list pointed at by element <i class="emphasis">C</i> of the array.</p>
+<p class="para">The planner discards paths that are not collision-free. For a polygonal car and obstacles, collision detection can be done exactly by recognizing that all points on <a name="1194"></a><a name="IDX-456"></a>the car move in circular arcs or straight lines. Obstacle intersection then becomes a problem of intersecting arcs or line segments with line segments. A simpler approach is to surround the car by a disk and to only check for collision of the disk at the end of a motion step. The disk should be chosen large enough to guarantee that collision detection is <i class="emphasis">conservative</i>&#8212;only feasible plans will be found, but feasible paths through tight spaces could be rejected.</p>
+<p class="para">The planner also discards any configuration that is sufficiently close to a configuration from which the children have already been generated. Two configurations are considered sufficiently close if they occupy the same cell of a predefined grid on the configuration space. The car is assumed to be confined to a rectangular region of the plane, so <i class="emphasis">q</i> <span class="unicode">&#8714;</span> (0, <i class="emphasis">x</i><sub>max</sub>) × (0, <i class="emphasis">y</i><sub>max</sub>) × [0, 2<span class="unicode">&#960;</span>), and the configuration space grid contains <i class="emphasis">d</i><sup>3</sup> boxes, where <i class="emphasis">d</i> is the number of partitions of each dimension of the configuration space.</p>
+<p class="para">The user must specify the parameters defining the size of the goal neighborhood<span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2358" src="figu456_1.jpg" height="21" width="62" title="" border="0" /></span></span>, the integration time of the control steps, and the resolution of the configuration space grid used to check for prior occupancy. These parameters are interdependent. The resolution of the grid should be sufficiently fine that the application of any control step will always move the configuration to a new grid cell, and the goal neighborhood should be large enough that the car will not easily jump over it. In practice, the user should decide how much configuration error is acceptable along each dimension at the goal configuration, choose <i class="emphasis">d</i> so that each grid box is no larger (and usually somewhat smaller) than the goal region, and then choose the control step to be just long enough to guarantee that the car will exit its current grid box.</p>
+<p class="para">This planner is resolution complete, meaning that if the step size is sufficiently small, the planner will find a path if one exists. Because the planner uses a best-first search, the path found will be optimal for the user's cost function and the given step size. This planner actually runs faster in cluttered spaces because the obstacles prune the search tree.</p>
+<p class="para">One important property of the approach is that any path with <i class="emphasis">p</i> cusps (linear speed reversals) using the full motion capabilities of the car can be followed arbitrarily closely by a path with only <i class="emphasis">p</i> cusps using only motions with the steering wheel turned all the way to the left or right. This means that the discretization of the car's possible motion directions does not preclude the possibility of finding minimum-cusp motions.</p>
+<p class="para">A drawback to this planner is that it is not exact; paths found by the planner go to a neighborhood of the goal, not exactly to the goal. It can also be slow in open spaces due to the exponential growth of the search tree <i class="emphasis">T</i>. The maximum number of configurations that will be marked "occupied" is upper-bounded by the <i class="emphasis">d</i><sup>3</sup> boxes of the occupancy grid, however, which may not be too large considering the system has only three degrees of freedom.</p>
+<p class="para">Examples of planner output are shown in <a class="internaljump" href="#ch12fig26">figures 12.26</a> and <a class="internaljump" href="#ch12fig27">12.27</a>.</p>
+<div class="figure">
+<a name="1195"></a><a name="ch12fig26"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2359','fig12-26_0.jpg','842','479')" name="IMG_2359" target="_self"><img alt="Image from book" id="IMG_2359" src="fig12-26.jpg" height="199" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.26: </span>The classic parallel-parking problem.</span>
+</div>
+<div class="figure">
+<a name="1196"></a><a name="ch12fig27"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2360','fig12-27_0.jpg','1000','473')" name="IMG_2360" target="_self"><img alt="Image from book" id="IMG_2360" src="fig12-27.jpg" height="166" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.27: </span>The same planning problem solved with two different cost functions. On the left, <i class="emphasis">a</i> = 1 and <i class="emphasis">b</i> = <i class="emphasis">c</i> = 0, meaning that the planner looks for the shortest path. On the right, <i class="emphasis">a</i> = 1, <i class="emphasis">b</i> = 0, and <i class="emphasis">c</i> = 300, meaning that the planner heavily penalizes cusps.</span>
+</div>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1197"></a><a name="ch12lev3sec3"></a>Omnidirectional to Nonholonomic Path Transformation</h4>
+<p class="first-para">
+<a name="1198"></a><a name="IDX-457"></a>The following approach to motion planning for a car was proposed in [267]:</p>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">Use a path planner to find a path for a car with no motion constraints (i.e., a free-flying body).</p>
+</li>
+<li class="listitem">
+<p class="first-para">Transform the path into a path satisfying the nonholonomic constraint.</p>
+</li>
+<li class="listitem">
+<p class="first-para">Optimize the path.</p>
+</li>
+</ol>
+<p class="para">
+<a name="1199"></a><a name="IDX-458"></a>Because the car is STLC, the path transformation in the second step is always possible if the path found in the first step does not touch any obstacles.</p>
+<p class="para">Step 2 proceeds as follows. Parameterize the original path returned in the first step by <i class="emphasis">s</i> <span class="unicode">&#8714;</span> [0, 1], where <i class="emphasis">q</i> (0) is the initial configuration and <i class="emphasis">q</i>(1) is the final configuration. Using the lookup table of Reeds-Shepp curves, find the shortest path connecting <i class="emphasis">q</i>(0) and <i class="emphasis">q</i>(1). If this path is collision-free, then we have found the shortest path, and we are done. If it is not collision-free, divide the <i class="emphasis">s</i> interval [0, 1] into two equal pieces, and calculate the shortest paths between <i class="emphasis">q</i>(0) and <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2361" src="figu458_1.jpg" height="26" width="38" title="" border="0" /></span></span>, and between <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2362" src="figu458_2.jpg" height="26" width="37" title="" border="0" /></span></span> and <i class="emphasis">q</i>(1). If either of these paths is in collision, subdivide that interval again, and continue recursively until a free path is found. This procedure is guaranteed to terminate if the path found in the first step touches no obstacles. This guarantee relies on a topological property that says for any open ball <i class="emphasis">B</i><sub>&#948;</sub>(<i class="emphasis">q</i>)of radius <span class="unicode">&#948;</span>&gt; 0 about a configuration <i class="emphasis">q</i>, there exists another ball <i class="emphasis">B</i><sub>&#8714;</sub>(<i class="emphasis">q</i>) such that for any <i class="emphasis">q</i><span class="unicode">&#8242;</span> <span class="unicode">&#8714;</span> <i class="emphasis">B</i><sup>&#8714;</sup>(<i class="emphasis">q</i>), the local path planner (Reeds-Shepp curves in this case) finds a path between <i class="emphasis">q</i> and <i class="emphasis">q</i><span class="unicode">&#8242;</span> that is contained in <i class="emphasis">B</i><sub>&#948;</sub>(<i class="emphasis">q</i>) (<a class="internaljump" href="#ch12fig28">figure 12.28</a>).</p>
+<div class="figure">
+<a name="1200"></a><a name="ch12fig28"></a><span class="figuremediaobject"><img alt="Image from book" id="IMG_2363" src="fig12-28.jpg" height="378" width="341" title="" border="0" /></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.28: </span>Fora given open ball <i class="emphasis">B</i><sub>&#948;</sub>(<i class="emphasis">q</i>), there exists an open ball <i class="emphasis">B</i><sub>&#8714;</sub>(<i class="emphasis">q</i>) such that paths found by the local planner from <i class="emphasis">q</i> to any point in <i class="emphasis">B</i><sub>&#8714;</sub>(<i class="emphasis">q</i>) are completely contained in <i class="emphasis">B</i><sub>&#948;</sub>(<i class="emphasis">q</i>).</span>
+</div>
+<p class="last-para">We now have a feasible path for the car, but it may be unnecessarily long. In the final step, we choose two randomly selected points along the path and replace the path in between by the shortest Reeds-Shepp path, if it is collision-free. We iterate this procedure, stopping when it fails to shorten the path a prespecified number of times in a row.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1201"></a><a name="ch12lev3sec4"></a>Randomized Methods</h4>
+<p class="first-para">Probabilistic roadmap methods, as discussed in <a href="42.html" class="chapterjump">chapter 7</a>, can also be applied to carlike robots. All that is required is the specification of a local planner that quickly finds a path connecting two configurations in the absence of obstacles. For example, the local planner could use Reeds-Shepp curves as described in [394,395] to quickly find a shortest path. Two configurations are connected in the "roadmap" representation of <a name="1202"></a><a name="page459"></a>the free space if the path returned by the local planner is collision-free. This approach is probabilistically complete&#8212;the probability of finding a solution, if one exists, approaches 100% as the running time goes to infinity.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1203"></a><a name="ch12lev3sec5"></a>Smooth Paths</h4>
+<p class="first-para">A drawback to using Reeds-Shepp curves, and in using the CAR GRID SEARCH planner (<a class="internaljump" href="#ch12al22">algorithm 22</a>), is that the curvature of the paths is discontinuous at the transitions between straight and curved segments, even where there is no cusp. This means that either the steering angle must change instantaneously, the car must come to a stop at the transitions, or we must be willing to accept the error in execution that comes from ignoring this problem. To overcome this problem, several approaches have been proposed to planning paths with continuous steering angles. For example, a postprocessing step could be used to smooth the transitions (e.g., see [151]). A problem with this approach is that the new, smoothed path might collide with obstacles. Instead, smooth primitives can be used directly in the local planner, perhaps based on the car's differential flatness properties [159,258,351,370].</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1204"></a><a name="ch12lev3sec6"></a>Cars Pulling Trailers</h4>
+<p class="first-para">
+<a class="internaljump" href="#ch12fig29">Figure 12.29</a> shows a car pulling two trailers, with each trailer hitched between the rear wheels of the body in front. For a car pulling <i class="emphasis">p</i> trailers, the configuration of the system is written <i class="emphasis">x</i> = [<i class="emphasis">x</i><sub>1</sub>,<span class="unicode">&#8230;</span>,<i class="emphasis">x</i><sub><i class="emphasis">p</i>+4</sub>]<sup><i class="emphasis">T</i></sup>, where <i class="emphasis">x</i><sub><i class="emphasis">i</i>+4</sub> = <span class="unicode">&#952;</span><sup><i class="emphasis">i</i></sup> gives the orientation of the <i class="emphasis">i</i>th trailer relative to the body in front. The controls for this system are still <i class="emphasis">u</i><sub>1</sub>, the forward speed of the car, and <i class="emphasis">u</i><sub>2</sub>, the rate of change of the steering angle.</p>
+<div class="figure">
+<a name="1205"></a><a name="ch12fig29"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2364','fig12-29_0.jpg','1000','395')" name="IMG_2364" target="_self"><img alt="Image from book" id="IMG_2364" src="fig12-29.jpg" height="138" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.29: </span>A car pulling two trailers.</span>
+</div>
+<p class="para">To derive the equations of motion for this system, let's start by looking at a single trailer (see <a class="internaljump" href="#ch12fig30">figure 12.30</a>). The trailer is being pulled with a linear velocity <i class="emphasis">w</i> at an <a name="1206"></a><a name="IDX-460"></a>angle <span class="unicode">&#952;</span> at the hitch a distance <i class="emphasis">d</i> from the trailer wheels. The trailer's linear velocity is <i class="emphasis">v</i> and the angular velocity is <span class="unicode">&#969;</span>. The trailer velocity (<i class="emphasis">v, <span class="unicode">&#969;</span></i>) is related to the pulling velocity <i class="emphasis">w</i> at the hitch by</p>
+<div class="equation" mathml="yes">
+<a name="1207"></a><a name="ch12eqn36"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.36) </span></td><td valign="top"><img src="figu460_1.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.37) </span></td><td valign="top"><img src="figu460_2.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<div class="figure">
+<a name="1208"></a><a name="ch12fig30"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2367','fig12-30_0.jpg','557','324')" name="IMG_2367" target="_self"><img alt="Image from book" id="IMG_2367" src="fig12-30.jpg" height="194" width="334" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.30: </span>A single trailer.</span>
+</div>
+<p class="para">The linear velocity <i class="emphasis">v</i> becomes the hitch velocity <i class="emphasis">w</i> for the trailer behind this trailer, and <a class="internaljump" href="#ch12eqn36">equation (12.36)</a> shows that the linear velocity is nonincreasing as we move back in the trailer chain.</p>
+<p class="para">Extending the reasoning above, the car and trailer system can be written</p>
+<div class="informalequation" mathml="yes">
+<img src="figu460_3.jpg" /><br />
+</div>
+<p class="para">where</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.38) </span></td><td valign="top"><img src="figu460_4.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">Constructing Lie brackets of <i class="emphasis">g</i><sub>1</sub> and <i class="emphasis">g</i><sub>2</sub> shows that the tractor-trailer system is STLC at any <i class="emphasis">x</i> for a symmetric control set [265].</p>
+<p class="para">To plan motions for a tractor-trailer system among obstacles, we could extend the grid search approach of Barraquand and Latombe [41]. For example, if the car is <a name="1209"></a><a name="IDX-461"></a>pulling a single trailer, we can add a dimension to the configuration space grid and proceed as before with the six motion primitives <i class="emphasis">L</i><sub>±</sub>, <i class="emphasis">S</i><sub>±</sub>, and <i class="emphasis">R</i><sub>±</sub>. The only difference is that the equations of motion must be numerically integrated to determine the net change of the trailer orientation at the end of the motion step. Alternatively, this computation can be done offline and stored in a lookup table.</p>
+<p class="para">The path transformation and randomized approaches can also be extended to tractor- trailer systems by using local planners based on exact closed-form motion plans in the absence of obstacles [378, 406]. Such local planners may take advantage of the fact that all trailer systems of the form described above can be converted to chained form, allowing the use of sinusoidal controls [377,393].</p>
+<p class="para">The path transformation method first finds a free path ignoring the nonholonomic constraints, and then transforms the path into one respecting the constraints. For the path transformation method to work, the local planner must satisfy the topological property discussed earlier for cars [259,378]. A generalization of this approach turns this single transformation step into a sequence of steps, each one introducing one more nonholonomic constraint to be satisfied by the transformation [379]. This multilevel approach can lead to increased computational efficiency and shorter paths. Finally, a path can be turned into a trajectory by a time scaling <i class="emphasis">s</i>(<i class="emphasis">t</i>) respecting actuator limits, as discussed in <a href="61.html" class="chapterjump">chapter 11</a> [259].</p>
+<p class="para">
+<a class="internaljump" href="#ch12fig31">Figure 12.31</a>, taken from [378], shows two paths found for a two-trailer system using a path transformation planner. The local planner used to transform the original path to a feasible path uses sinusoidal inputs and the two-trailer system's chained-form equations.</p>
+<div class="figure">
+<a name="1210"></a><a name="ch12fig31"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2370','fig12-31_0.jpg','1000','418')" name="IMG_2370" target="_self"><img alt="Image from book" id="IMG_2370" src="fig12-31.jpg" height="146" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.31: </span>Two paths for a two-trailer system found using an omnidirectional-to- nonholonomic path transformation planner. (From Sekhavat and Laumond [378], © 1998 IEEE.)</span>
+</div>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1211"></a><a name="ch12lev2sec15"></a><span class="section-titlelabel">12.5.7 </span>Kinematic Reductions of Mechanical Systems</h3>
+<p class="first-para">
+<a name="1212"></a><a name="page462"></a><a href="70.html#1127" class="chapterjump">subsection 12.4.2</a> described a class of underactuated second-order mechanical systems, called kinematically controllable systems, for which trajectory planning can be decoupled into path planning followed by time scaling according to actuator limits. The big advantage of this is that the search for a feasible motion plan can occur in the system's <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2371" src="figu462_1.jpg" height="15" width="21" title="" border="0" /></span></span>-dimensional configuration space instead of the <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2372" src="figu462_2.jpg" height="19" width="32" title="" border="0" /></span></span>-dimensional state space. Since many search algorithms run in time exponential in the dimension of the search space, this reduction can greatly speed up motion planning.</p>
+<p class="para">We focus on systems that are not maximally reducible to kinematic systems but possess <i class="emphasis">p</i> decouplingvectorfields <i class="emphasis">V</i><sub>1</sub>,<span class="unicode">&#8230;</span>,<i class="emphasis">V<sub>p</sub></i> satisfying <span class="unicode">&#8230;</span> lie({V<sub>1</sub>, <span class="unicode">&#8230;</span>, V<sub>p</sub>}) <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2373" src="figu462_3.jpg" height="21" width="86" title="" border="0" /></span></span> at all <i class="emphasis">q</i><span class="unicode">&#8230;</span>,meaning that the system is STLKC. The path-planning problem is to find a concatenation of integral curve segments of these vector fields to take the system from the initial configuration <i class="emphasis">q</i><sub>start</sub> to the goal configuration <i class="emphasis">q</i><sub>goal</sub>. Because the velocity must be brought to zero at switches between vector fields, in the interest of minimizing execution time, it is reasonable to design the planner to minimize the number of switches. This implicitly minimizes the use of slow Lie bracket motions. Because the second step of the procedure time-optimally time-scales the motion along the planned path, the approach produces fast trajectories in a computationally efficient manner. (Global time-optimality is precluded because of our decoupling of the problem.)</p>
+<p class="para">An example of a kinematically controllable system is a 3R robot arm moving in a horizontal plane with the third joint unactuated and frictionless (<a class="internaljump" href="#ch12fig32">figure 12.32</a>). It <a name="1213"></a><a name="IDX-463"></a>is not hard to see that the third link of the arm is equivalent to the PBWT in zero gravity, except the "thruster" forces at the third joint are generated by the actuators at the first two joints. As long as the second joint is not completely extended, the arm can apply a force in any direction at the third joint. Because there is no actuator there, however, the arm cannot generate torque about this joint. The two decoupling vector fields for this system are translation along the length of the third link and rotation about the center of percussion of the third link with respect to the joint. Small-time local kinematic controllability of the PBWT implies STLKC of the 3R arm away from <i class="emphasis">q</i><sub>2</sub> = 0 and <i class="emphasis">q</i><sub>2</sub> = <span class="unicode">&#960;</span>.</p>
+<div class="figure">
+<a name="1214"></a><a name="ch12fig32"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2374','fig12-32_0.jpg','979','817')" name="IMG_2374" target="_self"><img alt="Image from book" id="IMG_2374" src="fig12-32.jpg" height="292" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.32: </span>A3R robot arm in a horizontal plane with an unactuated third joint.</span>
+</div>
+<p class="para">To find motion plans minimizing the number of switches between these vector fields, we can adapt the grid search motion planner for cars, "driving" the third link around. In this problem, the four motion primitives are forward and backward translation and clockwise and counterclockwise rotation (about the center of percussion). We choose the path cost function to be the number of switches between the primitives. Inverse kinematics is used to calculate the robot's entire configuration as the third link moves, and collisions must be checked along the entire robot arm, not just at the third link. Apart from these modifications, the algorithm is the same as for carlike robots.</p>
+<p class="para">Once a path is found using the decoupling vector fields, the path can be time-scaled arbitrarily while respecting the underactuation constraint (zero torque at the third joint). To perform the time-optimal time scaling, we use the manipulator dynamics</p>
+<div class="informalequation" mathml="yes">
+<img src="figu463_1.jpg" /><br />
+</div>
+<p class="para">in the time-scaling algorithm described in the <a href="61.html" class="chapterjump">previous chapter</a>. For the 3R arm, the inertia matrix <i class="emphasis">M</i>(<i class="emphasis">q</i>) is given by</p>
+<div class="informalequation" mathml="yes">
+<img src="figu463_2.jpg" /><br />
+</div>
+<p class="para">where <i class="emphasis">m</i><sub><i class="emphasis">i</i></sub> is the mass of link <i class="emphasis">i</i>, <i class="emphasis">I</i><sub><i class="emphasis">i</i></sub> is the inertia of link <i class="emphasis">i</i> about its center of mass, and <i class="emphasis">r</i><sub><i class="emphasis">i</i></sub> and <i class="emphasis">L</i><sub><i class="emphasis">i</i></sub> are defined in <a class="internaljump" href="#ch12fig32">figure 12.32</a>. Recall that <i class="emphasis">M</i><sub>21</sub> = <i class="emphasis">M</i><sub>12</sub>, <i class="emphasis">M</i><sub>31</sub> = <i class="emphasis">M</i><sub>13</sub>, <i class="emphasis">M</i><sub>32</sub> = <i class="emphasis">M</i><sub>23</sub>. The Christoffel symbols <span class="unicode">&#915;</span><sup><i class="emphasis">i</i></sup><sub><i class="emphasis">jk</i></sub>(<i class="emphasis">q</i>) are derived from <i class="emphasis">M</i>(<i class="emphasis">q</i>).</p>
+<p class="para">
+<a name="1215"></a><a name="page465"></a><a class="internaljump" href="#ch12fig33">Figure 12.33</a> shows a trajectory planned for the robot arm with the kinematic parameters, inertial parameters, and actuator limits given in <a class="internaljump" href="#ch12table01">table 12.1</a>. The path consists of four separate motions along decoupling vector fields, and the motion must come to a halt at the switches. Therefore, the time-scaling problem becomes four separate problems. The complete time-optimal trajectory along the path takes 0.890 s.</p>
+<a name="1216"></a><a name="ch12table01"></a>
+<table linktabletoexcel="yes" id="ch12table01" class="table" border="1">
+<caption class="table-title">
+<span class="table-title"><span class="table-titlelabel">Table 12.1: </span>Kinematic parameters, inertial parameters, and actuator limits for the simulated robot.</span>
+<br /></caption>
+<thead>
+<tr valign="top">
+<th class="th" scope="col" align="center">
+<p class="table-para">Joint</p>
+</th><th class="th" scope="col" align="center">
+<p class="table-para">
+<i class="emphasis">L</i><sub><i class="emphasis">i</i></sub>
+</p>
+</th><th class="th" scope="col" align="center">
+<p class="table-para">
+<i class="emphasis">r</i><sub><i class="emphasis">i</i></sub>
+</p>
+</th><th class="th" scope="col" align="center">
+<p class="table-para">
+<i class="emphasis">m</i><sub><i class="emphasis">i</i></sub>
+</p>
+</th><th class="th" scope="col" align="center">
+<p class="table-para">
+<i class="emphasis">I</i><sub><i class="emphasis">i</i></sub>
+</p>
+</th><th class="th" scope="col" align="center">
+<p class="table-para">
+<span class="unicode">&#964;</span><sup>max</sup><sub><i class="emphasis">i</i></sub>
+</p>
+</th><th class="th" scope="col" align="left">
+<p class="table-para">
+<span class="unicode">&#964;</span><sup>min</sup><sub><i class="emphasis">i</i></sub>
+</p>
+</th>
+</tr>
+<tr valign="top">
+<th class="th" scope="col" align="center">
+<p class="table-para">
+<i class="emphasis">i</i>
+</p>
+</th><th class="th" scope="col" align="center">
+<p class="table-para">(m)</p>
+</th><th class="th" scope="col" align="center">
+<p class="table-para">(m)</p>
+</th><th class="th" scope="col" align="center">
+<p class="table-para">(kg)</p>
+</th><th class="th" scope="col" align="center">
+<p class="table-para">(kg-m<sup>2</sup>)</p>
+</th><th class="th" scope="col" align="center">
+<p class="table-para">(N-m)</p>
+</th><th class="th" scope="col" align="left">
+<p class="table-para">(N-m)</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td class="td" align="center">
+<p class="table-para">1</p>
+</td><td class="td" align="center">
+<p class="table-para">0.3</p>
+</td><td class="td" align="center">
+<p class="table-para">0.15</p>
+</td><td class="td" align="center">
+<p class="table-para">2.0</p>
+</td><td class="td" align="center">
+<p class="table-para">0.02</p>
+</td><td class="td" align="center">
+<p class="table-para">20</p>
+</td><td class="td" align="left">
+<p class="table-para">
+<span class="unicode">&#8722;</span>20</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="center">
+<p class="table-para">2</p>
+</td><td class="td" align="center">
+<p class="table-para">0.3</p>
+</td><td class="td" align="center">
+<p class="table-para">0.15</p>
+</td><td class="td" align="center">
+<p class="table-para">1.0</p>
+</td><td class="td" align="center">
+<p class="table-para">0.01</p>
+</td><td class="td" align="center">
+<p class="table-para">10</p>
+</td><td class="td" align="left">
+<p class="table-para">
+<span class="unicode">&#8722;</span>10</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="center">
+<p class="table-para">3</p>
+</td><td class="td" align="center"> </td><td class="td" align="center">
+<p class="table-para">0.15</p>
+</td><td class="td" align="center">
+<p class="table-para">0.5</p>
+</td><td class="td" align="center">
+<p class="table-para">0.004125</p>
+</td><td class="td" align="center">
+<p class="table-para">0</p>
+</td><td class="td" align="left">
+<p class="table-para">0</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure">
+<a name="1217"></a><a name="ch12fig33"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2377','fig12-33_0.jpg','1000','1000')" name="IMG_2377" target="_self"><img alt="Image from book" id="IMG_2377" src="fig12-33.jpg" height="350" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.33: </span>A collision-free trajectory for the 3R robot with an unactuated third joint. The left column shows the path and the right column shows the actuator profiles. One of the actuators is always saturated. The middle column illustrates the speed along the path segment vs. a path parameter (normalized rotation angle or translation distance), as described in <a href="61.html" class="chapterjump">chapter 11</a>.</span>
+</div>
+<p class="para">This planner has been successfully implemented on an experimental underactuated 3R arm, though not using the time-optimal motions along the paths [305].</p>
+<p class="last-para">A brute-force best-first search along decoupling vector fields can be applied to any STLKC mechanical system. For systems with more degrees of freedom, however, the computational expense may be prohibitive. In this case we might give up on finding motion plans that minimize switches between decoupling vector fields. Possible approaches are multiresolution grid-search methods, probabilistic roadmap methods, or transformation of omnidirectional paths (as described for cars in <a class="internaljump" href="#ch12lev2sec14">subsection 12.5.6</a>) using exact local planners based on the decoupling vector fields [200,310], and rapidly-exploring random trees (RRT's) modified to reduce the number of vector field switches [111].</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1218"></a><a name="ch12lev2sec16"></a><span class="section-titlelabel">12.5.8 </span>Other Approaches</h3>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1219"></a><a name="ch12lev3sec7"></a>Fictitious Inputs for Drift-Free Systems</h4>
+<p class="first-para">Lafferriere and Sussmann proposed a general method for steering drift-free STLC systems [253,254]. If the original system is</p>
+<div class="informalequation" mathml="yes">
+<img src="figu465_1.jpg" /><br />
+</div>
+<p class="para">then an <i class="emphasis">extended</i> system is defined to be</p>
+<div class="informalequation" mathml="yes">
+<img src="figu465_2.jpg" /><br />
+</div>
+<p class="para">
+<a name="1220"></a><a name="page466"></a>where the vector fields <i class="emphasis">g</i><sub><i class="emphasis">m</i>+1</sub>,<span class="unicode">&#8230;</span>,<i class="emphasis">g</i><sub><i class="emphasis">r</i></sub> correspond to Lie product motions of the system. These vector fields are chosen so that span({<i class="emphasis">g</i><sup>1</sup>,<span class="unicode">&#8230;</span>,<i class="emphasis">g</i><sup><i class="emphasis">r</i></sup>})<span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2380" src="figu466_1.jpg" height="18" width="101" title="" border="0" /></span></span> at all <i class="emphasis">x</i>, and <i class="emphasis">v</i><sub><i class="emphasis">m</i></sub><sub>+</sub><sub>1</sub>,<span class="unicode">&#8230;</span>,<i class="emphasis">v</i><sup><i class="emphasis">r</i></sup> are called <i class="emphasis">fictitious</i> inputs.</p>
+<p class="para">There are no nonholonomic constraints for the extended system, so motion planning for this system is identical to motion planning for an unconstrained system. Once we have found a path for the unconstrained system using the controls <i class="emphasis">v</i>,we transform it to a path for the original system with controls <i class="emphasis">u</i>. This transformation uses the Campbell-Baker-Hausdorff formula [330, 369] describing the motion generated by composing motions along two different vector fields, and is beyond the scope of this chapter. If the vector fields <i class="emphasis">g</i><sub>1</sub>,<span class="unicode">&#8230;</span>,<i class="emphasis">g</i><sub><i class="emphasis">m</i></sub> are nilpotent, or <i class="emphasis">nilpotentizable</i> by a feedback transformation, the transformation provides an exact expression for the motion of the system with a finite number of Lie products of the two vector fields, and the transformation produces an exact motion plan. Otherwise, small errors are introduced due to higher-order terms in the Lie bracket motion prescription. These errors can be arbitrarily reduced by iterating the procedure.</p>
+<p class="last-para">This approach applies to any STLC drift-free system. The quality of the solution depends on the initial path chosen for the system, and it is in no sense optimal. For more details, see the original papers by Lafferriere and Sussmann [253, 254] or the summaries in the textbooks [330,368].</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1221"></a><a name="ch12lev3sec8"></a>Motion Libraries</h4>
+<p class="first-para">A motion library consists of a set of canonical motions or primitives that are feasible for the underactuated system, along with a set of conditions (or transition maneuvers) for concatenating these primitives. A search for a feasible trajectory is then restricted to compositions of these primitives. The decoupling vector fields of kinematically controllable systems are examples of motion primitives that are concatenable at any configuration <i class="emphasis">q</i>.As another example, a set of primitives for an airplane might include flying level, a steady dive, and a constant climbing turn. Symmetries in the system dynamics can be exploited to minimize the number of primitives; e.g., the dynamics of flying level (in the absence of wind) are invariant to the airplane's position and orientation in a horizontal plane. The library should consist of a sufficient number of primitives to ensure controllability of the system. One formalization of these ideas is given by the Maneuver Automaton of Frazzoli, Dahleh, and Feron [160].</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1222"></a><a name="ch12lev3sec9"></a>Rapidly Exploring Random Trees and Expansive Space Trees</h4>
+<p class="first-para">RRTs and ESTs, as described in <a href="42.html" class="chapterjump">chapter 7</a>, apply to a broad class of systems, including nonholonomic and underactuated systems. All that is required is a state equation <a name="1223"></a><a name="page467"></a><span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2381" src="figu467_1.jpg" height="19" width="101" title="" border="0" /></span></span>and a distance metric appropriate to the problem. Because no particular structure of the system is utilized, motion plans may be inefficient. The planning time may be sensitive to the chosen distance metric. (See also <a href="42.html" class="chapterjump">chapter 7</a>, <a href="47.html#644" class="chapterjump">section 7.5.1</a>.)</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<div class="footnote">
+<p>
+<a name="1156"></a><sup>[<a name="ftn.ch12fnt12_3" href="#ch12fnt12_3">3</a>]</sup><i class="citetitle">Fiber controllability</i>, a weaker concept than complete controllability, concerns the controllability of the fiber variables without concern for the evolution of the shape variables. See [120,233].</p>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="70.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=937121278"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="72.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

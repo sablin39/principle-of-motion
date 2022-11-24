@@ -1,0 +1,416 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+G.2 Complexity Theory</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Appendix G - 
+ Analysis of Algorithms and Complexity Classes</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(81,84,35,21,95,90,63,66,72,6,2,59,27,7,44)
+var a1 = new Array(13,9,10)
+var a2 = new Array(2,8,12)
+var a3 = new Array(14,6,1)
+var a4 = new Array(0,3,5)
+var a5 = new Array(11,7,4)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="91.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="93.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:52:56 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:52:57 UTC-->
+<div class="appendix">
+<a name="ap-g0946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="1341"></a><a name="ap-glev1sec20946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="section-titlelabel">G.2 </span>Complexity Theory</h2>
+<p class="first-para">The goal of <i class="emphasis">complexity theory</i> is to characterize the amount of resources needed for the computation of specific problems. Common resources include sequential time, sequential space, number of gates in Boolean circuits, parallel time in a multiprocessor machine, etc. The exact complexity of a problem is determined by the amount of resources that is both sufficient and necessary for its solution. Sufficiency implies an upper bound on the amount of resources needed to solve the problem for every instance of the input. Necessity implies a lower bound, i.e., for some instance of the input, at least a certain amount of resources is required to solve the problem.</p>
+<p class="para">The amount of resources that is needed to solve a problem allows for an elegant classification of problems according to their computational complexity. Researchers have developed the notion of <i class="emphasis">complexity classes</i>, where a complexity class is defined by specifying (a) the type of computation model M, (b) the resource R which is measured in this model, and (c) an upper bound U on this resource. A complexity class, then, consists of all problems requiring at most an amount U of resource R for their solution in the model M. Thus, the <i class="emphasis">complexity of a problem</i> is determined by finding to which complexity classes it belongs (by providing upper bounds on the resource) and to which complexity classes it does not belong (by providing lower bounds). To define complexity classes more precisely, we will need to make use of definitions of alphabets, strings, and languages.</p>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1342"></a><a name="ap-glev3sec10946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>Input Representation</h4>
+<p class="first-para">
+<a name="1343"></a><a name="page5160946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>The amount of the resource used in a complexity class is expressed in terms of the length of the input. It is not clear, however, how to define the length of the input since it can be of different types and values, i.e., integers, names, graphs, matrices, etc. It is convenient to have a unique and clear definition of the length of the input. To this end, researchers have proposed the encoding of inputs as strings over a set of symbols and have defined the length of the input as the number of symbols of the encoding string.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.1</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">An alphabet, usually denoted by <span class="unicode">&Sigma;</span>, is any finite set of symbols.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.2</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">A string <i class="emphasis">s</i> over an alphabet <span class="unicode">&Sigma;</span> is a sequence of symbols from <span class="unicode">&Sigma;</span>. The length of a string <i class="emphasis">s</i>, denoted |<i class="emphasis">s</i>|, is equal to the number of its symbols. The set of all strings over the alphabet <span class="unicode">&Sigma;</span> is denoted by <span class="unicode">&Sigma;</span>*.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="last-para">The encoding of an input <i class="emphasis">a</i> is denoted by enc(<i class="emphasis">a</i>). To illustrate, let <span class="unicode">&Sigma;</span> ={0, 1}. Then, integers can be encoded in standard binary form, e.g., the encodings of 5 and 35 are 101 and 100001 of lengths 3 and 6, respectively. The encoding of a graph <i class="emphasis">G</i> = (<i class="emphasis">V, E</i>), where <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2664" src="figu516_1.jpg" height="15" width="400" title="" border="0" /></span></span> can be obtained by concatenating the encodings of its vertex set and its edge set. The vertex set and the edge set can be encoded by concatenating the encodings of the vertices and of the edges, respectively. Special markers can be used to indicate the ending of a vertex and edge encoding. Thus, enc(<i class="emphasis">G</i>) = enc(<i class="emphasis">v</i><sub>1</sub>)<span class="unicode">&#8728;</span>enc(*)<span class="unicode">&#8728;</span><span class="unicode">&hellip;</span><span class="unicode">&#8728;</span>enc(<i class="emphasis">v<sub>n</sub></i>)<span class="unicode">&#8728;</span>enc(*)<span class="unicode">&#8728;</span>enc(+)<span class="unicode">&#8728;</span> enc(<i class="emphasis">v</i><span class="unicode">&prime;</span><sub>1</sub>) <span class="unicode">&#8728;</span> enc(*) <span class="unicode">&#8728;</span> enc(<i class="emphasis">v</i><span class="unicode">&Prime;</span><sub>1</sub>) <span class="unicode">&#8728;</span> enc(*) <span class="unicode">&#8728;</span> <span class="unicode">&hellip;</span><span class="unicode">&#8728;</span> enc(<i class="emphasis">v</i><span class="unicode">&prime;</span><sub><i class="emphasis">m</i></sub>) <span class="unicode">&#8728;</span> enc(*) <span class="unicode">&#8728;</span> enc(<i class="emphasis">v</i><span class="unicode">&Prime;</span><sub><i class="emphasis">m</i></sub>) <span class="unicode">&#8728;</span> enc(*), where enc(*) and enc(+) are the encodings of special markers used to separate vertices and indicate the start of the edge encodings, respectively, and <span class="unicode">&#8728;</span> denotes concatenation.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1344"></a><a name="ap-glev3sec20946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>Problem Abstraction</h4>
+<p class="first-para">A problem can be thought of as mapping an input instance to a solution. In many cases, we are interested in problems whose solution is either "yes" or "no." Such problems are known as <i class="emphasis">decision problems</i>.For example, the graph-coloring problem asks whether it is possible to color the vertices of a graph <i class="emphasis">G</i> = (<i class="emphasis">V, E</i>) using <i class="emphasis">k</i> different colors such that no two vertices connected by an edge have the same color. In many other cases, we are interested in finding the best solution according to some criteria. Such problems are known as <i class="emphasis">optimization problems</i>.To continue our example, we may be interested in determining the minimum number of colors needed to color a graph. Generally, an optimization problem can be cast as a decision problem by imposing an upper bound. In our example, we can determine the minimum number of colors needed to color a graph <i class="emphasis">G</i> = (<i class="emphasis">V, E</i>) by invoking the corresponding decision problem with <i class="emphasis">k</i> = 1,<span class="unicode">&hellip;</span>,|<i class="emphasis">V</i>| until the answer to the decision problem is "yes."</p>
+<p class="last-para">
+<a name="1345"></a><a name="IDX-5170946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>In the rest of the section, we restrict our attention to decision problems since their definition is more amendable to complexity analysis and since other problems can be cast as decision problems.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1346"></a><a name="ap-glev3sec30946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>Languages</h4>
+<p class="first-para">Languages provide a convenient framework for expressing decision problems.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.3</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">A language <i class="emphasis">L</i> over an alphabet <span class="unicode">&Sigma;</span> is a set of strings over the alphabet <span class="unicode">&Sigma;</span>, i.e., <i class="emphasis">L</i> <span class="unicode">&sube;</span> <span class="unicode">&Sigma;</span>*.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="last-para">The language defined by a decision problem includes all the input instances whose solutionis "yes." For example, the graph-coloring problem defines the language whose elements are all the encodings of graphs that can be colored using <i class="emphasis">k</i> colors.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1347"></a><a name="ap-glev3sec40946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>Acceptance of Languages</h4>
+<p class="first-para">An algorithm <i class="emphasis">A</i> accepts a string <i class="emphasis">s</i> <span class="unicode">&#8714;</span> <span class="unicode">&Sigma;</span>* if the output of the algorithm <i class="emphasis">A</i>(<i class="emphasis">s</i>) is "yes." The string <i class="emphasis">s</i> is rejected by the algorithm if its output <i class="emphasis">A</i>(<i class="emphasis">s</i>) is "no." The language <i class="emphasis">L</i> accepted by an algorithm <i class="emphasis">A</i> is the set of strings accepted by the algorithm, i.e.,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu517_1.jpg" />
+<br />
+
+</div>
+<p class="para">Note that even if <i class="emphasis">L</i> is the language accepted by the algorithm <i class="emphasis">A</i>,given some input string <i class="emphasis">s</i> <span class="unicode">&notin;</span> <i class="emphasis">L</i>, the algorithm will not necessarily reject <i class="emphasis">s</i>. It may never be able to determine that <i class="emphasis">s</i> <span class="unicode">&notin;</span> <i class="emphasis">L</i> and thus loop forever. Language <i class="emphasis">L</i> is <i class="emphasis">decided</i> by an algorithm <i class="emphasis">A</i> if for every string <i class="emphasis">s</i> <span class="unicode">&#8714;</span> <span class="unicode">&Sigma;</span>*, <i class="emphasis">A</i> accepts <i class="emphasis">s</i> if <i class="emphasis">s</i> <span class="unicode">&#8714;</span> <i class="emphasis">L</i> and <i class="emphasis">A</i> rejects <i class="emphasis">s</i> if <i class="emphasis">s</i> <span class="unicode">&notin;</span> <i class="emphasis">L</i>. If <i class="emphasis">L</i> is decided by <i class="emphasis">A</i>,it guarantees that on any input string the algorithm will terminate.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.4</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Let <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2666" src="figu517_2.jpg" height="15" width="74" title="" border="0" /></span></span> be a function. An algorithm <i class="emphasis">A</i> <i class="emphasis">decides a language</i> Lover some alphabet <span class="unicode">&Sigma;</span> in time <i class="emphasis">O</i>(<i class="emphasis">t</i>(<i class="emphasis">n</i>)) if for every string <i class="emphasis">s</i> of length <i class="emphasis">n</i> over <span class="unicode">&Sigma;</span>, the algorithm <i class="emphasis">A</i> in <i class="emphasis">O</i>(<i class="emphasis">t</i>(<i class="emphasis">n</i>)) steps accepts <i class="emphasis">s</i> if <i class="emphasis">s</i> <span class="unicode">&#8714;</span> <i class="emphasis">L</i> or rejects <i class="emphasis">s</i> if <i class="emphasis">s</i> <span class="unicode">&notin;</span> <i class="emphasis">L</i>. Language <i class="emphasis">L</i> is decided in time <i class="emphasis">O</i>(<i class="emphasis">t</i>(<i class="emphasis">n</i>)).</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="1348"></a><a name="ap-glev3sec50946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>Complexity Classes</h4>
+<p class="first-para">We are now ready to define some of the most important complexity classes. We start with the definition of the polynomial-time complexity class.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.5</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">A language <i class="emphasis">L</i> is in <i class="emphasis">P</i> if there exists a polynomial-time algorithm <i class="emphasis">A</i> that decides <i class="emphasis">L</i>.</p>
+<p class="para">
+<a name="1349"></a><a name="IDX-5180946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>The complexity class P encompasses a wide variety of problems such as sorting, shortest path, Fourier transform, etc. Roughly speaking, P corresponds to all the problems that admit an efficient algorithm. Generally, we think of problems that are solvable by polynomial time algorithms as being tractable, or easy, and problems that require superpolynomial time as being intractable, or hard.</p>
+<p class="last-para">Indeed, for many problems there are no polynomial-time algorithms. For example, deciding whether or not a graph <i class="emphasis">G</i> = (<i class="emphasis">V, E</i>) can be colored with three colors is not known to be in P. These problems can be solved by brute-force algorithms in exponential time.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.6</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">A language <i class="emphasis">L</i> is in <i class="emphasis">EXPTIME</i> if there exists an exponential-time algorithm <i class="emphasis">A</i> that decides <i class="emphasis">L</i>.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">Interestingly enough, many of these hard problems have a feature that is called polynomial-time verifiability. That is, although currently it is not possible to solve these problems in polynomial time, if a candidate solution to the problem, called a certificate, is given, the correctness of the solution can be verified in polynomial time. For example, a certificate for the graph-coloring problem with three colors would be a mapping that for each vertex indicates its color. The correctness can be verified in polynomial time by examining all the edges and checking for each edge that the colors of its two vertices are different. This observation is captured by the following definition.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.7</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">A language <i class="emphasis">L</i> is in <i class="emphasis">NP</i> if there exists a polynomial-time verifier algorithm <i class="emphasis">A</i> and <i class="emphasis">a</i> constant <i class="emphasis">c</i> such that for every string <i class="emphasis">s</i> there exists <i class="emphasis">a</i> certificate <i class="emphasis">y</i> of length <i class="emphasis">O</i>(|<i class="emphasis">s</i>|<sup><i class="emphasis">c</i></sup>) such that <i class="emphasis">A</i>(<i class="emphasis">s, y</i>) = "<i class="emphasis">yes</i>" if <i class="emphasis">s</i> <span class="unicode">&#8714;</span> <i class="emphasis">L</i> and <i class="emphasis">A</i>(<i class="emphasis">s, y</i>) = "<i class="emphasis">no</i>" if <i class="emphasis">s</i> <span class="unicode">&notin;</span> <i class="emphasis">L</i>.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">It is clear that P <span class="unicode">&sube;</span> NP since any language that can be decided in polynomial time can also be decided without the need of a certificate. The most fundamental question in complexity theory is whether P <span class="unicode">&sub;</span> NP or P = NP. After many years of extensive research the question remains unanswered. An important step was made in the 70s when Cook and Levin related the complexity of certain NP problems to the complexity of all NP problems. They were able to prove that if a polynomial-time algorithm existed for one of these problems, then a polynomial-time algorithm could be constructed for any NP problem. These special problems form an important complexity class known as NP-complete.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.8</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">A language <i class="emphasis">L</i><sub>1</sub> is <i class="emphasis">polynomial time reducible</i> to a language <i class="emphasis">L</i><sub>2</sub>, denoted <i class="emphasis">L</i><sub>1</sub> <span class="unicode">&le;</span><sub><i class="emphasis">p</i></sub> <i class="emphasis">L</i><sub>2</sub>, if there exists a polynomial time computable function <i class="emphasis">f</i>: <span class="unicode">&Sigma;</span>* <span class="unicode">&rarr;</span> <span class="unicode">&Sigma;</span>*, such that for every <i class="emphasis">s</i> <span class="unicode">&#8714;</span> <span class="unicode">&Sigma;</span>*,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu518_1.jpg" />
+<br />
+
+</div>
+<p class="last-para">
+<a name="1350"></a><a name="IDX-5190946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><i class="emphasis">f</i> is called the reduction function and the algorithm <i class="emphasis">F</i> that computes <i class="emphasis">f</i> is called the reduction algorithm.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">If a language <i class="emphasis">L</i><sub>1</sub> is reducible to alanguage <i class="emphasis">L</i><sub>2</sub> via some polynomial-time computable function <i class="emphasis">f</i>, and if <i class="emphasis">L</i><sub>2</sub> has a polynomial-time algorithm <i class="emphasis">A</i><sub>2</sub>, then we can construct a polynomial-time algorithm <i class="emphasis">A</i><sub>1</sub> for <i class="emphasis">L</i><sub>1</sub>. Given some input string <i class="emphasis">s</i>, algorithm <i class="emphasis">A</i><sub>1</sub> invokes <i class="emphasis">F</i> to compute <i class="emphasis">f</i>(<i class="emphasis">s</i>) and then invokes <i class="emphasis">A</i><sub>2</sub> on <i class="emphasis">f</i>(<i class="emphasis">s</i>) and gives the same answer as <i class="emphasis">A</i><sub>2</sub>. Thus, via reductions, the solution of one problem can be used to solve other problems.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.9</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">A language <i class="emphasis">L</i> is in <i class="emphasis">NP-complete</i> if</p>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">
+<i class="emphasis">L</i> <span class="unicode">&#8714;</span> <i class="emphasis">NP</i>, and</p>
+</li>
+<li class="listitem">
+<p class="first-para">if <i class="emphasis">L</i><span class="unicode">&prime;</span> <span class="unicode">&#8714;</span> <i class="emphasis">NP</i>, then <i class="emphasis">L</i><span class="unicode">&prime;</span> <span class="unicode">&le;</span><sub><i class="emphasis">p</i></sub> <i class="emphasis">L</i>.</p>
+</li>
+</ol>
+<p class="last-para">If <i class="emphasis">L</i> satisfies the second condition, but not necessarily the first condition, then <i class="emphasis">L</i> is <i class="emphasis">NP-hard</i>.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">It is clear now that if an NP-complete problem has a polynomial-time algorithm, then via reductions it is possible to construct a polynomial-time algorithm for any problem in NP. This would imply that P = NP.</p>
+<p class="para">In addition to time, another common resource of interest is space. Using the same framework, complexity classes can be defined based on the amount of space the algorithms use to solve problems.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.10</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Let <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2668" src="figu519_1.jpg" height="15" width="74" title="" border="0" /></span></span> be a function. An algorithm <i class="emphasis">A</i> decides a language <i class="emphasis">L</i> over some alphabet <span class="unicode">&Sigma;</span> in space <i class="emphasis">O</i>(<i class="emphasis">t</i>(<i class="emphasis">n</i>)) if for every string <i class="emphasis">s</i> of length <i class="emphasis">n</i> over <span class="unicode">&Sigma;</span>, the algorithm <i class="emphasis">A</i> using at most <i class="emphasis">O</i>(<i class="emphasis">t</i>(<i class="emphasis">n</i>)) space accepts <i class="emphasis">s</i> if <i class="emphasis">s</i> <span class="unicode">&#8714;</span> <i class="emphasis">L</i> or rejects <i class="emphasis">s</i> if <i class="emphasis">s</i> <span class="unicode">&notin;</span> <i class="emphasis">L</i>. The language <i class="emphasis">L</i> is decided in space <i class="emphasis">O</i>(<i class="emphasis">t</i>(<i class="emphasis">n</i>)).</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.11</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">A language <i class="emphasis">L</i> is in <i class="emphasis">PSPACE</i> if there exists a polynomial-space algorithm <i class="emphasis">A</i> that decides <i class="emphasis">L</i>.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.2.12</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">A language <i class="emphasis">L</i> is in <i class="emphasis">PSPACE-complete</i> if</p>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">
+<i class="emphasis">L</i> <span class="unicode">&#8714;</span> <i class="emphasis">PSPACE</i>, and</p>
+</li>
+<li class="listitem">
+<p class="first-para">if <i class="emphasis">L</i><span class="unicode">&prime;</span> <span class="unicode">&#8714;</span> <i class="emphasis">PSPACE</i>, then <i class="emphasis">L</i><span class="unicode">&prime;</span> <span class="unicode">&le;</span><sub><i class="emphasis">p</i></sub> <i class="emphasis">L</i>.</p>
+</li>
+</ol>
+<p class="last-para">If <i class="emphasis">L</i> satisfies the second condition, but not necessarily the first condition, then <i class="emphasis">L</i> is <i class="emphasis">PSPACE-hard</i>.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">
+<a name="1351"></a><a name="IDX-5200946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>It can be easily shown that the relationship between the different complexity classes that have been defined in this section is as follows:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu520_1.jpg" />
+<br />
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="91.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="93.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

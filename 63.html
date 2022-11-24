@@ -1,0 +1,495 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+11.2 Decoupled Trajectory Planning</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Chapter 11 - 
+ Trajectory Planning</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(34,7,70,3,41,85,3,22,38,38,4,57,3,78,4)
+var a1 = new Array(14,1,6)
+var a2 = new Array(9,5,2)
+var a3 = new Array(3,13,8)
+var a4 = new Array(0,10,4)
+var a5 = new Array(7,12,11)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="62.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="64.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:32:25 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:32:25 UTC-->
+<div class="chapter">
+<a name="ch111C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="950"></a><a name="ch11lev1sec21C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">11.2 </span>Decoupled Trajectory Planning</h2>
+<p class="first-para">Given a collision-free path <i class="emphasis">q</i>(<i class="emphasis">s</i>) for a robot system, what is the fastest feasible trajectory that follows this path? In other words, what is the time-optimal time scaling <i class="emphasis">s</i>(<i class="emphasis">t</i>) subject to actuator constraints? This question is of considerable importance for maximizing the productivity of robot systems when a path has been given by task specifications or found by a path planner. This problem has been solved elegantly by Shin and McKay [385] and Bobrow, Dubowsky, and Gibson [51], with subsequent enhancements by Pfeiffer and Johanni [348], Slotine and Yang [388], and Shiller and Lu [384].</p>
+<p class="para">Let us assume that the equations of motion of our system are in the standard form of <a href="58.html#882" target="_parent" class="chapterjump">equation (10.7)</a> or <a href="58.html#886" target="_parent" class="chapterjump">equation (10.10)</a> from <a href="57.html" target="_parent" class="chapterjump">chapter 10</a>. The robot is subject to the actuator limits</p>
+<div class="equation" mathml="yes">
+<a name="951"></a><a name="ch11eqn011C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.1)&nbsp;</span></td><td valign="top"><img src="figu374_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">In general, the actuator limits may be functions of the system configuration and velocity. For example, the torque available to accelerate a DC motor decreases as its angular velocity increases. The simplest example of actuator limits are the symmetric, state-independent bounds</p>
+<div class="informalequation" mathml="yes">
+<img src="figu374_5.jpg" />
+<br />
+
+</div>
+<p class="para">For a given path <i class="emphasis">q</i>(<i class="emphasis">s</i>), we can substitute</p>
+<div class="equation" mathml="yes">
+<a name="952"></a><a name="ch11eqn021C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.2)&nbsp;</span></td><td valign="top"><img src="figu374_6.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.3)&nbsp;</span></td><td valign="top"><img src="figu374_7.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">
+<a name="953"></a><a name="page3751C14020F-F9F5-4415-973A-D906072C1A72"></a>into <a href="58.html#886" target="_parent" class="chapterjump">equation (10.10)</a> to get</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.4)&nbsp;</span></td><td valign="top"><img src="figu375_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">or</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.5)&nbsp;</span></td><td valign="top"><img src="figu375_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">These equations can be expressed compactly as the vector equation</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.6)&nbsp;</span></td><td valign="top"><img src="figu375_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">defining the dynamics constrained to the path <i class="emphasis">q</i>(<i class="emphasis">s</i>). The vector functions <i class="emphasis">a</i>(<i class="emphasis">s</i>), <i class="emphasis">b</i>(<i class="emphasis">s</i>), and <i class="emphasis">c</i>(<i class="emphasis">s</i>) are inertial, velocity product, and gravitational terms in terms of <i class="emphasis">s</i>, respectively.</p>
+<p class="para">As the robot travels along the path <i class="emphasis">q</i>(<i class="emphasis">s</i>), its state at any time is identified by <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1597" src="figu375_4.jpg" height="18" width="42" title="" border="0" /></span></span>. Actuator limits can be expressed as a function of the path state by substituting <a class="internaljump" href="#ch11eqn021C14020F-F9F5-4415-973A-D906072C1A72">equation (11.2)</a> into <a class="internaljump" href="#ch11eqn011C14020F-F9F5-4415-973A-D906072C1A72">equation (11.1)</a>, yielding <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1598" src="figu375_5.jpg" height="21" width="76" title="" border="0" /></span></span> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1599" src="figu375_6.jpg" height="18" width="78" title="" border="0" /></span></span>. Therefore, at all times the system must satisfy the constraints</p>
+<div class="equation" mathml="yes">
+<a name="954"></a><a name="ch11eqn071C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.7)&nbsp;</span></td><td valign="top"><img src="figu375_7.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Let <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1601" src="figu375_8.jpg" height="18" width="62" title="" border="0" /></span></span> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1602" src="figu375_9.jpg" height="18" width="61" title="" border="0" /></span></span> be the minimum and maximum accelerations <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1603" src="figu375_10.jpg" height="11" width="7" title="" border="0" /></span></span> satisfying the <i class="emphasis">i</i>th component of <a class="internaljump" href="#ch11eqn071C14020F-F9F5-4415-973A-D906072C1A72">equation (11.7)</a>, and define</p>
+<div class="equation" mathml="yes">
+<a name="955"></a><a name="ch11eqn081C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.8)&nbsp;</span></td><td valign="top"><img src="figu375_11.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Then <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1605" src="figu375_12.jpg" height="18" width="322" title="" border="0" /></span></span> if <i class="emphasis">a</i><sub><i class="emphasis">i</i></sub> (<i class="emphasis">s</i>) &gt; 0, and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1606" src="figu375_13.jpg" height="18" width="155" title="" border="0" /></span></span>, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1607" src="figu375_14.jpg" height="18" width="153" title="" border="0" /></span></span> if <i class="emphasis">a</i><sub><i class="emphasis">i</i></sub>(<i class="emphasis">s</i>) &lt; 0. (If <i class="emphasis">a</i><sub><i class="emphasis">i</i></sub>(<i class="emphasis">s</i>) = 0 for any <i class="emphasis">i</i>, the system is at a <i class="emphasis">zero inertia point</i>, and we will set aside this possibility until <a class="internaljump" href="#ch11lev2sec21C14020F-F9F5-4415-973A-D906072C1A72">subsection 11.2.1</a>.) We define</p>
+<div class="informalequation" mathml="yes">
+<img src="figu375_15.jpg" />
+<br />
+
+</div>
+<p class="para">The actuator limits <a class="internaljump" href="#ch11eqn071C14020F-F9F5-4415-973A-D906072C1A72">(11.7)</a> can then be expressed as</p>
+<div class="equation" mathml="yes">
+<a name="956"></a><a name="ch11eqn091C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.9)&nbsp;</span></td><td valign="top"><img src="figu375_16.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">The problem can now be stated:</p>
+<p class="para">Given a path <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1610" src="figu375_17.jpg" height="19" width="132" title="" border="0" /></span></span>, an initial state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1611" src="figu375_18.jpg" height="18" width="51" title="" border="0" /></span></span>, and a final state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1612" src="figu375_19.jpg" height="20" width="55" title="" border="0" /></span></span>, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1613" src="figu375_20.jpg" height="20" width="88" title="" border="0" /></span></span>, find a monotonically increasing twice-differentiable time scaling <i class="emphasis">s</i> : [0, <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub> ] <span class="unicode">&rarr;</span> [0, 1] that (1) satisfies <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1614" src="figu375_21.jpg" height="20" width="344" title="" border="0" /></span></span>, and (2) minimizes the total travel time <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub> along the path while respecting the actuator constraints <a class="internaljump" href="#ch11eqn091C14020F-F9F5-4415-973A-D906072C1A72">(11.9)</a> for all time <i class="emphasis">t</i> <span class="unicode">&#8714;</span> [0, <i class="emphasis">t</i><sub><i class="emphasis">f</i></sub> ].</p>
+<p class="para">
+<a name="957"></a><a name="page3761C14020F-F9F5-4415-973A-D906072C1A72"></a>We can conveniently visualize this problem in the <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1615" src="figu376_5.jpg" height="18" width="42" title="" border="0" /></span></span> state space. At any state <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1616" src="figu376_6.jpg" height="18" width="42" title="" border="0" /></span></span>, the constraints <a class="internaljump" href="#ch11eqn091C14020F-F9F5-4415-973A-D906072C1A72">(11.9)</a> specify a range of feasible accelerations along the path, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1617" src="figu376_7.jpg" height="18" width="191" title="" border="0" /></span></span>. This range can be interpreted as a cone of tangent vectors in the state space, as illustrated in <a class="internaljump" href="#ch11fig011C14020F-F9F5-4415-973A-D906072C1A72">figure 11.1</a>. The problem is to find a curve from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1618" src="figu376_8.jpg" height="18" width="51" title="" border="0" /></span></span> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1619" src="figu376_9.jpg" height="20" width="52" title="" border="0" /></span></span> such that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1620" src="figu376_10.jpg" height="17" width="49" title="" border="0" /></span></span> everywhere and the tangent at each state is inside the cone at that state. Further, the curve should maximize the speed <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1621" src="figu376_11.jpg" height="13" width="7" title="" border="0" /></span></span> at each <i class="emphasis">s</i> to minimize the time of motion. A consequence of this is that the curve always follows the upper or lower bound of the cone (maximum or minimum acceleration) at each state.<sup>[<a name="ch11fnt11_11C14020F-F9F5-4415-973A-D906072C1A72" href="#ftn.ch11fnt11_11C14020F-F9F5-4415-973A-D906072C1A72">1</a>]</sup> This kind of trajectory is called a "bang-bang" trajectory, and at least one of the actuators is always saturated. The heart of the time-scaling problem is to find the switching points between maximum and minimum acceleration.</p>
+<p class="para">At some states <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1622" src="figu376_12.jpg" height="18" width="42" title="" border="0" /></span></span>, the actuation constraints <a class="internaljump" href="#ch11eqn091C14020F-F9F5-4415-973A-D906072C1A72">(11.9)</a> indicate that there is no feasible acceleration that will allow the system to continue to follow the path. Such regions of the state space are shown in gray in <a class="internaljump" href="#ch11fig011C14020F-F9F5-4415-973A-D906072C1A72">figure 11.1</a>. We will call these regions <i class="emphasis">inadmissible</i> regions. At any inadmissible state, the robot is doomed to leave the path immediately. At admissible states, the robot may still be doomed to eventually leave <a name="959"></a><a name="page3771C14020F-F9F5-4415-973A-D906072C1A72"></a>the path. This happens if any integral curve originating from the state, with tangents remaining inside the tangent cones, eventually must reach the inadmissible region (<a class="internaljump" href="#ch11fig021C14020F-F9F5-4415-973A-D906072C1A72">figure 11.2</a>).</p>
+<div class="figure">
+<a name="960"></a><a name="ch11fig011C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1627','fig11-1_0.jpg','973','651')" name="IMG_1627" target="_self"><img alt="Image from book" id="IMG_1627" src="fig11-1.jpg" height="234" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.1: </span>At each point <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1623" src="figu376_1.jpg" height="17" width="38" title="" border="0" /></span></span> in the phase plane we can draw a motion cone defined by the maximum and minimum accelerations <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1624" src="figu376_2.jpg" height="10" width="7" title="" border="0" /></span></span> satisfying the actuator limits. The time-optimal trajectory from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1625" src="figu376_3.jpg" height="17" width="46" title="" border="0" /></span></span> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1626" src="figu376_4.jpg" height="19" width="46" title="" border="0" /></span></span> is the curve that maximizes the area underneath it while remaining on the boundary of the motion cones. In this example, the trajectory switches between maximum and minimum acceleration three times. The velocity limit curve indicates the states where the cone collapses to a single tangent vector, and the gray region represents inadmissible states where the cone disappears-no feasible actuation will keep the system on the path.</span>
+</div>
+<div class="figure">
+<a name="961"></a><a name="ch11fig021C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1629','fig11-2_0.jpg','644','550')" name="IMG_1629" target="_self"><img alt="Image from book" id="IMG_1629" src="fig11-2.jpg" height="299" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.2: </span>Beginning from the <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1628" src="figu377_1.jpg" height="17" width="37" title="" border="0" /></span></span> state represented by the dot, the system is doomed to leave the path. The set of all trajectories tangent to the motion cones is bounded by the two integral curves shown, showing that all feasible trajectories penetrate the velocity limit curve.</span>
+</div>
+<p class="para">We will assume that, for any <i class="emphasis">s</i>, the robot is strong enough to maintain its configuration statically, so all <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1630" src="figu377_2.jpg" height="15" width="53" title="" border="0" /></span></span> states are admissible and the path can be executed arbitrarily slowly. We will also assume that as <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1631" src="figu377_3.jpg" height="13" width="7" title="" border="0" /></span></span> increases from zero for a given <i class="emphasis">s</i>, there will be at most one switch from admissible to inadmissible. This occurs at the <i class="emphasis">velocity limit curve</i> <span class="unicode">&nu;</span>(<i class="emphasis">s</i>), consisting of states <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1632" src="figu377_4.jpg" height="18" width="41" title="" border="0" /></span></span> satisfying</p>
+<div class="equation" mathml="yes">
+<a name="962"></a><a name="ch11eqn101C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.10)&nbsp;</span></td><td valign="top"><img src="figu377_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">The velocity limit <span class="unicode">&nu;</span>(<i class="emphasis">s</i>) is obtained by equating <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1634" src="figu377_6.jpg" height="20" width="165" title="" border="0" /></span></span> for all <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1635" src="figu377_7.jpg" height="21" width="123" title="" border="0" /></span></span> and solving each equation for <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1636" src="figu377_8.jpg" height="13" width="7" title="" border="0" /></span></span> (if a solution exists). Call the solution <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1637" src="figu377_9.jpg" height="18" width="39" title="" border="0" /></span></span>.<sup>[<a name="ch11fnt11_21C14020F-F9F5-4415-973A-D906072C1A72" href="#ftn.ch11fnt11_21C14020F-F9F5-4415-973A-D906072C1A72">2</a>]</sup>
+</p>
+<p class="para">For all <i class="emphasis">i</i>, <i class="emphasis">j</i>, keep the minimum value: <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1639" src="figu377_11.jpg" height="21" width="150" title="" border="0" /></span></span>
+</p>
+<p class="para">Note that because of the max(&middot;) and min(&middot;) functions used in calculating <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1640" src="figu377_12.jpg" height="18" width="127" title="" border="0" /></span></span>, and <span class="unicode">&nu;</span>(<i class="emphasis">s</i>), these functions are generally not smooth.</p>
+<p class="para">As mentioned earlier, the problem is to find the switches between maximum and minimum acceleration. The following algorithm uses numerical integration to find the set of switches, expressed as the <i class="emphasis">s</i> values at which the switches occur.</p>
+<div class="section">
+<h3 class="sect3-title">
+<a name="964"></a><a name="ch11lev2sec11C14020F-F9F5-4415-973A-D906072C1A72"></a>Time-Scaling Algorithm</h3>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">
+<a name="965"></a><a name="IDX-3781C14020F-F9F5-4415-973A-D906072C1A72"></a>Initialize an empty list of switches <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1641" src="figu378_1.jpg" height="19" width="66" title="" border="0" /></span></span> and a switch counter <i class="emphasis">i</i> = 0. Set <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1642" src="figu378_2.jpg" height="18" width="140" title="" border="0" /></span></span>
+</p>
+</li>
+<li class="listitem">
+<p class="first-para">Integrate the equation <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1643" src="figu378_3.jpg" height="18" width="94" title="" border="0" /></span></span> <i class="emphasis">backward</i> in time from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1644" src="figu378_4.jpg" height="21" width="52" title="" border="0" /></span></span> until the velocity limit curve is penetrated (reached transversally, not tangentially), <i class="emphasis">s</i> = 0, or <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1645" src="figu378_5.jpg" height="15" width="46" title="" border="0" /></span></span> at <i class="emphasis">s</i> &lt; 1. There is no solution to the problem if <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1646" src="figu378_6.jpg" height="15" width="47" title="" border="0" /></span></span> is reached. Otherwise, call this phase plane curve <i class="emphasis">F</i> and proceed to the next step.</p>
+</li>
+<li class="listitem">
+<p class="first-para">Integrate the equation <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1647" src="figu378_7.jpg" height="18" width="100" title="" border="0" /></span></span> forward in time from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1648" src="figu378_8.jpg" height="18" width="53" title="" border="0" /></span></span>. Call this curve <i class="emphasis">A</i><sub><i class="emphasis">i</i></sub>. Continue integrating until either <i class="emphasis">A</i><sub><i class="emphasis">i</i></sub> crosses <i class="emphasis">F</i> or <i class="emphasis">A</i><sub><i class="emphasis">i</i></sub> penetrates the velocity limit curve. (If <i class="emphasis">A</i><sub><i class="emphasis">i</i></sub> crosses <i class="emphasis">s</i> = 1 or <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1649" src="figu378_9.jpg" height="15" width="46" title="" border="0" /></span></span> before either of these two cases occurs, there is no solution to the problem.) If <i class="emphasis">A</i><sub><i class="emphasis">i</i></sub> crosses <i class="emphasis">F</i>, then increment <i class="emphasis">i</i>, let <i class="emphasis">s</i><sub><i class="emphasis">i</i></sub> be the <i class="emphasis">s</i> value at which the crossing occurs, and append <i class="emphasis">s</i><sub><i class="emphasis">i</i></sub> to the list of switches <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1650" src="figu378_10.jpg" height="15" width="13" title="" border="0" /></span></span>. The problem is solved and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1651" src="figu378_11.jpg" height="15" width="13" title="" border="0" /></span></span> is the solution. If instead the velocity limit curve is penetrated, let <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1652" src="figu378_12.jpg" height="18" width="80" title="" border="0" /></span></span> be the point of penetration and proceed to the next step.</p>
+</li>
+<li class="listitem">
+<p class="first-para">Search the velocity limit curve <span class="unicode">&nu;</span>(<i class="emphasis">s</i>) forward in <i class="emphasis">s</i> from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1653" src="figu378_13.jpg" height="18" width="80" title="" border="0" /></span></span> until finding the first point where the feasible acceleration (<i class="emphasis">L</i> = <i class="emphasis">U</i> on the velocity limit curve) is tangent to the velocity limit curve. If the velocity limit is <span class="unicode">&nu;</span>(<i class="emphasis">s</i>), then a point (<i class="emphasis">s</i><sub>0</sub>, <span class="unicode">&nu;</span>(<i class="emphasis">s</i><sub>0</sub>)) satisfies the tangency condition if <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1654" src="figu378_14.jpg" height="25" width="239" title="" border="0" /></span></span>. Call the first tangent point reached <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1655" src="figu378_15.jpg" height="21" width="90" title="" border="0" /></span></span>.<sup>[<a name="ch11fnt11_31C14020F-F9F5-4415-973A-D906072C1A72" href="#ftn.ch11fnt11_31C14020F-F9F5-4415-973A-D906072C1A72">3</a>]</sup> From (<i class="emphasis">s</i><sub>tan</sub>, <i class="emphasis">s</i><sub>tan</sub>), integrate the curve <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1663" src="figu378_16.jpg" height="18" width="94" title="" border="0" /></span></span> backward in time until it intersects <i class="emphasis">A</i><sub><i class="emphasis">i</i></sub>. Increment <i class="emphasis">i</i> and call this new curve <i class="emphasis">A</i><sub><i class="emphasis">i</i></sub>. Let <i class="emphasis">s</i><sub><i class="emphasis">i</i></sub> be the <i class="emphasis">s</i> value of the intersection point. This is a switch point from maximum to minimum acceleration. Append <i class="emphasis">s</i><sub><i class="emphasis">i</i></sub> to the list <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1664" src="figu378_17.jpg" height="15" width="13" title="" border="0" /></span></span>.</p>
+</li>
+<li class="listitem">
+<p class="first-para">Increment <i class="emphasis">i</i> and set <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1665" src="figu378_18.jpg" height="18" width="160" title="" border="0" /></span></span>. This is a switch point from minimum to maximum acceleration. Append <i class="emphasis">s</i><sub><i class="emphasis">i</i></sub> to the list <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1666" src="figu378_19.jpg" height="15" width="13" title="" border="0" /></span></span>. Goto step 3.</p>
+</li>
+</ol>
+<p class="para">An illustration of the time-scaling algorithm is shown in <a class="internaljump" href="#ch11fig031C14020F-F9F5-4415-973A-D906072C1A72">figure 11.3</a>.</p>
+<div class="figure">
+<a name="967"></a><a name="ch11fig031C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1678','fig11-3_0.jpg','1000','592')" name="IMG_1678" target="_self"><img alt="Image from book" id="IMG_1678" src="fig11-3.jpg" height="207" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.3: </span>An illustration of the time-scaling algorithm. (Step 2) Beginning from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1667" src="figu379_1.jpg" height="19" width="47" title="" border="0" /></span></span> the minimum acceleration is integrated backward until the velocity limit curve is reached. The resulting phase plane curve is denoted <i class="emphasis">F</i>. (Step 3) Beginning from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1668" src="figu379_2.jpg" height="17" width="46" title="" border="0" /></span></span>, the maximum acceleration is integrated forward until the velocity limit curve is reached at <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1669" src="figu379_3.jpg" height="17" width="69" title="" border="0" /></span></span>. This phase plane curve is denoted <i class="emphasis">A</i><sub>0</sub>. (Step 4) The velocity limit curve <span class="unicode">&nu;</span>(<i class="emphasis">s</i>) is searched forward from <i class="emphasis">s</i><sub>lim</sub> until a point is found where the feasible acceleration is tangent to the limit curve. The figure shows the feasible accelerations at points on the velocity limit curve as arrows. An arrow becomes tangent to the velocity limit curve at <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1670" src="figu379_4.jpg" height="17" width="69" title="" border="0" /></span></span>. From <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1671" src="figu379_5.jpg" height="17" width="69" title="" border="0" /></span></span>, the minimum acceleration is integrated backward until it reaches <i class="emphasis">A</i><sub>0</sub>. This curve is called <i class="emphasis">A</i><sub>1</sub>. The <i class="emphasis">s</i> value of the intersection is <i class="emphasis">s</i><sub>1</sub> and is added to the switch list, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1672" src="figu379_6.jpg" height="17" width="68" title="" border="0" /></span></span>. (Step 5) The point <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1673" src="figu379_7.jpg" height="17" width="51" title="" border="0" /></span></span> is set equal to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1674" src="figu379_8.jpg" height="17" width="69" title="" border="0" /></span></span>, and <i class="emphasis">s</i><sub>2</sub> is added to the switch list, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1675" src="figu379_9.jpg" height="17" width="92" title="" border="0" /></span></span>. (Step 2) Maximum acceleration is integrated forward from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1676" src="figu379_10.jpg" height="17" width="51" title="" border="0" /></span></span> until it hits <i class="emphasis">F</i>. This curve is denoted <i class="emphasis">A</i><sub>2</sub>, and the <i class="emphasis">s</i> value of the intersection, <i class="emphasis">s</i><sub>3</sub>, is added to the switch list, yielding <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1677" src="figu379_11.jpg" height="17" width="118" title="" border="0" /></span></span>. The algorithm terminates.</span>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="968"></a><a name="ch11lev2sec21C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">11.2.1 </span>Zero Inertia Points</h3>
+<p class="first-para">Until now, we have been making the assumption that each <i class="emphasis">a</i><sub><i class="emphasis">i</i></sub>(<i class="emphasis">s</i>) in <a class="internaljump" href="#ch11eqn081C14020F-F9F5-4415-973A-D906072C1A72">(11.8)</a> is always nonzero. In this usual case, the velocity limit occurs when <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1679" src="figu378_20.jpg" height="18" width="154" title="" border="0" /></span></span>. If <a name="969"></a><a name="page3791C14020F-F9F5-4415-973A-D906072C1A72"></a><i class="emphasis">a</i><sub><i class="emphasis">i</i></sub>(<i class="emphasis">s</i>) = 0, however, the force at the <i class="emphasis">i</i>th actuator is independent of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1680" src="figu379_12.jpg" height="14" width="9" title="" border="0" /></span></span>, and therefore the <i class="emphasis">i</i>th actuator defines no acceleration constraints <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1681" src="figu379_13.jpg" height="18" width="141" title="" border="0" /></span></span>. Instead, it defines directly a <i class="emphasis">velocity</i> constraint using <a class="internaljump" href="#ch11eqn071C14020F-F9F5-4415-973A-D906072C1A72">(11.7)</a>:</p>
+<div class="equation" mathml="yes">
+<a name="970"></a><a name="ch11eqn111C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.11)&nbsp;</span></td><td valign="top"><img src="figu379_14.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">In the case of a zero inertia point where <i class="emphasis">k</i> of the <i class="emphasis">a</i><sub><i class="emphasis">i</i></sub> (<i class="emphasis">s</i>) are zero, let <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1683" src="figu379_15.jpg" height="22" width="57" title="" border="0" /></span></span> be the maximum velocity satisfying all <i class="emphasis">k</i> constraints <a class="internaljump" href="#ch11eqn111C14020F-F9F5-4415-973A-D906072C1A72">(11.11)</a>, and let <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1684" src="figu379_16.jpg" height="28" width="243" title="" border="0" /></span></span>. Then <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1685" src="figu379_17.jpg" height="18" width="57" title="" border="0" /></span></span> is the <i class="emphasis">true</i> velocity limit curve, generalizing the curve <span class="unicode">&nu;</span>(<i class="emphasis">s</i>) by allowing for the possibility of zero inertia points.</p>
+<p class="para">If a point on the velocity limit curve <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1686" src="figu379_18.jpg" height="18" width="57" title="" border="0" /></span></span> is determined by a zero inertia point velocity constraint, then <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1687" src="figu379_19.jpg" height="18" width="145" title="" border="0" /></span></span> at this point. This point is called a <i class="emphasis">critical</i> point. If, in addition, either <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1688" src="figu379_20.jpg" height="16" width="50" title="" border="0" /></span></span> integrated forward from this point, or <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1689" src="figu379_21.jpg" height="18" width="56" title="" border="0" /></span></span> <a name="971"></a><a name="page3801C14020F-F9F5-4415-973A-D906072C1A72"></a>integrated backward from this point, would result in immediate penetration of the velocity limit curve, then the point is called <i class="emphasis">singular</i> (<a class="internaljump" href="#ch11fig041C14020F-F9F5-4415-973A-D906072C1A72">figure 11.4</a>).</p>
+<div class="figure">
+<a name="972"></a><a name="ch11fig041C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1691','fig11-4_0.jpg','832','429')" name="IMG_1691" target="_self"><img alt="Image from book" id="IMG_1691" src="fig11-4.jpg" height="180" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.4: </span>At critical and singular points, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1690" src="figu380_1.jpg" height="17" width="130" title="" border="0" /></span></span>. At a singular point, following <i class="emphasis">U</i> forward or <i class="emphasis">L</i> backward results in penetration of the velocity limit curve.</span>
+</div>
+<p class="para">At a singular point <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1692" src="figu380_2.jpg" height="18" width="104" title="" border="0" /></span></span>, let</p>
+<div class="informalequation" mathml="yes">
+<img src="figu380_3.jpg" />
+<br />
+
+</div>
+<p class="para">be the acceleration defined by the tangent to the velocity limit curve. If the velocity limit curve is not differentiable at the singular point (as is often the case), then define</p>
+<div class="informalequation" mathml="yes">
+<img src="figu380_4.jpg" />
+<br />
+
+</div>
+<p class="para">to be the right and left limits, respectively. Then, to prevent penetration of the velocity limit curve, the maximum feasible acceleration at <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1695" src="figu380_5.jpg" height="18" width="104" title="" border="0" /></span></span> is</p>
+<div class="informalequation" mathml="yes">
+<img src="figu380_6.jpg" />
+<br />
+
+</div>
+<p class="para">Similarly, the minimum feasible acceleration is</p>
+<div class="informalequation" mathml="yes">
+<img src="figu380_7.jpg" />
+<br />
+
+</div>
+<p class="para">This is shown graphically in <a class="internaljump" href="#ch11fig051C14020F-F9F5-4415-973A-D906072C1A72">figure 11.5</a>.</p>
+<div class="figure">
+<a name="973"></a><a name="ch11fig051C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1702','fig11-5_0.jpg','913','422')" name="IMG_1702" target="_self"><img alt="Image from book" id="IMG_1702" src="fig11-5.jpg" height="162" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.5: </span>At this singular point on the velocity limit curve, integrating <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1698" src="figu381_1.jpg" height="17" width="50" title="" border="0" /></span></span> backward in time would result in penetration of the velocity limit curve. The true minimum feasible acceleration at this point is <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1699" src="figu381_2.jpg" height="15" width="28" title="" border="0" /></span></span>, defined by the left tangent of the velocity limit curve at the singularity. Similarly, integrating <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1700" src="figu381_3.jpg" height="17" width="52" title="" border="0" /></span></span> forward results in penetration. The true maximum feasible acceleration is <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1701" src="figu381_4.jpg" height="13" width="29" title="" border="0" /></span></span>, defined by the right tangent at the singularity.</span>
+</div>
+<p class="para">Critical points occur on a lower-dimensional subset of the robot's configuration space where <i class="emphasis">M</i>(<i class="emphasis">q</i>) is not full rank. If the path passes through this subset transversally, the path will have isolated critical points. If the path travels along this lower-dimensional subset, however, we may have a continuous <i class="emphasis">critical arc</i> of critical points. Similarly, we may have <i class="emphasis">singular arcs</i>.</p>
+<p class="para">
+<a name="974"></a><a name="IDX-3811C14020F-F9F5-4415-973A-D906072C1A72"></a>We can now modify the time-scaling algorithm to properly account for zero inertia points. At singular points, we integrate <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1703" src="figu381_5.jpg" height="21" width="74" title="" border="0" /></span></span> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1704" src="figu381_6.jpg" height="18" width="76" title="" border="0" /></span></span> instead of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1705" src="figu381_7.jpg" height="18" width="56" title="" border="0" /></span></span> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1706" src="figu381_8.jpg" height="18" width="57" title="" border="0" /></span></span>, respectively. This will also allow the algorithm to "slide" along singular arcs using an acceleration between <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1707" src="figu381_9.jpg" height="18" width="56" title="" border="0" /></span></span> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1708" src="figu381_10.jpg" height="18" width="58" title="" border="0" /></span></span>, instead of switching rapidly back and forth between them. In step 4, we search the velocity limit curve <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1709" src="figu381_11.jpg" height="18" width="76" title="" border="0" /></span></span> for any critical or tangent point, not just tangent points.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">EXAMPLE 11.2.1</span></span><a name="975"></a><a name="ch11ex02_11C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Consider the two-joint RP robot arm with the dynamics derived in <a href="57.html" target="_parent" class="chapterjump">chapter 10</a>. We have planned a path to follow the straight line shown in <a class="internaljump" href="#ch11fig061C14020F-F9F5-4415-973A-D906072C1A72">figure 11.6</a>, and we wish to find the time-optimal time scaling of the path. Let x = [<i class="emphasis">x</i><sub>1</sub>, <i class="emphasis">x</i><sub>2</sub>]<sup><i class="emphasis">T</i></sup> be the Cartesian coordinates of the center of mass of the second link, as shown in the figure. The path we wish to follow, parameterized by s, is expressed as</p>
+<p class="para">
+<div class="equation" mathml="yes">
+<a name="976"></a><a name="ch11eqn121C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.12)&nbsp;</span></td><td valign="top"><img src="figu381_12.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="figure">
+<a name="977"></a><a name="ch11fig061C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1711','fig11-6_0.jpg','952','704')" name="IMG_1711" target="_self"><img alt="Image from book" id="IMG_1711" src="fig11-6.jpg" height="259" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.6: </span>The path followed by the RP manipulator.</span>
+</div>
+</p>
+<p class="para">The first thing we will do is express this path in the generalized coordinates q = [<i class="emphasis">q</i><sub>1</sub>, <i class="emphasis">q</i><sub>2</sub>]<sup><i class="emphasis">T</i></sup> of <a href="57.html#877" target="_parent" class="chapterjump">figure 10.2</a> in <a href="57.html" target="_parent" class="chapterjump">chapter 10</a>. To do this, we can define the forward kinematics of the robot arm to be the mapping <span class="unicode">&phi;</span> from joint coordinates q to Cartesian coordinates x:</p>
+<p class="para">
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.13)&nbsp;</span></td><td valign="top"><img src="figu381_13.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+</p>
+<p class="para">The inverse kinematics <span class="unicode">&phi;</span><sup>&minus;1</sup> gives the joint coordinates q as a function of the Cartesian coordinates x. For the RP arm, the inverse kinematics are unique within the reachable <a name="978"></a><a name="IDX-3821C14020F-F9F5-4415-973A-D906072C1A72"></a>workspace of the robot (<i class="emphasis">where q</i><sub>2</sub> <span class="unicode">&ge;</span> 0):</p>
+<p class="para">
+<div class="equation" mathml="yes">
+<a name="979"></a><a name="ch11eqn141C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.14)&nbsp;</span></td><td valign="top"><img src="figu382_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+</p>
+<p class="para">where atan2(<i class="emphasis">x</i><sub>2</sub>, <i class="emphasis">x</i><sub>1</sub>) is the two argument arctangent returning the unique angle in [<span class="unicode">&minus;</span><span class="unicode">&pi;</span>, <span class="unicode">&pi;</span>) of the Cartesian point (<i class="emphasis">x</i><sup>1</sup>, <i class="emphasis">x</i><sup>2</sup>)(where <i class="emphasis">x</i><sup>2</sup><sub>1</sub> + <i class="emphasis">x</i><sub>2</sub><sup>2</sup> <span class="unicode">&ne;</span> 0). Plugging <a class="internaljump" href="#ch11eqn121C14020F-F9F5-4415-973A-D906072C1A72">equation (11.12)</a> into <a class="internaljump" href="#ch11eqn141C14020F-F9F5-4415-973A-D906072C1A72">equation (11.14)</a>, we find the parameterized path in joint coordinates</p>
+<p class="para">
+<div class="equation" mathml="yes">
+<a name="980"></a><a name="ch11eqn151C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.15)&nbsp;</span></td><td valign="top"><img src="figu382_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+</p>
+<p class="para">Differentiating, we get the velocity and acceleration</p>
+<p class="para">
+<div class="equation" mathml="yes">
+<a name="981"></a><a name="ch11eqn161C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.16)&nbsp;</span></td><td valign="top"><img src="figu382_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="982"></a><a name="ch11eqn171C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.17)&nbsp;</span></td><td valign="top"><img src="figu382_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+</p>
+<p class="para">In <a href="57.html" target="_parent" class="chapterjump">chapter 10</a> we derived the equations of motion:</p>
+<p class="para">
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.18)&nbsp;</span></td><td valign="top"><img src="figu382_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.19)&nbsp;</span></td><td valign="top"><img src="figu382_6.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+</p>
+<p class="para">
+<a name="983"></a><a name="IDX-3831C14020F-F9F5-4415-973A-D906072C1A72"></a>Substituting in <a class="internaljump" href="#ch11eqn151C14020F-F9F5-4415-973A-D906072C1A72">equations (11.15)</a>, <a class="internaljump" href="#ch11eqn161C14020F-F9F5-4415-973A-D906072C1A72">(11.16)</a>, and <a class="internaljump" href="#ch11eqn171C14020F-F9F5-4415-973A-D906072C1A72">(11.17)</a>, we get</p>
+<div class="informalequation" mathml="yes">
+<img src="figu383_1.jpg" />
+<br />
+
+</div>
+<p class="para">where</p>
+<p class="para">
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.20)&nbsp;</span></td><td valign="top"><img src="figu383_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.21)&nbsp;</span></td><td valign="top"><img src="figu383_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(11.22)&nbsp;</span></td><td valign="top"><img src="figu383_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+</p>
+<p class="para">Note that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1723" src="figu383_5.jpg" height="25" width="46" title="" border="0" /></span></span> defines a zero inertia point, as <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1724" src="figu383_6.jpg" height="25" width="83" title="" border="0" /></span></span>. Understand this intuitively by considering the <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1725" src="figu383_7.jpg" height="25" width="57" title="" border="0" /></span></span> point in <a class="internaljump" href="#ch11fig061C14020F-F9F5-4415-973A-D906072C1A72">figure 11.6</a>.) In this case there is no velocity constraint due to the second actuator, since <i class="emphasis">b</i><sub>2</sub> = 0 (see problem 5).</p>
+<p class="last-para">We now choose the following parameters for the robot arm: <i class="emphasis">m</i><sub>1</sub> = 5 kg, <i class="emphasis">I</i><sub>1</sub> = 0.1 kg-m<sup>2</sup>, <i class="emphasis">r</i><sub>1</sub> = 0.2 <i class="emphasis">m, m</i><sup>2</sup> = 3 kg, and <i class="emphasis">I</i><sub>2</sub> = 0.05 kg-m<sup>2</sup>. The actuator limits are taken to be &plusmn;20 N-m for joint 1 and &plusmn;40 N for joint 2, and gravity is <i class="emphasis">a</i><sub><i class="emphasis">g</i></sub> = 9.8 m/s. <a class="internaljump" href="#ch11fig071C14020F-F9F5-4415-973A-D906072C1A72">Figure 11.7</a> shows the time-optimal trajectory along the path for these choices. The minimum-time execution of the path is approximately 0.888 s. Note that one of the actuators is saturated at all times. In this example, the velocity limit curve is never reached, so there is just one switch between maximum and minimum acceleration.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="figure">
+<a name="984"></a><a name="ch11fig071C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1726','fig11-7_0.jpg','1000','416')" name="IMG_1726" target="_self"><img alt="Image from book" id="IMG_1726" src="fig11-7.jpg" height="146" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 11.7: </span>The time-optimal actuator histories and trajectory of the RP manipulator along the straight-line path of <a class="internaljump" href="#ch11ex02_11C14020F-F9F5-4415-973A-D906072C1A72">example 11.2.1</a>.</span>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="985"></a><a name="ch11lev2sec31C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">11.2.2 </span>Global Time-Optimal Trajectory Planning</h3>
+<p class="first-para">
+<a name="986"></a><a name="IDX-3841C14020F-F9F5-4415-973A-D906072C1A72"></a>The time-scaling algorithm finds the time-optimal trajectory along a given path. What if our real goal is to find the time-optimal trajectory between two states when we are free to choose any collision-free path? Can we use the time-scaling algorithm in conjunction with a collision-free path planner? Conceptually, imagine running the time-scaling algorithm on all possible paths between the start and goal states. Then the fastest of these is the global time-optimal trajectory.</p>
+<p class="para">Naturally, the problem is how to efficiently test a large number of possible paths. One approach to this problem for robot manipulators was proposed by Shiller and Dubowsky [383]. The approach is quite involved, and we only sketch it here. The first step is to define a grid on the workspace and construct all collision-free paths (without sharp turns) between the start and goal states moving along edges or diagonals of the grid. The next step is to quickly compute rough lower-bound estimates of the traveling times of these paths using a maximum velocity limit during the motion. The fastest paths are selected and smoothed by using the grid points as control points for cubic splines. The best of these paths is then submitted to the full time-scaling algorithm, generating an upper bound on the optimal travel time. All paths with lower bounds above this upper bound can be pruned. Of the remaining paths, the lower bounds are more carefully calculated, and the process continues, using increasingly accurate estimates of the lower bounds as the number of candidate paths is reduced. When the pruning process has ended, only the best path in each path-neighborhood is considered further. These best paths are submitted to a local optimization that may locally alter the paths to allow them to be executed more quickly. This process uses the travel times returned by the time-scaling algorithm as the objective function.</p>
+<p class="last-para">This approach combines collision-free path planning and time scaling in an iterative fashion to arrive at a global near-time-optimal trajectory. In the <a href="64.html#987" target="_parent" class="chapterjump">next section</a>, we discuss methods that do not separate the path-planning and time-scaling problems, but solve directly in the state space.</p>
+</div>
+</div>
+<div class="footnotes">
+<div class="footnote">
+<p>
+<a name="958"></a><sup>[<a name="ftn.ch11fnt11_11C14020F-F9F5-4415-973A-D906072C1A72" href="#ch11fnt11_11C14020F-F9F5-4415-973A-D906072C1A72">1</a>]</sup>Except perhaps at zero inertia points, as described in <a class="internaljump" href="#ch11lev2sec21C14020F-F9F5-4415-973A-D906072C1A72">subsection 11.2.1</a>.</p>
+</div>
+<div class="footnote">
+<p>
+<a name="963"></a><sup>[<a name="ftn.ch11fnt11_21C14020F-F9F5-4415-973A-D906072C1A72" href="#ch11fnt11_21C14020F-F9F5-4415-973A-D906072C1A72">2</a>]</sup>In general, <a class="internaljump" href="#ch11eqn101C14020F-F9F5-4415-973A-D906072C1A72">equation (11.10)</a> may be satisfied for multiple values of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1638" src="figu377_10.jpg" height="13" width="8" title="" border="0" /></span></span> for a single value of <i class="emphasis">s</i>. This may occur due to friction in the system, weak actuators that cannot hold each configuration statically, or the form of the actuation limit functions. In this case, there may be inadmissible "islands" in the phase plane. This significantly complicates the problem of finding an optimal time scaling, and we ignore this possibility. See [385] for a time-scaling algorithm for this case.</p>
+</div>
+<div class="footnote">
+<p>
+<a name="966"></a><sup>[<a name="ftn.ch11fnt11_31C14020F-F9F5-4415-973A-D906072C1A72" href="#ch11fnt11_31C14020F-F9F5-4415-973A-D906072C1A72">3</a>]</sup>An alternative approach to finding <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1656" src="figu378_21.jpg" height="15" width="62" title="" border="0" /></span></span> is to choose a point <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1657" src="figu378_22.jpg" height="15" width="53" title="" border="0" /></span></span>, where <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1658" src="figu378_23.jpg" height="15" width="52" title="" border="0" /></span></span>, integrate <i class="emphasis">L</i> forward from there, and check if the solution penetrates the velocity limit curve. If so, choose <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1659" src="figu378_24.jpg" height="17" width="60" title="" border="0" /></span></span> if not, choose <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1660" src="figu378_25.jpg" height="12" width="43" title="" border="0" /></span></span>. Perform the integration of <i class="emphasis">L</i> from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1661" src="figu378_26.jpg" height="15" width="55" title="" border="0" /></span></span>. Repeat the binary search until the forward integration just touches the velocity limit curve tangentially. The tangent point is <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1662" src="figu378_27.jpg" height="15" width="62" title="" border="0" /></span></span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="62.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="64.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

@@ -1,0 +1,266 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+H.2 A* Algorithm</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Appendix H - 
+ Graph Representation and Basic Search</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(2,58,68,74,24,6,58,78,80,43,47,8,9,53,17)
+var a1 = new Array(0,12,11)
+var a2 = new Array(5,3,1)
+var a3 = new Array(10,2,4)
+var a4 = new Array(8,14,9)
+var a5 = new Array(7,6,13)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="94.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=858244353"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="96.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:53:40 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:53:41 UTC-->
+<div class="appendix">
+<a name="ap-h0946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="1371"></a><a name="AP-HLEV1SEC20946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="section-titlelabel">H.2 </span><i class="emphasis">A</i>* Algorithm</h2>
+<p class="FIRST-PARA">Breadth-first search produces the shortest path to the start node in terms of link lengths. Since the wave-front planner is a breadth-first search, a four-point connectivity wave-front algorithm produces the shortest path with respect to the Manhattan distance function. This is because it implicitly has an underlying graph where each node corresponds to a pixel and neighboring pixels have an edge length of one. However, shortest-path length is not the only metric we may want to optimize. We can tune our graph search to find optimal paths with respect to other metrics such as energy, time, traversability, safety, etc., as well as combinations of them.</p>
+<p class="para">When speaking of graph search, there is another opportunity for optimization: minimize the number of nodes that have to be visited to locate the goal node subject to our path-optimality criteria. To distinguish between these forms of optimality, let us reserve the term <i class="EMPHASIS">optimality</i> to measure the path and <i class="emphasis">efficiency</i> to measure the search, i.e., the number of nodes visited to determine the path. There is no reason to expect depth-first and breadth-first search to be efficient, even though breadth-first search can produce an optimal path.</p>
+<p class="para">Depth-first and breadth-first search in a sense are uninformed, in that the search just moves through the graph without any preference for or influence on where the goal node is located. For example, if the coordinates of the goal node are known, then a graph search can use this information to help decide which nodes in the graph to visit (i.e., expand) to locate the goal node.</p>
+<p class="para">Alas, although we may have some information about the goal node, the best we can do is define a <i class="EMPHASIS">heuristic</i> which hypothesizes an expected, but not necessarily actual, cost to the goal node. For example, a graph search may choose as its next node to explore one that has the shortest Euclidean distance to the goal because such a node has highest possibility, based on local information, of getting closest to the goal. However, there is no guarantee that this node will lead to the (globally) shortest path in the graph to the goal. This is just a good guess. However, these good guesses are based on the best information available to the search.</p>
+<p class="PARA">The <i class="emphasis">A</i>* algorithm searches a graph efficiently, with respect to a chosen heuristic. If the heuristic is "good," then the search is efficient; if the heuristic is "bad," although a path will be found, its search will take more time than probably required and possibly return a suboptimal path. <i class="EMPHASIS">A</i>* will produce an optimal path if its heuristic is <i class="EMPHASIS">optimistic</i>.</p>
+<p class="para">
+<a name="1372"></a><a name="IDX-528"></a>An optimistic, or admissible, heuristic always returns a value less than or equal to the cost of the shortest path from the current node to the goal node within the graph. For example, if a graph represented a grid, an optimistic heuristic could be the Euclidean distance to the goal because the <i class="EMPHASIS">L</i><sup>2</sup> distance is always less than or equal to the <i class="EMPHASIS">L</i><sup>1</sup> distance in the plane (<a class="internaljump" href="#ap-hfig100946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">figure H.10</a>).</p>
+<div class="figure">
+<a name="1373"></a><a name="AP-HFIG100946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2679','figh-10_0.jpg','619','619')" name="img_2679" target="_self"><img alt="Image from book" border="0" height="350" id="IMG_2679" title="Click To expand" src="figh-10.jpg" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="FIGURE-TITLE"><span class="figure-titlelabel">Figure H.10: </span>The heuristic between two nodes is the Euclidean distance, which is less than the actual path length in the grid, making this heuristic optimistic.</span>
+</div>
+<p class="PARA">First, we will explain the <i class="EMPHASIS">A</i>* search via example and then formally introduce the algorithm. See <a class="internaljump" href="#ap-hfig11">figure H.11</a> for a sample graph. The <i class="emphasis">A</i>* search has a <i class="EMPHASIS">priority queue</i> which contains a list of nodes sorted by priority, which is determined by the sum of the distance traveled in the graph thus far from the start node, and the heuristic.</p>
+<div class="figure">
+<a name="1374"></a><a name="AP-HFIG110946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="FIGUREMEDIAOBJECT"><a href="javascript:PopImage('IMG_2680','figh-11_0.jpg','767','1000')" name="img_2680" target="_self"><img border="0" alt="Image from book" height="456" id="IMG_2680" title="Click To expand" src="figh-11.jpg" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="FIGURE-TITLE"><span class="figure-titlelabel">Figure H.11: </span>Sample graph where each node is labeled by a letter and has an associated heuristic value which is contained inside the node icon. Edge costs are represented by numbers adjacent to the edges and the start and goal nodes are labeled. We label the start node with a zero to emphasize that it has the highest priority at first.</span>
+</div>
+<p class="PARA">The first node to be put into the priority queue is naturally the start node. Next, we <i class="emphasis">expand</i> the start node by popping the start node and putting all adjacent nodes to the start node into the priority queue sorted by their corresponding priorities. Since node B has the greatest priority, it is expanded next, i.e., it is popped from the queue and its neighbors are added (<a class="INTERNALJUMP" href="#ap-hfig120946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">figure H.12</a>). Note that only unvisited nodes are added to the priority queue, i.e., do not re-add the start node.</p>
+<div class="figure">
+<a name="1375"></a><a name="AP-HFIG12"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2681','figh-12_0.jpg','1000','210')" name="IMG_2681" target="_self"><img alt="Image from book" border="0" id="IMG_2681" height="74" title="Click To expand" src="figh-12.jpg" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="FIGURE-TITLE"><span class="figure-titlelabel">Figure H.12: </span>(Left) Priority queue after the start is expanded. (Middle) Priority queue after the second node, B, is expanded. (Right) Three iterations of the priority queue are displayed. Each arrow points from the expanded node to the nodes that were added in each step. Since node H had no unvisited adjacent cells, its arrow points to nothing. The middle queue corresponds to two actions. Node E points to the goal which provides the first candidate path to the goal. Note that nodes D, I, F, and G are shaded out because they were discarded.</span>
+</div>
+<p class="PARA">Now, we expand node H because it has the highest priority. It is popped off of the queue and all of its neighbors are added. However, H has no neighbors, so nothing is added to the queue. Since no new nodes are added, no more action or expansion will be associated with node H (<a class="internaljump" href="#ap-hfig12">figure H.12</a>). Next, we pop off the node with greatest priority, i.e., node A, and expand it, adding all of its adjacent neighbors to the priority queue (<a href="#ap-hfig120946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" class="internaljump">figure H.12</a>).</p>
+<p class="PARA">Next, node E is expanded which gives us a path to the goal of cost 5. Note that this cost is the real cost, i.e., the sum of the edge costs to the goal. At this point, there are <a name="1376"></a><a name="idx-529"></a>nodes in the priority queue which have a priority value greater than the cost to the goal. Since these priority values are lower bounds on path cost to the goal, all paths through these nodes will have a higher cost than the cost of the path already found. Therefore, these nodes can be discarded (<a href="#ap-hfig120946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" class="INTERNALJUMP">figure H.12</a>).</p>
+<p class="para">The explicit path through the graph is represented by a series of <i class="emphasis">back pointers.</i> A back pointer represents the immediate history of the expansion process. So, the back pointers from nodes A, B, and C all point to the start. Likewise, the back pointers to D, E, and F point to A. Finally, the back pointer of goal points to E. Therefore, the path defined with the back pointers is start, A, E, and goal. The arrows in <a class="INTERNALJUMP" href="#ap-hfig120946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">figure H.12</a> point in the reverse direction of the back pointers.</p>
+<p class="PARA">Even though a path to the goal has been determined, <i class="emphasis">A</i>* is not finished because there could be a better path. <i class="EMPHASIS">A</i>* knows this is possible because the priority queue <a name="1377"></a><a name="idx-530"></a>still contains nodes whose value is smaller than that of the goal state. The priority queue at this point just contains node C and is then expanded adding nodes J, K, and Lto the priority queue. We can immediately remove J and L because their priority values are greater than or equal the cost of the shortest path found thus far. Node K is then expanded finding the goal with a path cost shorter than the previously found path through node E. This path becomes the current best path. Since at this point the priority queue does not possess any elements whose value is smaller than that of the goal node, this path results in the best path (<a href="#ap-hfig130946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" class="INTERNALJUMP">figure H.13</a>).</p>
+<div class="FIGURE">
+<a name="1378"></a><a name="AP-HFIG13"></a><span class="figuremediaobject"><a name="IMG_2682" href="javascript:PopImage('IMG_2682','figh-13_0.jpg','749','304')" target="_self"><img border="0" alt="Image from book" height="142" id="IMG_2682" src="figh-13.jpg" title="Click To expand" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure H.13: </span>Four displayed iterations of the priority queue with arrows representing the history of individual expansions. Here, the path to the goal is start, C, K, goal.</span>
+</div>
+<div class="section">
+<h3 class="SECT3-TITLE">
+<a name="1379"></a><a name="AP-HLEV2SEC10946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="SECTION-TITLELABEL">H.2.1 </span>Basic Notation and Assumptions</h3>
+<p class="first-para">Now, we can more formally define the <i class="EMPHASIS">A</i>* algorithm. The input for <i class="emphasis">A</i>* is the graph itself. These nodes can naturally be embedded into the robot's free space and thus can have coordinates. Edges correspond to adjacent nodes and have values corresponding to the cost required to traverse between the adjacent nodes. The output of the <i class="emphasis">A</i>* <a name="1380"></a><a name="idx-5310946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>algorithm is a back-pointer path, which is a sequence of nodes starting from the goal and going back to the start.</p>
+<p class="para">We will use two additional data structures, an open set <i class="emphasis">O</i> and a closed set <i class="EMPHASIS">C</i>. The open set <i class="EMPHASIS">O</i> is the priority queue and the closed set <i class="EMPHASIS">C</i> contains all processed nodes. Other notation includes</p>
+<ul type="square" class="square-list">
+<li class="FIRST-LISTITEM">
+<p class="first-para">Star(<i class="emphasis">n</i>) represents the set of nodes which are adjacent to <i class="emphasis">n</i>.</p>
+</li>
+<li class="listitem">
+<p class="FIRST-PARA">
+<i class="emphasis">c</i>(<i class="emphasis">n</i><sub>1</sub>, <i class="EMPHASIS">n</i><sub>2</sub>)is the length of edge connecting <i class="EMPHASIS">n</i><sub>1</sub> and <i class="EMPHASIS">n</i><sub>2</sub>.</p>
+</li>
+<li class="listitem">
+<p class="FIRST-PARA">
+<i class="EMPHASIS">g</i>(<i class="EMPHASIS">n</i>) is the total length of a backpointer path from <i class="EMPHASIS">n</i> to <i class="emphasis">q<sub>start</sub></i>.</p>
+</li>
+<li class="LISTITEM">
+<p class="FIRST-PARA">
+<i class="emphasis">h</i>(<i class="EMPHASIS">n</i>) is the heuristic cost function, which returns the estimated cost of shortest path from <i class="EMPHASIS">n</i> to <i class="emphasis">q<sub>goal</sub></i>.</p>
+</li>
+<li class="listitem">
+<p class="FIRST-PARA">
+<i class="emphasis">f</i>(<i class="EMPHASIS">n</i>) = <i class="EMPHASIS">g</i>(<i class="emphasis">n</i>) + <i class="emphasis">h</i>(<i class="EMPHASIS">n</i>)is the estimated cost of shortest path from <i class="emphasis">q<sub>start</sub></i> to <i class="emphasis">q<sub>goal</sub></i> via <i class="emphasis">n</i>. The algorithm can be found in <a class="INTERNALJUMP" href="#ap-hal240946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">algorithm 24</a>.</p>
+</li>
+</ul>
+</div>
+<div class="SECTION">
+<h3 class="SECT3-TITLE">
+<a name="1381"></a><a name="AP-HLEV2SEC2"></a><span class="section-titlelabel">H.2.2 </span>Discussion: Completeness, Efficiency, and Optimality</h3>
+<p class="first-para">Here is an informal proof of completeness for <i class="EMPHASIS">A</i>*. <i class="EMPHASIS">A</i>* generates a search tree, which by definition, has no cycles. Furthermore, there are a finite number of acyclic paths in the tree, assuming a bounded world. Since <i class="emphasis">A</i>* uses a tree, it only considers acyclic paths. Since the number of acyclic paths is finite, the most work that can be done, <a name="1382"></a><a name="idx-5320946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>searching all acyclic paths, is also finite. Therefore <i class="emphasis">A</i>* will always terminate, ensuring completeness.</p>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 24: </span><i class="emphasis">A</i>* Algorithm</span><a name="1383"></a><a name="ap-hal240946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<div class="formalbody">
+<table border="0" cellpadding="0" class="blueline" cellspacing="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font face="Arial" color="010100" size="2"><b><img border="0" alt="Image from book" height="2" src="_.gif" title="Start example" width="1" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b> A graph
+<b class="bold">Output:</b> A path between start and goal nodes
+1: <b class="bold">repeat</b>
+2:   Pick <i class="emphasis">n<sub>best</sub></i> from <i class="emphasis">O</i> such that <i class="emphasis">f</i>(<i class="emphasis">n<sub>best</sub></i>) <span class="unicode">&le;</span> <i class="emphasis">f</i>(<i class="emphasis">n</i>), <span class="unicode">&forall;</span> <i class="emphasis">n</i> <span class="unicode">&#8714;</span> <i class="emphasis">O</i>.
+3:   Remove <i class="emphasis">n<sub>best</sub></i> from <i class="emphasis">O</i> and add to <i class="emphasis">C</i>.
+4:   If <i class="EMPHASIS">n<sub>best</sub></i> = <i class="emphasis">q<sub>goal</sub></i>, EXIT.
+5:   Expand <i class="emphasis">n<sub>best</sub></i>: for all <i class="EMPHASIS">x</i> <span class="unicode">&#8714;</span> Star(<i class="EMPHASIS">n<sub>best</sub></i>) that are not in <i class="emphasis">C</i>.
+6:   <b class="bold">if</b> <i class="emphasis">x</i> <span class="UNICODE">&notin;</span> <i class="EMPHASIS">O</i> <b class="bold">then</b>
+7:     add <i class="EMPHASIS">x</i> to <i class="EMPHASIS">O</i>.
+8:   <b class="bold">else if</b> <i class="EMPHASIS">g</i>(<i class="EMPHASIS">n<sub>best</sub></i>) + <i class="EMPHASIS">c</i>(<i class="emphasis">n<sub>best</sub>, x</i>) &lt; <i class="emphasis">g</i>(<i class="EMPHASIS">x</i>) <b class="bold">then</b>
+9:     update <i class="emphasis">x</i>'s backpointer to point to <i class="EMPHASIS">n<sub>best</sub></i>
+10:   <b class="bold">end if</b>
+11: <b class="BOLD">until</b> <i class="EMPHASIS">O</i> is empty
+</pre>
+<table cellpadding="0" border="0" cellspacing="0" class="blueline" width="100%">
+<tr>
+<td class="bluecell" bgcolor="000080"><font face="Arial" color="010100" size="2"><b><img alt="Image from book" border="0" src="_.gif" height="2" title="End example" width="1" /></b></font></td>
+</tr>
+</table>
+<table cellpadding="0" border="0" cellspacing="0" class="BLANKSPACE" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="para">This is not to say <i class="EMPHASIS">A</i>* will always search all acyclic paths since it can terminate as soon as it explores all paths with greater cost than the minimum goal cost found. Thanks to the priority queue, <i class="EMPHASIS">A</i>* explores paths likely to reach the goal quickly first. By doing so, it is efficient. If <i class="emphasis">A</i>* does search every acyclic path and does not find the goal, the algorithm still terminates and simply returns that a path does not exist. Of course, this also makes sense if every possible path is searched.</p>
+<p class="LAST-PARA">Now, there is no guarantee that the first path to the goal found is the cheapest/best path. So, in quest for optimality (once again, with respect to the defined metric), all branches must be explored to the extent that a branch's terminating node cost (sum of edge costs) is greater than the lowest goal cost. Effectively, all paths with overall cost lower than the goal must be explored to guarantee that an even shorter one does not exist. Therefore, <i class="emphasis">A</i>* is also optimal (with respect to the chosen metric).</p>
+</div>
+<div class="SECTION">
+<h3 class="sect3-title">
+<a name="1384"></a><a name="AP-HLEV2SEC30946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="section-titlelabel">H.2.3 </span>Greedy-Search and Dijkstra's Algorithm</h3>
+<p class="FIRST-PARA">There are variations or special cases of <i class="emphasis">A</i>*. When <i class="EMPHASIS">f</i>(<i class="EMPHASIS">n</i>) = <i class="emphasis">h</i>(<i class="EMPHASIS">n</i>), then the search becomes a <i class="emphasis">greedy</i> search because the search is only considering what it "believes" is the best path to the goal from the current node. When <i class="emphasis">f</i>(<i class="EMPHASIS">n</i>) = <i class="emphasis">g</i>(<i class="EMPHASIS">n</i>), the planner is not using any heuristic information but rather growing a path that is shortest from the start until it encounters the goal. This is a classic search called <i class="emphasis">Dijkstra's algorithm.</i> <a href="#ap-hfig140946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" class="internaljump">Figure H.14</a> contains a graph which demonstrates Dijkstra's Algorithm. In this example, we also show backpointers being updated (which can also occur with <i class="EMPHASIS">A</i>*). The following lists the open and closed sets for the Dijkstra search in each step.</p>
+<ol class="ORDEREDLIST">
+<li class="first-listitem">
+<p class="FIRST-PARA">
+<i class="emphasis">O</i> ={<i class="EMPHASIS">S</i>}</p>
+</li>
+<li class="LISTITEM">
+<p class="FIRST-PARA">
+<i class="emphasis">O</i> ={2, 4, 1, 5}; <i class="EMPHASIS">C</i> ={<i class="emphasis">S</i>} (1, 2, 4, 5 all point back to <i class="emphasis">S</i>)</p>
+</li>
+<li class="listitem">
+<p class="FIRST-PARA">
+<i class="EMPHASIS">O</i> ={4, 1, 5}; <i class="EMPHASIS">C</i> ={<i class="emphasis">S</i>,2} (there are no adjacent nodes not in C)<a name="1385"></a><a name="IDX-533"></a>
+</p>
+</li>
+<li class="listitem">
+<p class="first-para">O = {1,5,3}; C = {S, 2, 4} (1, 2, 4 point to <i class="emphasis">S</i>; <i class="emphasis">5 points to 4</i>)</p>
+</li>
+<li class="listitem">
+<p class="FIRST-PARA">O = {5,3}; C = {S, 2, 4, 1}</p>
+</li>
+<li class="LISTITEM">
+<p class="FIRST-PARA">O = {3, G}; C = {S, 2, 4, 1} (goal points to 5 which points to 4 which points to <i class="emphasis">S</i>)</p>
+</li>
+</ol>
+<div class="FIGURE">
+<a name="1386"></a><a name="ap-hfig14"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2683','figh-14_0.jpg','791','289')" name="img_2683" target="_self"><img border="0" alt="Image from book" height="128" id="IMG_2683" title="Click To expand" src="figh-14.jpg" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="FIGURE-TITLELABEL">Figure H.14: </span>Dijkstra graph search example.</span>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1387"></a><a name="AP-HLEV2SEC40946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="SECTION-TITLELABEL">H.2.4 </span>Example of <i class="EMPHASIS">A</i>* on a Grid</h3>
+<p class="first-para">
+<a href="#ap-hfig150946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" class="INTERNALJUMP">Figure H.15</a> contains an example of a grid world with a start and a goal identified accordingly. We will assume that the free space uses eight-point connectivity, and thus cell (3, 2) is adjacent to cell (4, 3), i.e., the robot can travel from (3, 2) to (4, 3). Each of the cells also has its heuristic distance to the goal where we use a modified metric which is not the Manhattan or the Euclidean distance. Instead, between free space pixels, a vertical or horizontal step has length 1 and a diagonal has length 1.4 (our approximation of <span class="UNICODE">&radic;</span>2). The cost of traveling from a free space pixel to an obstacle pixel is made to be arbitrarily high; we chose 10000. So one pixel step from a free space to an obstacle pixel along a vertical or horizontal direction costs 10000 and one pixel step along a diagonal direction costs 10000.4. Here, we are assuming that our graph connects <i class="EMPHASIS">all</i> cells in the grid, not just the free space, and the prohibitively high cost of moving into an obstacle will prevent the robot from collision (<a class="INTERNALJUMP" href="#ap-hfig16">figure H.16</a>).</p>
+<div class="figure">
+<a name="1388"></a><a name="AP-HFIG15"></a><span class="FIGUREMEDIAOBJECT"><a name="img_2684" href="javascript:PopImage('IMG_2684','figh-15_0.jpg','687','615')" target="_self"><img alt="Image from book" border="0" height="313" id="IMG_2684" title="Click To expand" src="figh-15.jpg" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="FIGURE-TITLE"><span class="FIGURE-TITLELABEL">Figure H.15: </span>Heuristic values are set, but backpointers and priorities have not.</span>
+</div>
+<div class="figure">
+<a name="1389"></a><a name="ap-hfig16"></a><span class="FIGUREMEDIAOBJECT"><a href="javascript:PopImage('IMG_2685','figh-16_0.jpg','868','364')" name="img_2685" target="_self"><img border="0" alt="Image from book" height="147" id="IMG_2685" src="figh-16.jpg" title="Click To expand" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="FIGURE-TITLE"><span class="FIGURE-TITLELABEL">Figure H.16: </span>Eight-point connectivity and possible cost values.</span>
+</div>
+<p class="para">Note that this metric, in the free space, does not induce a true Euclidean metric because two cells sideways and one cell up is 2.4, not <span class="unicode">&radic;</span>5. However, this metric is quite representative of path length within the grid. This heuristic is optimistic because the actual cost to current cell to the goal will always be greater than or equal <a name="1390"></a><a name="IDX-534"></a>to the heuristic. Thus far, in <a href="#ap-hfig15" class="internaljump">figure H.15</a> the back pointers and priorities have not been set.</p>
+<p class="para">The start pixel is put on the priority queue with a priority equal to its heuristic. See <a href="#ap-hfig17" class="internaljump">figure H.17</a>. Next, the start node is expanded and the priority values for each of the start's neighbors are determined. They are all put on the priority queue sorted in ascending order by priority. See <a class="INTERNALJUMP" href="#ap-hfig18">figure H.18</a>(left). Cell (3, 2) is expanded next, as depicted in <a href="#ap-hfig180946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" class="INTERNALJUMP">figure H.18</a>(right). Here, cells (4, 1), (4, 2), (4, 3), (3, 3), and (2, 3) are added onto the priority queue because our graph representation of the grid includes both free space and obstacle pixels. However, cells (4, 2), (3, 3), and (2, 3) correspond to obstacles and thus have a high cost. If a path exists in the free space or the longest path in the free space has a traversal cost less than our arbitrarily high number chosen for obstacles (<a class="INTERNALJUMP" href="#ap-hfig160946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">figure H.16</a>), then these pixels will never be expanded. Therefore, in the figures below, we did not display them on the priority queue.</p>
+<div class="FIGURE">
+<a name="1391"></a><a name="ap-hfig170946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="figuremediaobject"><a name="IMG_2686" href="javascript:PopImage('IMG_2686','figh-17_0.jpg','789','580')" target="_self"><img border="0" alt="Image from book" id="IMG_2686" height="257" src="figh-17.jpg" title="Click To expand" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="FIGURE-TITLE"><span class="figure-titlelabel">Figure H.17: </span>Start node is put on priority queue, displayed in upper right.</span>
+</div>
+<div class="figure">
+<a name="1392"></a><a name="ap-hfig180946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="figuremediaobject"><a name="img_2687" href="javascript:PopImage('IMG_2687','figh-18_0.jpg','1000','341')" target="_self"><img alt="Image from book" border="0" height="119" id="IMG_2687" src="figh-18.jpg" title="Click To expand" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure H.18: </span>(Left) The start node is expanded, the priority queue is updated, and the back-pointers are set, which are represented by the right bottom icon. <i class="emphasis">b</i> = (<i class="emphasis">i, j</i>) points to cell (<i class="emphasis">i, j</i>). (Right) Cell (3, 2) was expanded. Note that pixels (3, 3), (2, 3), and (4, 2) are not displayed in the priority queue because they correspond to obstacles.</span>
+</div>
+<p class="para">Eventually, the goal cell is reached (<a href="#ap-hfig190946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" class="internaljump">figure H.19</a> (left)). Since the priority value of the goal is less than the priorities of all other cells in the priority queue, the resulting <a name="1393"></a><a name="idx-5350946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>path is optimal and <i class="emphasis">A</i>* terminates. <i class="emphasis">A</i>* traces the backpointers to find the optimal path from start to goal (<a href="#ap-hfig190946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" class="internaljump">figure H.19</a> (right)).</p>
+<div class="figure">
+<a name="1394"></a><a name="ap-hfig190946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="figuremediaobject"><a name="img_2688" href="javascript:PopImage('IMG_2688','figh-19_0.jpg','1000','371')" target="_self"><img alt="Image from book" border="0" id="IMG_2688" height="130" src="figh-19.jpg" title="Click To expand" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure H.19: </span>(Left) The goal state is expanded. (Right) Resulting path.</span>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1395"></a><a name="ap-hlev2sec5"></a><span class="section-titlelabel">H.2.5 </span>Nonoptimistic Example</h3>
+<p class="first-para">
+<a class="internaljump" href="#ap-hfig200946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">Figure H.20</a> contains an example of a graph whose heuristic values are nonoptimistic and thus force <i class="emphasis">A</i>* to produce a nonoptimal path. <i class="emphasis">A</i>* puts node <i class="EMPHASIS">S</i> on the priority queue and then expands it. Next, <i class="emphasis">A</i>* expands node A because its priority value is 7. The goal <a name="1396"></a><a name="idx-5360946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>node is then reached with priority value 8, which is still less than node B's priority value of 13. At this point, node B will be eliminated from the priority queue because its value is greater than the goal's priority value. However, the optimal path passes through B, not A. Here, the heuristic is not optimistic because from B to G, <i class="EMPHASIS">h</i> = 10 when the actual edge length was 2.</p>
+<div class="figure">
+<a name="1397"></a><a name="AP-HFIG20"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2689','figh-20_0.jpg','788','619')" name="img_2689" target="_self"><img alt="Image from book" border="0" height="275" id="IMG_2689" title="Click To expand" src="figh-20.jpg" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="FIGURE-TITLELABEL">Figure H.20: </span>A nonoptimistic heuristic leads to a nonoptimal path with <i class="EMPHASIS">A</i>*.</span>
+</div>
+</div>
+</div>
+</div> </div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="94.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=858244353"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="96.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

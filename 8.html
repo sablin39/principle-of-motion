@@ -1,0 +1,228 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+Chapter 2: Bug Algorithms</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Chapter 2 - 
+ Bug Algorithms</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(10,28,74,5,63,33,62,8,9,4,30,9,51,33,63)
+var a1 = new Array(11,7,8)
+var a2 = new Array(5,4,12)
+var a3 = new Array(1,6,0)
+var a4 = new Array(14,9,2)
+var a5 = new Array(3,10,13)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="7.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="9.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 09:07:30 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 09:07:31 UTC-->
+<div class="chapter">
+<a name="ch027C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a>
+<h1 class="chapter-title">
+<span class="chapter-titlelabel">Chapter 2: </span>Bug Algorithms</h1>
+<p class="first-para">
+<a name="57"></a><a name="page177C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a>Even a simple planner can present interesting and difficult issues. The Bug1 and Bug2 algorithms [301] are among the earliest and simplest sensor-based planners with provable guarantees. These algorithms assume the robot is a point operating in the plane with a contact sensor or a zero range sensor to detect obstacles. When the robot has a finite range (nonzero range) sensor, then the Tangent Bug algorithm [217] is a Bug derivative that can use that sensor information to find shorter paths to the goal. The Bug and Bug-like algorithms are straightforward to implement; moreover, a simple analysis shows that their success is guaranteed, when possible. These algorithms require two behaviors: move on a straight line and follow a boundary. To handle boundary-following, we introduce a curve-tracing technique based on the implicit function theorem at the end of this chapter. This technique is general to following any path, but we focus on following a boundary at a fixed distance.</p>
+<div class="section">
+<h2 class="sect2-title">
+<a name="58"></a><a name="ch02lev1sec17C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a><span class="section-titlelabel">2.1 </span>Bug1 and Bug2</h2>
+<p class="first-para">Perhaps the most straight forward path planning approach is to move toward the goal, unless an obstacle is encountered, in which case, circumnavigate the obstacle until motion toward the goal is once again allowable. Essentially, the Bug1 algorithm formalizes the "common sense" idea of moving toward the goal and going around obstacles. The robot is assumed to be a point with perfect positioning (no positioning error) with a contact sensor that can detect an obstacle boundary if the point robot "touches" it. The robot can also measure the distance <i class="emphasis">d</i>(<i class="emphasis">x</i>, <i class="emphasis">y</i>) between any two points <i class="emphasis">x</i> <a name="59"></a><a name="page187C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a>and <i class="emphasis">y</i>. Finally, assume that the workspace is <i class="emphasis">bounded</i>. Let <i class="emphasis">B</i><sub><i class="emphasis">r</i></sub> (<i class="emphasis">x</i>) denote a ball of radius <i class="emphasis">r</i> centered on <i class="emphasis">x</i>, i.e., <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_23" src="figu18_1.jpg" height="17" width="200" title="" border="0" /></span></span>. The fact that the workspace is bounded implies that for all <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_24" src="figu18_2.jpg" height="13" width="42" title="" border="0" /></span></span>, there exists an <i class="emphasis">r</i> &lt; <span class="unicode">&infin;</span> such that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_25" src="figu18_3.jpg" height="14" width="77" title="" border="0" /></span></span>.</p>
+<p class="para">The start and goal are labeled <i class="emphasis">q</i><sub>start</sub> and <i class="emphasis">q</i><sub>goal</sub>, respectively. Let <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub><i class="emphasis">O</i></sub> = <i class="emphasis">q</i><sub>start</sub> and the <i class="emphasis">m</i>-line be the line segment that connects <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub><i class="emphasis">i</i></sub> to <i class="emphasis">q</i><sub>goal</sub>. Initially, <i class="emphasis">i</i> = 0. The Bug1 algorithm exhibits two behaviors: motion-to-goal and boundary-following. During motion-to-goal, the robot moves along the <i class="emphasis">m</i>-line toward <i class="emphasis">q</i><sub>goal</sub> until it either encounters the goal or an obstacle. If the robot encounters an obstacle, let <i class="emphasis">q</i><sup><i class="emphasis">H</i></sup><sub>1</sub> be the point where the robot first encounters an obstacle and call this point a <i class="emphasis">hit point</i>. The robot then circumnavigates the obstacle until it returns to <i class="emphasis">q</i><sup><i class="emphasis">H</i></sup><sub>1</sub>. Then, the robot determines the closest point to the goal on the perimeter of the obstacle and traverses to this point. This point is called a <i class="emphasis">leave point</i> and is labeled <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub>1</sub>. From <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub>1</sub>, the robot heads straight toward the goal again, i.e., it reinvokes the motion-to-goal behavior. If the line that connects <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub>1</sub> and the goal intersects the current obstacle, then there is no path to the goal; note that this intersection would occur immediately "after" leaving <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub>1</sub>.</p>
+<p class="para">Otherwise, the index <i class="emphasis">i</i> is incremented and this procedure is then repeated for <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub><i class="emphasis">i</i></sub> and <i class="emphasis">q</i><sup><i class="emphasis">H</i></sup><sub><i class="emphasis">i</i></sub> until the goal is reached or the planner determines that the robot cannot reach the goal (<a class="internaljump" href="#ch02fig017C9D701F-F8DA-49A1-BB16-AD9FEE20A345">figures 2.1</a>, <a class="internaljump" href="#ch02fig027C9D701F-F8DA-49A1-BB16-AD9FEE20A345">2.2</a>). Finally, if the line to the goal "grazes" an obstacle, the robot need not invoke a boundary following behavior, but rather continues onward toward the goal. See <a class="internaljump" href="#ch02al017C9D701F-F8DA-49A1-BB16-AD9FEE20A345">algorithm 1</a> for a description of the Bug1 approach.</p>
+<div class="figure">
+<a name="60"></a><a name="ch02fig017C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_26','fig2-1_0.jpg','934','829')" name="IMG_26" target="_self"><img alt="Image from book" id="IMG_26" src="fig2-1.jpg" height="311" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 2.1: </span>The Bug1 algorithm successfully finds the goal.</span>
+</div>
+<div class="figure">
+<a name="61"></a><a name="ch02fig027C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_27','fig2-2_0.jpg','663','543')" name="IMG_27" target="_self"><img alt="Image from book" id="IMG_27" src="fig2-2.jpg" height="287" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 2.2: </span>The Bug1 algorithm reports the goal is unreachable.</span>
+</div>
+<a name="62"></a><a name="page197C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 1: </span>Bug1 Algorithm</span><a name="63"></a><a name="ch02al017C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b> A point robot with a tactile sensor
+<b class="bold">Output:</b> A path to the <i class="emphasis">q</i><sub>goal</sub> or a conclusion no such path exists
+1: <b class="bold">while</b> Forever <b class="bold">do</b>
+2:  <b class="bold">repeat</b>
+3:    From <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub><i class="emphasis">i</i>-1</sub>, move toward <i class="emphasis">q</i><sub>goal</sub>.
+4:  <b class="bold">until</b> <i class="emphasis">q</i><sub>goal</sub> is reached <b class="bold">or</b> an obstacle is encountered at <i class="emphasis">q</i><sup><i class="emphasis">H</i></sup><sub><i class="emphasis">i</i></sub>
+5:  <b class="bold">if</b> Goal is reached <b class="bold">then</b>
+6:     Exit.
+7:  <b class="bold">end if</b>
+8:  <b class="bold">repeat</b>
+9:    Follow the obstacle boundary.
+10:  <b class="bold">until</b> <i class="emphasis">q</i><sub>goal</sub> is reached <b class="bold">or</b> <i class="emphasis">q</i><sup><i class="emphasis">H</i></sup><sub><i class="emphasis">i</i></sub> is re-encountered.
+11:  Determine the point <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub><i class="emphasis">i</i></sub> on the perimeter that has the shortest distance to the goal.
+12:  Go to <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub><i class="emphasis">i</i></sub>.
+13:  <b class="bold">if</b> the robot were to move toward the goal <b class="bold">then</b>
+14:    Conclude <i class="emphasis">q</i><sub>goal</sub> is not reachable and exit.
+15:  <b class="bold">end if</b>
+16: <b class="bold">end while</b>
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="para">Like its Bug1 sibling, the Bug2 algorithm exhibits two behaviors: motion-to-goal and boundary-following. During motion-to-goal, the robot moves toward the goal on the <i class="emphasis">m</i>-line; however, in Bug2 the <i class="emphasis">m</i>-line connects <i class="emphasis">q</i><sub>start</sub> and <i class="emphasis">q</i><sub>goal</sub>, and thus remains fixed. The boundary-following behavior is invoked if the robot encounters an obstacle, <a name="64"></a><a name="IDX-207C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a>but this behavior is different from that of Bug1. For Bug2, the robot circumnavigates the obstacle until it reaches a new point on the <i class="emphasis">m</i>-line closer to the goal than the initial point of contact with the obstacle. At this time, the robot proceeds toward the goal, repeating this process if it encounters an object. If the robot re-encounters the original departure point from the <i class="emphasis">m</i>-line, then there is no path to the goal (<a class="internaljump" href="#ch02fig037C9D701F-F8DA-49A1-BB16-AD9FEE20A345">figures 2.3</a>, <a class="internaljump" href="#ch02fig047C9D701F-F8DA-49A1-BB16-AD9FEE20A345">2.4</a>). Let <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_28" src="figu20_1.jpg" height="16" width="107" title="" border="0" /></span></span> be the current position of the robot, <i class="emphasis">i</i> = 1, and <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub><i class="emphasis">O</i></sub> be the start location. See <a class="internaljump" href="#ch02al027C9D701F-F8DA-49A1-BB16-AD9FEE20A345">algorithm 2</a> for a description of the Bug2 approach.</p>
+<div class="figure">
+<a name="65"></a><a name="ch02fig037C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_29','fig2-3_0.jpg','625','1000')" name="IMG_29" target="_self"><img alt="Image from book" id="IMG_29" src="fig2-3.jpg" height="499" width="312" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 2.3: </span>(Top) The Bug2 algorithm finds a path to the goal. (Bottom) The Bug2 algorithm reports failure.</span>
+</div>
+<div class="figure">
+<a name="66"></a><a name="ch02fig047C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_30','fig2-4_0.jpg','1000','916')" name="IMG_30" target="_self"><img alt="Image from book" id="IMG_30" src="fig2-4.jpg" height="321" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 2.4: </span>Bug2 Algorithm.</span>
+</div>
+<p class="para">At first glance, it seems that Bug2 is a more effective algorithm than Bug1 because the robot does not have to entirely circumnavigate the obstacles; however, this is not always the case. This can be seen by comparing the lengths of the paths found by the two algorithms. For Bug1, when the <i class="emphasis">i</i>th obstacle is encountered, the robot completely circumnavigates the boundary, and then returns to the leave point. In the worst case, the robot must traverse half the perimeter, <i class="emphasis">p</i><sub><i class="emphasis">i</i></sub>, of the obstacle to reach this leave point.</p>
+<p class="para">
+<a name="67"></a><a name="IDX-217C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a>Moreover, in the worst case, the robot encounters all <i class="emphasis">n</i> obstacles. If there are no obstacles, the robot must traverse a distance of length <i class="emphasis">d</i>(<i class="emphasis">q</i><sub>start</sub>, <i class="emphasis">q</i><sub>goal</sub>). Thus, we obtain</p>
+<div class="equation" mathml="yes">
+<a name="68"></a><a name="ch02eqn017C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(2.1)&nbsp;</span></td><td valign="top"><img src="figu21_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">For Bug2, the path length is a bit more complicated. Suppose that the line through <i class="emphasis">q</i><sub>start</sub> and <i class="emphasis">q</i><sub>goal</sub> intersects the <i class="emphasis">i</i>th obstacle <i class="emphasis">n</i><sub><i class="emphasis">i</i></sub> times. Then, there are at most <i class="emphasis">n</i><sub><i class="emphasis">i</i></sub> leave points for this obstacle, since the robot may only leave the obstacle when it returns to a point on this line. It is easy to see that half of these intersection points are not valid leave points because they lie on the "wrong side" of the obstacle, i.e., moving toward the goal would cause a collision. In the worst case, the robot will traverse nearly the entire perimeter of the obstacle for each leave point. Thus, we obtain</p>
+<div class="equation" mathml="yes">
+<a name="69"></a><a name="ch02eqn027C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(2.2)&nbsp;</span></td><td valign="top"><span class="equation-image"><img alt=" \user1{(2}\user1{.2)}L_{{\rm{Bug}}2}  \le d(q_{{\rm{start,}}} q_{{\rm{goal}}} ) + {1 \over 2}\sum\limits_{i = 1}^n {n_i p_i .} " id="IMG_32" src="figu21_2.jpg" height="57" width="369" title=" \user1{(2}\user1{.2)}L_{{\rm{Bug}}2}  \le d(q_{{\rm{start,}}} q_{{\rm{goal}}} ) + {1 \over 2}\sum\limits_{i = 1}^n {n_i p_i .} " border="0" /></span>
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Naturally, <a class="internaljump" href="#ch02eqn027C9D701F-F8DA-49A1-BB16-AD9FEE20A345">(2.2)</a> is an upper-bound because the summation is over all of the obstacles as opposed to over the set of obstacles that are encountered by the robot.</p>
+<a name="70"></a><a name="page227C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 2: </span>Bug2 Algorithm</span><a name="71"></a><a name="ch02al027C9D701F-F8DA-49A1-BB16-AD9FEE20A345"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b> A point robot with a tactile sensor
+<b class="bold">Output:</b> A path to <i class="emphasis">q</i><sub>goal</sub> or a conclusion no such path exists
+1: <b class="bold">while</b> True <b class="bold">do</b>
+2:  <b class="bold">repeat</b>
+3:    From <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub><i class="emphasis">i</i>-1</sub>, move toward <i class="emphasis">q</i><sub>goal</sub> along <i class="emphasis">m</i>-line.
+4:  <b class="bold">until</b>
+<i class="emphasis">q</i><sub>goal</sub> is reached <b class="bold">or</b>
+an obstacle is encountered at <i class="emphasis">hit point q</i><sup><i class="emphasis">H</i></sup><sub><i class="emphasis">i</i></sub>.
+5:  Turn left (or right).
+6:  <b class="bold">repeat</b>
+7:    Follow boundary
+8:  <b class="bold">until</b>
+9:   <i class="emphasis">q</i><sub>goal</sub> is reached <b class="bold">or</b>
+10:    <i class="emphasis">q</i><sup><i class="emphasis">H</i></sup><sub><i class="emphasis">i</i></sub> is re-encountered <b class="bold">or</b>
+11:    <i class="emphasis">m</i>-line is re-encountered at a point <i class="emphasis">m</i> such that
+12:     <i class="emphasis">m</i> <span class="unicode">&ne;</span> <i class="emphasis">q</i><sup><i class="emphasis">H</i></sup><sub><i class="emphasis">i</i></sub> (robot did not reach the hit point),
+13:     <i class="emphasis">d</i>(<i class="emphasis">m</i>, <i class="emphasis">q</i><sub>goal</sub>) &lt; <i class="emphasis">d</i>(<i class="emphasis">m</i>, <i class="emphasis">q</i><sup><i class="emphasis">H</i></sup><sub><i class="emphasis">i</i></sub> (robot is closer), and
+14:     If robot moves toward goal, it would not hit the obstacle
+15:   Let <i class="emphasis">q</i><sup><i class="emphasis">L</i></sup><sub><i class="emphasis">i</i>+1</sub> = <i class="emphasis">m</i>
+16:   Increment <i class="emphasis">i</i>
+17: <b class="bold">end while</b>
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="para">A casual examination of <a class="internaljump" href="#ch02eqn017C9D701F-F8DA-49A1-BB16-AD9FEE20A345">(2.1)</a> and <a class="internaljump" href="#ch02eqn027C9D701F-F8DA-49A1-BB16-AD9FEE20A345">(2.2)</a> shows that <i class="emphasis">L</i><sub>Bug2</sub> can be arbitrarily longer than <i class="emphasis">L</i><sub>Bug1</sub>. This can be achieved by constructing an obstacle whose boundary has many intersections with the <i class="emphasis">m</i>-line. Thus, as the "complexity" of the obstacle increases, it becomes increasingly likely that Bug1 could outperform Bug2 (<a class="internaljump" href="#ch02fig047C9D701F-F8DA-49A1-BB16-AD9FEE20A345">figure 2.4</a>).</p>
+<p class="last-para">In fact, Bug1 and Bug2 illustrate two basic approaches to search problems. For each obstacle that it encounters, Bug1 performs an <i class="emphasis">exhaustive search</i> to find the optimal leave point. This requires that Bug1 traverse the entire perimeter of the obstacle, buthaving done so, it is certain to have found the optimal leave point. In contrast, Bug2 uses an <i class="emphasis">opportunistic</i> approach. When Bug2 finds a leave point that is better than any it has seen before, it commits to that leave point. Such an algorithm is also called <i class="emphasis">greedy</i>, since it opts for the first promising option that is found. When the obstacles are simple, the greedy approach of Bug2 gives a quick payoff, but when the obstacles are complex, the more conservative approach of Bug1 often yields better performance.</p>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="7.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="9.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

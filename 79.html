@@ -1,0 +1,195 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+C.5 Jacobians and Gradients</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Appendix C - 
+ Topology and Metric Spaces</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(12,50,15,7,69,5,95,47,82,94,91,55,9,31,27)
+var a1 = new Array(5,12,3)
+var a2 = new Array(0,4,9)
+var a3 = new Array(11,8,13)
+var a4 = new Array(14,6,7)
+var a5 = new Array(10,2,1)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="78.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=794314750"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="80.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:49:21 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:49:21 UTC-->
+<div class="appendix">
+<a name="ap-c0946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="1255"></a><a name="ap-clev1sec50946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="section-titlelabel">C.5 </span>Jacobians and Gradients</h2>
+<p class="first-para">
+<a name="1256"></a><a name="page4830946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>Consider a vector-valued function <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2480" src="figu483_1.jpg" height="19" width="123" title="" border="0" /></span></span> where <i class="emphasis">f</i> can be written</p>
+<div class="informalequation" mathml="yes">
+<img src="figu483_2.jpg" />
+<br />
+
+</div>
+<p class="para">where <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2482" src="figu483_3.jpg" height="19" width="118" title="" border="0" /></span></span> for <i class="emphasis">i</i> <span class="unicode">&#8714;</span>{1, 2,<span class="unicode">&hellip;</span>,<i class="emphasis">n</i>}.</p>
+<p class="para">We define the <i class="emphasis">differential</i> of <i class="emphasis">f</i> to be the matrix<sup>[<a name="ap-cfnt010946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" href="#ftn.ap-cfnt010946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">1</a>]</sup>
+</p>
+<div class="informalequation" mathml="yes">
+<img src="figu483_4.jpg" />
+<br />
+
+</div>
+<p class="para">The matrix <i class="emphasis">Df</i> is denoted in a number of different ways. It is sometimes called the <i class="emphasis">Jacobian</i> of <i class="emphasis">f</i> and denoted <i class="emphasis">J</i> (see <a href="12.html" target="_parent" class="chapterjump">chapter 3</a>). It is sometimes called the <i class="emphasis">tangent map</i> of <i class="emphasis">f</i> and denoted <i class="emphasis">Tf</i>. Sometimes it is necessary to specify which variables are used in the differentiation. Hence the differential can also be denoted <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2488" src="figu483_5.jpg" height="26" width="16" title="" border="0" /></span></span>. Putting the variable name in the subscript serves a similar purpose. The symbols <i class="emphasis">D<sub>x</sub> f, J<sub>x</sub></i>, and <i class="emphasis">T<sub>x</sub> f</i> all denote the differential of <i class="emphasis">f</i> with respect to the variable <i class="emphasis">x</i>.</p>
+<p class="para">Given a function <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2489" src="figu483_6.jpg" height="19" width="110" title="" border="0" /></span></span>, the <i class="emphasis">gradient</i> of <i class="emphasis">g</i> is defined to be</p>
+<div class="informalequation" mathml="yes">
+<img src="figu483_7.jpg" />
+<br />
+
+</div>
+<p class="para">As in the case of the differential, the notation <span class="unicode">&nabla;</span><sub><i class="emphasis">x</i></sub><i class="emphasis">g</i> is sometimes used to make explicit the fact that <i class="emphasis">g</i> is differentiated with respect to <i class="emphasis">x</i>. The vector <span class="unicode">&nabla;</span><i class="emphasis">g</i>(<i class="emphasis">x</i>) points in the direction that maximally increases the function at the point <i class="emphasis">x</i>. Note that by this defintition <span class="unicode">&nabla;</span> <i class="emphasis">f</i>(<i class="emphasis">x</i>) = <i class="emphasis">Df<sup>T</sup></i>. The decision as to whether the gradient should be a row vector or a column vector is somewhat arbitrary. In this book we define it as a column vector because that is the convention commonly used in the robotics community when discussing planning algorithms based on artificial potential fields.</p>
+<p class="para">
+<a name="1258"></a><a name="page4840946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>Let <i class="emphasis">c</i>(<i class="emphasis">t</i>) be a <i class="emphasis">smooth curve</i> in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2491" src="figu484_1.jpg" height="15" width="22" title="" border="0" /></span></span>, i.e., <i class="emphasis">c</i> is a <i class="emphasis">C</i><sup>&infin;</sup>, vector-valued map <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2492" src="figu484_2.jpg" height="15" width="106" title="" border="0" /></span></span>. If <i class="emphasis">t</i> is time, the derivative</p>
+<div class="informalequation" mathml="yes">
+<img src="figu484_3.jpg" />
+<br />
+
+</div>
+<p class="para">can be thought of as the velocity of a point moving along <i class="emphasis">c</i>(<i class="emphasis">t</i>).</p>
+<p class="para">For a real-valued function <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2494" src="figu484_4.jpg" height="19" width="110" title="" border="0" /></span></span>, one is often interested in how the value of the function <i class="emphasis">g</i> changes as the state follows the trajectory <i class="emphasis">c</i>(<i class="emphasis">t</i>). This is the same as finding the derivative of <i class="emphasis">g</i>(<i class="emphasis">c</i>(<i class="emphasis">t</i>)) with respect to <i class="emphasis">t</i>, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2495" src="figu484_5.jpg" height="26" width="156" title="" border="0" /></span></span>, where (<i class="emphasis">g</i> <span class="unicode">&#8728;</span> <i class="emphasis">c</i>)(<i class="emphasis">t</i>) = <i class="emphasis">g</i>(<i class="emphasis">c</i>(<i class="emphasis">t</i>)) is called the <i class="emphasis">composition</i> of <i class="emphasis">g</i> and <i class="emphasis">c</i>. To calculate <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2496" src="figu484_6.jpg" height="16" width="95" title="" border="0" /></span></span> we can use the <i class="emphasis">chain rule</i>, which can be stated in a number of different ways:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu484_7.jpg" />
+<br />
+
+</div>
+<p class="para">Note here that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2498" src="figu484_8.jpg" height="29" width="19" title="" border="0" /></span></span> denotes the partial derivative of <i class="emphasis">g</i> with respect to <i class="emphasis">x<sub>i</sub></i> evaluated at <i class="emphasis">x<sub>i</sub></i> = <i class="emphasis">c<sub>i</sub></i>(<i class="emphasis">t</i>). Likewise, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2499" src="figu484_9.jpg" height="10" width="17" title="" border="0" /></span></span> and <i class="emphasis">D<sub>c</sub>g</i> denote the differential of <i class="emphasis">g</i> with respect to <i class="emphasis">x</i> evaluated at <i class="emphasis">x</i> = <i class="emphasis">c</i>(<i class="emphasis">t</i>). When it is necessary to be explicit, these quantities are sometimes denoted as <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2500" src="figu484_10.jpg" height="26" width="64" title="" border="0" /></span></span> or <i class="emphasis">D</i><sub><i class="emphasis">x</i></sub> |<sub><i class="emphasis">x</i></sub> = <i class="emphasis">c</i>(<i class="emphasis">t</i>).</p>
+<p class="para">Sometimes it is useful to be able to see how <i class="emphasis">g</i> changes when the curve <i class="emphasis">c</i> is represented in different coordinates than those for which <i class="emphasis">g</i> is defined. Let <i class="emphasis">h</i> : <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2501" src="figu484_11.jpg" height="15" width="119" title="" border="0" /></span></span> be the smooth change of coordinates that maps from the coordinates in which <i class="emphasis">c</i> is defined (<i class="emphasis">y</i>-coordinates) into the <i class="emphasis">x</i>-coordinates required by <i class="emphasis">g</i>, i.e., <i class="emphasis">x</i> = <i class="emphasis">g</i>(<i class="emphasis">y</i>). So we are interested in seeing how <i class="emphasis">g</i>(<i class="emphasis">h</i>(<i class="emphasis">c</i>(<i class="emphasis">t</i>))) = (<i class="emphasis">g</i> <span class="unicode">&#8728;</span> <i class="emphasis">h</i> <span class="unicode">&#8728;</span> <i class="emphasis">c</i>)(<i class="emphasis">t</i>) evolves with <i class="emphasis">t</i>. Again, the chain rule allows us to express this quantity in a number of different ways:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu484_12.jpg" />
+<br />
+
+</div>
+<p class="para">
+<a name="1259"></a><a name="IDX-4850946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>In the second of these expressions the dimension of each of the three objects on the right-hand side is written below the underbrace. This is to make it clear that the dimensions are suitable for matrix multiplication and that the resulting product is indeed a scalar.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">EXAMPLE C.5.1</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Consider the curve <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2503" src="figu485_1.jpg" height="18" width="107" title="" border="0" /></span></span> defined in polar coordinates</p>
+<div class="informalequation" mathml="yes">
+<img src="figu485_2.jpg" />
+<br />
+
+</div>
+<p class="para">Note that this curve corresponds to a point moving around a circle of constant radius 2 at a velocity of 4<span class="unicode">&pi;</span>, i.e., the point travels around the circle once every second. Now consider a function <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2505" src="figu485_3.jpg" height="22" width="110" title="" border="0" /></span></span> defined in Cartesian coordinates</p>
+<div class="informalequation" mathml="yes">
+<img src="figu485_4.jpg" />
+<br />
+
+</div>
+<p class="para">In order to compute <i class="emphasis">&#289;</i>, we introduce a coordinate change <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2507" src="figu485_5.jpg" height="18" width="121" title="" border="0" /></span></span> that maps the vector <i class="emphasis">y</i> = [<i class="emphasis">y</i><sub>1</sub>, <i class="emphasis">y</i><sub>2</sub>]<sup><i class="emphasis">T</i></sup> = [<i class="emphasis">r</i>, <span class="unicode">&theta;</span>]<sup><i class="emphasis">T</i></sup> in polar coordinates into Cartesian coordinates:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu485_6.jpg" />
+<br />
+
+</div>
+<p class="para">Using the chain rule we get</p>
+<p class="para">
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(C.2)&nbsp;</span></td><td valign="top"><img src="figu485_7.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+</p>
+<p class="last-para">This can be checked by differentiating (<i class="emphasis">g</i> <span class="unicode">&#8728;</span> <i class="emphasis">h</i> <span class="unicode">&#8728;</span> <i class="emphasis">c</i>)(<i class="emphasis">t</i>) = 2 cos(2<span class="unicode">&pi;</span><i class="emphasis">t</i>) directly to get the same answer.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">The chain rule can be used in a similar manner to differentiate compositions of functions of any compatible dimension. For example, if we redefine the functions <i class="emphasis">h</i> and <i class="emphasis">g</i> so that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2510" src="figu485_8.jpg" height="15" width="128" title="" border="0" /></span></span> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2511" src="figu485_9.jpg" height="19" width="129" title="" border="0" /></span></span>, then the chain rule gives the derivative of the composition</p>
+<div class="informalequation" mathml="yes">
+<img src="figu485_10.jpg" />
+<br />
+
+</div>
+<p class="para">
+<b>A remark about rows and columns:</b> <a name="1260"></a><a name="IDX-4860946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>In mechanics, a force vector <i class="emphasis">F</i> is usually represented by a row vector as it is a member of the cotangent space (see <a href="66.html" target="_parent" class="chapterjump">chapter 12</a>). Velocity vectors belong to the tangent space and are usually represented as column vectors, e.g., <i class="emphasis">v</i>. This allows us to easily take the product <i class="emphasis">Fv</i> to get power, which is a scalar value. Many mechanics texts use up-down indicial notation to facilitate this, but such notation is not required for this book.</p>
+</div>
+<div class="footnotes">
+<div class="footnote">
+<p>
+<a name="1257"></a><sup>[<a name="ftn.ap-cfnt010946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC" href="#ap-cfnt010946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">1</a>]</sup>To be technically accurate, the differential is actually a map from the tangent space of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2483" src="figu483_8.jpg" height="12" width="20" title="" border="0" /></span></span> (which happens to also be <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2484" src="figu483_9.jpg" height="12" width="20" title="" border="0" /></span></span>) to the tangent space of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2485" src="figu483_10.jpg" height="12" width="18" title="" border="0" /></span></span> (which is <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2486" src="figu483_11.jpg" height="12" width="18" title="" border="0" /></span></span>). For the purposes of this appendix, we simply represent <i class="emphasis">Df</i> as an <i class="emphasis">n</i> &times; <i class="emphasis">m</i> matrix.</p>
+</div>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="78.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=794314750"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="80.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

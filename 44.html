@@ -1,0 +1,404 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+7.2 Single-Query Sampling-Based Planners</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Chapter 7 - 
+ Sampling-Based Algorithms</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(60,58,9,29,11,28,60,52,32,7,83,0,28,4,9)
+var a1 = new Array(14,9,2)
+var a2 = new Array(3,10,13)
+var a3 = new Array(5,8,11)
+var a4 = new Array(12,0,4)
+var a5 = new Array(7,6,1)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="43.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="45.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:17:39 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:17:40 UTC-->
+<div class="chapter">
+<a name="ch071C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="575"></a><a name="ch07lev1sec21C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">7.2 </span>Single-Query Sampling-Based Planners</h2>
+<p class="first-para">
+<tt>PRM</tt> was originally presented as a multiple-query planner: the goal was to create a roadmap that captures the connectivity of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_893" src="figu227_4.jpg" height="18" width="37" title="" border="0" /></span></span> and then answer multiple user-defined queries very fast. In many planning instances, the answer to a single query is of interest and these instances are best served by single-query planners. Single-query planners attempt to solve a query as fast as possible and do not focus on the exploration of the entire <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_894" src="figu227_5.jpg" height="18" width="37" title="" border="0" /></span></span>.</p>
+<p class="para">Many efficient single-query sampling-based planners exist. Some of them preceded <tt>PRM</tt>. One of the first widely used sampling-based planners was <tt>RPP</tt> [40]. <tt>RPP</tt> works by constructing potential fields over the workspace that attract control points of the robot to their corresponding positions in the goal configuration while pushing these robot points away from the obstacles (see also <a href="21.html" target="_parent" class="chapterjump">chapter 4</a>). The workspace potentials are combined using an arbitration function to generate a configuration space potential. Starting from the initial configuration <tt>RPP</tt> performs a gradient motion until it reaches a local minimum. If the goal configuration has not been reached, <tt>RPP</tt> executes a series <a name="576"></a><a name="page2281C14020F-F9F5-4415-973A-D906072C1A72"></a>of random motions to escape the local minimum. In this way, <tt>RPP</tt> incrementally builds a graph of local minima, where the path joining two local minima is obtained by concatenating a random motion and a gradient descent motion. "Ariadne's clew" is another algorithm that uses samples in the configuration space [47,48]. The algorithm works by interleaving the exploration of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_895" src="figu228_1.jpg" height="18" width="16" title="" border="0" /></span></span> with searches for paths to the goal configuration. "Ariadne's clew" builds a tree from the initial configuration. During exploration, new configurations are placed in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_896" src="figu228_2.jpg" height="18" width="37" title="" border="0" /></span></span> as far as possible from one another. The selection of configurations can be difficult and is done through genetic optimization. For each new configuration, a local search is performed to determine if the goal configuration is reachable from it. Many other algorithms (e.g., [33, 102, 165, 204]) explored the idea of planning by generating sample points in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_897" src="figu228_3.jpg" height="18" width="37" title="" border="0" /></span></span>, but will not be presented in this chapter due to space limitations. The planner in [204] called the 2Z-method bears some similarities with <tt>PRM</tt>.</p>
+<p class="para">
+<tt>PRM</tt> itself can also be used as single-query planner. In that case, <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> should be inserted to the roadmap at the beginning. The planner should check periodically if the given query can be solved, that is if <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> belong to the same component of the roadmap. At that point, the construction of the roadmap should be aborted. The sampling and connections strategies described in <a href="43.html#515" target="_parent" class="chapterjump">section 7.1</a> are all applicable here. In particular, the careful application of lazy evaluation has yielded an effective single-query <tt>PRM</tt> planner, which is called <tt>LazyPRM</tt> [52-54]. <tt>LazyPRM</tt> "creates" a roadmap whose nodes and edges have not been checked for collision. The planner performs a standard search to find a path from the initial to the goal configuration and starts checking the path for collisions as described in <a href="43.html#569" target="_parent" class="chapterjump">section 7.1.4</a>. The planner stops when a collision-free path has been found and it was shown experimentally that this was achieved well before the roadmap was fully checked [53].</p>
+<p class="para">This section describes two planners that were designed primarily for single-query planning. The planners are Expansive-Spaces Trees (<tt>EST</tt>s) [192, 195, 196, 235] and Rapidly-exploring Random Trees (<tt>RRT</tt>s) [249,270-272]. These planners also have the advantage that they are very efficient for kinodynamic planning (see <a href="47.html#643" target="_parent" class="chapterjump">section 7.5</a> and <a href="57.html" target="_parent" class="chapterjump">chapters 10</a>, <a href="61.html" target="_parent" class="chapterjump">11</a>, and <a href="66.html" target="_parent" class="chapterjump">12</a>). For the moment, we concentrate on geometric path-planning.</p>
+<p class="para">
+<tt>EST</tt>s and <tt>RRT</tt>s bias the sampling of configurations by maintaining two trees, <i class="emphasis">T</i><sub>init</sub> and <i class="emphasis">T</i><sub>goal</sub>, rooted at <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> configurations, respectively, and then growing the trees toward each other until they are merged into one. It is possible to construct only a single tree rooted at <i class="emphasis">q</i><sub>init</sub> that grows toward <i class="emphasis">q</i><sub>goal</sub>,but, for geometric path-planning, this is usually less efficient than maintaining two trees. In the construction step, new configurations are sampled from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_898" src="figu228_4.jpg" height="18" width="37" title="" border="0" /></span></span> near the boundaries of the two trees. A configuration is added to a tree only if it can be connected by the local planner to some existing configuration in the tree. In the merging step, a local planner attempts <a name="577"></a><a name="page2291C14020F-F9F5-4415-973A-D906072C1A72"></a>to connect pairs of configurations selected from both trees. If successful, the two trees become one connected component and a path from <i class="emphasis">q</i><sub>init</sub> to <i class="emphasis">q</i><sub>goal</sub> is returned.</p>
+<p class="para">For answering a single query, it is necessary to cover only the parts of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_899" src="figu229_1.jpg" height="18" width="37" title="" border="0" /></span></span> relevant to the query. <tt>EST</tt>s and <tt>RRT</tt>s developed sampling strategies that bias the sampling of the configurations toward the unexplored components of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_900" src="figu229_2.jpg" height="18" width="37" title="" border="0" /></span></span> relevant to the query. The introduced sampling methods are fundamentally conditional: the generation of a new configuration depends on the initial and goal configuration and any previously generated configurations. The planners, however, are faced with the following dilemma: although it is important to search the part of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_901" src="figu229_3.jpg" height="18" width="37" title="" border="0" /></span></span> that is relevant to the given query, the planners need to demonstrate that their sampling can potentially cover the whole <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_902" src="figu229_4.jpg" height="18" width="37" title="" border="0" /></span></span>. This is necessary for ensuring probabilistic completeness. <tt>EST</tt>s are a purely forward projection/propagation method. An <tt>EST</tt> pushes the constructed tree to unexplored parts of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_903" src="figu229_5.jpg" height="18" width="37" title="" border="0" /></span></span> by sampling points away from densely sampled areas. A rigorous analysis shows that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_904" src="figu229_6.jpg" height="18" width="37" title="" border="0" /></span></span> will be covered under certain assumptions [192]. <tt>RRT</tt>s employ a steering strategy that pulls the tree to unexplored parts of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_905" src="figu229_7.jpg" height="18" width="37" title="" border="0" /></span></span>. An <tt>RRT</tt> attempts to expand toward points in the free configuration space away from the tree. The algorithm has been shown to be probabilistically complete under certain assumptions [271]. <a class="internaljump" href="#ch07fig111C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.11</a> shows a single tree expanded from <i class="emphasis">q</i><sub>init</sub> using a variant of <tt>EST</tt> [350].</p>
+<div class="figure">
+<a name="578"></a><a name="ch07fig111C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_906','fig7-11_0.jpg','605','592')" name="IMG_906" target="_self"><img alt="Image from book" id="IMG_906" src="fig7-11.jpg" height="342" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.11: </span>Tree generated by a tree-based motion planner for docking a space shuttle at the space station. (From Phillips and Kavraki [350].)</span>
+</div>
+<p class="para">At the end of this section, the <tt>SBL</tt> [367] planner is described. <tt>SBL</tt> is a bi-directional <tt>EST</tt> that uses lazy evaluation for its node connection strategy. This allows the planner to explore the free space very efficiently and at the same time reduce the number of collision checks with further performance improvements over traditional <tt>EST</tt>s.</p>
+<div class="section">
+<h3 class="sect3-title">
+<a name="579"></a><a name="ch07lev2sec51C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">7.2.1 </span>Expansive-Spaces Trees</h3>
+<p class="first-para">
+<a name="580"></a><a name="page2301C14020F-F9F5-4415-973A-D906072C1A72"></a><tt>EST</tt>s were initially developed as an efficient single-query planner that covers the space between <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> rapidly [192, 195, 196, 235]. The developers of the algorithm did not use the acronym <tt>EST</tt> in their original publications. The acronym was later adopted and was inspired by the notion of "expansive" space used in the theoretical analysis of the algorithm. <tt>EST</tt> was initially geared toward kinodynamic problems, and for these problems a single tree is typically built (see <a href="47.html#644" target="_parent" class="chapterjump">section 7.5.1</a>). A number of recent planners are based on or use <tt>EST</tt>s [14,350,367]. The <tt>EST</tt> algorithm has been shown to be probabilistically complete [192].</p>
+<div class="section">
+<h4 class="sect4-title">
+<a name="581"></a><a name="ch07lev3sec251C14020F-F9F5-4415-973A-D906072C1A72"></a>Construction of Trees</h4>
+<p class="first-para">Let <i class="emphasis">T</i> be one of the trees <i class="emphasis">T</i><sub>init</sub> or <i class="emphasis">T</i><sub>goal</sub> rooted at <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub>, respectively. The planner first selects a configuration <i class="emphasis">q</i> in <i class="emphasis">T</i> from which to grow <i class="emphasis">T</i> and then samples a random configuration, <i class="emphasis">q</i><sub>rand</sub>, from a uniform distribution in the neighborhood of <i class="emphasis">q</i>. Configuration <i class="emphasis">q</i> is selected at random with probability <span class="unicode">&pi;</span><sub><i class="emphasis">T</i></sub>(<i class="emphasis">q</i>). The local planner <span class="unicode">&Delta;</span> (see <a href="43.html#515" target="_parent" class="chapterjump">section 7.1</a>) attempts a connection between <i class="emphasis">q</i> and <i class="emphasis">q</i><sub>rand</sub>. If successful, <i class="emphasis">q</i><sub>rand</sub> is added to the vertices of <i class="emphasis">T</i> and (<i class="emphasis">q</i>, <i class="emphasis">q</i><sub>rand</sub>) is added to the edges of <i class="emphasis">T</i>. The process is repeated until a specified number of configurations has been added to <i class="emphasis">T</i>. The pseudocode is given in algorithms 8 and 9. <a class="internaljump" href="#ch07fig121C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.12</a> illustrates this method in the simple case of a point robot in a two-dimensional Euclidean workspace.</p>
+<div class="figure">
+<a name="582"></a><a name="ch07fig121C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_907','fig7-12_0.jpg','688','460')" name="IMG_907" target="_self"><img alt="Image from book" id="IMG_907" src="fig7-12.jpg" height="234" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.12: </span>Adding a new configuration to an <tt>EST</tt>. Suppose <i class="emphasis">q</i> is selected and <i class="emphasis">q</i><span class="unicode">&prime;</span><sub>rand</sub> is created in its neighborhood. The local planner succeeds in connecting <i class="emphasis">q</i> to <i class="emphasis">q</i><span class="unicode">&prime;</span><sub>rand</sub>. Configuration <i class="emphasis">q</i><span class="unicode">&prime;</span><sub>rand</sub> and the edge (<i class="emphasis">q</i>, <i class="emphasis">q</i><span class="unicode">&prime;</span><sub>rand</sub>) are added to the tree <i class="emphasis">T</i>. Had <i class="emphasis">q</i><span class="unicode">&Prime;</span><sub>rand</sub> been created, no nodes or edges would have been added to <i class="emphasis">T</i>, as the local planner would have failed to connect <i class="emphasis">q</i> and <i class="emphasis">q</i><span class="unicode">&Prime;</span><sub>rand</sub>.</span>
+</div>
+<p class="para">Recall that in the roadmap construction of <tt>PRM</tt>, <a href="43.html#521" target="_parent" class="chapterjump">algorithm 6</a> in <a href="43.html#515" target="_parent" class="chapterjump">section 7.1</a>, a new random configuration in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_908" src="figu230_1.jpg" height="18" width="37" title="" border="0" /></span></span> is never rejected but it is immediately added to the <a name="583"></a><a name="IDX-2311C14020F-F9F5-4415-973A-D906072C1A72"></a>roadmap. No attempts are made to connect it to existing configurations in the roadmap. In contrast, in the construction step of <tt>EST</tt>, a new configuration is added to <i class="emphasis">T</i> only if <span class="unicode">&Delta;</span> succeeds in connecting it to an existing configuration in <i class="emphasis">T</i>. It follows then that there is a path from the root of <i class="emphasis">T</i> to every configuration in <i class="emphasis">T</i>.</p>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 8: </span>Build <tt>EST</tt> Algorithm</span><a name="584"></a><a name="ch07al081C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b>
+<i class="emphasis">q</i><sub>0</sub>: the configuration where the tree is rooted
+<i class="emphasis">n</i> : the number of attempts to expand the tree
+<b class="bold">Output:</b>
+A tree <i class="emphasis">T</i> = (<i class="emphasis">V</i>, <i class="emphasis">E</i>) that is rooted at <i class="emphasis">q</i><sub>0</sub> and has <span class="unicode">&le;</span> <i class="emphasis">n</i> configurations
+1: <i class="emphasis">V</i> <span class="unicode">&larr;</span>{<i class="emphasis">q</i><sub>0</sub>}
+2: <i class="emphasis">E</i> <span class="unicode">&larr;</span> <span class="unicode">&#8856;</span>
+3: <b class="bold">for</b> <i class="emphasis">i</i> = 1 to <i class="emphasis">n</i> <b class="bold">do</b>
+4:    <i class="emphasis">q</i> <span class="unicode">&larr;</span> a randomly chosen configuration from <i class="emphasis">T</i> with probability <span class="unicode">&pi;</span><sub><i class="emphasis">T</i></sub> (<i class="emphasis">q</i>)
+5:    extend EST (<i class="emphasis">T</i>, <i class="emphasis">q</i>)
+6: <b class="bold">end for</b>
+7: <b class="bold">return</b> <i class="emphasis">T</i>
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 9: </span>Extend <tt>EST</tt> Algorithm</span><a name="585"></a><a name="ch07al091C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b>
+<i class="emphasis">T</i> = (<i class="emphasis">V</i>, <i class="emphasis">E</i>): an EST
+<i class="emphasis">q</i>: a configuration from which to grow <i class="emphasis">T</i>
+<b class="bold">Output:</b>
+A new configuration <i class="emphasis">q</i><sub>new</sub> in the neighborhood of <i class="emphasis">q</i>,or NIL in case of failure
+1: <i class="emphasis">q</i><sub>new</sub> <span class="unicode">&larr;</span> a random collision-free configuration from the neighborhood of <i class="emphasis">q</i>
+2: <b class="bold">if</b> <span class="unicode">&Delta;</span>(<i class="emphasis">q</i>, <i class="emphasis">q</i><sub>new</sub>) <b class="bold">then</b>
+3:    <i class="emphasis">V</i> <span class="unicode">&larr;</span> <i class="emphasis">V</i> <span class="unicode">&cup;</span> {<i class="emphasis">q</i><sub>new</sub>}
+4:    <i class="emphasis">E</i> <span class="unicode">&larr;</span> <i class="emphasis">E</i> <span class="unicode">&cup;</span> {(<i class="emphasis">q</i>, <i class="emphasis">q</i><sub>new</sub>)}
+5:    <b class="bold">return</b> <i class="emphasis">q</i><sub>new</sub>
+6: <b class="bold">end if</b>
+7: <b class="bold">return</b> NIL
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="586"></a><a name="ch07lev3sec261C14020F-F9F5-4415-973A-D906072C1A72"></a>Guiding the Sampling</h4>
+<p class="first-para">The effectiveness of <tt>EST</tt> relies on the ability to avoid oversampling any region of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_909" src="figu231_1.jpg" height="18" width="37" title="" border="0" /></span></span>, especially the neighborhoods of <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub>. Hence, careful consideration is given <a name="587"></a><a name="IDX-2321C14020F-F9F5-4415-973A-D906072C1A72"></a>to the choice of the probability density function <span class="unicode">&pi;</span><sub><i class="emphasis">T</i></sub>. Ideally, the function <span class="unicode">&pi;</span><sub><i class="emphasis">T</i></sub> should be chosen such that the sampled configurations constitute a rather uniform covering of the connected components of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_910" src="figu232_1.jpg" height="18" width="37" title="" border="0" /></span></span> containing <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sup>goal</sup>. A good choice of <span class="unicode">&pi;</span> is biased toward configurations of <i class="emphasis">T</i> whose neighborhoods are not dense. There are several ways to measure the density of a neighborhood. One that works well in practice associates with each configuration <i class="emphasis">q</i> of <i class="emphasis">T</i> a weight, <i class="emphasis">w<sub>T</sub></i> (<i class="emphasis">q</i>), that counts the number of configurations within some predefined neighborhood of <i class="emphasis">q</i>. If <span class="unicode">&pi;</span><sub><i class="emphasis">T</i></sub>(<i class="emphasis">q</i>) is defined to be inversely proportional to <i class="emphasis">w<sub>T</sub></i>(<i class="emphasis">q</i>), then configurations with sparse neighborhoods are more likely to be picked by the planner and used as input to <a class="internaljump" href="#ch07al091C14020F-F9F5-4415-973A-D906072C1A72">algorithm 9</a>.</p>
+<p class="para">The naive method to compute <span class="unicode">&pi;</span><sub><i class="emphasis">T</i></sub> (<i class="emphasis">q</i>) enumerates all the configurations of <i class="emphasis">T</i> and tests if they are close to <i class="emphasis">q</i>. This method takes linear time in the number of configurations, <i class="emphasis">n</i>, in the tree <i class="emphasis">T</i> and works well only for relatively small <i class="emphasis">n</i>. A reasonable approximation to <span class="unicode">&pi;</span><sub><i class="emphasis">T</i></sub>(<i class="emphasis">q</i>) can be obtained by imposing a grid on <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_911" src="figu232_2.jpg" height="17" width="14" title="" border="0" /></span></span>. At each iteration, the planner selects the configuration from which to grow the tree by choosing at random a cell and a configuration from this cell. This method was used in [367] and is described in <a class="internaljump" href="#ch07lev2sec71C14020F-F9F5-4415-973A-D906072C1A72">subsection 7.2.3</a>.</p>
+<p class="last-para">Several other <span class="unicode">&pi;</span><sub><i class="emphasis">T</i></sub> functions have been proposed. In [349,350], <span class="unicode">&pi;</span><sub><i class="emphasis">T</i></sub>(<i class="emphasis">q</i>) is defined to be a function of the order in which <i class="emphasis">q</i> is generated, its number of neighbors, its out degree, and an <i class="emphasis">A</i>* cost function <i class="emphasis">A</i>*<sub>cost</sub>. The <i class="emphasis">A</i>*<sub>cost</sub> is commonly used in graph search to focus the search toward paths with low cost and is computed as the sum of the total cost from the root of the tree to <i class="emphasis">q</i> and the estimated cost from <i class="emphasis">q</i> to the goal configuration. The above weight function combines in a natural way standard <tt>EST</tt> heuristics with potential field methods.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="588"></a><a name="ch07lev3sec271C14020F-F9F5-4415-973A-D906072C1A72"></a>Merging of Trees</h4>
+<p class="first-para">The merging of the trees is achieved by pushing the exploration of the space from one tree toward the space explored by the other tree. Initially, a configuration in <i class="emphasis">T</i><sub>init</sub> is used as described in <a class="internaljump" href="#ch07al091C14020F-F9F5-4415-973A-D906072C1A72">algorithm 9</a> to produce a new configuration <i class="emphasis">q</i>. Then the local planner attempts to connect <i class="emphasis">q</i> to its closest <i class="emphasis">k</i> configurations in <i class="emphasis">T</i><sub>goal</sub>. If a connection is successful, the two trees are merged. Otherwise, the trees are swapped and the process is repeated for a specified number of times. <a class="internaljump" href="#ch07fig131C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.13</a> illustrates the merging of two <tt>EST</tt> trees in a simple case of a two-dimensional Euclidean space.</p>
+<div class="figure">
+<a name="589"></a><a name="ch07fig131C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_912','fig7-13_0.jpg','1000','396')" name="IMG_912" target="_self"><img alt="Image from book" id="IMG_912" src="fig7-13.jpg" height="139" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.13: </span>Merging two <tt>EST</tt> trees. Configuration <i class="emphasis">q</i> is just added to the first tree, <i class="emphasis">T</i><sub>init</sub>. The local planner attempts to connect <i class="emphasis">q</i> to its closest configurations <i class="emphasis">x</i> and <i class="emphasis">y</i> in the second tree, <i class="emphasis">T</i><sub>goal</sub>. The local planner fails to connect <i class="emphasis">q</i> to <i class="emphasis">x</i>,but succeeds in the case of <i class="emphasis">y</i>.</span>
+</div>
+<p class="para">The merging of the two trees is obtained by connecting some configuration <i class="emphasis">q</i><sub>1</sub> <span class="unicode">&#8714;</span> <i class="emphasis">T</i><sub>init</sub> to some configuration <i class="emphasis">q</i><sub>2</sub> <span class="unicode">&#8714;</span> <i class="emphasis">T</i><sup>goal</sup> by using the local planner<span class="unicode">&Delta;</span>. Thus, the path between <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub>, which are the roots of the corresponding trees, is obtained by concatenating the path from <i class="emphasis">q</i><sub>init</sub> to <i class="emphasis">q</i><sub>1</sub> in <i class="emphasis">T</i><sub>init</sub> to the path from <i class="emphasis">q</i><sub>2</sub> to <i class="emphasis">q</i><sub>goal</sub> in <i class="emphasis">T</i><sub>goal</sub>.</p>
+<p class="last-para">Care should be taken when implementing <tt>EST</tt>s. A successful implementation requires a fast update of <span class="unicode">&pi;</span><sub><i class="emphasis">T</i></sub> as new configurations are added to <i class="emphasis">T</i>. The linear cost of the <a name="590"></a><a name="page2331C14020F-F9F5-4415-973A-D906072C1A72"></a>naive method is too high and grid-based approaches or hashing methods (such as those described in <a class="internaljump" href="#ch07lev2sec71C14020F-F9F5-4415-973A-D906072C1A72">section 7.2.3</a>) must be employed for large <i class="emphasis">n</i> and high-dimensional <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_913" src="figu233_1.jpg" height="17" width="14" title="" border="0" /></span></span>.</p>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="591"></a><a name="ch07lev2sec61C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">7.2.2 </span>Rapidly-Exploring Random Trees</h3>
+<p class="first-para">
+<tt>RRT</tt>s were introduced as a single-query planning algorithm that efficiently covers the space between <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> [249,270-272]. The planner was again initially developed for kinodynamic motion planning, where, as in the case of <tt>EST</tt>s, a single tree is built. The applicability of <tt>RRT</tt>s extends beyond kinodynamic planning problems. The <tt>RRT</tt> algorithm has been shown to be probabilistically complete [271].</p>
+<div class="section">
+<h4 class="sect4-title">
+<a name="592"></a><a name="ch07lev3sec281C14020F-F9F5-4415-973A-D906072C1A72"></a>Construction of Trees</h4>
+<p class="first-para">Let <i class="emphasis">T</i> be one of the trees <i class="emphasis">T</i><sub>init</sub> or <i class="emphasis">T</i><sub>goal</sub> rooted at <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub>, respectively. Each tree <i class="emphasis">T</i> is incrementally extended. At each iteration, a random configuration, <i class="emphasis">q</i><sub>rand</sub>,is sampled uniformly in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_914" src="figu233_2.jpg" height="18" width="37" title="" border="0" /></span></span>. The nearest configuration, <i class="emphasis">q</i><sub>near</sub>,to <i class="emphasis">q</i><sub>rand</sub> in <i class="emphasis">T</i> is found and an attempt is made to make progress from <i class="emphasis">q</i><sub>near</sub> toward <i class="emphasis">q</i><sub>rand</sub>. Usually this entails moving <i class="emphasis">q</i><sub>near</sub> a distance <tt>step_size</tt> in the straight line defined by <i class="emphasis">q</i><sub>near</sub> and <i class="emphasis">q</i><sub>rand</sub>. This newly generated configuration, <i class="emphasis">q</i><sub>new</sub>,if it is collision-free, is then added to the vertices of <i class="emphasis">T</i>, and the edge (<i class="emphasis">q</i><sub>near</sub>, <i class="emphasis">q</i><sub>new</sub>) is added to the edges of <i class="emphasis">T</i>. The pseudocode is given in algorithms 10 and 11. <a class="internaljump" href="#ch07fig141C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.14</a> illustrates the extension step of an <tt>RRT</tt> for a point robot operating in a two-dimensional Euclidean workspace.</p>
+<div class="figure">
+<a name="593"></a><a name="ch07fig141C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_916','fig7-14_0.jpg','590','473')" name="IMG_916" target="_self"><img alt="Image from book" id="IMG_916" src="fig7-14.jpg" height="281" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.14: </span>Adding a new configuration to an <tt>RRT</tt>. Configuration <i class="emphasis">q</i><sub>rand</sub> is selected randomly from a uniform distribution in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_915" src="figu235_1.jpg" height="16" width="32" title="" border="0" /></span></span>. Configuration <i class="emphasis">q</i> is the closest configuration in <i class="emphasis">T</i> to <i class="emphasis">q</i><sup>rand</sup> (this configuration is denoted as <i class="emphasis">q</i><sub>near</sub> in the algorithm). Configuration <i class="emphasis">q</i><sub>new</sub> is obtained by moving <i class="emphasis">q</i> by <tt>step_size</tt> toward <i class="emphasis">q</i><sub>rand</sub>. Only <i class="emphasis">q</i><sub>new</sub> and the edge (<i class="emphasis">q</i>, <i class="emphasis">q</i><sub>new</sub>) are added to the <tt>RRT</tt>.</span>
+</div>
+<p class="para">The sampling is done by <a class="internaljump" href="#ch07al111C14020F-F9F5-4415-973A-D906072C1A72">algorithm 11</a>, which produces a new configuration, <i class="emphasis">q</i><sub>new</sub>,asa result of moving some configuration <i class="emphasis">q</i><sub>near</sub> by <tt>step_size</tt> toward a configuration <i class="emphasis">q</i><sub>rand</sub>. A natural question to consider is how <tt>step_size</tt> is determined.</p>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 10: </span>Build <tt>RRT</tt> Algorithm</span><a name="594"></a><a name="ch07al101C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<a name="595"></a><a name="IDX-2341C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<b class="bold">Input:</b>
+<i class="emphasis">q</i><sub>0</sub>: the configuration where the tree is rooted
+<i class="emphasis">n</i>: the number of attempts to expand the tree
+<b class="bold">Output:</b>
+A tree <i class="emphasis">T</i> = (<i class="emphasis">V</i>, <i class="emphasis">E</i>) that is rooted at <i class="emphasis">q</i><sub>0</sub> and has <span class="unicode">&le;</span> <i class="emphasis">n</i> configurations
+1: <i class="emphasis">V</i> <span class="unicode">&larr;</span> {<i class="emphasis">q</i><sub>0</sub>}
+2: <i class="emphasis">E</i> <span class="unicode">&larr;</span> <span class="extended-unicode">&#58067;</span>
+3: <b class="bold">for</b> <i class="emphasis">i</i> = 1 to <i class="emphasis">n</i> <b class="bold">do</b>
+4:   <i class="emphasis">q</i><sub>rand</sub> <span class="unicode">&larr;</span> a randomly chosen free configuration
+5:   extend RRT (<i class="emphasis">T</i>, <i class="emphasis">q</i><sub>rand</sub>)
+6: <b class="bold">end for</b>
+7: <b class="bold">return</b> <i class="emphasis">T</i>
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 11: </span>Extend <tt>RRT</tt> Algorithm</span><a name="596"></a><a name="ch07al111C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b>
+<i class="emphasis">T</i> = (<i class="emphasis">V</i>, <i class="emphasis">E</i>): an RRT
+<i class="emphasis">q</i>:a configuration toward which the tree <i class="emphasis">T</i> is grown
+<b class="bold">Output:</b>
+A new configuration <i class="emphasis">q</i><sub>new</sub> toward <i class="emphasis">q</i>,or NIL in case of failure
+1: <i class="emphasis">q</i><sub>near</sub> <span class="unicode">&larr;</span> closest neighbor of <i class="emphasis">q</i> in <i class="emphasis">T</i>
+2: <i class="emphasis">q</i><sub>new</sub> <span class="unicode">&larr;</span> progress <i class="emphasis">q</i><sub>near</sub> by step_size along the straight line in <span class="inlinemediaobject"><img alt="Image from book" id="IMG_917" src="figu234_1.jpg" height="17" width="14" title="" border="0" /></span> between <i class="emphasis">q</i><sub>near</sub> and <i class="emphasis">q</i><sub>rand</sub>
+3: <b class="bold">if</b> <i class="emphasis">q</i><sub>new</sub> is collision-free <b class="bold">then</b>
+4:   <i class="emphasis">V</i> <span class="unicode">&larr;</span> <i class="emphasis">V</i> <span class="unicode">&cup;</span> {<i class="emphasis">q</i><sup>new</sup>}
+5:   <i class="emphasis">E</i> <span class="unicode">&larr;</span> <i class="emphasis">E</i> <span class="unicode">&cup;</span> {(<i class="emphasis">q</i><sub>near</sub>, <i class="emphasis">q</i><sub>new</sub>)}
+6: <b class="bold">return</b> <i class="emphasis">q</i><sub>new</sub>
+7: <b class="bold">end if</b>
+8: <b class="bold">return</b> NIL
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="para">One possible way is to choose <tt>step_size</tt> dynamically based on the distance between <i class="emphasis">q</i><sub>near</sub> and <i class="emphasis">q</i><sub>rand</sub> as given by the distance function used. It makes sense to choose a large value for <tt>step_size</tt> if the two configurations are far from colliding, and small otherwise. <tt>RRT</tt> is sensitive to the distance function used, since it is this function that determines <tt>step_size</tt> and guides the sampling. A discussion of the metrics and their effects on <tt>RRT</tt>s is found in [103]. It is also interesting to consider a greedier alternative that tries to move <i class="emphasis">q</i><sub>new</sub> as close to <i class="emphasis">q</i><sub>rand</sub> as possible. This method, <a class="internaljump" href="#ch07al121C14020F-F9F5-4415-973A-D906072C1A72">algorithm 12</a>, calls <a name="597"></a><a name="IDX-2351C14020F-F9F5-4415-973A-D906072C1A72"></a><a class="internaljump" href="#ch07al111C14020F-F9F5-4415-973A-D906072C1A72">algorithm 11</a> until <i class="emphasis">q</i><sub>new</sub> reaches <i class="emphasis">q</i><sub>rand</sub> or no progress is possible. If <a class="internaljump" href="#ch07al121C14020F-F9F5-4415-973A-D906072C1A72">algorithm 12</a> is called in <a class="internaljump" href="#ch07al101C14020F-F9F5-4415-973A-D906072C1A72">algorithm 10</a>, line 5, an <tt>RRT</tt> with greater than <i class="emphasis">n</i> nodes may be created.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 12: </span>Connect <tt>RRT</tt> Algorithm</span><a name="598"></a><a name="ch07al121C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b>
+<i class="emphasis">T</i> = (<i class="emphasis">V</i>, <i class="emphasis">E</i>): an RRT
+<i class="emphasis">q</i>: a configuration toward which the tree <i class="emphasis">T</i> is grown
+<b class="bold">Output:</b>
+connected if <i class="emphasis">q</i> is connected to <i class="emphasis">T</i>; failure otherwise
+1: <b class="bold">repeat</b>
+2:    <i class="emphasis">q</i><sub>new</sub> <span class="unicode">&larr;</span> extend RRT (<i class="emphasis">T</i>, <i class="emphasis">q</i>)
+3: <b class="bold">until</b> (<i class="emphasis">q</i><sub>new</sub>=q <b class="bold">or</b> <i class="emphasis">q</i><sub>new</sub>= NIL)
+4: <b class="bold">if</b> <i class="emphasis">q</i><sub>new</sub> = <i class="emphasis">q</i> <b class="bold">then</b>
+5:    <b class="bold">return</b> connected
+6: <b class="bold">else</b>
+7:    <b class="bold">return</b> failure
+8: <b class="bold">end if</b>
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="last-para">It is important to note the tradeoff that exists between the exploration of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_918" src="figu235_2.jpg" height="17" width="14" title="" border="0" /></span></span> and the number of samples added to the tree, especially for high-dimensional problems. If <tt>step_size</tt> is small, then the exploration steps are short and the nodes of the tree are close together. A successful call to <a class="internaljump" href="#ch07al121C14020F-F9F5-4415-973A-D906072C1A72">algorithm 12</a> results in many nodes being added to the tree. As the number of nodes becomes large, memory consumption is increased and finding the nearest neighbor becomes expensive, which in turn reduces <a name="599"></a><a name="IDX-2361C14020F-F9F5-4415-973A-D906072C1A72"></a>the performance of the planner. In such cases, it may be better to add only the last sample of the Extend <tt>RRT</tt> iteration to the tree and no intermediate samples.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="600"></a><a name="ch07lev3sec291C14020F-F9F5-4415-973A-D906072C1A72"></a>Guiding the Sampling</h4>
+<p class="first-para">Selecting a node uniformly at random in step 4 of <a class="internaljump" href="#ch07al101C14020F-F9F5-4415-973A-D906072C1A72">algorithm 10</a> is a basic mechanism of <tt>RRT</tt>. It is also of interest to consider other sampling functions that are biased toward the connected components of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_919" src="figu236_1.jpg" height="16" width="32" title="" border="0" /></span></span> that contain <i class="emphasis">q</i><sub>init</sub> or <i class="emphasis">q</i><sup>goal</sup>. Let's consider the case of <i class="emphasis">q</i><sub>goal</sub>. At an extreme, a very greedy sampling function can be defined that sets <i class="emphasis">q</i><sub>rand</sub> to <i class="emphasis">q</i><sub>goal</sub> (if the tree being built is rooted at <i class="emphasis">q</i><sub>init</sub>) or to <i class="emphasis">q</i><sub>init</sub> (if the tree being built is rooted at <i class="emphasis">q</i><sub>goal</sub>). The problem with this approach is that it introduces too much bias, and eventually <tt>RRT</tt> ends up behaving like a randomized potential field planner that gets stuck in local minima. It seems, therefore, that a suitable choice is a sampling function that alternates, according to some probability distribution, between uniform samples and samples biased toward regions that contain the initial or the goal configuration. Experimental evidence [249,271] has shown that setting <i class="emphasis">q</i><sub>rand</sub> to <i class="emphasis">q</i><sub>goal</sub> with probability <i class="emphasis">p</i>, or randomly generating <i class="emphasis">q</i><sub>rand</sub> with probability 1 <span class="unicode">&minus;</span> <i class="emphasis">p</i> from a uniform distribution, works well. Even for small values of <i class="emphasis">p</i>, such as 0.05, the tree rooted at <i class="emphasis">q</i><sub>init</sub> converges much faster to <i class="emphasis">q</i><sub>goal</sub> than when just uniform sampling is used. This simple function can be further improved by sampling in a region around <i class="emphasis">q</i><sub>goal</sub> instead of setting <i class="emphasis">q</i><sub>rand</sub> to <i class="emphasis">q</i><sub>goal</sub>. The region around <i class="emphasis">q</i><sub>goal</sub> is defined by the vertices of the <tt>RRT</tt> closest to <i class="emphasis">q</i><sub>goal</sub> at each iteration of the construction step.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="601"></a><a name="ch07lev3sec301C14020F-F9F5-4415-973A-D906072C1A72"></a>Merging of Trees</h4>
+<p class="first-para">In the merging step, <tt>RRT</tt> tries to connect the two trees, <i class="emphasis">T</i><sub>init</sub> and <i class="emphasis">T</i><sub>goal</sub>, rooted at <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub>, respectively. This is achieved by growing the trees toward each other. Initially, a random configuration, <i class="emphasis">q</i><sub>rand</sub>,is generated. <tt>RRT</tt> extends one tree toward <i class="emphasis">q</i><sub>rand</sub> and as a result obtains a new configuration, <i class="emphasis">q</i><sub>new</sub>. Then the planner attempts to extend the closest node to <i class="emphasis">q</i><sub>new</sub> in the other tree toward <i class="emphasis">q</i><sub>new</sub>. If successful, the planner terminates, otherwise the two trees are swapped and the process is repeated a certain number of times. <a class="internaljump" href="#ch07fig151C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.15</a> illustrates a simple case of merging two <tt>RRT</tt>s in a two-dimensional Euclidean space.</p>
+<div class="figure">
+<a name="602"></a><a name="ch07fig151C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_921','fig7-15_0.jpg','948','462')" name="IMG_921" target="_self"><img alt="Image from book" id="IMG_921" src="fig7-15.jpg" height="171" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.15: </span>Merging two <tt>RRT</tt>s. Configuration <i class="emphasis">q</i><sub>rand</sub> is generated randomly from a uniform distribution in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_920" src="figu237_1.jpg" height="16" width="32" title="" border="0" /></span></span>. Configuration <i class="emphasis">q</i><sub>1</sub> was extended to <i class="emphasis">q</i><sub>rand</sub>. <i class="emphasis">q</i><sup>2</sup> is the closest configuration to <i class="emphasis">q</i><sub>rand</sub> in <i class="emphasis">T</i><sub>goal</sub>. It was possible to extend <i class="emphasis">q</i><sub>2</sub> to <i class="emphasis">q</i><sub>rand</sub>. As a result, <i class="emphasis">T</i><sub>init</sub> and <i class="emphasis">T</i><sub>goal</sub> were merged.</span>
+</div>
+<p class="para">The merge algorithm, as presented in <a class="internaljump" href="#ch07al131C14020F-F9F5-4415-973A-D906072C1A72">algorithm 13</a>, uses <a class="internaljump" href="#ch07al111C14020F-F9F5-4415-973A-D906072C1A72">algorithm 11</a>. Recall that <a class="internaljump" href="#ch07al111C14020F-F9F5-4415-973A-D906072C1A72">algorithm 11</a> produces a new configuration that is only <tt>step_size</tt> away from the nearest node in the existing <tt>RRT</tt>.By replacing <a class="internaljump" href="#ch07al111C14020F-F9F5-4415-973A-D906072C1A72">algorithm 11</a> in lines (3) and (5) with <a class="internaljump" href="#ch07al121C14020F-F9F5-4415-973A-D906072C1A72">algorithm 12</a>, new configurations are produced farther away. This greedier approach has been reported to work well [249, 271]. It is also reasonable to replace only one of the <a class="internaljump" href="#ch07al111C14020F-F9F5-4415-973A-D906072C1A72">algorithm 11</a> calls, and thus obtain a balance between the two approaches. The <a name="603"></a><a name="IDX-2371C14020F-F9F5-4415-973A-D906072C1A72"></a>choice of whether a greedier or more balanced approach is used for the exploration depends on the particular problem being solved. Discussions can be found in [249, 271]. Once the two <tt>RRT</tt>s are merged together, a path from <i class="emphasis">q</i><sub>init</sub> to <i class="emphasis">q</i><sub>goal</sub> is obtained in the same way as in the case of <tt>EST</tt>s.</p>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 13: </span>Merge <tt>RRT</tt> Algorithm</span><a name="604"></a><a name="ch07al131C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b>
+<i class="emphasis">T</i><sub>1</sub>: first RRT
+<i class="emphasis">T</i><sub>2</sub>: second RRT
+<span class="unicode">&#8467;</span>: number of attempts allowed to merge <i class="emphasis">T</i><sub>1</sub> and <i class="emphasis">T</i><sub>2</sub>
+<b class="bold">Output:</b>
+merged if the two RRTs are connected to each other; failure otherwise
+1: <b class="bold">for</b> <i class="emphasis">i</i> = 1 to <span class="unicode">&#8467;</span> <b class="bold">do</b>
+2:    <i class="emphasis">q</i><sub>rand</sub> <span class="unicode">&larr;</span> a randomly chosen free configuration
+3:    <i class="emphasis">q</i><sub>new, 1</sub> <span class="unicode">&larr;</span> extend RRT (<i class="emphasis">T</i><sub>1</sub>, <i class="emphasis">q</i><sub>rand</sub>)
+4:    <b class="bold">if</b> <i class="emphasis">q</i><sub>new, 1</sub> <span class="unicode">&ne;</span> NIL <b class="bold">then</b>
+5:       <i class="emphasis">q</i><sub>new, 2</sub> <span class="unicode">&larr;</span> extend RRT (<i class="emphasis">T</i><sub>2</sub>, <i class="emphasis">q</i><sub>new, 1</sub>)
+6:       <b class="bold">if</b> <i class="emphasis">q</i><sub>new, 1</sub> = <i class="emphasis">q</i><sub>new, 2</sub> <b class="bold">then</b>
+7:          <b class="bold">return</b> merged
+8:       <b class="bold">end if</b>
+9:       SWAP(<i class="emphasis">T</i><sub>1</sub>, <i class="emphasis">T</i><sub>2</sub>)
+10:    <b class="bold">end if</b>
+11: <b class="bold">end for</b>
+12: <b class="bold">return</b> failure
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="last-para">
+<a name="605"></a><a name="page2381C14020F-F9F5-4415-973A-D906072C1A72"></a>The implementation of <tt>RRT</tt> is easier than that of <tt>EST</tt>. Unlike <tt>EST, RRT</tt> does not compute the number of configurations lying inside a predefined neighborhood of a node and it does not maintain a probability distribution for its configurations.</p>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="606"></a><a name="ch07lev2sec71C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">7.2.3 </span>Connection Strategies and the SBL Planner</h3>
+<p class="first-para">Lazy evaluation, which was introduced as a connection strategy in <a href="43.html#569" target="_parent" class="chapterjump">section 7.1.4</a>, can also be used in the context of tree-building sampling methods. A combination of lazy evaluation and <tt>EST</tt>s has been presented in the context of the Single-query, Bi-directional, Lazy collision-checking (<tt>SBL</tt>) planner [367].</p>
+<p class="para">
+<tt>SBL</tt> constructs two <tt>EST</tt> trees rooted at <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub>. <tt>SBL</tt> creates new samples according to the <tt>EST</tt> criteria but does not immediately test connections between samples for collisions. A connection between two configurations is checked exactly once and this is done only when the connection is part of the path joining the two trees together (if such a path is found). This results in substantial time-savings as reported in [367].</p>
+<p class="para">It is also worth noting that <tt>SBL</tt> uses a clever way to find which configurations to expand and hence guide the sampling (see <a class="internaljump" href="#ch07lev2sec51C14020F-F9F5-4415-973A-D906072C1A72">section 7.2.1</a>). In the original <tt>EST</tt>, a configuration is chosen for expansion according to the density of sampling in its neighboorhood. Finding neighbors is in general an expensive operation as the dimension increases. <tt>SBL</tt> imposes a coarse grid on <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_922" src="figu238_1.jpg" height="17" width="14" title="" border="0" /></span></span>. It then picks randomly a non-empty cell in the grid and a sample from that cell. The probability to pick a certain sample is greater if this sample lies in a cell with few nodes. This simple technique allows afast implementation of <tt>SBL</tt> and is applicable to all <tt>EST</tt>-based planners. Details on how this technique helps in the connection of trees grown from the initial and goal configurations are given in [367].</p>
+<p class="last-para">EST and <tt>RRT</tt> employ excellent sampling and connection schemes that can be further exploited to obtain even more powerful planners, as discussed in the <a href="45.html#607" target="_parent" class="chapterjump">next section</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="43.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="45.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

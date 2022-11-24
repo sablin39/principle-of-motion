@@ -1,0 +1,672 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+Chapter 9: Bayesian Methods</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Chapter 9 - 
+ Bayesian Methods</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(2,7,85,88,17,18,7,89,2,95,72,0,6,28,5)
+var a1 = new Array(8,12,6)
+var a2 = new Array(14,5,13)
+var a3 = new Array(2,7,1)
+var a4 = new Array(11,9,4)
+var a5 = new Array(3,0,10)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="53.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=728071772"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="55.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:25:30 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:25:31 UTC-->
+<div class="chapter">
+<a name="ch091C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<h1 class="chapter-title">
+<span class="chapter-titlelabel">Chapter 9: </span>Bayesian Methods</h1>
+<p class="first-para">
+<a name="754"></a><a name="page3011C14020F-F9F5-4415-973A-D906072C1A72"></a>Operating in the real world, robots lack the perfect sensors and deterministic actions of many artificial worlds. Rather, robots are faced with various kinds of uncertainty. In this chapter we continue to discuss probabilistic frameworks for typical fundamental tasks of mobile robots such as localization, mapping, and simultaneous localization and mapping (SLAM). While the methods presented in this chapter employ the same iterative prediction-update process that is used in the Kalman filter (see <a href="48.html" target="_parent" class="chapterjump">chapter 8</a>), they do not rely on the restrictive assumptions required by the Kalman filter. The methods described here can use nonlinear models for both robot motion and sensing. Most important, the resulting estimate may be an arbitrary distribution instead of a Gaussian. Throughout this chapter we present the key ideas of successful techniques together with a derivation of their mathematical foundations. We will also discuss ways to efficiently implement these approaches, since the capability to represent arbitrary distributions can lead to higher computational demands compared to Kalman filters.</p>
+<div class="section">
+<h2 class="sect2-title">
+<a name="755"></a><a name="ch09lev1sec11C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">9.1 </span>Localization</h2>
+<p class="first-para">In the <a href="48.html" target="_parent" class="chapterjump">previous chapter</a>, we achieved localization by maintaining a distribution of the robot by iteratively estimating the mean and covariance matrix of a Gaussian distribution. This way of representing a belief about the location of the robot assumes that there is no "ambiguity" in the sense that the distribution is always unimodal or more specifically a Gaussian. One form of localization in which this assumption is often met is <i class="emphasis">position tracking</i>, which assumes that the initial configuration of the robot <a name="756"></a><a name="page3021C14020F-F9F5-4415-973A-D906072C1A72"></a>is (approximately) known and whose task is to keep track of the robot's location while it is moving through the environment. If the robot's configuration is approximately known and if there is only a small region of uncertainty around the true location of the robot, the observations of the robot can usually be associated uniquely with the corresponding features in its map. Consider, e.g., that a robot knows its location up to a few centimeters. If it detects a door, it can use this observation to accurately compute its location given the door stored in its map of the environment. If, however, the uncertainty is high and the robot knows its location only up to several meters, there might be multiple doors in the map that its current observation can correspond to. Accordingly, the situation is ambiguous and a single Gaussian obviously cannot appropriately represent the robot's belief about its location.</p>
+<p class="para">In this chapter, we consider a form of position estimation where the robot may have ambiguity, i.e., the belief about its location can be modeled by a multimodal distribution. The techniques described in this chapter are able to deal with a more complex version of localization called <i class="emphasis">global localization</i>. Here the robot has to estimate its location under global uncertainty as it is not given its initial location. The techniques can also solve the most complex problem of robot localization, the so-called <i class="emphasis">kidnapped robot problem</i>. The kidnapped robot problem, or the relocalization problem, is more complicated than the global localization problem because the robot has generated a false belief of its most likely location which it must identify and "unlearn" before it can relocalize.</p>
+<div class="section">
+<h3 class="sect3-title">
+<a name="757"></a><a name="ch09lev2sec11C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">9.1.1 </span>The Basic Idea of Probabilistic Localization</h3>
+<p class="first-para">Before we delve into mathematical detail, let us illustrate the basic concepts with a simple example. Consider the environment depicted in <a class="internaljump" href="#ch09fig011C14020F-F9F5-4415-973A-D906072C1A72">figure 9.1</a>. For the sake of simplicity, assume that the space of robot locations is one-dimensional, i.e., the robot can only move horizontally. Now suppose the robot is switched on somewhere in this environment to start its operation, but it is not told its location. Probabilistic localization represents this state of uncertainty by a <i class="emphasis">uniform distribution</i> over all locations, as shown by the graph in the top diagram in <a class="internaljump" href="#ch09fig011C14020F-F9F5-4415-973A-D906072C1A72">figure 9.1</a>. Now assume the robot queries its sensors and finds out that it is next to a door. Probabilistic localization modifies the belief by raising the probability for locations next to doors, and lowering it elsewhere. This is illustrated in the second diagram in <a class="internaljump" href="#ch09fig011C14020F-F9F5-4415-973A-D906072C1A72">figure 9.1</a>. Notice that the resulting belief is multimodal, reflecting the fact that the available information is insufficient to uniquely derive the robot's configuration. Also note that locations not close to a door still possess nonzero probability. This is because sensor readings are noisy, and a single sight of a door is typically insufficient to exclude the possibility of not being next to a door.</p>
+<div class="figure">
+<a name="758"></a><a name="ch09fig011C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1273','fig9-1_0.jpg','927','1000')" name="IMG_1273" target="_self"><img alt="Image from book" id="IMG_1273" src="fig9-1.jpg" height="378" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 9.1: </span>The basic idea of probabilistic localization: a mobile robot during global localization.</span>
+</div>
+<p class="para">
+<a name="759"></a><a name="IDX-3031C14020F-F9F5-4415-973A-D906072C1A72"></a>Now the robot advances to the next door. Probabilistic localization incorporates this information by propagating the belief distribution accordingly. To account for the inherent noise in robot motion, which in this situation inevitably leads to a loss of information, the new belief is smoother (and less certain) than the previous one. This is visualized in the third diagram in <a class="internaljump" href="#ch09fig011C14020F-F9F5-4415-973A-D906072C1A72">figure 9.1</a>. Finally, the robot senses a second time, and again finds itself next to a door. This observation is combined with the current (nonuniform) belief, which leads to the final belief shown in the bottom diagram in <a class="internaljump" href="#ch09fig011C14020F-F9F5-4415-973A-D906072C1A72">figure 9.1</a>. At this point, "most" of the probability is centered around a single location. The robot is now quite certain about its location.</p>
+<p class="para">
+<a name="760"></a><a name="page3041C14020F-F9F5-4415-973A-D906072C1A72"></a>Note that the final belief includes five different peaks given our sequence of two observations and one motion. The four smaller peaks correspond to the four cases in which the robot could only once explain its two observations given the map of the environment. At the location of the highest peak, which is in front of the second door at the true location of the robot, the robot has correctly identified a door twice. All other locations have small probabilities, since the robot could not explain its observations using its map.</p>
+<p class="para">Note that in this example the robot did not have an erroneous measurement. A false-positive detection of a door would lead to a situation in which the highest peak does not correspond to the true location of the robot. If, however, the robot knows about potential measurement errors, it would not become overly confident by just a few observations. One of the key features of probabilistic localization is that it uses the sensory information obtained to compute a belief that most accurately reflects the uncertainty about the configuration of the robot, given the knowledge about the behavior of the sensors of the robot.</p>
+<p class="last-para">Moreover, if the doors were uniquely identifiable by the robot, a Kalman filter would be sufficient for global localization. Since the robot is not able to identify the door it has sensed, it cannot associate an observation of a door uniquely to the doors given in its map. This problem is well-known as the <i class="emphasis">data association</i> problem. If the data association is known, Kalman filters can in fact be sufficient. Without knowing how to associate measurements to features in the map, the resulting beliefs will be inherently multimodal due to the resulting ambiguities. The strength of probabilistic localization lies in its capability to allow the representation of arbitrary distributions that are much more flexible than Gaussians. Put another way, probabilistic localization can also be applied when the data association is unknown or when the robot's motion models or sensor models are highly nonlinear.</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="761"></a><a name="ch09lev2sec21C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">9.1.2 </span>Probabilistic Localization as Recursive Bayesian Filtering</h3>
+<p class="first-para">Let <i class="emphasis">X</i> be the state space for the robot. We want to estimate the state <i class="emphasis">x</i> ? <i class="emphasis">X</i> of the robot, which essentially is its configuration given as its position and orientation. In probabilistic localization the robot estimates at every time step <i class="emphasis">k</i> the conditional probability <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>)) over all possible configurations given the sensor information <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>) it gathered about the environment and the movements <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1) carried out. The term <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>) denotes all observations obtained in the time steps 1,...,<i class="emphasis">k</i>. The notation <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>) "unfolds" to <i class="emphasis">y</i>(1), <i class="emphasis">y</i>(2),...,<i class="emphasis">y</i>(<i class="emphasis">k</i>) and <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1) unfolds in a similar fashion. The term <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(1 : <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>)) is usually called the <i class="emphasis">posterior probability</i> (or simply <i class="emphasis">posterior</i>) [347]. Note that when <i class="emphasis">u</i> and <i class="emphasis">y</i> are written side by side, we assume that data have arrived in a synchronized way, <a name="762"></a><a name="page3051C14020F-F9F5-4415-973A-D906072C1A72"></a>i.e., in the form <i class="emphasis">u</i>(0), <i class="emphasis">y</i>(1),...,<i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(<i class="emphasis">k</i>). This assumption makes the derivation of probabilistic localization easier, but our algorithms can easily be extended to data streams that are not synchronized.</p>
+<p class="para">Note that in the <a href="48.html" target="_parent" class="chapterjump">previous chapter</a>, <i class="emphasis">u</i>(<i class="emphasis">k</i>)was simply the control input. In this chapter, we denote it as movements and do not rely on a specific interpretation of <i class="emphasis">u</i>(<i class="emphasis">k</i>). It can represent the commanded velocities, the odometry measurements, or the result of filtering and fusing commanded velocities and odometry measurements, as described in the <a href="48.html" target="_parent" class="chapterjump">previous chapter</a>.</p>
+<p class="para">Throughout this section we will assume that the robot is also given a model or map <i class="emphasis">m</i> of the environment. In principle we have to add this model as background knowledge in every term. However, for the sake of simplicity we will skip <i class="emphasis">m</i> in the equations below and assume that it is given as background knowledge. The heart of probabilistic localization is the following equation which tells us how to use the sensory input to update the most recent estimate (the <i class="emphasis">prior</i>)to obtain a new estimate (the posterior):</p>
+<div class="equation" mathml="yes">
+<a name="763"></a><a name="ch09eqn011C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.1)&nbsp;</span></td><td valign="top"><img src="figu305_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">As mentioned above, the term <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>)) is the posterior about the location of the robot at time <i class="emphasis">k</i> given the input data gathered so far. The term <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 2), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1))), in contrast, is denoted as the <i class="emphasis">prior</i> as it quantifies the probability that the robot is at location <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) before the integration of <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1) and <i class="emphasis">y</i>(<i class="emphasis">k</i>). The term <i class="emphasis">P</i>(<i class="emphasis">y</i>(<i class="emphasis">k</i>) | <i class="emphasis">x</i>(<i class="emphasis">k</i>)) is called the <i class="emphasis">observation model</i> which specifies the likelihood of the measurement <i class="emphasis">y</i>(<i class="emphasis">k</i>) given the robot is at location <i class="emphasis">x</i>(<i class="emphasis">k</i>). The term <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1), <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1)) represents the <i class="emphasis">motion model</i> and can be regarded as a transition probability. It specifies the likelihood that the movement action <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1) carried out at location <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) carries the robot to the location <i class="emphasis">x</i>(<i class="emphasis">k</i>). Finally, ?(<i class="emphasis">k</i>) is a <i class="emphasis">normalization constant</i> that ensures that the left-hand side of this equation sums up to one over all <i class="emphasis">x</i>(<i class="emphasis">k</i>). Note that <a class="internaljump" href="#ch09eqn011C14020F-F9F5-4415-973A-D906072C1A72">(9.1)</a> effectively accomplishes a combination of both the prediction and update steps of the Kalman filter.</p>
+<p class="para">
+<a class="internaljump" href="#ch09eqn011C14020F-F9F5-4415-973A-D906072C1A72">Equation (9.1)</a> is a special case of the following general equation for recursive Bayesian filtering.</p>
+<div class="equation" mathml="yes">
+<a name="764"></a><a name="ch09eqn021C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.2)&nbsp;</span></td><td valign="top"><img src="figu305_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">
+<a name="765"></a><a name="IDX-3061C14020F-F9F5-4415-973A-D906072C1A72"></a>Whereas <a class="internaljump" href="#ch09eqn011C14020F-F9F5-4415-973A-D906072C1A72">(9.1)</a> assumes discrete state spaces, <a class="internaljump" href="#ch09eqn021C14020F-F9F5-4415-973A-D906072C1A72">(9.2)</a> deals with continuous state spaces. Additionally, <a class="internaljump" href="#ch09eqn021C14020F-F9F5-4415-973A-D906072C1A72">(9.2)</a> can be shown to be a generalization of Kalman filtering. In this context the term <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1), <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1)) is a generalization of <a href="50.html#687" target="_parent" class="chapterjump">(8.1)</a> (see <a href="48.html" target="_parent" class="chapterjump">chapter 8</a>) to arbitrary and nonlinear noise. Similarly, the term <i class="emphasis">P</i>(<i class="emphasis">y</i>(<i class="emphasis">k</i>) | <i class="emphasis">x</i>(<i class="emphasis">k</i>)) can handle arbitrary and nonlinear noise in the measurements. Finally, the posterior <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0: <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1: <i class="emphasis">k</i>)) generalizes the belief representation of Kalman filters from Gaussians to arbitrary probability density functions (PDFs).</p>
+<p class="para">Note the recursive character of probabilistic localization. The belief at time <i class="emphasis">k</i> is computed out of the posterior at time <i class="emphasis">k</i> ? 1by incorporating two quantities, namely <i class="emphasis">P</i>(<i class="emphasis">y</i>(<i class="emphasis">k</i>) | <i class="emphasis">x</i>(<i class="emphasis">k</i>)) and <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1), <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1)). Obviously, both the motion model and the observation model are the crucial components of probabilistic localization. Further below we will describe typical realizations of these models. We will also discuss different ways to represent the posterior <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1), <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1)) and describe how to update the posterior given these representations.</p>
+<p class="para">Independent of the specific representation, the update of the belief is generally carried out in two different steps. The two steps are the <i class="emphasis">prediction step</i> and the <i class="emphasis">update step</i> which are joined together by <a class="internaljump" href="#ch09eqn011C14020F-F9F5-4415-973A-D906072C1A72">(9.1)</a>. Note that the separation of a filtering process into these two steps is common in the context of Kalman filtering. The prediction step is applied whenever the belief has to be updated because of an odometry measurement <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1). Suppose <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 2) and <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1) are the data obtained thus far and <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 2), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1))) is the current belief about the configuration of the robot. Then we obtain the resulting belief <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1)) by integrating over all possible previous configurations <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1). For each such <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) we multiply <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 2), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1)) by the probability <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1), <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1)) that the measured motion action <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1) has carried the robot from <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) to <i class="emphasis">x</i>(<i class="emphasis">k</i>) and compute <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1)) as the sum over all these values, i.e.,</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.3)&nbsp;</span></td><td valign="top"><img src="figu306_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Note that this operation basically corresponds to the step depicted in the third diagram of <a class="internaljump" href="#ch09fig011C14020F-F9F5-4415-973A-D906072C1A72">figure 9.1</a>.</p>
+<p class="para">The update step is carried out whenever the robot perceives a measurement <i class="emphasis">y</i>(<i class="emphasis">k</i>) with information about its environment. Suppose the current belief of the robot is <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0: <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1: <i class="emphasis">k</i> ? 1)). In the update step we simply multiply for each configuration <i class="emphasis">x</i>(<i class="emphasis">k</i>) the current value <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0: <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1: <i class="emphasis">k</i> ? 1)) with the likelihood <a name="766"></a><a name="IDX-3071C14020F-F9F5-4415-973A-D906072C1A72"></a>of <i class="emphasis">P</i>(<i class="emphasis">y</i>(<i class="emphasis">k</i>) | <i class="emphasis">x</i>(<i class="emphasis">k</i>)) that the robot perceives <i class="emphasis">y</i>(<i class="emphasis">k</i>)given the map of the environment and given that the robot's configuration is <i class="emphasis">x</i>(<i class="emphasis">k</i>). Additionally, we multiply each value with a normalization constant that ensures that <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0: <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1: <i class="emphasis">k</i>)) sums up to one over all <i class="emphasis">x</i>(<i class="emphasis">k</i>), i.e.,</p>
+<div class="equation" mathml="yes">
+<a name="767"></a><a name="ch09eqn041C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.4)&nbsp;</span></td><td valign="top"><img src="figu307_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">According to Bayes rule, the constant ?(<i class="emphasis">k</i>) is given as</p>
+<div class="equation" mathml="yes">
+<a name="768"></a><a name="ch09eqn051C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.5)&nbsp;</span></td><td valign="top"><img src="figu307_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">which generally is hard to compute. This is mainly because the dependency between consecutive measurements without any information about the location of the robot in general is hard to determine. However, if we apply the law of total probability, we can sum over all locations <i class="emphasis">x</i>(<i class="emphasis">k</i>) and transform <a class="internaljump" href="#ch09eqn051C14020F-F9F5-4415-973A-D906072C1A72">(9.5)</a> to</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.6)&nbsp;</span></td><td valign="top"><img src="figu307_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Obviously, we now can compute ?(<i class="emphasis">k</i>) using the terms that are already contained in <a class="internaljump" href="#ch09eqn041C14020F-F9F5-4415-973A-D906072C1A72">(9.4)</a>. As we will see later, using this equation the normalization constant can be computed on the fly while integrating <i class="emphasis">y</i>(<i class="emphasis">k</i>) into the current belief.</p>
+<p class="para">To summarize, we have the following equations that completely describe the two individual steps of recursive Bayesian filtering and that correspond to the prediction and update steps also found in the Kalman filter:</p>
+<p class="para">
+<b class="bold">prediction:</b>
+</p>
+<div class="informalequation" mathml="yes">
+<img src="figu307_4.jpg" />
+<br />
+
+</div>
+<p class="para">
+<b class="bold">update:</b>
+</p>
+<div class="informalequation" mathml="yes">
+<img src="figu307_5.jpg" />
+<br />
+
+</div>
+<p class="para">
+<a name="769"></a><a name="IDX-3081C14020F-F9F5-4415-973A-D906072C1A72"></a>In probabilistic localization the initial belief <i class="emphasis">P</i>(<i class="emphasis">x</i>(0)), reflects the prior knowledge about the initial configuration of the robot. This distribution can be initialized arbitrarily, but in practice two cases prevail. If the configuration of the robot relative to its map is entirely unknown, <i class="emphasis">P</i>(<i class="emphasis">x</i>(0)) is usually uniformly distributed, or if the initial state of the robot would be known up to a slight uncertainty, one would initialize <i class="emphasis">P</i>(<i class="emphasis">x</i>(0)) using a narrow Gaussian distribution centered at the robot's believed configuration.</p>
+<p class="para">The reader may notice that the principle of probabilistic localization leaves open</p>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">how the belief <i class="emphasis">P</i>(<i class="emphasis">x</i>) is represented as well as</p>
+</li>
+<li class="listitem">
+<p class="first-para">how the conditional probabilities <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1), <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1)) and <i class="emphasis">P</i>(<i class="emphasis">y</i>(<i class="emphasis">k</i>) | <i class="emphasis">x</i>(<i class="emphasis">k</i>)) are computed.</p>
+</li>
+</ol>
+<p class="last-para">Accordingly, existing approaches to probabilistic localization mainly differ in the representation of the belief and the way the perceptual and motion models are represented. After a derivation of the equation for probabilistic localization in the following subsection, we will discuss different ways to represent the posterior. As we will see, the representation of the posterior has a serious impact on the efficiency of probabilistic localization and the type of situations that can be accommodated with probabilistic localization.</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="770"></a><a name="ch09lev2sec31C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">9.1.3 </span>Derivation of Probabilistic Localization</h3>
+<p class="first-para">When computing <i class="emphasis">P</i>(<i class="emphasis">x</i> | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>)), we distinguish two cases, depending on whether the most recent data item is an odometry reading or a sensor measurement.<sup>[<a name="ch09fnt09_11C14020F-F9F5-4415-973A-D906072C1A72" href="#ftn.ch09fnt09_11C14020F-F9F5-4415-973A-D906072C1A72">1</a>]</sup> Let us first consider how to incorporate the most recent data item, namely a sensor measurement <i class="emphasis">y</i>(<i class="emphasis">k</i>) the robot uses to gather information about its environment. If we apply Bayes rule considering <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1) and <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1) as background knowledge, we obtain</p>
+<div class="equation" mathml="yes">
+<a name="772"></a><a name="ch09eqn071C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.7)&nbsp;</span></td><td valign="top"><img src="figu308_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">First consider the left term <i class="emphasis">P</i>(<i class="emphasis">y</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1), <i class="emphasis">x</i>(<i class="emphasis">k</i>)) in the numerator. This term represents the likelihood of the most recent measurement <i class="emphasis">y</i>(<i class="emphasis">k</i>)given all previous measurements and given that the configuration <i class="emphasis">x</i>(<i class="emphasis">k</i>)of the robot at time <i class="emphasis">k</i> is known. In recursive Bayesian filtering, one generally makes the assumption that, once the state <i class="emphasis">x</i>(<i class="emphasis">k</i>) is known, the measurement <i class="emphasis">y</i>(<i class="emphasis">k</i>) is independent of all previous measurements and controls. Given this assumption we can simply remove <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1) <a name="773"></a><a name="IDX-3091C14020F-F9F5-4415-973A-D906072C1A72"></a>and <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1) from this term. Accordingly, we simplify <a class="internaljump" href="#ch09eqn071C14020F-F9F5-4415-973A-D906072C1A72">(9.7)</a> to</p>
+<div class="equation" mathml="yes">
+<a name="774"></a><a name="ch09eqn081C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.8)&nbsp;</span></td><td valign="top"><img src="figu309_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Observe that the denominator is a normalizer that does not depend on the configuration of the robot. It simply ensures that the left-hand side of <a class="internaljump" href="#ch09eqn081C14020F-F9F5-4415-973A-D906072C1A72">(9.8)</a> sums up to one over all <i class="emphasis">x</i>(<i class="emphasis">k</i>). Accordingly, we can replace the denominator by a normalization constant ?(<i class="emphasis">k</i>) which is the same for all <i class="emphasis">x</i>(<i class="emphasis">k</i>). This leads to</p>
+<div class="equation" mathml="yes">
+<a name="775"></a><a name="ch09eqn091C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.9)&nbsp;</span></td><td valign="top"><img src="figu309_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">To see how to incorporate the motions of the robot into the belief we next consider the rightmost term <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1)) in this equation. If we use the law of total probability we derive</p>
+<div class="equation" mathml="yes">
+<a name="776"></a><a name="ch09eqn101C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.10)&nbsp;</span></td><td valign="top"><img src="figu309_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">To simplify the lefthand term in the sum we again make an independence assumption. We assume that <i class="emphasis">x</i>(<i class="emphasis">k</i>) is independent of the measurements <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1) and the movements <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 2) obtained and carried out before the robot arrived at <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) given we know <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1). Rather the likelihood of being at <i class="emphasis">x</i>(<i class="emphasis">k</i>) only depends on <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) and the most recent movement <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1), i.e.,</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.11)&nbsp;</span></td><td valign="top"><img src="figu309_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Thus we simplify <a class="internaljump" href="#ch09eqn101C14020F-F9F5-4415-973A-D906072C1A72">(9.10)</a> to</p>
+<div class="equation" mathml="yes">
+<a name="777"></a><a name="ch09eqn121C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.12)&nbsp;</span></td><td valign="top"><img src="figu309_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Now consider the second factor <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1)) in the sum. This term specifies the probability that the robot's configuration at time <i class="emphasis">k</i> ? 1is <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) given the motions <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1) and given the observations <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1). <a name="778"></a><a name="IDX-3101C14020F-F9F5-4415-973A-D906072C1A72"></a>According to our terminology, the motion <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1) is carried out at time step <i class="emphasis">k</i> ? 1 so that <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1) carries the robot away from <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1). Since we have no information about <i class="emphasis">x</i>(<i class="emphasis">k</i>) and under the assumption that the time that elapses between consecutive measurements is small, we can in fact conclude that the information that the robot has moved after it was at <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) does not provide any information about <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1). Note that this is not true in general. Suppose the environment of the robot consists of two rooms, a small and a large room, and that there is no door between these two rooms. Furthermore suppose the robot moved a distance that is larger than the diameter of the small room. After that movement the probability that the robot is in the larger room must exceed the probability that the robot is in the smaller room. If, however, the time intervals between consecutive measurements are small, each movement can only represent a small distance and the fact that the robot has moved a few inches away from its current location <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) carries almost no information about <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) given we do not know <i class="emphasis">x</i>(<i class="emphasis">k</i>). Under this assumption we therefore can conclude that <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1) does not provide information about <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) if we have no information about <i class="emphasis">x</i>(<i class="emphasis">k</i>). Thus, we assume that <i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) is independent of <i class="emphasis">u</i>(<i class="emphasis">k</i> ? 1) in the term <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i> ? 1) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i> ? 1)). Thus we obtain</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.13)&nbsp;</span></td><td valign="top"><img src="figu310_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">and simplify <a class="internaljump" href="#ch09eqn121C14020F-F9F5-4415-973A-D906072C1A72">(9.12)</a> to</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.14)&nbsp;</span></td><td valign="top"><img src="figu310_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">If we now substitute this result into <a class="internaljump" href="#ch09eqn091C14020F-F9F5-4415-973A-D906072C1A72">(9.9)</a> we obtain</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.15)&nbsp;</span></td><td valign="top"><img src="figu310_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="last-para">which directly corresponds to the <a class="internaljump" href="#ch09eqn011C14020F-F9F5-4415-973A-D906072C1A72">(9.1)</a>.</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="779"></a><a name="ch09lev2sec41C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">9.1.4 </span>Representations of the Posterior</h3>
+<p class="first-para">As mentioned above, the probabilistic formulation leaves open how the posterior is represented. In principle, there are various ways to represent the posterior. Mathematically speaking, <i class="emphasis">P</i> is a function <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1291" src="figu310_4.jpg" height="15" width="97" title="" border="0" /></span></span>. When <i class="emphasis">X</i> is continuous (or infinite), <i class="emphasis">P</i> lives <a name="780"></a><a name="IDX-3111C14020F-F9F5-4415-973A-D906072C1A72"></a>in an infinitely dimensional space. Of course it is impossible to arbitrarily represent an infinitely dimensional map. Thus we have to be content with a finite approximation. Throughout this section we discuss three different approaches: Kalman filters, discrete approximations, and particle filters.</p>
+<div class="section">
+<h4 class="sect4-title">
+<a name="781"></a><a name="ch09lev3sec11C14020F-F9F5-4415-973A-D906072C1A72"></a>Kalman Filters</h4>
+<p class="first-para">The <a href="48.html" target="_parent" class="chapterjump">previous chapter</a> covered a common approach to the representation of the belief <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0: <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1: <i class="emphasis">k</i>)) as Extended Kalman filters (EKFs) [215,390]. In this case, the posterior is represented using a unimodal Gaussian distribution. Many successful applications of Kalman filters for mobile robot localization have been demonstrated [28,179,276,371]. One advantage of Kalman filtering is that it can be implemented quite efficiently and that it works well in high-dimensional state spaces. Additionally, Kalman filters provide a floating-point resolution and in this way allow highly accurate estimates.</p>
+<p class="last-para">Unfortunately, Kalman filters are only optimal for systems whose behavior is governed by the linear equations given by <a href="50.html#687" target="_parent" class="chapterjump">(8.1)</a> and <a href="50.html#688" target="_parent" class="chapterjump">(8.2)</a>. Since Kalman filters use Gaussian distributions, they cannot appropriately represent beliefs that correspond to ambiguous situations as they appear, e.g., in the context of global localization. As a result, localization approaches using Kalman filters typically require that the starting location of the robot is known or that unique landmarks are given so that there is no data association problem. To overcome the limitations of Kalman filters, recent extensions of this approach have been developed. For example, Jensfeld and Christensen [209] use a mixture of Gaussians to represent the belief about the location of the robot. They also present techniques to update this mixture based on sensory input and robot motions. In this chapter, we consider two alternative nonparametric state representations-discrete grids and samples-to bypass the Gaussian assumption.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="782"></a><a name="ch09lev3sec21C14020F-F9F5-4415-973A-D906072C1A72"></a>Discrete Approximations</h4>
+<p class="first-para">An alternative form to represent <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>)) is to use a discrete approximation of the configuration space. Independent of the structure of the discretization all approaches store in each element of their discrete structure the probability that the robot is at the location that corresponds to this element. In practice, one mainly finds topological and geometric discretizations. In the first case, the configuration space is separated according to the topological structure of the environment. Many systems that exploit topological structures use individual states for junctions, door-ways and rooms and four possible headings. Several systems [213, 339, 386] follow this approach and perform probabilistic localization for landmark-based corridor <a name="783"></a><a name="IDX-3121C14020F-F9F5-4415-973A-D906072C1A72"></a>navigation. Choset and Nagatani exploit the topology of the generalized Voronoi diagram (GVD) [108], described in <a href="30.html" target="_parent" class="chapterjump">chapter 5</a>. The advantage of a topological representation lies in its compactness, because only a limited number of states need to be considered. Its disadvantage, on the other hand, is limited accuracy with respect to position and orientation. To achieve more accurate estimates, Burgard, Fox, and coworkers [83, 158] use a fine-grained grid to represent the posterior. Throughout this section we will give a detailed description of this grid-based technique.</p>
+<p class="para">If we assume that the configuration of the robot is <i class="emphasis">SE</i>(2) and thus a configuration is represented by a three-dimensional random vector consisting of the (<i class="emphasis">x<sub>r</sub></i>, <i class="emphasis">y<sub>r</sub></i> )-position and the orientation ?<i class="emphasis"><sub>r</sub></i> of the vehicle, our grid needs to be three-dimensional. Whereas the first two dimensions are used for the position of the vehicle, the third dimension is used for its orientation. <a class="internaljump" href="#ch09fig021C14020F-F9F5-4415-973A-D906072C1A72">Figure 9.2</a> shows the structure of the grid for this kind of representation. In practical applications of this technique, spatial resolution of 10 to 30 cm and an angular resolutions of 2 to 10 degrees turned out to be sufficient for robust and accurate localization of mobile robots [81,177].</p>
+<div class="figure">
+<a name="784"></a><a name="ch09fig021C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1292','fig9-2_0.jpg','592','592')" name="IMG_1292" target="_self"><img alt="Image from book" id="IMG_1292" src="fig9-2.jpg" height="350" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 9.2: </span>Grid-based representation of the state space.</span>
+</div>
+<p class="para">To compute the posterior <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>)) represented by a grid we follow the procedure summarized in <a class="internaljump" href="#ch09al161C14020F-F9F5-4415-973A-D906072C1A72">Algorithm 16</a>. Given <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> ? 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>) and an initial belief <i class="emphasis">P</i>(<i class="emphasis">x</i>(0)), we carry out <i class="emphasis">k</i> loops. In the every round <i class="emphasis">i</i> we integrate <i class="emphasis">u</i>(<i class="emphasis">i</i> ? 1) and <i class="emphasis">y</i>(<i class="emphasis">i</i>). The first step (i.e., the prediction step) incorporates the movement <i class="emphasis">u</i>(<i class="emphasis">i</i> ? 1), which means that we have to recompute the grid according to the motion model <i class="emphasis">P</i>(<i class="emphasis">x</i> | <i class="emphasis">u</i>(<i class="emphasis">i</i> ? 1), <i class="emphasis">x</i>?). In principle, this involves integrating over all possible prior states of the robot, which would result in an <i class="emphasis">O</i>(<i class="emphasis">N</i><sup>2</sup>) complexity, where <i class="emphasis">N</i> is the number of states represented by the grid. One way to reduce the complexity of this operation is to <a name="785"></a><a name="IDX-3131C14020F-F9F5-4415-973A-D906072C1A72"></a>limit the number of predecessor states summed over. In a successful implementation of the grid-based representation Fox, Burgard and Thrun [158] applied the following approach to approximate the integration over all potential previous states: First, all grid cells are shifted according to the motion <i class="emphasis">u</i>(<i class="emphasis">i</i> ? 1) carried out by the robot, and then the whole grid is convolved using a bounded Gaussian kernel that corresponds to the uncertainty of <i class="emphasis">u</i>(<i class="emphasis">i</i> ? 1). Whenever the robot has moved, we can easily compute for every (<i class="emphasis">x</i>, <i class="emphasis">y</i>)-plane of the grid the offsets ?<i class="emphasis">x</i> and ?<i class="emphasis">y</i> by which each cell has to be shifted according to <i class="emphasis">u</i>(<i class="emphasis">i</i> ? 1) (and assuming there are no odometry errors). Please note that ?<i class="emphasis">x</i> and ?<i class="emphasis">y</i> both depend on the angle ? that the corresponding plane in the grid represents. The convolution operation can be carried out efficiently using a separable kernel. This involves convolving independently over the individual dimensions of the grid. To realize this, one usually introduces a one-dimensional array <i class="emphasis">P</i>? that stores the intermediate results of this computation. In the case of the <i class="emphasis">x</i>-dimension we proceed as follows for all <i class="emphasis">x</i>:</p>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 16: </span>Probabilistic localization for discrete state spaces</span><a name="786"></a><a name="ch09al161C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b> Sequence of measurements <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>) and movements <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> - 1) and initial
+belief <i class="emphasis">P</i>(<i class="emphasis">x</i>(0))
+<b class="bold">Output:</b> A posterior <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> - 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>)) about the configuration of the
+robot at time step <i class="emphasis">k</i>
+1: <i class="emphasis">P</i>(<i class="emphasis">x</i>) ? <i class="emphasis">P</i>(<i class="emphasis">x</i>(0))
+2: <b class="bold">for</b> <i class="emphasis">i</i> ? 1to <i class="emphasis">k</i> <b class="bold">do</b>
+3:   <b class="bold">for all</b> states <i class="emphasis">x</i> ? <i class="emphasis">X</i> <b class="bold">do</b>
+4:     <i class="emphasis">P</i>?(<i class="emphasis">x</i>) 
+? ?<sub><i class="emphasis">x</i>
+??<i class="emphasis">X</i></sub> <i class="emphasis">P</i>(<i class="emphasis">x</i> | <i class="emphasis">u</i>(<i class="emphasis">i</i> - 1), <i class="emphasis">x</i>?) <i class="emphasis">P</i>(<i class="emphasis">x</i>?)
+5:   <b class="bold">end for</b>
+6:   ? ? 0
+7:   <b class="bold">for all</b> states <i class="emphasis">x</i> ? <i class="emphasis">X</i> <b class="bold">do</b>
+8:     <i class="emphasis">P</i>(<i class="emphasis">x</i>) ? <i class="emphasis">P</i>(<i class="emphasis">y</i>(<i class="emphasis">i</i>) | <i class="emphasis">x</i>) <i class="emphasis">P</i>?(<i class="emphasis">x</i>)
+9:     ? ? ? + <i class="emphasis">P</i>(<i class="emphasis">x</i>)
+10:   <b class="bold">end for</b>
+11:   <b class="bold">for all</b> states <i class="emphasis">x</i> ? <i class="emphasis">X</i> <b class="bold">do</b>
+12:     <i class="emphasis">P</i>(<i class="emphasis">x</i>) ? <i class="emphasis">P</i>(<i class="emphasis">x</i>)/?
+13:   <b class="bold">end for</b>
+14: <b class="bold">end for</b>
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.16)&nbsp;</span></td><td valign="top"><img src="figu313_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">
+<a name="787"></a><a name="IDX-3141C14020F-F9F5-4415-973A-D906072C1A72"></a>Special care has to be taken at the borders of the grid. In this case only one neighboring cell is given and one chooses the coefficients <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1294" src="figu314_1.jpg" height="22" width="7" title="" border="0" /></span></span> for the cell itself and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1295" src="figu314_2.jpg" height="22" width="7" title="" border="0" /></span></span> for the neighbor cell (<i class="emphasis">x</i> +1or <i class="emphasis">x</i> ? 1 depending on where one is in the grid). Whenever <i class="emphasis">P</i>?((<i class="emphasis">x</i>, <i class="emphasis">y</i>, ?)) has been computed for all <i class="emphasis">x</i> and a given pair of <i class="emphasis">y</i> and ?, the results are then stored back in the original cells. Similarly we proceed with all <i class="emphasis">y</i> and ?. To correctly model the uncertainty introduced by the motion <i class="emphasis">u</i>(<i class="emphasis">i</i> ? 1) the convolution process can be repeated appropriately. The second step (i.e., the update step) of <a class="internaljump" href="#ch09al161C14020F-F9F5-4415-973A-D906072C1A72">Algorithm 16</a> integrates the observation <i class="emphasis">y</i>(<i class="emphasis">i</i>) into the grid. To achievethis, we simply multiply every grid cell by the likelihood of the observation <i class="emphasis">y</i>(<i class="emphasis">i</i>), given the robot has the configuration corresponding to that particular cell. Afterward the whole grid is normalized.</p>
+<p class="para">
+<a class="internaljump" href="#ch09al161C14020F-F9F5-4415-973A-D906072C1A72">Algorithm 16</a> can also be used for incremental filtering. If the initial belief is set to the output obtained from the preceeding application of the algorithm and if all measurements and movements since this point in time are given as input, the algorithm incrementally computes the corresponding posterior. Please also note that <a class="internaljump" href="#ch09al161C14020F-F9F5-4415-973A-D906072C1A72">Algorithm 16</a> can easily be extended to situations in which the movements and the environment measurements do not arrive in an alternating and fixed scheme.</p>
+<p class="para">One important aspect of all state estimation procedures is the extraction of relevant statistics such as the mean and the mode. These parameters are important whenever the robot has to generate actions based on the current belief about its state. For example, this can be the next motion command to enter a specific room. Both the mode and the mean can be determined efficiently given a grid-based approximation. The <i class="emphasis">x</i>- and <i class="emphasis">y</i>-coordinates of the mean (<span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1296" src="figu314_3.jpg" height="11" width="10" title="" border="0" /></span></span> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1297" src="figu314_4.jpg" height="15" width="9" title="" border="0" /></span></span>) can be computed by computing the weighted sums <i class="emphasis">i</i> = 1,...,<i class="emphasis">N</i> over all cells of the grid. To compute the angle mean we use the following equation:</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.17)&nbsp;</span></td><td valign="top"><img src="figu314_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Unfortunately, the mean has the disadvantage that the resulting values can lack any useful meaning, especially in the context of multimodal distributions. For example, the mean of a bimodal distribution might lie within an obstacle so that no meaningful commands can be generated. An alternative statistic is the mode of the distribution which, given a grid-based approximation, can be computed efficiently by a simple maximum operation. Compared to the mean, the mode has the advantage that it generally corresponds to a possible location of the vehicle. However, the locations of subsequent modes can differ largely so that the estimates are not as continuous as if we choose the mean. Whereas the mean automatically yields estimates at subgrid-resolution accuracy, we can obtain the same for the mode by averaging over a small region around the cell containing the maximum probability [82].</p>
+<p class="para">
+<a name="788"></a><a name="IDX-3151C14020F-F9F5-4415-973A-D906072C1A72"></a>To illustrate an application example of a grid-based representation, consider the map and the data set depicted in the left image of <a class="internaljump" href="#ch09fig031C14020F-F9F5-4415-973A-D906072C1A72">figure 9.3</a>. The map, which was generated using the system described by Buhmann and coworkers [73], corresponds to the environment of the AAAI '94 mobile robot competition. The size of this environment is 31 by 22 m. The right image of the same figure depicts the path of the B21 robot Rhino [415] along with measurements of the twenty four ultrasound sensors obtained as the robot moved through the competition arena. Here we use this sensor information to globally localize the robot from scratch. The time required to process this data on a 400 MHz Pentium II is 80 seconds, using a position probability grid with a spatial resolution of 15 cm and an angular resolution of 3 degrees.</p>
+<div class="figure">
+<a name="789"></a><a name="ch09fig031C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1299','fig9-3_0.jpg','1000','325')" name="IMG_1299" target="_self"><img alt="Image from book" id="IMG_1299" src="fig9-3.jpg" height="114" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 9.3: </span>Occupancy grid map of the 1994 AAAI mobile robot competition arena (left) and data set recorded in this (right). It includes the odometry information and the ultrasound measurements. Point <i class="emphasis">A</i> is after five steps, <i class="emphasis">B</i> is after eighteen, and <i class="emphasis">C</i> is after twenty-four.</span>
+</div>
+<p class="para">The right image of <a class="internaljump" href="#ch09fig031C14020F-F9F5-4415-973A-D906072C1A72">figure 9.3</a> also marks the points in time when the robot perceived the fifth (A), eighteenth (B), and twenty-fourth (C) sensor sweep. The posteriors during global localization at these three points in time are illustrated in <a class="internaljump" href="#ch09fig041C14020F-F9F5-4415-973A-D906072C1A72">figure 9.4</a>. The figures show the belief of the robot projected onto the (<i class="emphasis">x</i>, <i class="emphasis">y</i>)-plane by plotting <a name="790"></a><a name="IDX-3161C14020F-F9F5-4415-973A-D906072C1A72"></a>for each (<i class="emphasis">x</i>, <i class="emphasis">y</i>)-position the maximum probability over all possible orientations. More likely locations are darker and, for illustration purposes, the left and middle images use a logarithmic scale in intensity. The leftmost image of <a class="internaljump" href="#ch09fig041C14020F-F9F5-4415-973A-D906072C1A72">figure 9.4</a> shows the belief state after integrating five sensor sweeps (i.e. when the robot is at step A on its path). At this point in time, all the robot knows is that it is likely in one of the corridors of the environment. After integrating eighteen sweeps of the ultrasound sensors (at step B) the robot is almost certain that it is at the end of a corridor (see center image of <a class="internaljump" href="#ch09fig041C14020F-F9F5-4415-973A-D906072C1A72">figure 9.4</a>). After incorporating twenty-four scans (step C) the robot has determined its location uniquely. This is represented by the unique peak containing 99% of the whole probability mass (see rightmost image of <a class="internaljump" href="#ch09fig041C14020F-F9F5-4415-973A-D906072C1A72">figure 9.4</a>).</p>
+<div class="figure">
+<a name="791"></a><a name="ch09fig041C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1300','fig9-4_0.jpg','1000','272')" name="IMG_1300" target="_self"><img alt="Image from book" id="IMG_1300" src="fig9-4.jpg" height="95" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 9.4: </span>Density plots after incorporating five, eighteen, and twenty-four sonar scans (the darker locations are more likely).</span>
+</div>
+<p class="last-para">Although the grid-based approach has the advantage that it provides a well-understood approximation of the true distribution and that important statistics such as the mean and the mode can be easily assessed, it has certain disadvantages. First, the number of grid cells grows exponentially in the number of dimensions and therefore limits the application of this approach to low-dimensional state spaces. Additionally, the approach uses a rigid grid. If the whole probability mass is concentrated on a unique peak, most of the states in the grid are useless and approaches that focus the processing time on regions of high likelihood are preferable. One method to dynamically adapt the number of states that have to be updated is the selective updating scheme [158]. Burgard, Derr, Fox, and Cremers [82] use a tree structure and store only cells whose probability exceeds a certain threshold. In this way, memory and computational requirements can be adapted to the complexity of the posterior.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="792"></a><a name="ch09lev3sec31C14020F-F9F5-4415-973A-D906072C1A72"></a>Particle Filters</h4>
+<p class="first-para">An alternative and efficient way of representing and maintaining probability densities is the particle filter. The key idea of particle filters is to represent the posterior by a set <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1301" src="figu316_1.jpg" height="16" width="23" title="" border="0" /></span></span> of <i class="emphasis">N</i> samples. Each sample consists of a pair (<i class="emphasis">x</i>, ?) containing a state vector <i class="emphasis">x</i> of the underlying system and a weighting factor ?, i.e., <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1302" src="figu316_2.jpg" height="21" width="151" title="" border="0" /></span></span>. The latter is used to store the importance of the corresponding particle. The posterior is represented by the distribution of the samples and their importance factors. In the past a variety of different particle filter algorithms have been developed and many variants have been applied with great success to various application domains [97,125,138,157,167,201,218]. <a class="internaljump" href="#ch09al171C14020F-F9F5-4415-973A-D906072C1A72">Algorithm 17</a> describes a particle filter algorithm that uses <i class="emphasis">sequential importance sampling with resampling</i> [29] to implement the update step. This algorithm follows a survival of the fittest scheme. Whenever a new measurement <i class="emphasis">y</i>(<i class="emphasis">k</i>) arrives, the weight ? of a particle (<i class="emphasis">x</i>, ?) is computed as the like-lihood <i class="emphasis">p</i>(<i class="emphasis">y</i>(<i class="emphasis">k</i>) | <i class="emphasis">x</i>) of this observation given the system is in state <i class="emphasis">x</i>. After computing <a name="793"></a><a name="IDX-3171C14020F-F9F5-4415-973A-D906072C1A72"></a>the weights, a so-called resampling procedure is applied. We draw <i class="emphasis">N</i> samples with replacement from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1303" src="figu317_4.jpg" height="16" width="23" title="" border="0" /></span></span> such that each sample in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1304" src="figu317_5.jpg" height="16" width="23" title="" border="0" /></span></span> is selected with a probability that is proportional to its weight ?. Accordingly, samples with greater weights survive with higher likelihood than samples with values of small importance. In principle, there are many ways of achieving this. One popular approach (see also [29]) is described by <a class="internaljump" href="#ch09al181C14020F-F9F5-4415-973A-D906072C1A72">algorithm 18</a>. In this algorithm, the procedure <i class="emphasis">rand(I)</i> draws a random value from the interval <i class="emphasis">I</i> according to a uniform distribution. The major advantage of this algorithm is that the whole resampling process is carried out in <i class="emphasis">O</i>(<i class="emphasis">N</i>) steps. One alternative technique is the one used by Isard and Blake [201]. This approach relies on binary search to select a sample and thus requires <i class="emphasis">O</i>(<i class="emphasis">N</i> log <i class="emphasis">N</i>) steps.</p>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 17: </span>Probabilistic localization using a particle filter</span><a name="794"></a><a name="ch09al171C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b> Sequence of measurements <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>) and movements <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> - 1) and set <span class="inlinemediaobject"><img alt="Image from book" id="IMG_1305" src="figu317_1.jpg" height="16" width="23" title="" border="0" /></span>
+of <i class="emphasis">N</i> samples (<i class="emphasis">x<sub>j</sub></i>, ?<i class="emphasis">j</i>) corresponding to the initial belief <i class="emphasis">P</i>(<i class="emphasis">x</i>)
+<b class="bold">Output:</b> A posterior <i class="emphasis">P</i>(<i class="emphasis">x</i>(<i class="emphasis">k</i>) | <i class="emphasis">u</i>(0 : <i class="emphasis">k</i> - 1), <i class="emphasis">y</i>(1 : <i class="emphasis">k</i>)) about the configuration of the
+robot at time step <i class="emphasis">k</i> represented by <span class="inlinemediaobject"><img alt="Image from book" id="IMG_1306" src="figu317_2.jpg" height="16" width="23" title="" border="0" /></span>.
+1: <b class="bold">for</b> <i class="emphasis">i</i> ? 1 to <i class="emphasis">k</i> <b class="bold">do</b>
+2:   <b class="bold">for</b> <i class="emphasis">j</i> ? 1 to <i class="emphasis">N</i> <b class="bold">do</b>
+3:     compute a new state <i class="emphasis">x</i> by sampling according to <i class="emphasis">P</i>(<i class="emphasis">x</i> | <i class="emphasis">u</i>(<i class="emphasis">i</i> - 1), <i class="emphasis">x</i> <i class="emphasis">j</i>).
+4:     <i class="emphasis">x<sub>j</sub></i> ? <i class="emphasis">x</i>
+5:   <b class="bold">end for</b>
+6:   ? ? 0
+7:   <b class="bold">for</b> <i class="emphasis">j</i> ? 1 to <i class="emphasis">N</i> <b class="bold">do</b>
+8:     <i class="emphasis">w<sub>j</sub></i> = <i class="emphasis">P</i>(<i class="emphasis">y</i>(<i class="emphasis">i</i>) | <i class="emphasis">x<sub>j</sub></i>)
+9:     ? = ? + <i class="emphasis">w<sub>j</sub></i>
+10:   <b class="bold">end for</b>
+11:   <b class="bold">for</b> <i class="emphasis">j</i> ? 1 to <i class="emphasis">N</i> <b class="bold">do</b>
+12:     <i class="emphasis">w<sub>j</sub></i> = ?<sup>-1</sup> <i class="emphasis">w<sub>j</sub></i>
+13:   <b class="bold">end for</b>
+14:   <span class="inlinemediaobject"><img alt="Image from book" id="IMG_1307" src="figu317_3.jpg" height="19" width="166" title="" border="0" /></span>
+15: <b class="bold">end for</b>
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="para">We also need to describe the prediction step that we use to incorporate the motions of the robot into the sample set. Throughout this chapter we assume that incremental motions of a robot between two configurations <i class="emphasis">x</i><sub>1</sub> and <i class="emphasis">x</i><sub>2</sub> are encoded by the three parameters ?, ?, and <i class="emphasis">d</i> (see <a class="internaljump" href="#ch09fig051C14020F-F9F5-4415-973A-D906072C1A72">figure 9.5</a>). Here ? is an initial rotation in <i class="emphasis">x</i><sub>1</sub> toward <i class="emphasis">x</i><sub>2</sub>, <i class="emphasis">d</i> is the distance to be traveled from <i class="emphasis">x</i><sub>1</sub> to <i class="emphasis">x</i><sub>2</sub>, and ? is the final rotation carried out at the location <i class="emphasis">x</i><sub>2</sub> to reach the orientation of the robot in <i class="emphasis">x</i><sub>2</sub>. Since the motions carried <a name="795"></a><a name="IDX-3181C14020F-F9F5-4415-973A-D906072C1A72"></a>out by the robot are not deterministic, we need to cope with potential errors when we compute new locations for samples. We proceed as follows: Whenever we compute the new configuration for a sample after a movement <i class="emphasis">u</i>(<i class="emphasis">i</i> ? 1), we incorporate the possible deviations from the values of ?, ?, and <i class="emphasis">d</i>. Throughout this section, we assume Gaussian noise in these values and compute the new location of a sample according to values ??, ??, and <i class="emphasis">d</i>? that deviate from the measured values ?, ?, and <i class="emphasis">d</i> according to Gaussian distributions. If we denote the robot state as <i class="emphasis">x</i> = [<i class="emphasis">x<sub>r</sub></i>, <i class="emphasis">y<sub>r</sub></i>, ?<i class="emphasis"><sub>r</sub></i>] <a name="796"></a><a name="IDX-3191C14020F-F9F5-4415-973A-D906072C1A72"></a>and the <i class="emphasis">i</i>th particle by <i class="emphasis">x<sup>i</sup></i>, then the motion model is implemented by assigning</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.18)&nbsp;</span></td><td valign="top"><img src="figu319_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">for each particle in the collection, where</p>
+<div class="equation" mathml="yes">
+<a name="797"></a><a name="ch09eqn191C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.19)&nbsp;</span></td><td valign="top"><img src="figu319_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="798"></a><a name="ch09eqn201C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.20)&nbsp;</span></td><td valign="top"><img src="figu319_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="799"></a><a name="ch09eqn211C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.21)&nbsp;</span></td><td valign="top"><img src="figu319_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Here norm(?) is a random number generator that outputs random numbers according to a normal distribution with mean 0 and standard deviation ?. The standard deviations ?<sub><i class="emphasis">i</i></sub> are parameters that describe the influence of the translation <i class="emphasis">d</i> and the rotations ? and ? on the potential errors. In this model the errors in all three values depend on the rotations and the translation carried out. Note that the ?<i class="emphasis"><sub>i</sub></i> can be learned by generating a statistic about typical deviations of the actual movements from the values ?, ?, and <i class="emphasis">d</i>.</p>
+<div class="figure">
+<a name="800"></a><a name="ch09fig051C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1312','fig9-5_0.jpg','838','502')" name="IMG_1312" target="_self"><img alt="Image from book" id="IMG_1312" src="fig9-5.jpg" height="210" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 9.5: </span>The parameters ?, ?, and <i class="emphasis">d</i> specifying any incremental motion of a robot in the (<i class="emphasis">x</i>, <i class="emphasis">y</i>, ?)-space.</span>
+</div>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 18: </span>The procedure <i class="emphasis">resample</i><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1313" src="figu318_1.jpg" height="16" width="23" title="" border="0" /></span></span><a name="801"></a><a name="ch09al181C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b> Set <span class="inlinemediaobject"><img alt="Image from book" id="IMG_1314" src="figu318_2.jpg" height="16" width="23" title="" border="0" /></span> of <i class="emphasis">N</i> samples
+<b class="bold">Output:</b> Set <span class="inlinemediaobject"><img alt="Image from book" id="IMG_1315" src="figu318_3.jpg" height="16" width="23" title="" border="0" /></span> of <i class="emphasis">N</i> samples obtained by importance resampling from <span class="inlinemediaobject"><img alt="Image from book" id="IMG_1316" src="figu318_4.jpg" height="16" width="23" title="" border="0" /></span>
+1: <span class="inlinemediaobject"><img alt="Image from book" id="IMG_1317" src="figu318_5.jpg" height="16" width="23" title="" border="0" /></span>
+2: ? ? <i class="emphasis">rand</i>((0; <i class="emphasis">N</i><sup>-1</sup>])
+3: <i class="emphasis">c</i> ? ?<sub>0</sub>
+4: <i class="emphasis">i</i> ? 0
+5: <b class="bold">for</b> <i class="emphasis">j</i> ? 0 to <i class="emphasis">N</i> - 1 <b class="bold">do</b>
+6:   <i class="emphasis">u</i> ? ? + <i class="emphasis">j</i> <i class="emphasis">N</i><sup>-1</sup>
+7:   <b class="bold">while</b> <i class="emphasis">u</i> &gt; <i class="emphasis">c</i> <b class="bold">do</b>
+8:     <i class="emphasis">i</i> ? <i class="emphasis">i</i> + 1
+9:     <i class="emphasis">c</i> ? <i class="emphasis">c</i> + ?<i class="emphasis"><sub>i</sub></i>
+10:   <b class="bold">end while</b>
+11:   <span class="inlinemediaobject"><img alt="Image from book" id="IMG_1318" src="figu318_6.jpg" height="21" width="209" title="" border="0" /></span>
+12: <b class="bold">end for</b>
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="para">
+<a class="internaljump" href="#ch09fig061C14020F-F9F5-4415-973A-D906072C1A72">Figure 9.6</a> illustrates an application of this motion model to a sample set in which all samples are concentrated in a single state. The line depicts the path taken by the robot and the sample sets illustrate the belief about the robot's configurations at <a name="802"></a><a name="IDX-3201C14020F-F9F5-4415-973A-D906072C1A72"></a>certain points in time. In this particular example we incorporated no observations of the environment into the sample set. As can be seen from the figure, the robot's uncertainty grows indefinitely while it is moving, and the overall distribution is slightly bent.</p>
+<div class="figure">
+<a name="803"></a><a name="ch09fig061C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1319','fig9-6_0.jpg','1000','706')" name="IMG_1319" target="_self"><img alt="Image from book" id="IMG_1319" src="fig9-6.jpg" height="247" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 9.6: </span>Sample-based approximation of the belief of the robot after repeatedly executing motion commands. In this example, the robot did not perceive the environment while it was updating the sample set.</span>
+</div>
+<p class="para">Note that the motion model described above does not incorporate any information about the environment. Accordingly, samples might end up inside obstacles in the map of the environment. One advantage of sample-based approaches, however, lies in the fact that such environmental information can easily be incorporated. To avoid that samples move through obstacles we can simply reject such values for ??, ??, and <i class="emphasis">d</i>?.</p>
+<p class="para">To extract the mean of a posterior represented by <i class="emphasis">N</i> samples, we can proceed in a similar way as for the grid-based representation. We simply average over all samples of the distribution. In the case that not all importance factors are equal we use the normalized importance factors as weighting factors. When computing the mode, we distinguish two different situations. If we compute the mode just before the resampling step, we can simply select that sample with the highest importance factor, which requires <i class="emphasis">O</i>(<i class="emphasis">N</i> ) steps. After resampling, however, the mode cannot be computed as easily, because the actual form of the posterior is only encoded in the density of the samples. One popular approach to approximate the mode is to use kd-trees [44], which, however, requires <i class="emphasis">O</i>(<i class="emphasis">N</i> log <i class="emphasis">N</i> ) steps. Alternatively, one can compute a histogram based on a coarse discretization of the state space. In this case, the space requirements are similar to the grid-based approach, but the mode can be extracted in <i class="emphasis">O</i>(<i class="emphasis">N</i>) steps.</p>
+<p class="para">
+<a class="internaljump" href="#ch09fig071C14020F-F9F5-4415-973A-D906072C1A72">Figure 9.7</a> shows a particle filter in action. This example is based on the ultra-sound and odometry data obtained while the robot traveled along the path depicted in <a href="49.html#681" target="_parent" class="chapterjump">figure 8.1</a> in <a href="48.html" target="_parent" class="chapterjump">chapter 8</a>. To achieve global localization we initialized the filter by selecting the initial set of particles from a uniform distribution over the free space in the environment (see left image of <a class="internaljump" href="#ch09fig071C14020F-F9F5-4415-973A-D906072C1A72">figure 9.7</a>). After incorporating ten ultrasound <a name="804"></a><a name="IDX-3211C14020F-F9F5-4415-973A-D906072C1A72"></a>measurements we obtain the particle set depicted in the middle image of <a class="internaljump" href="#ch09fig071C14020F-F9F5-4415-973A-D906072C1A72">figure 9.7</a>. After incorporating 65 measurements, the particle filter has converged to configurations close to the true location of the robot. The resulting density is depicted in the right image of <a class="internaljump" href="#ch09fig071C14020F-F9F5-4415-973A-D906072C1A72">figure 9.7</a>.</p>
+<div class="figure">
+<a name="805"></a><a name="ch09fig071C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1320','fig9-7_0.jpg','1000','231')" name="IMG_1320" target="_self"><img alt="Image from book" id="IMG_1320" src="fig9-7.jpg" height="81" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 9.7: </span>Global localization using a particle filter with 10,000 samples. The left image shows the initial distribution. The middle image shows the distribution after incorporating ten ultrasound beams. The right image shows a typical situation (here after 65 steps) when the location of the robot has been identified.</span>
+</div>
+<p class="para">
+<a class="internaljump" href="#ch09fig081C14020F-F9F5-4415-973A-D906072C1A72">Figure 9.8</a> shows the path of a robot as it is estimated by a particle filter. Here the particle filter was initialized using a Gaussian distribution and therefore was just tracking the location of the robot. Again, the odometry data used as input are shown in <a href="49.html#681" target="_parent" class="chapterjump">figure 8.1</a>. Additionally, the filter used the data of the 24 ultrasound sensors. As can be seen, the particle filter can robustly track the position of the robot, although ultrasound measurements are noisy and there are larger errors in odometry.</p>
+<div class="figure">
+<a name="806"></a><a name="ch09fig081C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1321','fig9-8_0.jpg','895','637')" name="IMG_1321" target="_self"><img alt="Image from book" id="IMG_1321" src="fig9-8.jpg" height="249" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 9.8: </span>Trajectory of the robot obtained by applying a particle filter for tracking the configuration of the robot using the data gathered along the path depicted in <a href="49.html#681" target="_parent" class="chapterjump">figure 8.1</a> in <a href="48.html" target="_parent" class="chapterjump">chapter 8</a>.</span>
+</div>
+<p class="last-para">As the global localization example illustrates, particle filters typically converge to the most likely estimate, i.e., after a certain period of time all of the particles usually cluster around the true configuration of the system. While this is desired in most situations, it also can be disadvantageous. This is especially true if a failure occurs that is not modeled in the motion model. One typical scenario in which such unpredicted localization errors frequently occur is the RoboCup environment [237]. There are certain conditions under which a referee removes a player from the soccer field. After a short period of time the player is then placed back onto the field. The problem that has to solved by the robot in such a case is usually denoted as the "kidnapped robot problem" [145]. To deal with such situations, or more generally, with situations in which the estimation process fails, the robot requires techniques to detect localization failures and to initiate a global localization. One approach is to <a name="807"></a><a name="IDX-3221C14020F-F9F5-4415-973A-D906072C1A72"></a>modify the motion model and to choose random configurations for a certain fraction of the samples [156]. Alternatively, one can monitor the average observation likelihood <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1322" src="figu322_1.jpg" height="29" width="236" title="" border="0" /></span></span> of all samples. For example, Burgard et al. [82] restart a global localization if this value falls below a certain threshold. Lenser and Veloso [275] adjust the number of samples with randomly chosen locations according to the value of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1323" src="figu322_2.jpg" height="18" width="12" title="" border="0" /></span></span>. Gutmann and Fox [176] additionally smooth <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1324" src="figu322_3.jpg" height="18" width="12" title="" border="0" /></span></span> to be more robust against short-term changes of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1325" src="figu322_4.jpg" height="18" width="12" title="" border="0" /></span></span>.</p>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="808"></a><a name="ch09lev2sec51C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">9.1.5 </span>Sensor Models</h3>
+<p class="first-para">One of the crucial aspects of probabilistic localization is how the likelihood of the robot's sensor measurements is computed. In particular, we are interested in the quantity <i class="emphasis">P</i>(<i class="emphasis">y</i> | <i class="emphasis">x</i>), which represents the likelihood of measuring <i class="emphasis">y</i> given <i class="emphasis">x</i> is the location of the system. Throughout this chapter, we denote the way in which we compute this quantity as the sensor model. Obviously, a good sensor model largely depends on the type of sensor that is used for localization. Additionally, it also may depend on the environment. For example, it might exploit particular features of the environment, such as landmarks. Finally, it also depends on the way the environment is represented, i.e., on the type of the map.</p>
+<p class="para">In this subsection we describe a sensor model that captures several of the physical properties of frequently used proximity sensors such as ultrasound or laser range scanners. To motivate this sensor model let us first investigate a typical scan obtained with the 24 ultrasound sensors of a B21 robot. One such scan is shown in <a class="internaljump" href="#ch09fig091C14020F-F9F5-4415-973A-D906072C1A72">figure 9.9</a>. In this figure the objects in the environment are shown in light gray. The dark lines indicate the central axis of 24 ultrasound beams as they are obtained at the corresponding location in this environment. As can be seen from the figure, most of the measurements are quite accurate. For example, the beams 0, 2, 3, 4, 10, 13, and 15 quite accurately correspond to the distance to the nearest obstacle in the measurement direction. Other beams, such as 1, 12, and 14, are shorter than the distance to the nearest obstacle. In this particular situation, the measurement 1 resulted from a crosstalk: the sensor received a sound signal emitted by another sensor [61]. The other two short measurements (12 and 14) were caused by objects not contained in the map. Whereas beam 12 was reflected by a person entering the room, the cone of beam 14 was echoed by a refrigerator installed in the niche. Furthermore, some of the measurements, such as 18, 19, and 20, appear to be quite random. They apparently pass through a bookshelf and appear to be echoed by an unmodeled object behind it. Finally, the sensors 6, 8, and 23 never received an echo and therefore report a maximum range reading.</p>
+<div class="figure">
+<a name="809"></a><a name="ch09fig091C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1326','fig9-9_0.jpg','864','864')" name="IMG_1326" target="_self"><img alt="Image from book" id="IMG_1326" src="fig9-9.jpg" height="350" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 9.9: </span>Ultrasound scan perceived with a B21 robot in an office environment.</span>
+</div>
+<p class="para">The sensor model that we describe in the remainder of this subsection is designed to capture the noise and error characteristics of many active range sensors. It can model <a name="810"></a><a name="IDX-3231C14020F-F9F5-4415-973A-D906072C1A72"></a>the accuracy of the sensor whenever the beam hits the nearest object in the direction of the measurement. Additionally, it represents random measurements. It furthermore provides means to model objects not contained in the map and to represent the effects of crosstalk between different sensors. Finally, it incorporates a technique to deal with detection errors in which the sensor reports a maximum range measurement. The model has been applied successfully in the past for mobile robot localization with proximity sensors such as ultrasound sensors and laser range finders. In 1997 and 1998 [81] the mobile robots Rhino and Minerva operated several weeks in populated museum environments using the sensor model described here for localization with laser range scanners.</p>
+<p class="para">Throughout this subsection we assume that range sensors have a limited numerical resolution, i.e., the information they provide is discrete. Accordingly, we consider a discrete set of distances <i class="emphasis">d</i><sub>0</sub>,...,<i class="emphasis">d</i><sub><i class="emphasis">n</i>?1</sub> where <i class="emphasis">d</i><sub><i class="emphasis">n</i>?1</sub> corresponds to the maximum distance that can be measured. We also assume that the size of the ranges ? = ?<sub><i class="emphasis">i</i>+1</sub> = <i class="emphasis">d</i><sub><i class="emphasis">i</i>+1</sub> ? <i class="emphasis">d<sub>i</sub></i> is the same for all <i class="emphasis">i</i>. In principle, the distribution <i class="emphasis">P</i>(<i class="emphasis">y</i> | <i class="emphasis">x</i>) that <i class="emphasis">y</i> is observed given the state of the system is <i class="emphasis">x</i> can be specified by a histogram that stores in each of its <i class="emphasis">n</i> bins the likelihood that <i class="emphasis">y</i> is <i class="emphasis">d<sub>i</sub></i>, <i class="emphasis">i</i> = 0, 1, ... <i class="emphasis">n</i> ? 1. Obviously, storing an individual histogram for sufficiently large number of potential states would consume too much space.</p>
+<p class="para">
+<a name="811"></a><a name="IDX-3241C14020F-F9F5-4415-973A-D906072C1A72"></a>The key idea of the model that we describe here is to compute <i class="emphasis">P</i>(<i class="emphasis">y</i> | <i class="emphasis">x</i>) based on the distance <i class="emphasis">d</i>(<i class="emphasis">x</i>) to the closest obstacle in the map within the perceptual field of the sensor. If the environment is represented geometrically, i.e., by an evidence grid or by geometric primitives such as polygons or lines, the expected distance <i class="emphasis">d</i>(<i class="emphasis">x</i>) can be computed efficiently using ray-casting. It is natural to assume that</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.22)&nbsp;</span></td><td valign="top"><img src="figu324_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Accordingly, it suffices to determine the expected distance <i class="emphasis">d</i> for the given measuring direction at the current location of the vehicle and then compute <i class="emphasis">P</i>(<i class="emphasis">y</i> | <i class="emphasis">d</i>).</p>
+<p class="para">The quantity <i class="emphasis">P</i>(<i class="emphasis">y</i> | <i class="emphasis">d</i>) is calculated as follows. According to the different situations identified in the scan depicted in <a class="internaljump" href="#ch09fig091C14020F-F9F5-4415-973A-D906072C1A72">figure 9.9</a>, we distinguish the following four situations:</p>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">
+<i class="emphasis">The nearest object in the direction of the beam is detected.</i> The actual measurement depends on the accuracy of the underlying sensor. Typically, the likelihood of the measurement <i class="emphasis">y</i> is then well-approximated by a Gaussian distribution <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1328" src="figu324_2.jpg" height="18" width="80" title="" border="0" /></span></span>, where <i class="emphasis">d</i> is the true distance to the object and the variance ? depends on the accuracy of the sensor; it is higher for ultrasound sensors than for laser range scanners.</p>
+</li>
+<li class="listitem">
+<p class="first-para">
+<i class="emphasis">An object not contained in the map reflects the beam, or there is crosstalk.</i> The sensor will report a distance that is shorter than the expected distance. In our model, we represent this by an exponential distribution, e.g., ?<i class="emphasis">e</i><sup>??<i class="emphasis">y</i></sup>.</p>
+</li>
+<li class="listitem">
+<p class="first-para">
+<i class="emphasis">The sensor produces a random measurement.</i> As mentioned above, there are situations in which the sensor provides a random measurement that cannot be explained given the current map. We model these types of measurements by a uniform distribution over the possible distances reported by the sensor, represented by a constant ?.</p>
+</li>
+<li class="listitem">
+<p class="first-para">
+<i class="emphasis">The sensor reports a maximum range reading.</i> In some situations, time-of-flight sensors such as ultrasounds or laser range scanners, or intensity-based sensors such as those based on infrared light fail to detect the beam reflected by an object. If no random measurement is obtained and if no crosstalk happens, the sensor may report a maximum range measurement. The likelihood of this event is represented by a constant ?.</p>
+</li>
+</ol>
+<p class="para">Since we do not know which situation is given, our distribution needs to represent all the different cases. Accordingly, the distribution <i class="emphasis">P</i>(<i class="emphasis">y</i> | <i class="emphasis">d</i>) is computed based on a mixture of the four different densities that correspond to the individual situations. Suppose <i class="emphasis">d<sub>i</sub></i> is the expected distance in a particular measurement direction at a given <a name="812"></a><a name="IDX-3251C14020F-F9F5-4415-973A-D906072C1A72"></a>position in the environment. Then we determine a complete histogram <i class="emphasis">h<sub>i</sub></i> containing in each bin <i class="emphasis">h<sub>i, j</sub></i> the likelihood of each possible measurement <i class="emphasis">d<sub>j</sub></i> the robot can obtain. If <i class="emphasis">j</i> &lt; <i class="emphasis">n</i> ? 1, i.e., the actual measurement is not a maximum range measurement, <i class="emphasis">h<sub>i, j</sub></i> is computed based on a mixture of the three densities representing the situations 1, 2, and 3 described above. If, however, <i class="emphasis">j</i> = <i class="emphasis">n</i> ? 1, then we have a single value representing the likelihood of maximum range measurements.</p>
+<div class="equation" mathml="yes">
+<a name="813"></a><a name="ch09eqn231C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.23)&nbsp;</span></td><td valign="top"><img src="figu325_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">The values of the parameters ?<i class="emphasis"><sub>i</sub></i>, ?<i class="emphasis"><sub>i</sub></i>, ?<i class="emphasis"><sub>i</sub></i>, ?<i class="emphasis"><sub>i</sub></i> and ?<i class="emphasis"><sub>i</sub></i> have to be chosen appropriately such that each <i class="emphasis">h<sub>ij</sub></i> reflects the correct likelihood. Thereby, we have to consider the constraint that</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.24)&nbsp;</span></td><td valign="top"><img src="figu325_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">for each histogram <i class="emphasis">h<sub>i</sub></i>. A typical approach to determine the optimal values for the different parameters of each histogram is log-likelihood maximization. Given a set of actual measurements for a given expected distance <i class="emphasis">d<sub>i</sub></i> this approach seeks to determine those values for the parameters that maximize the sum of the log likelihoods log <i class="emphasis">P</i>(<i class="emphasis">d</i> | <i class="emphasis">d<sub>i</sub></i>) over all measurements in the data set.</p>
+<p class="para">
+<a class="internaljump" href="#ch09fig101C14020F-F9F5-4415-973A-D906072C1A72">Figures 9.10</a> and <a class="internaljump" href="#ch09fig111C14020F-F9F5-4415-973A-D906072C1A72">9.11</a> show the resulting maximum-likelihood approximations for two different expected distances. Whereas <a class="internaljump" href="#ch09fig101C14020F-F9F5-4415-973A-D906072C1A72">figure 9.10</a> plots the histograms for ultrasound data, <a class="internaljump" href="#ch09fig111C14020F-F9F5-4415-973A-D906072C1A72">figure 9.11</a> plots the histograms obtained for laser range data. In all plots, the data are shown as boxes and the approximation is shown as dots. As can <a name="814"></a><a name="IDX-3261C14020F-F9F5-4415-973A-D906072C1A72"></a>be seen, our model is quite accurate and reflects well the properties of the real data. It is furthermore obvious that the laser range finder yields much more accurate data than the ultrasound sensor. This is represented by the fact that the Gaussians have a lower variance in both histograms. Please also note that the variances of the Gaussians do not depend solely on the accuracy of the sensor. They also encode the uncertainty of the map. For example, if dynamic objects such as chairs or tables are slightly moved, the error in the measurements increases, which results in a higher uncertainty of the sensor model.</p>
+<div class="figure">
+<a name="815"></a><a name="ch09fig101C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1331','fig9-10_0.jpg','1000','345')" name="IMG_1331" target="_self"><img alt="Image from book" id="IMG_1331" src="fig9-10.jpg" height="121" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 9.10: </span>Histograms (data and maximum-likelihood approximation) for data sets obtained with ultrasound sensors and for two different expected distances.</span>
+</div>
+<div class="figure">
+<a name="816"></a><a name="ch09fig111C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1332','fig9-11_0.jpg','1000','345')" name="IMG_1332" target="_self"><img alt="Image from book" id="IMG_1332" src="fig9-11.jpg" height="121" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 9.11: </span>Histograms (data and maximum-likelihood approximation) for data sets obtained with a laser range finder and for two different expected distances.</span>
+</div>
+<p class="para">Range scans obtained with laser range scanners typically consist of multiple measurements. Some robots are also equipped with arrays of ultrasound sensors which provide several measurements <i class="emphasis">y</i><sub>1</sub>, <i class="emphasis">y</i><sub>2</sub>, ... <i class="emphasis">y<sub>m</sub></i> at a time. In practice it is often assumed that these measurements are independent, i.e, that</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(9.25)&nbsp;</span></td><td valign="top"><img src="figu326_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">In general, however, this assumption is not always justified, e.g., if the environment contains objects that are not included in the map. In such a situation, the knowledge that one measurement is shorter than expected raises the probability that a neighboring beam of the same scan that intercepts a region close to the first measurement is also shorter. A popular solution to this problem is to use only a subset of all beams of a scan. For example, Fox et al. [158] typically used only 60 beams of the 181 beams of a SICK PLS laser range scan.</p>
+<p class="para">Finally, we want to describe some aspects that might be important when implementing this model. The first disadvantage of this model is that one has to perform a <a name="817"></a><a name="IDX-3271C14020F-F9F5-4415-973A-D906072C1A72"></a>ray-casting operation for every potential state of the system. In a grid-based representation of the state space this involves a ray-casting operation for every cell of the grid. If a sample-based representation is used, the same operation has to be performed for every sample in the sample set. One approach to reduce the computation time is to precompute all expected distances and to store them in a large lookup table. Given an appropriate discretization of the state space, the individual entries of this table can be accessed in constant time. If, furthermore, one limits the resolution of the range data such that each beam can have no more than 256 values, only one byte is needed for each entry of the table. In this case, also, the number of histograms for the computation of <i class="emphasis">P</i>(<i class="emphasis">y</i> | <i class="emphasis">d</i>) is limited. We only need 256 histograms with 256 bins each.</p>
+<p class="para">A further disadvantage of this approach is that the likelihood function sometimes lacks smoothness with respect to slight changes of the locations of the robot. For example, consider a situation in which a laser range finder points into a doorway. If we move the robot slightly, the beam might hit the adjacent wall. Alternatively, consider a beam that hits a wall at a small angle. Slight changes in the orientation of the robot in this case have a high influence on the measured distance. In contrast to that, if the beam is almost perpendicular to a wall, slight changes of the orientation of the robot have almost no influence on the measured distance. One way to solve this problem is to also consider the variance of the expected measurement. This variance can also be computed beforehand by integrating over the local neighborhood of the state <i class="emphasis">x</i>.Given an appropriate discretization of the variances, the histograms then have to be learned for each pair of expected distances and variance. Both techniques, the compact representation of expected distances and the integration of the variance of the expected distance with respect to slight changes in the location of the robot, have been used successfully in Rhino and Minerva [81,158,414].</p>
+<p class="last-para">Note that several alternative models have been proposed in the past. The goal of all these models is to provide robust and accurate estimates of the location of the robot. Forexample, Moravec [324] and Elfes [143], who introduced occupancy grid maps, also presented a probabilistic technique to compute the likelihood of ultrasound measurements given such a map and the position of the robot. Yamauchi and Langley [430] compared local maps built from the most recent measurements with a global map. The sensor models proposed by Konolige [245] and Thrun [412] are more efficient than the model presented here since they avoid the ray-casting operation and only consider the endpoint of each beam. Finally, Simmons and Koenig [386] extracted doorways and corridor junction types out of local grid maps and compared this information to landmarks stored in a topological representation of the environment.</p>
+</div>
+</div>
+<div class="footnotes">
+<div class="footnote">
+<p>
+<a name="771"></a><sup>[<a name="ftn.ch09fnt09_11C14020F-F9F5-4415-973A-D906072C1A72" href="#ch09fnt09_11C14020F-F9F5-4415-973A-D906072C1A72">1</a>]</sup>These two cases are analogous to the Kalman prediction and update steps, respectively.</p>
+</div>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="53.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=728071772"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="55.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

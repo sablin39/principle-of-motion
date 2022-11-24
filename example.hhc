@@ -1,0 +1,502 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD>
+<BODY>
+   <OBJECT type="text/site properties">
+     <param name="Window Styles" value="0x800425">
+     <param name="comment" value="title:Online Help">
+     <param name="comment" value="base:index.htm">
+   </OBJECT>
+   <UL>
+      <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Principles of Robot Motion-Theory, Algorithms, and Implementation">
+            <param name="Local" value="1.html">
+          </OBJECT>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Foreword">
+               <param name="Local" value="2.html">
+             </OBJECT>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Preface">
+               <param name="Local" value="3.html">
+             </OBJECT>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 1: Introduction">
+               <param name="Local" value="4.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="1.1 Overview of Concepts in Motion Planning">
+                  <param name="Local" value="5.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="1.2 Overview of the Book">
+                  <param name="Local" value="6.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="1.3 Mathematical Style">
+                  <param name="Local" value="7.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 2: Bug Algorithms">
+               <param name="Local" value="8.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="2.2 Tangent Bug">
+                  <param name="Local" value="9.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="2.3 Implementation">
+                  <param name="Local" value="10.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Problems">
+                  <param name="Local" value="11.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 3: Configuration Space">
+               <param name="Local" value="12.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="3.2 Obstacles and the Configuration Space">
+                  <param name="Local" value="13.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="3.3 The Dimension of the Configuration Space">
+                  <param name="Local" value="14.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="3.4 The Topology of the Configuration Space">
+                  <param name="Local" value="15.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="3.5 Embeddings of Manifolds in">
+                  <param name="Local" value="16.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="3.6 Parameterizations of SO(3)">
+                  <param name="Local" value="17.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="3.7 Example Configuration Spaces">
+                  <param name="Local" value="18.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="3.8 Transforming Configuration and Velocity Representations">
+                  <param name="Local" value="19.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Problems">
+                  <param name="Local" value="20.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 4: Potential Functions">
+               <param name="Local" value="21.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="4.1 Additive Attractive/Repulsive Potential">
+                  <param name="Local" value="22.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="4.2 Gradient Descent">
+                  <param name="Local" value="23.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="4.3 Computing Distance for Implementation in the Plane">
+                  <param name="Local" value="24.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="4.4 Local Minima Problem">
+                  <param name="Local" value="25.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="4.5 Wave-Front Planner">
+                  <param name="Local" value="26.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="4.6 Navigation Potential Functions">
+                  <param name="Local" value="27.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="4.7 Potential Functions in Non-Euclidean Spaces">
+                  <param name="Local" value="28.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Problems">
+                  <param name="Local" value="29.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 5: Roadmaps">
+               <param name="Local" value="30.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="5.1 Visibility Maps: The Visibility Graph">
+                  <param name="Local" value="31.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="5.2 Deformation Retracts: Generalized Voronoi Diagram">
+                  <param name="Local" value="32.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="5.3 Retract-like Structures: The Generalized Voronoi Graph">
+                  <param name="Local" value="33.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="5.4 Piecewise Retracts: The Rod-Hierarchical Generalized Voronoi Graph">
+                  <param name="Local" value="34.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="5.5 Silhouette Methods">
+                  <param name="Local" value="35.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Problems">
+                  <param name="Local" value="36.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 6: Cell Decompositions">
+               <param name="Local" value="37.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="6.1 Trapezoidal Decomposition">
+                  <param name="Local" value="38.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="6.2 Morse Cell Decompositions">
+                  <param name="Local" value="39.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="6.3 Visibility-Based Decompositions for Pursuit/Evasion">
+                  <param name="Local" value="40.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Problems">
+                  <param name="Local" value="41.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 7: Sampling-Based Algorithms">
+               <param name="Local" value="42.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="7.1 Probabilistic Roadmaps">
+                  <param name="Local" value="43.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="7.2 Single-Query Sampling-Based Planners">
+                  <param name="Local" value="44.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="7.3 Integration of Planners: Sampling-Based Roadmap of Trees">
+                  <param name="Local" value="45.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="7.4 Analysis of PRM">
+                  <param name="Local" value="46.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="7.5 Beyond Basic Path Planning">
+                  <param name="Local" value="47.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 8: Kalman Filtering">
+               <param name="Local" value="48.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="8.1 Probabilistic Estimation">
+                  <param name="Local" value="49.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="8.2 Linear Kalman Filtering">
+                  <param name="Local" value="50.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="8.3 Extended Kalman Filter">
+                  <param name="Local" value="51.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="8.4 Kalman Filter for SLAM">
+                  <param name="Local" value="52.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Problems">
+                  <param name="Local" value="53.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 9: Bayesian Methods">
+               <param name="Local" value="54.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="9.2 Mapping">
+                  <param name="Local" value="55.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Problems">
+                  <param name="Local" value="56.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 10: Robot Dynamics">
+               <param name="Local" value="57.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="10.2 Standard Forms for Dynamics">
+                  <param name="Local" value="58.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="10.3 Velocity Constraints">
+                  <param name="Local" value="59.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="10.4 Dynamics of a Rigid Body">
+                  <param name="Local" value="60.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 11: Trajectory Planning">
+               <param name="Local" value="61.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="11.1 Preliminaries">
+                  <param name="Local" value="62.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="11.2 Decoupled Trajectory Planning">
+                  <param name="Local" value="63.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="11.3 Direct Trajectory Planning">
+                  <param name="Local" value="64.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Problems">
+                  <param name="Local" value="65.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Chapter 12: Nonholonomic and Underactuated Systems">
+               <param name="Local" value="66.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="12.1 Preliminaries">
+                  <param name="Local" value="67.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="12.2 Control Systems">
+                  <param name="Local" value="68.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="12.3 Controllability">
+                  <param name="Local" value="69.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="12.4 Simple Mechanical Control Systems">
+                  <param name="Local" value="70.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="12.5 Motion Planning">
+                  <param name="Local" value="71.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="Problems">
+                  <param name="Local" value="72.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Appendix A: Mathematical Notation">
+               <param name="Local" value="73.html">
+             </OBJECT>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Appendix B: Basic Set Definitions">
+               <param name="Local" value="74.html">
+             </OBJECT>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Appendix C: Topology and Metric Spaces">
+               <param name="Local" value="75.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="C.2 Metric Spaces">
+                  <param name="Local" value="76.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="C.3 Normed and Inner Product Spaces">
+                  <param name="Local" value="77.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="C.4 Continuous Functions">
+                  <param name="Local" value="78.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="C.5 Jacobians and Gradients">
+                  <param name="Local" value="79.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Appendix D: Curve Tracing">
+               <param name="Local" value="80.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="D.2 Newton-Raphson Convergence Theorem">
+                  <param name="Local" value="81.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Appendix E: Representations of Orientation">
+               <param name="Local" value="82.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="E.2 Roll, Pitch, and Yaw Angles">
+                  <param name="Local" value="83.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="E.3 Axis-Angle Parameterization">
+                  <param name="Local" value="84.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="E.4 Quaternions">
+                  <param name="Local" value="85.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Appendix F: Polyhedral Robots in Polyhedral Worlds">
+               <param name="Local" value="86.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="F.2 Intersection Tests for Polygons">
+                  <param name="Local" value="87.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="F.3 Configuration Space Obstacles in The Star Algorithm">
+                  <param name="Local" value="88.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="F.4 Configuration Space Obstacles in">
+                  <param name="Local" value="89.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="F.5 Computing Distances between Polytopes in and">
+                  <param name="Local" value="90.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Appendix G: Analysis of Algorithms and Complexity Classes">
+               <param name="Local" value="91.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="G.2 Complexity Theory">
+                  <param name="Local" value="92.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="G.3 Completeness">
+                  <param name="Local" value="93.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Appendix H: Graph Representation and Basic Search">
+               <param name="Local" value="94.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="H.2 A* Algorithm">
+                  <param name="Local" value="95.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="H.3 D* Algorithm">
+                  <param name="Local" value="96.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="H.4 Optimal Plans">
+                  <param name="Local" value="97.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Appendix I: Statistics Primer">
+               <param name="Local" value="98.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="I.1 Distributions and Densities">
+                  <param name="Local" value="99.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="I.2 Expected Values and Covariances">
+                  <param name="Local" value="100.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="I.3 Multivariate Gaussian Distributions">
+                  <param name="Local" value="101.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Appendix J: Linear Systems and Control">
+               <param name="Local" value="102.html">
+             </OBJECT>
+         <UL>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="J.2 Stability">
+                  <param name="Local" value="103.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="J.3 LTI Control Systems">
+                  <param name="Local" value="104.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="J.4 Observing LTI Systems">
+                  <param name="Local" value="105.html">
+                </OBJECT>
+            <LI><OBJECT type="text/sitemap">
+                  <param name="Name" value="J.5 Discrete Time Systems">
+                  <param name="Local" value="106.html">
+                </OBJECT>
+         </UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Bibliography">
+               <param name="Local" value="107.html">
+             </OBJECT>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Index">
+               <param name="Local" value="108.html">
+             </OBJECT>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="List of Figures">
+               <param name="Local" value="133.html">
+             </OBJECT>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="List of Tables">
+               <param name="Local" value="134.html">
+             </OBJECT>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="List of Algorithms">
+               <param name="Local" value="135.html">
+             </OBJECT>
+      </UL>
+   </UL>
+</BODY>
+</HTML>

@@ -1,0 +1,962 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+7.1 Probabilistic Roadmaps</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Chapter 7 - 
+ Sampling-Based Algorithms</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(73,54,86,6,66,2,7,42,47,64,70,76,53,7,79)
+var a1 = new Array(13,5,6)
+var a2 = new Array(3,4,1)
+var a3 = new Array(0,2,8)
+var a4 = new Array(11,10,12)
+var a5 = new Array(14,9,7)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="42.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=754475342"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="44.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:16:00 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:16:00 UTC-->
+<div class="chapter">
+<a name="ch071C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="515"></a><a name="ch07lev1sec11C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">7.1 </span>Probabilistic Roadmaps</h2>
+<p class="first-para">The <tt>PRM</tt> planner is described in [231]. The planner resulted from the work of independent groups [225,226,344,345,404] and was further developed in [221,223,227,228]. <tt>PRM</tt> divides planning into two phases: the learning phase, during which a roadmap in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_811" src="figu202_4.jpg" height="18" width="37" title="" border="0" /></span></span> is built; and the query phase, during which user-defined query configurations are connected with the precomputed roadmap. The nodes of the roadmap are configurations in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_812" src="figu202_5.jpg" height="18" width="37" title="" border="0" /></span></span> and the edges of the roadmap correspond to free paths computed by a local planner. The objective of the first phase is to capture the connectivity of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_813" src="figu202_6.jpg" height="18" width="37" title="" border="0" /></span></span> so that path-planning queries can be answered efficiently.</p>
+<p class="para">The basic <tt>PRM</tt> algorithm presented below can be used to solve high-dimensional problems such as the one in <a href="42.html#506" target="_parent" class="chapterjump">figure 7.1</a>. It has been shown to be probabilistically complete [221,229,252]. In this section, the choices for the sampling and connection strategies of <tt>PRM</tt> are reduced to a bare minimum to facilitate the presentation. The emphasis here is to describe a planner that is easy to implement and works well even with rather high-dimensional problems (5-12 degrees of freedom).</p>
+<div class="section">
+<h3 class="sect3-title">
+<a name="516"></a><a name="ch07lev2sec11C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">7.1.1 </span>Basic <span class="fixed">PRM</span>
+</h3>
+<p class="first-para">
+<a name="517"></a><a name="page2031C14020F-F9F5-4415-973A-D906072C1A72"></a>The basic <tt>PRM</tt> algorithm first constructs a roadmap in a probabilistic way for a given workspace. The roadmap is represented by an undirected graph <i class="emphasis">G</i> = (<i class="emphasis">V</i>, <i class="emphasis">E</i>). The nodes in <i class="emphasis">V</i> are a set of robot configurations chosen by some method over <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_814" src="figu203_1.jpg" height="18" width="37" title="" border="0" /></span></span>. For the moment, assume that the generation of configurations is done randomly from a uniform distribution. The edges in <i class="emphasis">E</i> correspond to paths; an edge (<i class="emphasis">q</i><sub>1</sub>, <i class="emphasis">q</i><sub>2</sub>) corresponds to a collision-free path connecting configurations <i class="emphasis">q</i><sub>1</sub> and <i class="emphasis">q</i><sub>2</sub>. These paths, which are referred to as local paths, are computed by a local planner. In its simplestform, the local planner connects two configurations by the straight line in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_815" src="figu203_2.jpg" height="18" width="37" title="" border="0" /></span></span>, if such a line exists.</p>
+<p class="para">In the query phase, the roadmap is used to solve individual path-planning problems. Given an initial configuration <i class="emphasis">q</i><sub>init</sub> and a goal configuration <i class="emphasis">q</i><sub>goal</sub>, the method first tries to connect <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> to two nodes <i class="emphasis">q</i><span class="unicode">&prime;</span> and <i class="emphasis">q</i><span class="unicode">&Prime;</span>, respectively, in <i class="emphasis">V</i>. If successful, the planner then searches the graph <i class="emphasis">G</i> for a sequence of edges in <i class="emphasis">E</i> connecting <i class="emphasis">q</i><span class="unicode">&prime;</span> to <i class="emphasis">q</i><span class="unicode">&Prime;</span>. Finally, it transforms this sequence into a feasible path for the robot by recomputing the corresponding local paths and concatenating them. Local paths can be stored in the roadmap but this would increase the storage requirements of the roadmap, a topic which is discussed later in this section.</p>
+<p class="para">The roadmap can be reused and further augmented to capture the connectivity of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_816" src="figu203_3.jpg" height="18" width="37" title="" border="0" /></span></span>. Although the learning phase is usually performed before any path-planning query, the two phases can also be interwoven. It is reasonable to spend a considerable amount of time in the learning phase if the roadmap will be used to solve many queries.</p>
+<div class="section">
+<h4 class="sect4-title">
+<a name="518"></a><a name="ch07lev3sec41C14020F-F9F5-4415-973A-D906072C1A72"></a>Roadmap Construction</h4>
+<p class="first-para">To make the presentation more precise, let</p>
+<ul class="square-list" type="square">
+<li class="first-listitem">
+<p class="first-para">
+<span class="unicode">&Delta;</span>be the local planner that on input <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_817" src="figu203_4.jpg" height="20" width="175" title="" border="0" /></span></span> returns either a collisionfree path from <i class="emphasis">q</i> to <i class="emphasis">q</i><span class="unicode">&prime;</span> or NIL if it cannot find such a path. Assume for the moment that <span class="unicode">&Delta;</span> is symmetric and deterministic.</p>
+</li>
+<li class="listitem">
+<p class="first-para">
+<i class="emphasis">dist</i> be a function <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_818" src="figu203_5.jpg" height="20" width="174" title="" border="0" /></span></span>, called the <i class="emphasis">distance function</i>, usually a metric on <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_819" src="figu203_6.jpg" height="17" width="14" title="" border="0" /></span></span>.</p>
+</li>
+</ul>
+<p class="para">
+<a class="internaljump" href="#ch07al061C14020F-F9F5-4415-973A-D906072C1A72">Algorithm 6</a> describes the steps of the roadmap construction. For all algorithms described in this chapter, it should be noted that only the main steps are given and that implementation details are missing.</p>
+<p class="para">Initially, the graph <i class="emphasis">G</i> = (<i class="emphasis">V</i>, <i class="emphasis">E</i>) is empty. Then, repeatedly, a configuration is sampled from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_820" src="figu203_7.jpg" height="17" width="14" title="" border="0" /></span></span>. For the moment, assume that the sampling is done according to a uniform random distribution on <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_821" src="figu203_8.jpg" height="17" width="14" title="" border="0" /></span></span>. If the configuration is collision-free, it is added to the roadmap. The process is repeated until <i class="emphasis">n</i> collision-free configurations have been <a name="519"></a><a name="IDX-2041C14020F-F9F5-4415-973A-D906072C1A72"></a>sampled. For every node <i class="emphasis">q</i> <span class="unicode">&#8714;</span> <i class="emphasis">V</i>, a set <i class="emphasis">N<sub>q</sub></i> of <i class="emphasis">k</i> closest neighbors to the configuration <i class="emphasis">q</i> according to some metric <i class="emphasis">dist</i> is chosen from <i class="emphasis">V</i>. The local planner is called to connect <i class="emphasis">q</i> to each node <i class="emphasis">q</i><span class="unicode">&prime;</span> <span class="unicode">&#8714;</span> <i class="emphasis">N<sub>q</sub></i>. Whenever <span class="unicode">&Delta;</span> succeeds in computing a feasible path between <i class="emphasis">q</i> and <i class="emphasis">q</i><span class="unicode">&prime;</span>, the edge (<i class="emphasis">q</i>, <i class="emphasis">q</i><span class="unicode">&prime;</span>) is added to the roadmap. <a class="internaljump" href="#ch07fig031C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.3</a> shows a roadmap constructed for a point robot in a two-dimensional Euclidean workspace, where <span class="unicode">&Delta;</span> is a straight-line planner.</p>
+<div class="figure">
+<a name="520"></a><a name="ch07fig031C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_822','fig7-3_0.jpg','1000','581')" name="IMG_822" target="_self"><img alt="Image from book" id="IMG_822" src="fig7-3.jpg" height="203" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.3: </span>An example of a roadmap for a point robot in a two-dimensional Euclidean space. The gray areas are obstacles. The empty circles correspond to the nodes of the roadmap. The straight lines between circles correspond to edges. The number of <i class="emphasis">k</i> closest neighbors for the construction of the roadmap is three. The degree of a node can be greater than three since it may be included in the closest neighbor list of many nodes.</span>
+</div>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 6: </span>Roadmap Construction</span><a name="521"></a><a name="ch07al061C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b>
+<i class="emphasis">n</i> : number of nodes to put in the roadmap
+<i class="emphasis">k</i> : number of closest neighbors to examine for each configuration
+<b class="bold">Output:</b>
+A roadmap <i class="emphasis">G</i> = (<i class="emphasis">V</i>, <i class="emphasis">E</i>)
+1: <i class="emphasis">V</i> <span class="unicode">&larr;</span> <span class="extended-unicode">&#58067;</span>
+2: <i class="emphasis">E</i> <span class="unicode">&larr;</span> <span class="extended-unicode">&#58067;</span>
+3: <b class="bold">while</b> |<i class="emphasis">V</i> | &lt; <i class="emphasis">n</i> <b class="bold">do</b>
+4:   <b class="bold">repeat</b>
+5:     <i class="emphasis">q</i> <span class="unicode">&larr;</span> a random configuration in <span class="inlinemediaobject"><img alt="Image from book" id="IMG_823" src="figu204_1.jpg" height="17" width="14" title="" border="0" /></span>
+6:   <b class="bold">until</b> <i class="emphasis">q</i> is collision-free
+7:   <i class="emphasis">V</i> <span class="unicode">&larr;</span> <i class="emphasis">V</i> <span class="unicode">&cup;</span>{<i class="emphasis">q</i>}
+8: <b class="bold">end while</b>
+9: <b class="bold">for all</b> <i class="emphasis">q</i> <span class="unicode">&#8714;</span> <i class="emphasis">V</i> <b class="bold">do</b>
+10:    <i class="emphasis">N<sub>q</sub></i> <span class="unicode">&larr;</span> the <i class="emphasis">k</i> closest neighbors of <i class="emphasis">q</i> chosen from <i class="emphasis">V</i> according to <i class="emphasis">dist</i>
+11:    <b class="bold">for all</b> <i class="emphasis">q</i><span class="unicode">&prime;</span> <span class="unicode">&#8714;</span> <i class="emphasis">N<sub>q</sub></i> <b class="bold">do</b>
+12:      <b class="bold">if</b> (<i class="emphasis">q</i>, <i class="emphasis">q</i><span class="unicode">&prime;</span>) <span class="unicode">&notin;</span> <i class="emphasis">E</i> <b class="bold">and</b> <span class="unicode">&Delta;</span>(<i class="emphasis">q</i>, <i class="emphasis">q</i><span class="unicode">&prime;</span>) <span class="unicode">&ne;</span> NIL <b class="bold">then</b>
+13:        <i class="emphasis">E</i> <span class="unicode">&larr;</span> <i class="emphasis">E</i> <span class="unicode">&cup;</span>{(<i class="emphasis">q</i>, <i class="emphasis">q</i><span class="unicode">&prime;</span>)}
+14:      <b class="bold">end if</b>
+15:    <b class="bold">end for</b>
+16: <b class="bold">end for</b>
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="last-para">A number of components in <a class="internaljump" href="#ch07al061C14020F-F9F5-4415-973A-D906072C1A72">algorithm 6</a> are still unspecified. In particular, it needs to be defined how random configurations are created in line (5), how the closest neighbors are computed in line (10), how the distance function <i class="emphasis">dist</i> used in line (10) is chosen, and how local paths are generated in line (12).</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="522"></a><a name="ch07lev3sec51C14020F-F9F5-4415-973A-D906072C1A72"></a>Query Phase</h4>
+<p class="first-para">During the query phase, paths are found between arbitrary input configurations <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> using the roadmap constructed in the learning phase. <a class="internaljump" href="#ch07al071C14020F-F9F5-4415-973A-D906072C1A72">Algorithm 7</a> illustrates this process.</p>
+<p class="para">
+<a name="523"></a><a name="page2051C14020F-F9F5-4415-973A-D906072C1A72"></a>Assume for the moment that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_824" src="figu205_1.jpg" height="18" width="37" title="" border="0" /></span></span> is connected and that the roadmap consists of a single connected component. The main question is how to connect <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> to the roadmap. Queries should terminate as quickly as possible, so an inexpensive algorithm is desired here. The strategy used in <a class="internaljump" href="#ch07al071C14020F-F9F5-4415-973A-D906072C1A72">algorithm 7</a> to connect <i class="emphasis">q</i><sub>init</sub> to the roadmap is to consider the <i class="emphasis">k</i> closest nodes in the roadmap in order of increasing distance from <i class="emphasis">q</i><sub>init</sub>, according to the metric <i class="emphasis">dist</i>, and try to connect <i class="emphasis">q</i><sub>init</sub> to each of them with the local planner until one connection succeeds. The number of closest neighbors considered in <a class="internaljump" href="#ch07al071C14020F-F9F5-4415-973A-D906072C1A72">algorithm 7</a> can be different from the one in <a class="internaljump" href="#ch07al061C14020F-F9F5-4415-973A-D906072C1A72">algorithm 6</a>. The same procedure is used to connect <i class="emphasis">q</i><sub>goal</sub> to the roadmap.</p>
+<p class="para">If the connection of <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> to the roadmap is successful, the shortest path is found on the roadmap between <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> according to <i class="emphasis">dist</i> (e.g., using Dijkstra's algorithm or the <i class="emphasis">A</i>* algorithm). If one wishes, this path may be improved by running a smoothing postprocessing algorithm. <a class="internaljump" href="#ch07fig041C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.4</a> shows the solution to a query solved with the roadmap from <a class="internaljump" href="#ch07fig031C14020F-F9F5-4415-973A-D906072C1A72">figure 7.3</a>.</p>
+<div class="figure">
+<a name="524"></a><a name="ch07fig041C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_825','fig7-4_0.jpg','1000','581')" name="IMG_825" target="_self"><img alt="Image from book" id="IMG_825" src="fig7-4.jpg" height="203" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.4: </span>An example of how to solve a query with the roadmap from <a class="internaljump" href="#ch07fig031C14020F-F9F5-4415-973A-D906072C1A72">figure 7.3</a>. The configurations <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> are first connected to the roadmap through <i class="emphasis">q</i><span class="unicode">&prime;</span> and <i class="emphasis">q</i><span class="unicode">&Prime;</span>. Then a graph-search algorithm returns the shortest path denoted by the thick black lines.</span>
+</div>
+<p class="para">In general, the roadmap may consist of several connected components. This is very likely when <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_826" src="figu205_2.jpg" height="18" width="37" title="" border="0" /></span></span> is itself not connected, but it may also happen when <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_827" src="figu205_3.jpg" height="18" width="37" title="" border="0" /></span></span> is connected, and the roadmap has not managed to capture the connectivity of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_828" src="figu205_4.jpg" height="18" width="36" title="" border="0" /></span></span>. If the roadmap contains several components, <a class="internaljump" href="#ch07al071C14020F-F9F5-4415-973A-D906072C1A72">algorithm 7</a> can be used to connect both <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> to two nodes in the same connected component of the roadmap, e.g., by giving it as input a single connected component of <i class="emphasis">G</i>. All components of <i class="emphasis">G</i> should be considered. If the connection of <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> to the same connected <a name="525"></a><a name="page2071C14020F-F9F5-4415-973A-D906072C1A72"></a>component of the roadmap succeeds, a path is constructed as in the single-component case. The method returns failure if it cannot connect both <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> to the same roadmap component.</p>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 7: </span>Solve Query Algorithm</span><a name="526"></a><a name="ch07al071C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b>
+<i class="emphasis">q</i><sub>init</sub>: the initial configuration
+<i class="emphasis">q</i><sub>goal</sub>: the goal configuration
+<i class="emphasis">k</i>: the number of closest neighbors to examine for each configuration
+<i class="emphasis">G</i> = (<i class="emphasis">V</i>, <i class="emphasis">E</i>): the roadmap computed by <a class="internaljump" href="#ch07al061C14020F-F9F5-4415-973A-D906072C1A72">algorithm 6</a>
+<b class="bold">Output:</b>
+A path from <i class="emphasis">q</i><sub>init</sub> to <i class="emphasis">q</i><sub>goal</sub> or failure
+1: <i class="emphasis">N</i><sub><i class="emphasis">q</i>init</sub> <span class="unicode">&larr;</span> the <i class="emphasis">k</i> closest neighbors of <i class="emphasis">q</i><sub>init</sub> from <i class="emphasis">V</i> according to <i class="emphasis">dist</i>
+2: <i class="emphasis">N</i><sub><i class="emphasis">q</i>goal</sub> <span class="unicode">&larr;</span> the <i class="emphasis">k</i> closest neighbors of <i class="emphasis">q</i><sub>goal</sub> from <i class="emphasis">V</i> according to <i class="emphasis">dist</i>
+3: <i class="emphasis">V</i> <span class="unicode">&larr;</span>{<i class="emphasis">q</i><sub>init</sub>}<span class="unicode">&cup;</span>{<i class="emphasis">q</i><sub>goal</sub>}<span class="unicode">&cup;</span> <i class="emphasis">V</i>
+4: set <i class="emphasis">q</i><span class="unicode">&prime;</span> to be the closest neighbor of <i class="emphasis">q</i><sub>init</sub> in <i class="emphasis">N<sub>q<sub>init</sub></sub></i>
+5: <b class="bold">repeat
+6:   if</b> <span class="unicode">&Delta;</span>(<i class="emphasis">q</i><sub>init</sub>, <i class="emphasis">q</i><span class="unicode">&prime;</span>) <span class="unicode">&ne;</span> NIL <b class="bold">then</b>
+7:     <i class="emphasis">E</i> <span class="unicode">&larr;</span> (<i class="emphasis">q</i><sub>init</sub>, <i class="emphasis">q</i><span class="unicode">&prime;</span>) <span class="unicode">&cup;</span> <i class="emphasis">E</i>
+8:   <b class="bold">else</b>
+9:     set <i class="emphasis">q</i><span class="unicode">&prime;</span> to be the next closest neighbor of <i class="emphasis">q</i><sub>init</sub> in <i class="emphasis">N</i><sub><i class="emphasis">q</i><sub>init</sub></sub>
+10:  <b class="bold">end if
+11: until</b> a connection was succesful or the set <i class="emphasis">N</i><sub><i class="emphasis">q</i></sub><sub>init</sub> is empty
+12: set <i class="emphasis">q</i><span class="unicode">&prime;</span> to be the closest neighbor of <i class="emphasis">q</i><sub>goal</sub> in <i class="emphasis">N</i><sub><i class="emphasis">q</i><sub>goal</sub></sub>
+13: <b class="bold">repeat
+14:   if</b> <span class="unicode">&Delta;</span>(<i class="emphasis">q</i><sub>goal</sub>, <i class="emphasis">q</i><span class="unicode">&prime;</span>) <span class="unicode">&ne;</span> NIL <b class="bold">then</b>
+15:     <i class="emphasis">E</i> <span class="unicode">&larr;</span> (<i class="emphasis">q</i><sub>goal</sub>, <i class="emphasis">q</i><span class="unicode">&prime;</span>) <span class="unicode">&cup;</span> <i class="emphasis">E</i>
+16:   <b class="bold">else</b>
+17:     set <i class="emphasis">q</i><span class="unicode">&prime;</span> to be the next closest neighbor of <i class="emphasis">q</i><sub>goal</sub> in <i class="emphasis">N</i><sub><i class="emphasis">q</i><sub>goal</sub></sub>
+18:   <b class="bold">end if</b>
+19: <b class="bold">until</b> a connection was succesful or the set <i class="emphasis">N</i><sub><i class="emphasis">q</i><sub>goal</sub></sub> is empty
+20: <i class="emphasis">P</i> <span class="unicode">&larr;</span> shortest path(<i class="emphasis">q</i><sub>init</sub>, <i class="emphasis">q</i><sub>goal</sub>, <i class="emphasis">G</i>)
+21: <b class="bold">if</b> <i class="emphasis">P</i> is not empty <b class="bold">then</b>
+22:   <b class="bold">return</b> <i class="emphasis">P</i>
+23: <b class="bold">else</b>
+24: <b class="bold">return</b> failure
+25: <b class="bold">end if</b>
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="527"></a><a name="ch07lev3sec61C14020F-F9F5-4415-973A-D906072C1A72"></a>Adding to the Roadmap</h4>
+<p class="first-para">If path-planning queries fail frequently, the roadmap may not adequately capture the connectivity of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_829" src="figu207_1.jpg" height="18" width="36" title="" border="0" /></span></span>. When this occurs, the current roadmap can be extended by resuming the construction step algorithm (exclude lines (1) and (2) from <a class="internaljump" href="#ch07al061C14020F-F9F5-4415-973A-D906072C1A72">algorithm 6</a> and pass as a parameter the current roadmap). It should be emphasized again that in this section we present a very basic <tt>PRM</tt>. It has been observed for example, that when trying to connect components biased sampling may be particularly effective [231]. Biased sampling (see Connection Sampling in <a class="internaljump" href="#ch07lev2sec31C14020F-F9F5-4415-973A-D906072C1A72">section 7.1.3</a>) increases the sampling density in areas of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_830" src="figu207_2.jpg" height="18" width="37" title="" border="0" /></span></span> that have good chances to facilitate component connection.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="528"></a><a name="ch07lev3sec71C14020F-F9F5-4415-973A-D906072C1A72"></a>Directed Roadmaps and Roadmaps That Store Local Paths</h4>
+<p class="first-para">So far, it has been assumed that <span class="unicode">&Delta;</span> is symmetric and deterministic. It is also possible to use a local planner <span class="unicode">&Delta;</span> that is neither symmetric nor deterministic.</p>
+<p class="para">In many cases, connecting some configuration <i class="emphasis">q</i> to some configuration <i class="emphasis">q</i><span class="unicode">&prime;</span> does not necessarily imply that the opposite can be done. If the local planner takes the robot from <i class="emphasis">q</i> to <i class="emphasis">q</i><span class="unicode">&prime;</span> and the robot can also execute the path in reverse to go from <i class="emphasis">q</i><span class="unicode">&prime;</span> to <i class="emphasis">q</i>, the roadmap is an undirected graph. Adding the edge (<i class="emphasis">q</i>, <i class="emphasis">q</i><span class="unicode">&prime;</span>) implies that the edge <a name="529"></a><a name="page2081C14020F-F9F5-4415-973A-D906072C1A72"></a>(<i class="emphasis">q</i><span class="unicode">&prime;</span>, <i class="emphasis">q</i>) can also be added. If local paths cannot be reversed, a directed roadmap must be constructed. A separate check must be performed to determine if the edge (<i class="emphasis">q</i><span class="unicode">&prime;</span>, <i class="emphasis">q</i>) can also be added to the roadmap.</p>
+<p class="last-para">A deterministic local planner will always return the same path between two configurations and the roadmap does not have to store the local path between the two configurations in the corresponding edge. The path can be recomputed if needed to answer a query. On the other hand, if a nondeterministic local planner is used, the roadmap will have to associate with each edge the local path computed by <span class="unicode">&Delta;</span>. In general, the use of nondeterministic local planners increases the storage requirements of the roadmap. It permits, however, the use of more powerful local planners, which can be an advantage in certain cases as discussed in <a href="45.html#607" target="_parent" class="chapterjump">section 7.3</a>.</p>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="530"></a><a name="ch07lev2sec21C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">7.1.2 </span>A Practical Implementation of Basic <span class="fixed">PRM</span>
+</h3>
+<p class="first-para">One of the advantages of the basic <tt>PRM</tt> algorithm presented in the <a class="internaljump" href="#ch07lev3sec71C14020F-F9F5-4415-973A-D906072C1A72">previous section</a> is that it is easy to implement and performs well for a variety of problems. This section focuses on the details of a successful implementation of basic <tt>PRM</tt> that scales well for robots with many degrees of freedom. Issues that relate to a practical implementation of a planner, such as smoothing of the final path, are also discussed. These issues pertain to all planners in this chapter. The reader is also referred to [246] for details on implementation details and potential pitfalls.</p>
+<div class="section">
+<h4 class="sect4-title">
+<a name="531"></a><a name="ch07lev3sec81C14020F-F9F5-4415-973A-D906072C1A72"></a>Sampling Strategy: Uniform Distribution</h4>
+<p class="first-para">In basic <tt>PRM</tt> [231] the nodes of the roadmap constitute a uniform random sampling of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_831" src="figu208_1.jpg" height="18" width="37" title="" border="0" /></span></span>. To obtain a configuration, each translational degree of freedom can be drawn from the interval of allowed values of the corresponding degree of freedom using the uniform probability distribution over this interval. The same principle applies to rotational degrees of freedom but care should be taken not to favor specific orientations because of the representation used (see the example at the end of <a class="internaljump" href="#ch07lev2sec21C14020F-F9F5-4415-973A-D906072C1A72">section 7.1.2</a> and [246]). The main idea is that the sampling distribution should be symmetry invariant. The sampled configuration is checked for collision. If it is collision-free, the sample is added to the nodes of the roadmap; otherwise, it is discarded. Collision checking can be done using a variety of existing general techniques, as mentioned above.</p>
+<p class="last-para">Sampling from a uniform distribution is the simplest method for generating sample configurations, but other methods could be used, as we describe below. <a href="46.html#619" target="_parent" class="chapterjump">Section 7.4</a> offers a theoretical explanation of why sampling from a uniform distribution works well for many problems.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="532"></a><a name="ch07lev3sec91C14020F-F9F5-4415-973A-D906072C1A72"></a>Connection Strategy: Selecting Closest Neighbors</h4>
+<p class="first-para">
+<a name="533"></a><a name="page2091C14020F-F9F5-4415-973A-D906072C1A72"></a>Another important choice to be made is that of selecting the set <i class="emphasis">N<sub>q</sub></i> of closest neighbors to a configuration <i class="emphasis">q</i>. Many data structures have been proposed in the field of computational geometry that deal with the problem of efficiently calculating the closest neighbors to a point in a <i class="emphasis">d</i>-dimensional space. A relatively efficient method both in terms of space and time is the kd-tree data structure [124].</p>
+<p class="para">A <i class="emphasis">d</i>-dimensional kd-tree uses as input a set <i class="emphasis">S</i> of <i class="emphasis">n</i> points in <i class="emphasis">d</i> dimensions and constructs a binary tree that decomposes space into cells such that no cell contains too many points. A kd-tree is built recursively by splitting <i class="emphasis">S</i> by a plane into two subsets of roughly equal size: <i class="emphasis">S</i><sub>&#8467;</sub>, which includes points of <i class="emphasis">S</i> that lie to the left of the plane; and <i class="emphasis">S<sub>r</sub></i>, which includes the remaining points of <i class="emphasis">S</i>. The plane is stored at the root, and the left and right child are recursively constructed with input <i class="emphasis">S</i><sub>&#8467;</sub> and <i class="emphasis">S</i><sub><i class="emphasis">r</i></sub>, respectively. <a class="internaljump" href="#ch07fig051C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.5</a> illustrates the construction of a 2-dimensional kd-tree for ten points on a plane.</p>
+<div class="figure">
+<a name="534"></a><a name="ch07fig051C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_832','fig7-5_0.jpg','1000','400')" name="IMG_832" target="_self"><img alt="Image from book" id="IMG_832" src="fig7-5.jpg" height="140" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.5: </span>A kd-tree for ten points on a plane.</span>
+</div>
+<p class="last-para">A kd-tree for a set of <i class="emphasis">n</i> points in <i class="emphasis">d</i> dimensions uses <i class="emphasis">O</i>(<i class="emphasis">dn</i>) storage and can be built in <i class="emphasis">O</i>(<i class="emphasis">dn</i> log <i class="emphasis">n</i>) time. A rectangular range query takes <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_833" src="figu209_1.jpg" height="24" width="109" title="" border="0" /></span></span> time, where <i class="emphasis">m</i> is the number of reported neighbors. As <i class="emphasis">d</i> grows large, the cost of using kd-trees becomes linear. The rectangular range query time can be reduced considerably by introducing a small approximation error. This modified approach is called Approximate Nearest Neighbor queries (ANN) and is becoming increasingly popular [30].</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="535"></a><a name="ch07lev3sec101C14020F-F9F5-4415-973A-D906072C1A72"></a>Distance Functions and Embeddings</h4>
+<p class="first-para">Function <i class="emphasis">dist</i> is used to resolve the <i class="emphasis">k</i> closest neighbors query. It should be defined so that, for any pair (<i class="emphasis">q</i><span class="unicode">&prime;</span>, <i class="emphasis">q</i><span class="unicode">&Prime;</span>) of configurations, <i class="emphasis">dist</i>(<i class="emphasis">q</i><span class="unicode">&prime;</span>, <i class="emphasis">q</i><span class="unicode">&Prime;</span>) reflects the likelihood that the <a name="536"></a><a name="page2101C14020F-F9F5-4415-973A-D906072C1A72"></a>local planner will fail to compute a collision-free path between these configurations. One possibility is to define <i class="emphasis">dist</i>(<i class="emphasis">q</i><span class="unicode">&prime;</span>, <i class="emphasis">q</i><span class="unicode">&Prime;</span>)as some measure of the workspace region swept by the robot, such as the area or the volume, when it moves in the absence of obstacles along the path <span class="unicode">&Delta;</span>(<i class="emphasis">q</i><span class="unicode">&prime;</span>, <i class="emphasis">q</i><span class="unicode">&Prime;</span>). Intuitively, minimizing the swept volume, will minimize the chance of collision with the obstacles. An exact computation of swept areas or volumes is notoriously difficult, which is why heuristic metrics generally attempt to approximate the swept-volume metric (see [19,246]).</p>
+<p class="para">An approximate and inexpensive measure of the swept-region can be constructed as follows. The robot's configurations <i class="emphasis">q</i><span class="unicode">&prime;</span> and <i class="emphasis">q</i><span class="unicode">&Prime;</span> can be mapped to points in a Euclidean space, emb(<i class="emphasis">q</i><span class="unicode">&prime;</span>) and emb(<i class="emphasis">q</i><span class="unicode">&Prime;</span>), respectively, and the Euclidean distance between them can be used, i.e.,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu210_1.jpg" />
+<br />
+
+</div>
+<p class="para">A practical choice for the embedding function is to select <i class="emphasis">p</i> &gt; 0 points on the robot, concatenate them, and create a vector whose dimension is <i class="emphasis">p</i> multiplied by the dimension of the workspace of the robot. In order to represent a configuration <i class="emphasis">q</i> in the embedded space, the set of transformations corresponding to this configuration is applied to the <i class="emphasis">p</i> points, and emb(<i class="emphasis">q</i>) is obtained. Distances can be easily defined using the equation above. An example is given at the very end of this section. Note, however, that this choice of embeddings has its shortcomings. In particular, it is not clear what the number <i class="emphasis">p</i> should be. It is also not clear how to choose <i class="emphasis">p</i> points so that the exact shape of the robot is taken into account. Furthermore, as is the case with the swept-volume metric, the embedding does not take into account obstacles. So even when two configurations are close to one another, connecting them may be impossible due to obstacles.</p>
+<p class="para">For the case of rigid body motion, an alternative solution is to split <i class="emphasis">dist</i> into two components, one that expresses the distance between two configurations due to translation and one due to orientation. For example, if <i class="emphasis">X</i> and <i class="emphasis">R</i> represent the translation and rotation components of the configuration <i class="emphasis">q</i> = (<i class="emphasis">X</i>, <i class="emphasis">R</i>) <span class="unicode">&#8714;</span> <i class="emphasis">SE</i>(3) respectively, then</p>
+<div class="informalequation" mathml="yes">
+<img src="figu210_2.jpg" />
+<br />
+
+</div>
+<p class="para">is a weighted metric with the translation component ||<i class="emphasis">X</i><span class="unicode">&prime;</span> <span class="unicode">&minus;</span> <i class="emphasis">X</i><span class="unicode">&Prime;</span>|| using a standard Euclidean norm, and the positive scalar function <i class="emphasis">f</i>(<i class="emphasis">R</i><span class="unicode">&prime;</span>, <i class="emphasis">R</i><span class="unicode">&Prime;</span>) returning typically an approximate measure of the distance between the rotations <i class="emphasis">R</i><span class="unicode">&prime;</span>, <i class="emphasis">R</i><span class="unicode">&Prime;</span> <span class="unicode">&#8714;</span> <i class="emphasis">SO</i>(3). The rotation distance is scaled relative to the translation distance via the weights <i class="emphasis">w<sub>t</sub></i> and <i class="emphasis">w<sub>r</sub></i>. A reasonable choice of <i class="emphasis">f</i>(<i class="emphasis">R</i><span class="unicode">&prime;</span>, <i class="emphasis">R</i><span class="unicode">&Prime;</span>) is the length of the geodesic curve between <i class="emphasis">R</i><span class="unicode">&prime;</span> and <i class="emphasis">R</i><span class="unicode">&Prime;</span>. The selection of an appropriate rotation distance function <i class="emphasis">f</i>(<i class="emphasis">R</i><span class="unicode">&prime;</span>, <i class="emphasis">R</i><span class="unicode">&Prime;</span>) depends on the representation for the orientation of the robot, such as Euler angles or quaternions.</p>
+<p class="para">
+<a name="537"></a><a name="page2111C14020F-F9F5-4415-973A-D906072C1A72"></a>One of the difficulties with this method is deciding proper weight values. Furthermore, the extension to articulated bodies is not straightforward. A thorough discussion of metrics for rigid body planning is given in [246].</p>
+<p class="last-para">The choices for the embedding, its dimensionality, and the <i class="emphasis">dist</i> can have a great effect on the efficiency of the <tt>PRM</tt> algorithm. Different problems may require different approaches and there is great interest in the motion-planning community in finding appropriate metrics [19,246] and embeddings for interesting instances of the generalized mover's problem.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="538"></a><a name="ch07lev3sec111C14020F-F9F5-4415-973A-D906072C1A72"></a>Local Planner</h4>
+<p class="first-para">In <a class="internaljump" href="#ch07lev1sec11C14020F-F9F5-4415-973A-D906072C1A72">section 7.1</a>, it was assumed that is symmetric and deterministic. This is a design decision and it is possible to accommodate planners that are nondeterministic, and/or not symmetric.</p>
+<p class="para">Another important design decision is related to how fast the local planner should be. There is clearly a tradeoff between the time spent in each individual call of this planner and the number of calls. If a powerful local planner is used, it would often succeed in finding a path when one exists. Hence, relatively few nodes might be required to build a roadmap capturing the connectivity of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_836" src="figu211_1.jpg" height="18" width="37" title="" border="0" /></span></span> sufficiently well to reliably answer path-planning queries. Such a local planner would probably be rather slow, but this could be somewhat compensated by the small number of calls needed. On the other hand, a very fast planner is likely to be less successful. It will require more configurations to be included in the roadmap and as a result, the local planner is called more times for the connections between nodes. Each call will be cheaper, however. In <a href="45.html#607" target="_parent" class="chapterjump">section 7.3</a>, a roadmap technique that uses a powerful local planner is discussed.</p>
+<p class="para">The choice of the local planner also affects the query phase. It is important to be able to connect any given <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> configurations to the roadmap or to detect very quickly that no such connection is possible. This requires that the roadmap be dense enough that it always contains at least some nodes to which it is easy to connect <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub>. It thus seems preferable to use a very fast local planner, even if it is not too powerful, and build large roadmaps with configurations widely distributed over <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_837" src="figu211_2.jpg" height="18" width="37" title="" border="0" /></span></span>. In addition, if the local planner is very fast, the same planner can be used to connect <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> to the roadmap at query time. Discussions of the use of different local planners can be found in [14,162,203,221].</p>
+<p class="para">One popular planner, applicable to all holonomic robots, connects any two given configurations by a straight-line segment in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_838" src="figu211_3.jpg" height="17" width="14" title="" border="0" /></span></span> and checks this line segment for collision. Care should be taken to interpolate the translation and rotation components separately (see [246]). There are two commonly-used choices for collision checking, the incremental and the subdivision collision-checking algorithms. In both cases, the <a name="539"></a><a name="page2121C14020F-F9F5-4415-973A-D906072C1A72"></a>line segment, or more generally, any path generated by the local planner between configurations <i class="emphasis">q</i>' and <i class="emphasis">q</i>?, is discretized into a number of configurations (<i class="emphasis">q</i><sub>1</sub>, ..., <i class="emphasis">q</i><sub>&#8467;</sub>), where <i class="emphasis">q</i><span class="unicode">&prime;</span> = <i class="emphasis">q</i><sub>1</sub> and <i class="emphasis">q</i><span class="unicode">&Prime;</span> = <i class="emphasis">q</i><sub>&#8467;</sub>. The distance between any two consecutive configurations <i class="emphasis">q</i><sub><i class="emphasis">i</i></sub> and <i class="emphasis">q</i><sub><i class="emphasis">i</i>+1</sub> is less than some positive constant <tt>step_size</tt>. This value is problem specific and is defined by the user. It is important to note that again sampling is used to determine if a local path is collision-free. But in this case, sampling is done at a much finer level than was done for node generation and this is a very important feature of <tt>PRM</tt>. In general, the value of <tt>step_size</tt> needs to be very small to guarantee that all collisions are found.</p>
+<p class="para">In the case of incremental collision checking, the robot is positioned at <i class="emphasis">q</i><span class="unicode">&prime;</span> and moved at each step by <tt>step_size</tt> along the straight line in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_839" src="figu212_1.jpg" height="17" width="14" title="" border="0" /></span></span> between <i class="emphasis">q</i><span class="unicode">&prime;</span> and <i class="emphasis">q</i><span class="unicode">&Prime;</span>. A collision check is performed at the end of each step. The algorithm terminates as soon as a collision is detected or when <i class="emphasis">q</i><span class="unicode">&Prime;</span> is reached.</p>
+<p class="para">In the case of the subdivision collision checking, the middle point <i class="emphasis">q<sub>m</sub></i> of the straight line in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_840" src="figu212_2.jpg" height="17" width="14" title="" border="0" /></span></span> between <i class="emphasis">q</i><span class="unicode">&prime;</span> and <i class="emphasis">q</i><span class="unicode">&Prime;</span> is first checked for collision. Then the algorithm recurses on the straight lines between (<i class="emphasis">q</i><span class="unicode">&prime;</span>, <i class="emphasis">q<sub>m</sub></i>) and (<i class="emphasis">q<sub>m</sub></i>, <i class="emphasis">q</i><span class="unicode">&Prime;</span>). The recursion halts when a collision is found or the length of the line segment is less then <tt>step_size</tt>.</p>
+<p class="para">In both algorithms, the path is considered collision-free if none of the intermediate configurations yields collision. Neither algorithm has a clear theoretical advantage over the other, but in practice the subdivision collision checking algorithm tends to perform better [162, 367]. The reason is that, in general, shorter paths tend to be collision-free. Subdivision collision checking cuts down the length of the local path as soon as possible. It is also possible to use an adaptive subdivision collision-checking algorithm that dynamically adjusts <tt>step_size</tt>. In [376], <tt>step_size</tt> is determined by relating the distance between the robot and the workspace obstacles to the maximum length of the path traced out by any point on the robot. Furthermore, the method in [376] is exact, i.e., it always finds a collision when a collision exists, whereas the above discretization techniques may miss a collision if <tt>step_size</tt> is too large.</p>
+<p class="para">
+<a class="internaljump" href="#ch07fig061C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.6</a> illustrates how the incremental and subdivision collision-checking algorithms are sampling the straight line between two configurations <i class="emphasis">q</i><span class="unicode">&prime;</span> and <i class="emphasis">q</i><span class="unicode">&Prime;</span>. In this example, the subdivision algorithm performs a smaller number of collision checks. If the obstacle had been close to <i class="emphasis">q</i><span class="unicode">&prime;</span>, then the incremental algorithm would have performed a smaller number of collision checks.</p>
+<div class="figure">
+<a name="540"></a><a name="ch07fig061C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_841','fig7-6_0.jpg','1000','315')" name="IMG_841" target="_self"><img alt="Image from book" id="IMG_841" src="fig7-6.jpg" height="110" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.6: </span>Sampling along the straight line path between two configurations <i class="emphasis">q</i><span class="unicode">&prime;</span> and <i class="emphasis">q</i><span class="unicode">&Prime;</span>. The numbers correspond to the order in which each strategy checks the samples for collision.</span>
+</div>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="541"></a><a name="ch07lev3sec121C14020F-F9F5-4415-973A-D906072C1A72"></a>Postprocessing Queries</h4>
+<p class="first-para">A postprocessing step may be applied to the path connecting <i class="emphasis">q</i><sub>init</sub> to <i class="emphasis">q</i><sub>goal</sub> to improve its quality according to some criteria. For example, shortness and smoothness might <a name="542"></a><a name="IDX-2131C14020F-F9F5-4415-973A-D906072C1A72"></a>be desirable. Postprocessing is applicable to any path-planning algorithm, but is presented here for completeness of the implementation guidelines of the basic <tt>PRM</tt>.</p>
+<p class="para">From a given path, a shorter path could be obtained by checking whether nonadjacent configurations <i class="emphasis">q</i><sub>1</sub> and <i class="emphasis">q</i><sub>2</sub> along the path can be connected with the local planner. This idea has been described often in the literature (e.g., [150, 383]). The points <i class="emphasis">q</i><sub>1</sub> and <i class="emphasis">q</i><sub>2</sub> could be chosen randomly. Another alternative would be a greedy approach. Start from <i class="emphasis">q</i><sub>init</sub> and try to connect directly to the target <i class="emphasis">q</i><sub>goal</sub>.If this step fails, start from the configuration after <i class="emphasis">q</i><sub>init</sub> and try again. Repeat until a connection can be made to <i class="emphasis">q</i><sub>goal</sub>, say from the point <i class="emphasis">q</i><sub>0</sub>. Now set the target to <i class="emphasis">q</i><sub>0</sub> and begin again, trying to connect from <i class="emphasis">q</i><sub>init</sub> to <i class="emphasis">q</i><sub>0</sub>, and repeat the procedure. This procedure can also be applied toward the opposite direction. <a class="internaljump" href="#ch07fig071C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.7</a> illustrates the application of the greedy <a name="543"></a><a name="IDX-2141C14020F-F9F5-4415-973A-D906072C1A72"></a>approach in the forward direction to shorten a path in a two-dimensional Euclidean workspace.</p>
+<div class="figure">
+<a name="544"></a><a name="ch07fig071C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_842','fig7-7_0.jpg','912','596')" name="IMG_842" target="_self"><img alt="Image from book" id="IMG_842" src="fig7-7.jpg" height="229" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.7: </span>Processing the path returned from <tt>PRM</tt> to get a shorter path with the greedy approach.</span>
+</div>
+<p class="para">There are various reasons why configurations <i class="emphasis">q</i><sub>1</sub> and <i class="emphasis">q</i><sub>2</sub> along a path may have not been connected with an edge from the roadmap construction step of <tt>PRM</tt>. They may not be close according to the distance function <i class="emphasis">dist</i>, and the <i class="emphasis">k</i> closest neighbor query may not return them as neighbors. They may, however, be in a relatively uncluttered part of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_843" src="figu214_1.jpg" height="18" width="37" title="" border="0" /></span></span> and a long edge connecting them may still be possible. These cases will occur more frequently if the Creating Sparse Roadmaps connection strategy has been used (see <a class="internaljump" href="#ch07lev2sec41C14020F-F9F5-4415-973A-D906072C1A72">section 7.1.4</a>).</p>
+<p class="para">Instead of shortening the path, a different objective may be to get a path with smooth curvature. A possible approach to this is to use interpolating curves, such as splines, and use the configurations that have been computed by <tt>PRM</tt> as the interpolation points for the curves. In this case, collision checking is performed along the curves until curves that satisfy both the smoothness properties and the collision avoidance criteria are found.</p>
+<p class="last-para">Postprocessing steps such as path shortening and path smoothing can improve the quality of the path, but can also impose a significant overhead on the time that it takes to report the results of a query. In general, if paths with certain optimality criteria are desired, it is worth trying to build these paths during the roadmap construction phase of <tt>PRM</tt>. For example, a large dense roadmap will probably yield shorter paths than a smaller and sparser roadmap.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="545"></a><a name="ch07lev3sec131C14020F-F9F5-4415-973A-D906072C1A72"></a>An Example</h4>
+<p class="first-para">
+<a class="internaljump" href="#ch07fig081C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.8(a)</a> shows a motion-planning problem for a robot in a three-dimensional workspace. The robot is a rigid nonconvex polyhedral object; it can freely translate and rotate in the workspace as long as it does not collide with the obstacles. The workspace is made up of a rigid thin wall that has a narrow passage. A bounding box is defined that contains the wall and is small enough so that it does not allow the robot to move from one side of the wall to the other without going through the narrow passage. The goal is to build a roadmap that a planner can use to successively solve motion-planning queries where <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> appear on the two different sides of the wall.</p>
+<div class="figure">
+<a name="546"></a><a name="ch07fig081C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_844','fig7-8_0.jpg','1000','610')" name="IMG_844" target="_self"><img alt="Image from book" id="IMG_844" src="fig7-8.jpg" height="214" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.8: </span>An example of a motion-planning problem where both the robot and the obstacles are a collection of polyhedral objects in three dimensions. Parts of the robot on the other side of the wall are indicated by the darker color. (a) The initial and goal configuration of the query. (b) A path produced from a <tt>PRM</tt> with <i class="emphasis">n</i> = 1000 and <i class="emphasis">k</i> = 10.</span>
+</div>
+<p class="para">The problem has six degrees of freedom, three translational and three rotational. The configuration <i class="emphasis">q</i> = (<i class="emphasis">p</i>, <i class="emphasis">r</i>) of the robot can be represented by a point <i class="emphasis">p</i> expressing the translational component and a quaternion <i class="emphasis">r</i> (see <a href="82.html" target="_parent" class="chapterjump">appendix E</a>) expressing the rotational component. A configuration is generated by picking at random a sample from a uniform distribution from a subset of allowable positions in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_845" src="figu214_2.jpg" height="17" width="21" title="" border="0" /></span></span> and picking a random axis of rotation and a random angle for the quaternion (for details see [246]).</p>
+<p class="para">
+<a name="547"></a><a name="IDX-2151C14020F-F9F5-4415-973A-D906072C1A72"></a>In order to find the <i class="emphasis">k</i> closest neighbors of a configuration, configurations are embedded in a space where Euclidean distance is defined. A method that works well in practice is to choose a pair of points on the surface of the robot that have maximum distance and construct a six-dimensional vector emb(<i class="emphasis">q</i>) for the robot's initial configuration. If <i class="emphasis">q</i><span class="unicode">&prime;</span> is obtained by applying a translation and rotation transformation to <i class="emphasis">q</i>, then emb(<i class="emphasis">q</i><span class="unicode">&prime;</span>) is obtained by applying the same transformations to the pair of points in emb(<i class="emphasis">q</i>). The distance metric <i class="emphasis">dist</i> is then defined as the Euclidean distance of the two embeddings.</p>
+<p class="para">For every configuration and its <i class="emphasis">k</i> closest counterparts, the subdivision collision-checking algorithm is used to check if the straight line in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_846" src="figu215_1.jpg" height="17" width="14" title="" border="0" /></span></span> is collision-free. Intermediate configurations between <i class="emphasis">q</i><span class="unicode">&prime;</span> = (<i class="emphasis">p</i><span class="unicode">&prime;</span>, <i class="emphasis">r</i><span class="unicode">&prime;</span>) and <i class="emphasis">q</i><span class="unicode">&Prime;</span> = (<i class="emphasis">p</i><span class="unicode">&Prime;</span>, <i class="emphasis">r</i><span class="unicode">&Prime;</span>) are obtained by performing linear interpolations on <i class="emphasis">p</i><span class="unicode">&prime;</span> and <i class="emphasis">p</i><span class="unicode">&Prime;</span> and spherical interpolations on <i class="emphasis">r</i><span class="unicode">&prime;</span> and <i class="emphasis">r</i><span class="unicode">&Prime;</span>. The edge (<i class="emphasis">q</i><span class="unicode">&prime;</span>, <i class="emphasis">q</i><span class="unicode">&Prime;</span>) is added to the roadmap when all the intermediate configurations are collision-free.</p>
+<p class="last-para">When the roadmap has been completed, it can be used to solve user-specified queries. The <i class="emphasis">k</i> closest neighbors for the query points are calculated and the local planner attempts to connect <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> to them. As soon as they are connected to the same component, an <i class="emphasis">A</i>* algorithm is run on the graph to find the path. <a class="internaljump" href="#ch07fig081C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.8(b)</a> shows intermediate configurations of a path returned by the above procedure.</p>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="548"></a><a name="ch07lev2sec31C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">7.1.3 </span><span class="fixed">PRM</span> Sampling Strategies</h3>
+<p class="first-para">
+<a name="549"></a><a name="page2161C14020F-F9F5-4415-973A-D906072C1A72"></a>Several node-sampling strategies have been developed over the years for <tt>PRM</tt>. For many path-planning problems, a surprisingly large number of general sampling schemes will provide reasonable results (see e.g., the comparison of sampling schemes given in [162]). The analysis of <a href="46.html#619" target="_parent" class="chapterjump">section 7.4</a> provides some insight as to why this is the case. Intuitively, many planning problems in the physical world are difficult but not "pathological" (as in the kind of problem one encounters in NP-hardness proofs). Without doubt, however, the choice of the node-sampling strategy can play a significant role in the performance of <tt>PRM</tt>. This was observed in the original <tt>PRM</tt> publications which suggested mechanisms to generate samples in a non-uniform way [231]. Increasing the density of sampling in some areas of the free space is referred to as importance sampling and has been repeatedly demonstrated to increase the observed performance of <tt>PRM</tt>. In this section we describe several node-sampling schemes.</p>
+<p class="para">The uniform random sampling used in early work in <tt>PRM</tt> is the easiest sampling scheme to implement. As a random sampling method, it has the advantage that, in theory, a malicious opponent cannot defeat the planner by constructing carefully crafted inputs. It has the disadvantage, however, that, in difficult planning examples, the running time of <tt>PRM</tt> might vary across different runs. Nevertheless, random sampling works well in many practical cases involving robots with a large number of degrees of freedom.</p>
+<p class="para">There exist cases where uniform random sampling has poor performance. Often, this is the result of the so-called narrow passage problem. If a narrow passage exists in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_847" src="figu216_1.jpg" height="18" width="37" title="" border="0" /></span></span> and it is absolutely necessary to go through that passage to solve a query, a sampling-based planner must select a sample from a potentially very small set in order to answer the planning query. A number of different sampling methods have been designed with the narrow passage problem in mind and are described below. The narrow passage problem still remains a challenge for <tt>PRM</tt> planners and is an active area of research.</p>
+<p class="para">The remainder of this section describes sampling strategies that have been developed with the narrow passage problem in mind and then other general sampling strategies. We conclude the section with a brief discussion of how one might select an appropriate sampling scheme for a particular problem.</p>
+<div class="section">
+<h4 class="sect4-title">
+<a name="550"></a><a name="ch07lev3sec141C14020F-F9F5-4415-973A-D906072C1A72"></a>Sampling Near the Obstacles</h4>
+<p class="first-para">Obstacle-based sampling methods sample near the boundary of configuration-space obstacles. The motivation behind this kind of sampling is that narrow passages can be considered as thin corridors in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_848" src="figu216_2.jpg" height="18" width="37" title="" border="0" /></span></span> surrounded by obstacles.</p>
+<p class="para">
+<a name="551"></a><a name="page2171C14020F-F9F5-4415-973A-D906072C1A72"></a><tt>OBPRM</tt> [18] is one of the first and very successful representatives of obstacle-based sampling methods. Initially, <tt>OBPRM</tt> generates many configurations at random from a uniform distribution. For each configuration <i class="emphasis">q</i><sub>in</sub> found in collision, it generates a random direction <i class="emphasis">v</i>, and the planner finds a free configuration <i class="emphasis">q</i><sub>out</sub> in the direction <i class="emphasis">v</i>. Finally, it performs a simple binary search to find the closest free configuration <i class="emphasis">q</i> to the surface of the obstacle. Configuration <i class="emphasis">q</i> is added to the roadmap, while <i class="emphasis">q</i><sub>in</sub> and <i class="emphasis">q</i><sub>out</sub> are discarded.</p>
+<p class="para">The Gaussian sampler [59] addresses the narrow passage problem by sampling from a Gaussian distribution that is biased near the obstacles. The Gaussian distribution is obtained by first generating a configuration <i class="emphasis">q</i><sub>1</sub> randomly from a uniform distribution. Then a distance <tt>step</tt> is chosen according to a normal distribution to generate a configuration <i class="emphasis">q</i><sub>2</sub> at random at distance <tt>step</tt> from <i class="emphasis">q</i><sub>1</sub>. Both configurations are discarded if both are in collision or if both are collision-free. A sample is added to the roadmap if it is collision-free and the other sample is in collision.</p>
+<p class="last-para">In [194], samples are generated in a dilated <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_849" src="figu217_1.jpg" height="18" width="37" title="" border="0" /></span></span> by allowing the robot to penetrate by some small constant distance into the obstacles. The dilation of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_850" src="figu217_2.jpg" height="18" width="37" title="" border="0" /></span></span> widens narrow passages, making it easier for the planner to capture the connectivity of the space. During a second stage, all samples that do not lie in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_851" src="figu217_3.jpg" height="18" width="37" title="" border="0" /></span></span> are pushed into <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_852" src="figu217_4.jpg" height="18" width="37" title="" border="0" /></span></span> by performing local resampling operations.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="552"></a><a name="ch07lev3sec151C14020F-F9F5-4415-973A-D906072C1A72"></a>Sampling Inside Narrow Passages</h4>
+<p class="first-para">The bridge planner [193] uses a bridge test to sample configurations inside narrow passages. In a bridge test, two configurations <i class="emphasis">q</i><span class="unicode">&prime;</span> and <i class="emphasis">q</i><span class="unicode">&Prime;</span> are sampled randomly from a uniform distribution in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_853" src="figu217_5.jpg" height="17" width="14" title="" border="0" /></span></span>. These configurations are considered for addition to the roadmap, but if they are both in collision, then the point <i class="emphasis">q<sub>m</sub></i> halfway between them is added to the roadmap if it is collision free. This is called a bridge test because the line segment between <i class="emphasis">q</i><span class="unicode">&prime;</span> and <i class="emphasis">q</i><span class="unicode">&Prime;</span> resembles a bridge with <i class="emphasis">q</i><span class="unicode">&prime;</span> and <i class="emphasis">q</i><span class="unicode">&Prime;</span> inside obstacles acting as piers and the midpoint <i class="emphasis">q<sub>m</sub></i> hovering over <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_854" src="figu217_6.jpg" height="18" width="37" title="" border="0" /></span></span>. Observe that the geometry of narrow passages makes the construction of short bridges easy, while in open space the construction of short bridges is difficult. This allows the bridge planner to sample points inside narrow passages by favoring the construction of short bridges.</p>
+<p class="para">An efficient solution to the narrow passage problem would generate samples that are inside narrow passages but as far away as possible from the obstacles. The Generalized Voronoi Diagrams (GVDs) described in <a href="30.html" target="_parent" class="chapterjump">chapter 5</a> have exactly this property. Although exact computation of the GVD is impractical for high-dimensional configuration spaces, it is possible to find samples on the GVD without computing it explicitly. This can be done by a retraction scheme [427]. The retraction is achieved by a bisection <a name="553"></a><a name="page2181C14020F-F9F5-4415-973A-D906072C1A72"></a>method that moves each sample configuration until it is equidistant from two points on the boundary of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_855" src="figu218_1.jpg" height="18" width="37" title="" border="0" /></span></span>.</p>
+<p class="last-para">A simpler approach is to compute the GVD of the workspace and generate samples that somehow conform to this GVD [155,171,191]. For example, the robot can have some predefined handle points (e.g., end-points of the longest diameter of the robot) and sampling can place those handle points as close to the GVD as possible with the hope of aligning the whole robot with narrow passages. The disadvantage of workspace-GVD sampling is that it is in general difficult to generate configurations of the robot close to the GVD (details are given in [155, 171, 191]). The advantage of workspace-GVD sampling is that the GVD captures well narrow passages in the workspace that typically lead to narrow passages in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_856" src="figu218_2.jpg" height="18" width="37" title="" border="0" /></span></span>. Additionally, an approximation of the GVD of the workspace can be computed efficiently using graphics hardware [352] which is one of the reasons why this sampling method is popular for virtual walkthroughs and related simulations.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="554"></a><a name="ch07lev3sec161C14020F-F9F5-4415-973A-D906072C1A72"></a>Visibility-Based Sampling</h4>
+<p class="first-para">The goal of the visibility-based <tt>PRM</tt> [337] is to produce visibility roadmaps with a small number of nodes by structuring the configuration space into visibility domains. The visibility domain of a configuration <i class="emphasis">q</i> includes all configurations that can be connected to <i class="emphasis">q</i> by the local planner. This planner, unlike <tt>PRM</tt> which accepts all the free configurations generated in the construction stage, adds to the roadmap only those configurations <i class="emphasis">q</i> that satisfy one of two criteria: (1) <i class="emphasis">q</i> cannot be connected to any existing node, i.e., <i class="emphasis">q</i> is a new component, or (2) <i class="emphasis">q</i> connects at least two existing components. In this way, the number of configurations in the roadmap is kept small.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="555"></a><a name="ch07lev3sec171C14020F-F9F5-4415-973A-D906072C1A72"></a>Manipulability-Based Sampling</h4>
+<p class="first-para">Manipulability-based sampling [281, 282] is an importance-sampling approach that exploits the manipulability measure associated with the manipulator Jacobian [432]. Intuitively, manipulability characterizes the arm's freedom of motion for a given configuration. The motivation for using manipulability as a bias for sampling is as follows. In regions of the configuration space where manipulability is high, the robot has great dexterity, and therefore relatively fewer samples should be required in these areas. Regions of the configuration space where manipulability is low tend to be near (or to include) singular configurations of the arm. Near singularities, the range of possible motions is reduced, and therefore such regions should be sampled more densely.</p>
+<p class="para">Let <i class="emphasis">J</i>(<i class="emphasis">q</i>) denote the manipulator Jacobian matrix (i.e., the matrix that relates velocities of the end effector to joint velocities). For a redundant arm (e.g., an arm with <a name="556"></a><a name="page2191C14020F-F9F5-4415-973A-D906072C1A72"></a>more than six joints for a 3D workspace) the manipulability in configuration <i class="emphasis">q</i> is given by</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(7.1)&nbsp;</span></td><td valign="top"><img src="figu219_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="last-para">To bias sampling, an approximation to the cumulative density function (CDF) for <span class="unicode">&omega;</span> is created. Samples are then drawn from a uniform density on the configuration space, and rejected with probability proportional to the associated CDF value of their manipulability value.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="557"></a><a name="ch07lev3sec181C14020F-F9F5-4415-973A-D906072C1A72"></a>Quasirandom Sampling</h4>
+<p class="first-para">A number of deterministic (sometimes called quasirandom) alternatives to random sampling have been used [62,269,291,292]. These alternatives were first introduced in the context of Monte Carlo integration and aim to optimize various properties of the distribution of the samples. Before discussing some of these alternatives, we briefly describe two ways to evaluate a set of samples.</p>
+<p class="para">Let <i class="emphasis">P</i> be a set of point samples on some space <i class="emphasis">X</i>, and <i class="emphasis">N</i> be the number of points in <i class="emphasis">P</i>. One way to evaluate the quality of the samples in <i class="emphasis">P</i> is to assess how "uniformly" the points in <i class="emphasis">P</i> cover <i class="emphasis">X</i>. This is done with respect to a specific collection of subsets of <i class="emphasis">X</i>, called a <i class="emphasis">range space</i>, denoted by <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_858" src="figu219_2.jpg" height="15" width="17" title="" border="0" /></span></span>. Let <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_859" src="figu219_3.jpg" height="15" width="17" title="" border="0" /></span></span> be the set of all axis-aligned rectangular subsets of <i class="emphasis">X</i>, and define <span class="unicode">&mu;</span> to be the measure (or volume) of a set. Since <i class="emphasis">P</i> contains <i class="emphasis">N</i> points, the difference between the relative volumes of <i class="emphasis">R</i> to <i class="emphasis">X</i> and the fraction of samples contained in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_860" src="figu219_4.jpg" height="15" width="57" title="" border="0" /></span></span> is given by</p>
+<div class="informalequation" mathml="yes">
+<img src="figu219_5.jpg" />
+<br />
+
+</div>
+<p class="para">If we take the supremum of this difference over all <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_862" src="figu219_6.jpg" height="15" width="58" title="" border="0" /></span></span> we obtain the concept of <i class="emphasis">discrepancy</i>.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION 7.1.1</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">The <i class="emphasis">discrepancy</i> of point set P with respect to range space <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_863" src="figu219_7.jpg" height="15" width="17" title="" border="0" /></span></span> over some space <i class="emphasis">X</i> is defined as</p>
+<div class="informalequation" mathml="yes">
+<img src="figu219_8.jpg" />
+<br />
+
+</div>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">It is not necessary to take <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_865" src="figu219_9.jpg" height="15" width="17" title="" border="0" /></span></span> as the subset of axis-aligned rectangles, but this choice gives an intuitive understanding of discrepancy. Another common choice is to take <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_866" src="figu219_10.jpg" height="15" width="17" title="" border="0" /></span></span> as the set of <i class="emphasis">d</i>-balls, i.e., for each <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_867" src="figu219_11.jpg" height="15" width="59" title="" border="0" /></span></span> we have <i class="emphasis">R</i> ={<i class="emphasis">x</i><span class="unicode">&prime;</span> | ||<i class="emphasis">x</i> <span class="unicode">&minus;</span> <i class="emphasis">x</i><span class="unicode">&prime;</span>|| &lt; <span class="unicode">&#8714;</span>}, for some point <i class="emphasis">x</i> and radius <span class="unicode">&#8714;</span> &gt; 0.</p>
+<p class="para">While discrepancy provides a measure of how uniformly points are distributed over the space <i class="emphasis">X</i>, <i class="emphasis">dispersion</i> provides a measure of the largest portion of <i class="emphasis">X</i> that contains <a name="558"></a><a name="page2201C14020F-F9F5-4415-973A-D906072C1A72"></a>no points in <i class="emphasis">P</i>. For a given metric <span class="unicode">&rho;</span>, the distance between a point <i class="emphasis">x</i> <span class="unicode">&#8714;</span> <i class="emphasis">X</i> and a point <i class="emphasis">p</i> <span class="unicode">&#8714;</span> <i class="emphasis">P</i> is given by <span class="unicode">&rho;</span>(<i class="emphasis">x</i>, <i class="emphasis">p</i>). Thus, min<sub><i class="emphasis">p</i><span class="unicode">&#8714;</span><i class="emphasis">P</i></sub> <span class="unicode">&rho;</span>(<i class="emphasis">x</i>, <i class="emphasis">p</i>) gives the distance from <i class="emphasis">x</i> to the nearest point in <i class="emphasis">P</i>. If we take <span class="unicode">&rho;</span> to be the Euclidean metric, this gives the largest empty ball centered on <i class="emphasis">x</i>.Ifwe then take the minimization over all points in <i class="emphasis">X</i>,we obtain the size of the largest empty ball in <i class="emphasis">X</i>. This is exactly the concept of dispersion.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION 7.1.2</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">The <i class="emphasis">dispersion</i> <span class="unicode">&delta;</span> of point set <i class="emphasis">P</i> with respect to the metric <span class="unicode">&rho;</span> is given by</p>
+<div class="informalequation" mathml="yes">
+<img src="figu220_1.jpg" />
+<br />
+
+</div>
+<p class="para">An important result due to Sukharev gives a bound on the number of samples required to achieve a given dispersion. In particular, the <i class="emphasis">Sukharev sampling criterion</i> states that when <span class="unicode">&rho;</span> is taken as the <i class="emphasis">L</i><sub>&infin;</sub> norm, a set <i class="emphasis">P</i> of <i class="emphasis">N</i> samples on the <i class="emphasis">d</i>-dimensional unit cube will have</p>
+<div class="informalequation" mathml="yes">
+<img src="figu220_2.jpg" />
+<br />
+
+</div>
+<p class="para">So, to achieve a given dispersion value, say <span class="unicode">&delta;</span>*, since <i class="emphasis">N</i> must be an integer, we have</p>
+<div class="informalequation" mathml="yes">
+<img src="figu220_3.jpg" />
+<br />
+
+</div>
+<p class="para">i.e., the number of samples required to achieve a desired dispersion grows exponentially with the dimension of the space. In some sense, this result implies that to minimize dispersion, sampling on a regular grid will yield results that are as good as possible.</p>
+<p class="para">Now that we have quantitative measures for the quality of a set of samples, we describe some common ways to generate samples. For the case of <i class="emphasis">X</i> = [0, 1] the <i class="emphasis">Van der Corput sequence</i> gives a set of samples that minimizes both dispersion and discrepancy. The <i class="emphasis">n<sup>th</sup></i> sample in the sequence is generated as follows. Let <i class="emphasis">a<sub>i</sub></i> <span class="unicode">&#8714;</span>{0, 1} be the coefficients that define the binary representation of <i class="emphasis">n</i>,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu220_4.jpg" />
+<br />
+
+</div>
+<p class="para">The <i class="emphasis">n<sup>th</sup></i> element of the Van der Corput sequence, <span class="unicode">&Phi;</span>(<i class="emphasis">n</i>), is defined as</p>
+<div class="informalequation" mathml="yes">
+<img src="figu220_5.jpg" />
+<br />
+
+</div>
+<p class="para">
+<a class="internaljump" href="#ch07fig091C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.9(a)</a> shows the first sixteen elements of a Van der Corput sequence.</p>
+<p class="last-para">
+<div class="miscfigure">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start Figure" border="0" /></b></font></td>
+</tr>
+</table>
+<a name="559"></a><a name="ch07fig091C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="miscfigure-informalexample">
+<div class="informaltable">
+<table linktabletoexcel="yes" id="nr-N5085" border="1">
+
+<thead>
+<tr valign="top">
+<th class="th" scope="col" align="right">
+<p class="table-para">
+<i class="emphasis">n</i>
+</p>
+</th><th class="th" scope="col" align="right">
+<p class="table-para">
+<i class="emphasis">n</i> (binary)</p>
+</th><th class="th" scope="col" align="right">
+<p class="table-para">
+<span class="unicode">&Phi;</span>(<i class="emphasis">n</i>) (binary)</p>
+</th><th class="th" scope="col" align="right">
+<p class="table-para">
+<span class="unicode">&Phi;</span> (<i class="emphasis">n</i>)</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">0</p>
+</td><td class="td" align="right">
+<p class="table-para">0</p>
+</td><td class="td" align="right">
+<p class="table-para">0.0</p>
+</td><td class="td" align="right">
+<p class="table-para">0</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">1</p>
+</td><td class="td" align="right">
+<p class="table-para">1</p>
+</td><td class="td" align="right">
+<p class="table-para">0.1</p>
+</td><td class="td" align="right">
+<p class="table-para">1/2</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">2</p>
+</td><td class="td" align="right">
+<p class="table-para">10</p>
+</td><td class="td" align="right">
+<p class="table-para">0.01</p>
+</td><td class="td" align="right">
+<p class="table-para">1/4</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">3</p>
+</td><td class="td" align="right">
+<p class="table-para">11</p>
+</td><td class="td" align="right">
+<p class="table-para">0.11</p>
+</td><td class="td" align="right">
+<p class="table-para">3/4</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">4</p>
+</td><td class="td" align="right">
+<p class="table-para">100</p>
+</td><td class="td" align="right">
+<p class="table-para">0.001</p>
+</td><td class="td" align="right">
+<p class="table-para">1/8</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">5</p>
+</td><td class="td" align="right">
+<p class="table-para">101</p>
+</td><td class="td" align="right">
+<p class="table-para">0.101</p>
+</td><td class="td" align="right">
+<p class="table-para">5/8</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">6</p>
+</td><td class="td" align="right">
+<p class="table-para">110</p>
+</td><td class="td" align="right">
+<p class="table-para">0.011</p>
+</td><td class="td" align="right">
+<p class="table-para">3/8</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">7</p>
+</td><td class="td" align="right">
+<p class="table-para">111</p>
+</td><td class="td" align="right">
+<p class="table-para">0.111</p>
+</td><td class="td" align="right">
+<p class="table-para">7/8</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">8</p>
+</td><td class="td" align="right">
+<p class="table-para">1000</p>
+</td><td class="td" align="right">
+<p class="table-para">0.0001</p>
+</td><td class="td" align="right">
+<p class="table-para">1/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">9</p>
+</td><td class="td" align="right">
+<p class="table-para">1001</p>
+</td><td class="td" align="right">
+<p class="table-para">0.1001</p>
+</td><td class="td" align="right">
+<p class="table-para">9/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">10</p>
+</td><td class="td" align="right">
+<p class="table-para">1010</p>
+</td><td class="td" align="right">
+<p class="table-para">0.0101</p>
+</td><td class="td" align="right">
+<p class="table-para">5/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">11</p>
+</td><td class="td" align="right">
+<p class="table-para">1011</p>
+</td><td class="td" align="right">
+<p class="table-para">0.1101</p>
+</td><td class="td" align="right">
+<p class="table-para">13/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">12</p>
+</td><td class="td" align="right">
+<p class="table-para">1100</p>
+</td><td class="td" align="right">
+<p class="table-para">0.0011</p>
+</td><td class="td" align="right">
+<p class="table-para">3/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">13</p>
+</td><td class="td" align="right">
+<p class="table-para">1101</p>
+</td><td class="td" align="right">
+<p class="table-para">0.1011</p>
+</td><td class="td" align="right">
+<p class="table-para">11/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">14</p>
+</td><td class="td" align="right">
+<p class="table-para">1110</p>
+</td><td class="td" align="right">
+<p class="table-para">0.0111</p>
+</td><td class="td" align="right">
+<p class="table-para">7/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">15</p>
+</td><td class="td" align="right">
+<p class="table-para">1111</p>
+</td><td class="td" align="right">
+<p class="table-para">0.1111</p>
+</td><td class="td" align="right">
+<p class="table-para">15/16</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="informaltable">
+<table linktabletoexcel="yes" id="nr-N5346" border="1">
+
+<thead>
+<tr valign="top">
+<th class="th" scope="col" align="right">
+<p class="table-para">
+<i class="emphasis">n</i>
+</p>
+</th><th class="th" scope="col" align="right">
+<p class="table-para">
+<span class="unicode">&Phi;</span><sub>2</sub>(<i class="emphasis">n</i>)</p>
+</th><th class="th" scope="col" align="right">
+<p class="table-para">
+<span class="unicode">&Phi;</span><sub>1</sub>(<i class="emphasis">n</i>)</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">0</p>
+</td><td class="td" align="right">
+<p class="table-para">0</p>
+</td><td class="td" align="right">
+<p class="table-para">0</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">1</p>
+</td><td class="td" align="right">
+<p class="table-para">1/3</p>
+</td><td class="td" align="right">
+<p class="table-para">1/2</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">2</p>
+</td><td class="td" align="right">
+<p class="table-para">2/3</p>
+</td><td class="td" align="right">
+<p class="table-para">1/4</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">3</p>
+</td><td class="td" align="right">
+<p class="table-para">1/9</p>
+</td><td class="td" align="right">
+<p class="table-para">3/4</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">4</p>
+</td><td class="td" align="right">
+<p class="table-para">4/9</p>
+</td><td class="td" align="right">
+<p class="table-para">1/8</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">5</p>
+</td><td class="td" align="right">
+<p class="table-para">7/9</p>
+</td><td class="td" align="right">
+<p class="table-para">5/8</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">6</p>
+</td><td class="td" align="right">
+<p class="table-para">2/9</p>
+</td><td class="td" align="right">
+<p class="table-para">3/8</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">7</p>
+</td><td class="td" align="right">
+<p class="table-para">5/9</p>
+</td><td class="td" align="right">
+<p class="table-para">7/8</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">8</p>
+</td><td class="td" align="right">
+<p class="table-para">8/9</p>
+</td><td class="td" align="right">
+<p class="table-para">1/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">9</p>
+</td><td class="td" align="right">
+<p class="table-para">1/27</p>
+</td><td class="td" align="right">
+<p class="table-para">9/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">10</p>
+</td><td class="td" align="right">
+<p class="table-para">10/27</p>
+</td><td class="td" align="right">
+<p class="table-para">5/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">11</p>
+</td><td class="td" align="right">
+<p class="table-para">19/27</p>
+</td><td class="td" align="right">
+<p class="table-para">13/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">12</p>
+</td><td class="td" align="right">
+<p class="table-para">4/27</p>
+</td><td class="td" align="right">
+<p class="table-para">3/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">13</p>
+</td><td class="td" align="right">
+<p class="table-para">13/27</p>
+</td><td class="td" align="right">
+<p class="table-para">11/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">14</p>
+</td><td class="td" align="right">
+<p class="table-para">22/27</p>
+</td><td class="td" align="right">
+<p class="table-para">7/16</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="right">
+<p class="table-para">15</p>
+</td><td class="td" align="right">
+<p class="table-para">7/27</p>
+</td><td class="td" align="right">
+<p class="table-para">15/16</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End Figure" border="0" /></b></font></td>
+</tr>
+</table>
+<br style="line-height: 1" />
+<span class="miscfigure-title"><span class="figure-titlelabel">Figure 7.9: </span>(a) Van der Corput sequence, (b) Halton sequence for <i class="emphasis">d</i> = 2.</span>
+</div>
+</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">The Van der Corput sequence can only be used to sample the real line. The <i class="emphasis">Halton sequence</i> generalizes the Van der Corput sequence to <i class="emphasis">d</i> dimensions. Let {<i class="emphasis">b<sub>i</sub></i>} define <a name="560"></a><a name="IDX-2211C14020F-F9F5-4415-973A-D906072C1A72"></a>a set of <i class="emphasis">d</i> relatively prime integers, e.g., <i class="emphasis">b</i><sub>1</sub> = 2, <i class="emphasis">b</i><sub>2</sub> = 3, <i class="emphasis">b</i><sub>3</sub> = 5, <i class="emphasis">b</i><sub>4</sub> = 7, .... The integer <i class="emphasis">n</i> has a representation in base <i class="emphasis">b<sub>j</sub></i> given by</p>
+<div class="informalequation" mathml="yes">
+<img src="figu221_1.jpg" />
+<br />
+
+</div>
+<p class="para">and <span class="unicode">&Phi;</span><i class="emphasis"><sub>b<sub>j</sub></sub></i> (<i class="emphasis">n</i>) is defined as</p>
+<div class="informalequation" mathml="yes">
+<img src="figu221_2.jpg" />
+<br />
+
+</div>
+<p class="para">The <i class="emphasis">n<sup>th</sup></i> sample is then defined by the coordinates <i class="emphasis">p<sub>n</sub></i> = (<span class="unicode">&Phi;</span><sub><i class="emphasis">b</i><sub>1</sub></sub>(<i class="emphasis">n</i>), <span class="unicode">&Phi;</span><sub><i class="emphasis">b</i><sub>2</sub></sub>(<i class="emphasis">n</i>), ..., <span class="unicode">&Phi;</span><sub><i class="emphasis">b<sub>d</sub></i></sub> (<i class="emphasis">n</i>)). <a class="internaljump" href="#ch07fig091C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.9(b)</a> shows the first sixteen elements of a Halton sequence for <i class="emphasis">b</i><sub>1</sub> = 2, <i class="emphasis">b</i><sub>2</sub> = 3.</p>
+<p class="para">When the range space <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_875" src="figu221_3.jpg" height="15" width="17" title="" border="0" /></span></span> is a set of axis-aligned rectangular subsets of <i class="emphasis">X</i>, the discrepancy for the Halton sequence is bounded by</p>
+<div class="informalequation" mathml="yes">
+<img src="figu221_4.jpg" />
+<br />
+
+</div>
+<p class="para">
+<a name="561"></a><a name="IDX-2221C14020F-F9F5-4415-973A-D906072C1A72"></a>When the range space <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_877" src="figu222_1.jpg" height="15" width="17" title="" border="0" /></span></span> is the set of <i class="emphasis">d</i><span class="unicode">&minus;</span>balls, the discrepancy is bounded by</p>
+<div class="informalequation" mathml="yes">
+<img src="figu222_2.jpg" />
+<br />
+
+</div>
+<p class="para">When <i class="emphasis">N</i> is specified, a <i class="emphasis">Hammersley sequence</i> (sometimes called a Hammersley point set, since the number of points is known and finite) achieves the best possible asymptotic discrepancy. The <i class="emphasis">n<sup>th</sup></i> point in a Hammersley sequence is obtained by using the first <i class="emphasis">d</i> <span class="unicode">&minus;</span> 1 coordinates of a point in the Halton sequence, with the ratio <i class="emphasis">n</i>/<i class="emphasis">N</i> as the first coordinate,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu222_3.jpg" />
+<br />
+
+</div>
+<p class="para">
+<a class="internaljump" href="#ch07fig101C14020F-F9F5-4415-973A-D906072C1A72">Figure 7.10</a> shows point sets generated using a random number generator (<a class="internaljump" href="#ch07fig101C14020F-F9F5-4415-973A-D906072C1A72">figure 7.10a</a>), a Halton sequence (<a class="internaljump" href="#ch07fig101C14020F-F9F5-4415-973A-D906072C1A72">figure 7.10b</a>), and a Hammersley sequence (<a class="internaljump" href="#ch07fig101C14020F-F9F5-4415-973A-D906072C1A72">figure 7.10c</a>). Each point set contains 1024 points.</p>
+<div class="figure">
+<a name="562"></a><a name="ch07fig101C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_880','fig7-10_0.jpg','1000','357')" name="IMG_880" target="_self"><img alt="Image from book" id="IMG_880" src="fig7-10.jpg" height="125" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 7.10: </span>These figures shows 1024 samples generated in the plane using (a) a random number generator, (b) a Halton sequence, (c) a Hammersley sequence.</span>
+</div>
+<p class="last-para">The use of quasirandom sequences has the advantage that the running time is guaranteed to be the same for all the runs due to the deterministic nature of the point generation process. The resulting planner is resolution complete. The analysis of <a href="46.html#619" target="_parent" class="chapterjump">section 7.4</a> also sheds light as to why quasirandom sequences work well. As with any deterministic sampling method however, it is possible to construct examples where the performance of the planner deteriorates. As a remedy, it has been suggested to perturb the sequence [162]. The perturbation is achieved by choosing a random configuration from a uniform distribution in a small area around the sample point being added to the sequence. The area is gradually reduced as more points are added to the sequence. Certain quasirandom sequences can also be seen as generating points in a multiresolution grid in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_881" src="figu222_4.jpg" height="17" width="14" title="" border="0" /></span></span> [269].</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="563"></a><a name="ch07lev3sec191C14020F-F9F5-4415-973A-D906072C1A72"></a>Grid-Based Sampling</h4>
+<p class="first-para">
+<a name="564"></a><a name="page2231C14020F-F9F5-4415-973A-D906072C1A72"></a>Grid-based planners have appeared in the early planning literature [244,274] but did not use some key abstractions of <tt>PRM</tt> such as the collision checking primitives. The nodes of a grid can be an effective sampling strategy in the <tt>PRM</tt> setting. Especially when combined with efficient node connection schemes (see <a class="internaljump" href="#ch07lev2sec41C14020F-F9F5-4415-973A-D906072C1A72">section 7.1.4</a>), they can result in powerful planners for problems arising in industrial settings [52]. A natural wayof using grid-based search in a <tt>PRM</tt> is to use a rather coarse resolution for the grid and take advantage of the collision-checking abstraction; moving from one grid node <i class="emphasis">q</i> to a neighboring grid node <i class="emphasis">q</i><span class="unicode">&prime;</span> would require collision checking, and hence sampling, at a finer resolution between the nodes. During the query phase, attempts are made to connect <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> to nearby grid points. The resolution of the grid that is used to build the roadmap can be progressively increased either by adding points one at a time or by adding an entire hyperplane of samples chosen to fill the largest gap in the existing grid [52]. Of particular interest for path planning is the use of infinite sequences based on regular structures, which incrementally enhance their resolution. Recent work has demonstrated the use of such sequences for building lattices and other regular structures that have an implicit neighborhood structure, which is very useful for PRMs [269,291]. A grid-based path-planning algorithm is resolution complete.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="565"></a><a name="ch07lev3sec201C14020F-F9F5-4415-973A-D906072C1A72"></a>Connection Sampling</h4>
+<p class="first-para">Connection sampling [221, 231] generates samples that facilitate the connection of the roadmap and can be combined with all previously described sampling methods. Typically, if a small number of configurations is initially generated, there may exist a few disconnected components at the end of the construction step. If the roadmap under construction is disconnected in a place where <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_882" src="figu223_1.jpg" height="18" width="37" title="" border="0" /></span></span> is not, this place may correspond to some difficult area of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_883" src="figu223_2.jpg" height="18" width="37" title="" border="0" /></span></span>, possibly to a narrow passage of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_884" src="figu223_3.jpg" height="18" width="37" title="" border="0" /></span></span>. The idea underlying connection sampling is to select a number of configurations from the roadmap that are likely to lie in such regions and expand them. The expansion of a configuration <i class="emphasis">q</i> involves selecting a new free configuration in the neighborhood of <i class="emphasis">q</i> as described below, adding this configuration to the roadmap, and trying to connect it to other configurations of the roadmap in the same manner as in the construction step. The connection sampling step increases the density of the roadmap in regions of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_885" src="figu223_4.jpg" height="18" width="37" title="" border="0" /></span></span> that are believed to be difficult. Since the gaps between components of the roadmap are typically located in these regions, the connectivity of the roadmap is likely to increase. Connection sampling thus never creates new components in the roadmap. At worst, it fails to reduce the number of components.</p>
+<p class="para">A simple probabilistic scheme can be used for connection sampling. Each configuration <i class="emphasis">q</i> is associated with a heuristic measure of the difficulty of the region around <a name="566"></a><a name="IDX-2241C14020F-F9F5-4415-973A-D906072C1A72"></a><i class="emphasis">q</i> expressed by a positive weight <i class="emphasis">w</i>(<i class="emphasis">q</i>). Thus, <i class="emphasis">w</i>(<i class="emphasis">q</i>) is large whenever <i class="emphasis">q</i> is considered to be in a difficult region. Weights are normalized so that their sum for all configurations in the roadmap is one. Then, repeatedly, a configuration <i class="emphasis">q</i> is selected from the roadmap with probability</p>
+<div class="informalequation" mathml="yes">
+<img src="figu224_1.jpg" />
+<br />
+
+</div>
+<p class="para">and then <i class="emphasis">q</i> is expanded. The weights can be computed only once at the beginning of the process and not modified when new configurations are added to the roadmap, or can be modified periodically.</p>
+<p class="para">There are several ways to define the heuristic weight <i class="emphasis">w</i>(<i class="emphasis">q</i>) [221,231]. A function that has been found to work well in practice is the following. Let deg(<i class="emphasis">q</i>)be the number of configurations to which <i class="emphasis">q</i> is connected. Then,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu224_2.jpg" />
+<br />
+
+</div>
+<p class="last-para">The expansion of a configuration <i class="emphasis">q</i> requires the generation of a configuration in the neighborhood of <i class="emphasis">q</i>. Typically, such a configuration can be found easily by selecting values for the degrees of freedom of the robot within a small interval centered at the values of the corresponding degrees of freedom of <i class="emphasis">q</i>. If this fails, a small randombounce walk may be used to arrive at a new collision-free configuration. For holonomic robots, a random-bounce walk [231] from <i class="emphasis">q</i> consists of repeatedly picking at random a direction of motion and moving in this direction until an obstacle is hit. When a collision occurs, a new random direction is chosen. The above steps are repeated for a number of times. The configuration <i class="emphasis">q</i><span class="unicode">&prime;</span> reached by the random-bounce walk and the edge (<i class="emphasis">q</i>, <i class="emphasis">q</i><span class="unicode">&prime;</span>) are inserted into the roadmap. Moreover, the path computed between <i class="emphasis">q</i> and <i class="emphasis">q</i> is explicitly stored, since it was generated by a nondeterministic technique. The fact that <i class="emphasis">q</i><span class="unicode">&prime;</span> belongs to the same connected component as <i class="emphasis">q</i> is also recorded. Then attempts are made to connect <i class="emphasis">q</i><span class="unicode">&prime;</span> to the other connected components of the roadmap in the same way as in the construction step of <tt>PRM</tt>.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="567"></a><a name="ch07lev3sec211C14020F-F9F5-4415-973A-D906072C1A72"></a>Choosing Among Different Sampling Strategies</h4>
+<p class="first-para">Choosing among different sampling strategies is an open issue. Here, we give some very rough guidelines on how to choose a sampling strategy.</p>
+<p class="para">The success of <tt>PRM</tt> should be partly attributed to the fact that for a large range of problems (difficult but not "pathological" problems-see <a href="46.html#619" target="_parent" class="chapterjump">section 7.4</a>) several simple sampling strategies work well. For example, uniform random sampling works well for many problems found in practice involving 3-7 degrees of freedom. If consistency in the running time is an issue, quasirandom sampling and lattice-based sampling <a name="568"></a><a name="page2251C14020F-F9F5-4415-973A-D906072C1A72"></a>provide some advantages. When the dimension grows, and again for problems that do not exhibit pathological behavior, random sampling is the simplest way to go. When problems that have narrow passages are considered, sampling-based strategies that were designed with narrow passages in mind should be used.</p>
+<p class="para">Combinations of different sampling methods are possible and in many cases critical for success. If <span class="unicode">&pi;</span><sub><i class="emphasis">A</i></sub> and <span class="unicode">&pi;</span><sub><i class="emphasis">B</i></sub> are two different sampling methods, a weighted hybrid sampling method <span class="unicode">&pi;</span> can be produced by setting <span class="unicode">&pi;</span> = (1 <span class="unicode">&minus;</span> <i class="emphasis">w</i>)<span class="unicode">&pi;</span><sub><i class="emphasis">A</i></sub> + <i class="emphasis">w</i><span class="unicode">&pi;</span><sup><i class="emphasis">B</i></sup>. For example, connection sampling could be used in combination with random sampling [231] or <tt>OBPRM</tt> sampling. One sampling strategy can also be considered a filter for another. For example, the Gaussian sampler can be used to filter nodes created according to the bridge test [263].</p>
+<p class="last-para">None of the sampling methods described in this chapter provides clearly the best strategy across all planning problems. Sampling should also be considered in relation with the connection strategy used (see <a class="internaljump" href="#ch07lev2sec41C14020F-F9F5-4415-973A-D906072C1A72">section 7.1.4</a>) and the local planner used (see [14,162,203,221] and <a href="45.html#607" target="_parent" class="chapterjump">section 7.3</a>). Finally, it must be emphasized that it is possible to create "pathological" path-planning instances that will be arbitrarily hard for any sampling-based planner.</p>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="569"></a><a name="ch07lev2sec41C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">7.1.4 </span><span class="fixed">PRM</span> Connection Strategies</h3>
+<p class="first-para">An important aspect of <tt>PRM</tt> is the selection of pairs of configurations that will be tried for connections by a local planner. The objective is to select those configurations for which the local planner is likely to succeed. As has been discussed, one possible choice is to use the local planner to connect every configuration to all of its <i class="emphasis">k</i> closest neighbors. The rationale is that nearby samples lead to short connections that have good chances of being collision free. This section discusses some other approaches, their advantages and disadvantages. Clearly, the function used to select the neighbors and the implemented local planner can drastically affect the performance [19,246] of any connection strategy described in this section.</p>
+<div class="section">
+<h4 class="sect4-title">
+<a name="570"></a><a name="ch07lev3sec221C14020F-F9F5-4415-973A-D906072C1A72"></a>Creating Sparse Roadmaps</h4>
+<p class="first-para">A method that can speed up the roadmap construction step is to avoid the computation of edges that are part of the same connected component [231,404]. Since there exists a path between any two configurations in a connected component, the addition of the new edge will not improve the connectivity of the roadmap. Several implementations of this idea have been proposed. The simplest is to connect a configuration with the nearest node in each component that lies close enough. This method avoids many calls to the local planner and consequently speeds up the roadmap construction step. <a name="571"></a><a name="page2261C14020F-F9F5-4415-973A-D906072C1A72"></a>As the graph is being built, the connected components can be maintained by using a fast disjoint-set data structure [119].</p>
+<p class="last-para">With the above method, no cycles can be created and the resulting graph is a forest, i.e., a collection of trees. Since a query would never succeed due to an edge that is part of a cycle, it is indeed sensible not to consume time and space computing and storing such an edge. In some cases, however, the absence of cycles may lead the query phase to construct unnecessarily long paths. This drawback can be mitigated by applying postprocessing techniques, such as smoothing, on the resulting path. It has been observed however that allowing some redundant edges to be computed during the roadmap construction phase (e.g., two or three per node) can significantly improve the quality of the original path without significant overhead [162]. Recent work shows how to add useful cycles in <tt>PRM</tt> roadmaps that result in higher quality (shorter) paths [336].</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="572"></a><a name="ch07lev3sec231C14020F-F9F5-4415-973A-D906072C1A72"></a>Connecting Connected Components</h4>
+<p class="first-para">The roadmap constructed by <tt>PRM</tt> is aimed at capturing the connectivity of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_888" src="figu226_1.jpg" height="18" width="37" title="" border="0" /></span></span>. In some cases, due to the difficulty of the problem or the inadequate number of samples being generated, the roadmap may consist of several connected components. The quality of the roadmap can be improved by employing strategies aimed at connecting different components of the roadmap. Connection sampling, introduced in <a class="internaljump" href="#ch07lev2sec31C14020F-F9F5-4415-973A-D906072C1A72">section 7.1.3</a>, attempts to connect different components of the roadmap by placing more nodes in difficult regions of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_889" src="figu226_2.jpg" height="18" width="37" title="" border="0" /></span></span>. <a href="44.html#575" target="_parent" class="chapterjump">Section 7.2</a> describes sampling-based tree planners that can be very effective in connecting different components of the roadmap. This is exploited in the planner described in <a href="45.html#607" target="_parent" class="chapterjump">section 7.3</a>. Random walks and powerful planners such as RPP [40] can also be used to connect components [221]. Other strategies are described in [323].</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="573"></a><a name="ch07lev3sec241C14020F-F9F5-4415-973A-D906072C1A72"></a>Lazy Evaluation</h4>
+<p class="first-para">The idea behind lazy evaluation is to speed up performance by doing collision checks only when it is absolutely necessary. Lazy evaluation can be applied to almost all the sampling-based planners presented in this chapter [52-54]. In this section, lazy evaluation is described as a node connection scheme. It has also given rise to very effective planners that will be described in the <a href="44.html#575" target="_parent" class="chapterjump">next section</a>.</p>
+<p class="para">When lazy evaluation is employed, <tt>PRM</tt> operates on a roadmap <i class="emphasis">G</i>, whose nodes and paths have not been fully evaluated. It is assumed that all nodes and all edges of a node to its <i class="emphasis">k</i> neighbors are free of collisions. Once <tt>PRM</tt> is presented with a query, it connects <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub> to two close nodes of <i class="emphasis">G</i>. The planner then performs a <a name="574"></a><a name="page2271C14020F-F9F5-4415-973A-D906072C1A72"></a>graph search to find the shortest path between <i class="emphasis">q</i><sub>init</sub> and <i class="emphasis">q</i><sub>goal</sub>, according to the distance function used. Then the path is checked as follows. First, the nodes of <i class="emphasis">G</i> on the path are checked for collision. If a node is found in collision, it is removed from <i class="emphasis">G</i> together with all the edges originating from it. This procedure is repeated until a path with free nodes is discovered. The edges of that path are then checked. In order to avoid unnecessary collision checks, however, all edges along the path are first checked at a coarse resolution, and then at each iteration the resolution becomes finer and finer until it reaches the desired discretization. If an edge is found in collision, it is removed from <i class="emphasis">G</i>. The process of finding paths, checking their nodes and then checking their edges is repeated until a free path is found or all nodes of <i class="emphasis">G</i> have been visited. Once it is decided that a node of <i class="emphasis">G</i> is in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_890" src="figu227_1.jpg" height="18" width="37" title="" border="0" /></span></span>, this information is recorded to avoid future checks. For the edges, the resolution at which they have been checked for collision is also recorded so that if an edge is part of a future path, collision checks are not replicated. If no path is found and the nodes of <i class="emphasis">G</i> have been exhausted, new nodes and edges can be added to <i class="emphasis">G</i>. The new nodes can be sampled not only randomly but also from the difficult regions of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_891" src="figu227_2.jpg" height="18" width="37" title="" border="0" /></span></span> [54]. This kind of sampling is similar to the connection sampling strategy of <tt>PRM</tt> described in <a class="internaljump" href="#ch07lev2sec31C14020F-F9F5-4415-973A-D906072C1A72">section 7.1.3</a>.</p>
+<p class="last-para">A related lazy scheme [335] assigns a probability to each edge of being collision free. This probability is computed by taking into account the resolution at which the edge has been checked. The edge probabilities can be used to search for a path in <i class="emphasis">G</i> that has good chances of being in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_892" src="figu227_3.jpg" height="18" width="37" title="" border="0" /></span></span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="42.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=754475342"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="44.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

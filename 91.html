@@ -1,0 +1,233 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+Appendix G: Analysis of Algorithms and Complexity Classes</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Appendix G - 
+ Analysis of Algorithms and Complexity Classes</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(93,66,55,88,94,3,34,37,91,43,9,2,81,3,75)
+var a1 = new Array(11,10,5)
+var a2 = new Array(4,1,7)
+var a3 = new Array(2,0,12)
+var a4 = new Array(13,8,14)
+var a5 = new Array(9,6,3)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="90.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="92.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:52:44 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:52:45 UTC-->
+<div class="appendix">
+<a name="ap-g0946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<h1 class="appendix-title">
+<span class="chapter-titlelabel">Appendix G: </span>Analysis of Algorithms and Complexity Classes</h1>
+<div class="section">
+<h2 class="sect2-title">
+<a name="1337"></a><a name="ap-glev1sec10946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="section-titlelabel">G.1 </span>Running Time</h2>
+<p class="first-para">
+<a name="1338"></a><a name="IDX-5130946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>Yet another way to study an algorithm is to compute the running time of the algorithm purely as a function of the length of the input. <i class="emphasis">Worst-case analysis</i> considers the longest running time of all inputs of a particular length. <i class="emphasis">Average-time analysis</i> considers the average of all the running times of inputs of a particular length. The worst-case analysis is typically referred to as the <i class="emphasis">running time</i> of an algorithm.</p>
+<p class="para">Finding an expression for the exact running time is often difficult, but in most cases close estimations are possible. <i class="emphasis">Asymptotic analysis</i> provides the means of analyzing the running time of the algorithms for large inputs. As the lengths of the inputs become large, the high-order terms dominate the value of the expression and the low-order terms have little or no effect. Hence, a close approximation can be obtained only by considering the highest-order term in an expression. For example, the highest-order term of the function <i class="emphasis">f</i>(<i class="emphasis">n</i>) = 2<i class="emphasis">n</i><sup>5</sup> + 100<i class="emphasis">n</i><sup>3</sup> + 27<i class="emphasis">n</i> + 2003 is 2<i class="emphasis">n</i><sup>5</sup>. As <i class="emphasis">n</i> becomes large, disregarding the coefficient 2, the function <i class="emphasis">f</i>(<i class="emphasis">n</i>) behaves like <i class="emphasis">n</i><sup>5</sup> and it is said that <i class="emphasis">f</i>(<i class="emphasis">n</i>) is asymptotically at most <i class="emphasis">n</i><sup>5</sup>. The following are some common definitions that are useful in analyzing the asymptotic behavior of functions and hence algorithms.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">DEFINITION G.1.1</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Let <i class="emphasis">f</i> and <i class="emphasis">g</i> be two functions <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2653" src="figu513_1.jpg" height="20" width="129" title="" border="0" /></span></span>.</p>
+<ul class="square-list" type="square">
+<li class="first-listitem">
+<p class="first-para">The function <i class="emphasis">g</i> is an <i class="emphasis">asymptotically upper bound</i> for <i class="emphasis">f</i>, denoted <i class="emphasis">f</i>(<i class="emphasis">n</i>) <span class="unicode">&#8714;</span> <i class="emphasis">O</i>(<i class="emphasis">g</i>(<i class="emphasis">n</i>)) and read <i class="emphasis">f</i> is big-<i class="emphasis">O</i> of <i class="emphasis">g</i>, if there <i class="emphasis">exists a</i> constant <i class="emphasis">c</i> &gt; 0 and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2654" src="figu513_2.jpg" height="18" width="67" title="" border="0" /></span></span> such that <span class="unicode">&forall;</span><i class="emphasis">n</i> <span class="unicode">&ge;</span> <i class="emphasis">n</i><sub>0</sub>,<a name="1339"></a><a name="IDX-5140946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+</p>
+<div class="informalequation" mathml="yes">
+<img src="figu513_3.jpg" />
+<br />
+
+</div>
+</li>
+<li class="listitem">
+<p class="first-para">The function <i class="emphasis">g</i> is an <i class="emphasis">asymptotically strict upper bound</i> for <i class="emphasis">f</i>, denoted <i class="emphasis">f</i>(<i class="emphasis">n</i>) <span class="unicode">&#8714;</span> <i class="emphasis">o</i>(<i class="emphasis">g</i>(<i class="emphasis">n</i>)) and read f is small-<i class="emphasis">o</i> of <i class="emphasis">g</i>, if for <i class="emphasis">every</i> constant <i class="emphasis">c</i> &gt; 0 and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2656" src="figu514_1.jpg" height="18" width="59" title="" border="0" /></span></span> such that <span class="unicode">&forall;</span><i class="emphasis">n</i> <span class="unicode">&ge;</span> <i class="emphasis">n</i><sub>0</sub>,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu514_2.jpg" />
+<br />
+
+</div>
+</li>
+<li class="listitem">
+<p class="first-para">The function <i class="emphasis">g</i> is an <i class="emphasis">asymptotically lower bound</i> for <i class="emphasis">f</i>, denoted <i class="emphasis">f</i>(<i class="emphasis">n</i>) <span class="unicode">&#8714;</span> <span class="unicode">&Omega;</span>(<i class="emphasis">g</i>(<i class="emphasis">n</i>)) and read <i class="emphasis">f</i> is big-Omega of <i class="emphasis">g</i>, if there <i class="emphasis">exists a</i> constant <i class="emphasis">c</i> &gt; 0 and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2658" src="figu514_3.jpg" height="18" width="60" title="" border="0" /></span></span> such that <span class="unicode">&forall;</span><i class="emphasis">n</i> <span class="unicode">&ge;</span> <i class="emphasis">n</i><sub>0</sub>,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu514_4.jpg" />
+<br />
+
+</div>
+</li>
+<li class="listitem">
+<p class="first-para">The function <i class="emphasis">g</i> is an <i class="emphasis">asymptotically strict lower bound</i> for <i class="emphasis">f</i>, denoted <i class="emphasis">f</i>(<i class="emphasis">n</i>) <span class="unicode">&#8714;</span> <span class="unicode">&omega;</span>(<i class="emphasis">g</i>(<i class="emphasis">n</i>)) and read <i class="emphasis">f</i> is small-omega of <i class="emphasis">g</i>, if for <i class="emphasis">every</i> constant <i class="emphasis">c</i> &gt; 0 and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2660" src="figu514_5.jpg" height="18" width="58" title="" border="0" /></span></span> such that <span class="unicode">&forall;</span><i class="emphasis">n</i> <span class="unicode">&ge;</span> <i class="emphasis">n</i><sub>0</sub>,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu514_6.jpg" />
+<br />
+
+</div>
+</li>
+<li class="listitem">
+<p class="first-para">The function <i class="emphasis">g</i> is <i class="emphasis">asymptotically equal</i> to <i class="emphasis">f</i>, denoted <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2662" src="figu514_7.jpg" height="19" width="140" title="" border="0" /></span></span> and read fis theta of <i class="emphasis">g</i>, if <i class="emphasis">f</i>
+</p>
+<div class="informalequation" mathml="yes">
+<img src="figu514_8.jpg" />
+<br />
+
+</div>
+</li>
+</ul>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">Considering only the highest terms and disregarding constant factors, the big-O notation says that the function <i class="emphasis">f</i> is no more than the function <i class="emphasis">g</i>. The big-O notation is thought of as suppressing a constant factor. For example, <i class="emphasis">f</i>(<i class="emphasis">n</i>) = 5<i class="emphasis">n</i><sup>4</sup> + 7<i class="emphasis">n</i><sup>3</sup> <span class="unicode">&minus;</span> 4<i class="emphasis">n</i><sup>2</sup> <span class="unicode">&#8714;</span> <i class="emphasis">O</i>(<i class="emphasis">n</i><sup>4</sup>), <i class="emphasis">f</i>(<i class="emphasis">n</i>) = <i class="emphasis">n</i><sup>log<i class="emphasis">n</i></sup> + <i class="emphasis">n</i><sup>100</sup> <span class="unicode">&#8714;</span> <i class="emphasis">O</i>(<i class="emphasis">n</i><sup>log<i class="emphasis">n</i></sup>), etc. When <i class="emphasis">f</i> is strictly less than <i class="emphasis">g</i>, the small-o notation is used. The small o-notation indicates that the function <i class="emphasis">g</i> grows much faster than the function <i class="emphasis">f</i>. For example, <i class="emphasis">f</i>(<i class="emphasis">n</i>) = log<sup>100</sup> <i class="emphasis">n</i> <span class="unicode">&#8714;</span> <i class="emphasis">o</i> (<i class="emphasis">n</i><sup>1/100</sup>), <i class="emphasis">f</i>(<i class="emphasis">n</i>) = <i class="emphasis">n</i><sup>40</sup> <span class="unicode">&#8714;</span> <i class="emphasis">o</i>(2<sup><i class="emphasis">n</i></sup>), etc. The notations <span class="unicode">&Omega;</span> and <span class="unicode">&omega;</span> express the opposite of <i class="emphasis">O</i> and <i class="emphasis">o</i> notations, respectively. Thus, the big-Omega notation indicates that <i class="emphasis">f</i> grows no slower than <i class="emphasis">g</i>, and the small-omega notation indicates that <i class="emphasis">f</i> grows faster than <i class="emphasis">g</i>. When the functions <i class="emphasis">f</i> and <i class="emphasis">g</i> grow at the same rate, the <span class="unicode">&Theta;</span> notation is used. For example, <i class="emphasis">f</i>(<i class="emphasis">n</i>) = 3<i class="emphasis">n</i><sup>5</sup> + <i class="emphasis">n</i><sup>4</sup> <span class="unicode">&#8714;</span> <span class="unicode">&Theta;</span> (<i class="emphasis">n</i><sup>5</sup>).</p>
+<p class="para">When describing the running time of different algorithms, certain terms come up frequently. The running times of common algorithms such as matrix multiplication, sorting, shortest path, etc., are <i class="emphasis">O</i>(<i class="emphasis">n<sup>c</sup></i>), where <i class="emphasis">c</i> is some positive constant. In such cases, it is said that the running time is polynomial in the length of the input <i class="emphasis">n</i>. Other algorithms, such as satisfiability of Boolean expressions, Hamiltonian paths, decomposition of integers into prime factors, etc., are <i class="emphasis">O</i>(2<sup><i class="emphasis">n<sup>c</sup></i></sup>), where <i class="emphasis">c</i> is some positive constant. Such algorithms are said to be running in exponential time. The <a name="1340"></a><a name="page5150946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>following table summarizes some of the common characterizations of the running time of algorithms (<i class="emphasis">c</i> is some positive constant).</p>
+<div class="informaltable">
+<table border="0">
+<thead>
+<tr valign="top">
+<th class="th" scope="col" align="left">&nbsp;</th><th class="th" scope="col" align="center">
+<p class="table-para">Running time</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td class="td" align="left">
+<p class="table-para">constant</p>
+</td><td class="td" align="center">
+<p class="table-para">
+<i class="emphasis">O</i> (1)</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="left">
+<p class="table-para">logarithmic</p>
+</td><td class="td" align="center">
+<p class="table-para">
+<i class="emphasis">O</i> (log <i class="emphasis">n</i>)</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="left">
+<p class="table-para">polylogarithmic</p>
+</td><td class="td" align="center">
+<p class="table-para">
+<i class="emphasis">O</i> (log<sup><i class="emphasis">c</i></sup> <i class="emphasis">n</i>)</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="left">
+<p class="table-para">linear</p>
+</td><td class="td" align="center">
+<p class="table-para">
+<i class="emphasis">O</i> (<i class="emphasis">n</i>)</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="left">
+<p class="table-para">polynomial</p>
+</td><td class="td" align="center">
+<p class="table-para">
+<i class="emphasis">O</i> (<i class="emphasis">n<sup>c</sup></i>)</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="left">
+<p class="table-para">quasipolynomial</p>
+</td><td class="td" align="center">
+<p class="table-para">
+<i class="emphasis">O</i> (<i class="emphasis">n</i><sup>log<sup><i class="emphasis">c</i></sup><i class="emphasis">n</i></sup>)</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="left">
+<p class="table-para">exponential</p>
+</td><td class="td" align="center">
+<p class="table-para">
+<i class="emphasis">O</i> (2<sup><i class="emphasis">n</i><sup><i class="emphasis">c</i></sup></sup>)</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="left">
+<p class="table-para">doubly expnonential</p>
+</td><td class="td" align="center">
+<p class="table-para">
+<i class="emphasis">O</i> (2<sup>2<sup><i class="emphasis">n</i></sup><sup><i class="emphasis">c</i></sup></sup>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="90.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="92.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

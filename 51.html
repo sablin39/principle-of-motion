@@ -1,0 +1,295 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+8.3 Extended Kalman Filter</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Chapter 8 - 
+ Kalman Filtering</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(68,7,75,24,54,65,47,70,79,40,79,43,2,50,7)
+var a1 = new Array(12,1,14)
+var a2 = new Array(7,11,13)
+var a3 = new Array(9,5,0)
+var a4 = new Array(3,6,4)
+var a5 = new Array(8,2,10)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="50.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="52.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:24:01 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:24:03 UTC-->
+<div class="chapter">
+<a name="ch081C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="732"></a><a name="ch08lev1sec31C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">8.3 </span>Extended Kalman Filter</h2>
+<p class="first-para">The Kalman filter is a powerful tool for linear systems, but many systems encountered in practice are nonlinear. Consider the system</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(8.35)&nbsp;</span></td><td valign="top"><img src="figu289_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(8.36)&nbsp;</span></td><td valign="top"><img src="figu289_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">where <i class="emphasis">x</i>, <i class="emphasis">y</i>, <i class="emphasis">u</i>, <i class="emphasis">v</i>, and <i class="emphasis">w</i> are as before and</p>
+<div class="informalequation" mathml="yes">
+<img src="figu289_6.jpg" />
+<br />
+
+</div>
+<p class="para">
+<a name="733"></a><a name="IDX-2901C14020F-F9F5-4415-973A-D906072C1A72"></a>and</p>
+<div class="informalequation" mathml="yes">
+<img src="figu290_1.jpg" />
+<br />
+
+</div>
+<p class="para">are both continuously differentiable in <i class="emphasis">x</i>(<i class="emphasis">k</i>). One approach to state estimation for systems of this type is to linearize the equations about the current estimate and then apply Kalman's equations using the resulting approximation. This formulation is called the extended Kalman filtering. The EKF equations are:</p>
+<p class="para">
+<b class="bold"><i class="emphasis">prediction:</i></b>
+</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(8.37)&nbsp;</span></td><td valign="top"><img src="figu290_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(8.38)&nbsp;</span></td><td valign="top"><img src="figu290_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">where</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(8.39)&nbsp;</span></td><td valign="top"><img src="figu290_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">
+<b class="bold"><i class="emphasis">update:</i></b>
+</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(8.40)&nbsp;</span></td><td valign="top"><img src="figu290_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(8.41)&nbsp;</span></td><td valign="top"><img src="figu290_6.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">where</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(8.42)&nbsp;</span></td><td valign="top"><img src="figu290_7.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(8.43)&nbsp;</span></td><td valign="top"><img src="figu290_8.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(8.44)&nbsp;</span></td><td valign="top"><img src="figu290_9.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">and</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(8.45)&nbsp;</span></td><td valign="top"><img src="figu290_10.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="734"></a><a name="ch08lev2sec81C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">8.3.1 </span>EKF for Range and Bearing Localization</h3>
+<p class="first-para">The EKF is well suited to the problem of localizing a mobile robot equipped with sensors that can detect range and bearing to previously mapped landmarks in the <a name="735"></a><a name="IDX-2911C14020F-F9F5-4415-973A-D906072C1A72"></a>environment [278]. Consider a robot whose state at time <i class="emphasis">k</i> is given by <i class="emphasis">x</i>(<i class="emphasis">k</i>) = [<i class="emphasis">x<sub>r</sub></i>(<i class="emphasis">k</i>), <i class="emphasis">y<sub>r</sub></i>(<i class="emphasis">k</i>), <span class="unicode">&theta;</span><i class="emphasis"><sub>r</sub></i>(<i class="emphasis">k</i>)]<sup><i class="emphasis">T</i></sup>, where (<i class="emphasis">x<sub>r</sub></i>(<i class="emphasis">k</i>), <i class="emphasis">y<sub>r</sub></i>(<i class="emphasis">k</i>)) denotes its position in the plane and <span class="unicode">&theta;</span>(<i class="emphasis">k</i>) denotes its orientation. The input is <i class="emphasis">u</i>(<i class="emphasis">k</i>) = [<i class="emphasis">u</i><sub>1</sub>(<i class="emphasis">k</i>), <i class="emphasis">u</i><sub>2</sub>(<i class="emphasis">k</i>)]<sup><i class="emphasis">T</i></sup>, where <i class="emphasis">u</i><sub>1</sub>(<i class="emphasis">k</i>) and <i class="emphasis">u</i><sub>2</sub>(<i class="emphasis">k</i>) denote the forward and angular velocities of the robot, respectively. The process model for this robot nonlinear, i.e.,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu291_1.jpg" />
+<br />
+
+</div>
+<p class="para">where <i class="emphasis">v</i>(<i class="emphasis">k</i>) is a random vector from a Gaussian distribution whose mean is zero and covariance is <i class="emphasis">V</i>(<i class="emphasis">k</i>).</p>
+<p class="para">The robot is equipped with sensors that can measure the range and bearing to certain landmarks in the environment. Assume that the free space is populated with <i class="emphasis">n</i><sub>&#8467;</sub> landmarks whose locations are known to be (<i class="emphasis">x</i><sub>l<i class="emphasis">i</i></sub>, <i class="emphasis">y</i><sub>l<i class="emphasis">i</i></sub>), <i class="emphasis">i</i> = 1, 2,...,<i class="emphasis">n</i><sub>&#8467;</sub>. At any time <i class="emphasis">k</i>, the robot can only see the subset of landmarks that is within the range of its sensors, so the number of measurements taken varies with <i class="emphasis">k</i>. The number of measurements taken at the <i class="emphasis">k</i>th timestep is denoted by <i class="emphasis">p</i>(<i class="emphasis">k</i>). Each measurement has two components, a range component and a bearing component. We also assume for now that for each measurement, we somehow know which landmark was observed. We introduce the association map <i class="emphasis">a</i>: {1, 2,...,<i class="emphasis">p</i>(<i class="emphasis">k</i>)} <span class="unicode">&rarr;</span> {1, 2,...,<i class="emphasis">n</i><sub>&#8467;</sub>} which is defined such that the <i class="emphasis">i</i>th measurement at time <i class="emphasis">k</i> corresponds to the <i class="emphasis">a</i>(<i class="emphasis">i</i>)th landmark. The output equation for this system is then given as</p>
+<div class="informalequation" mathml="yes">
+<img src="figu291_2.jpg" />
+<br />
+
+</div>
+<p class="para">where, for <i class="emphasis">i</i> = 1, 2,...,<i class="emphasis">p</i>(<i class="emphasis">k</i>),</p>
+<div class="informalequation" mathml="yes">
+<img src="figu291_3.jpg" />
+<br />
+
+</div>
+<p class="para">and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1226" src="figu291_4.jpg" height="21" width="94" title="" border="0" /></span></span> is a random vector taken from a Gaussian distribution with zero mean and covariance matrix <i class="emphasis">W<sub>i</sub></i>(<i class="emphasis">k</i>).</p>
+<p class="para">In order to linearize, we differentiate the process and sensor models with</p>
+<div class="informalequation" mathml="yes">
+<img src="figu291_5.jpg" />
+<br />
+
+</div>
+<p class="para">
+<a name="736"></a><a name="page2921C14020F-F9F5-4415-973A-D906072C1A72"></a>and</p>
+<div class="informalequation" mathml="yes">
+<img src="figu292_1.jpg" />
+<br />
+
+</div>
+<p class="para">resulting in</p>
+<div class="informalequation" mathml="yes">
+<img src="figu292_2.jpg" />
+<br />
+
+</div>
+<p class="para">and</p>
+<div class="informalequation" mathml="yes">
+<img src="figu292_3.jpg" />
+<br />
+
+</div>
+<p class="last-para">With these matrices in hand, we can use the linearized Kalman filter equations to estimate the robot state.</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="737"></a><a name="ch08lev2sec91C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">8.3.2 </span>Data Association</h3>
+<p class="first-para">The solution presented in the <a class="internaljump" href="#ch08lev2sec81C14020F-F9F5-4415-973A-D906072C1A72">previous section</a> glosses over one very important aspect of localization: it assumes that each measurement is automatically associated with the correct landmark. In practice, landmarks have similar properties which make them good features but often make them difficult to distinguish one from another. When this happens, we must address the problem of <i class="emphasis">data association</i>, which is the question of which landmark corresponds to a particular measurement. This is equivalent to finding the association map used in the <a class="internaljump" href="#ch08lev2sec81C14020F-F9F5-4415-973A-D906072C1A72">previous section</a>.</p>
+<p class="para">The basic idea used for data association is as follows. Consider the <i class="emphasis">i</i>th measurement <i class="emphasis">y<sub>i</sub></i>(<i class="emphasis">k</i> + 1). For each landmark in the map, we compute the innovation <span class="unicode">&nu;</span><i class="emphasis"><sub>ij</sub></i> which is defined to be the difference between the actual measurement <i class="emphasis">y<sub>i</sub></i>(<i class="emphasis">k</i> + 1) and the measurement that we would expect if <i class="emphasis">y<sub>i</sub></i>(<i class="emphasis">k</i> + 1) corresponded to the <i class="emphasis">j</i>th landmark and the prediction <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1231" src="figu292_4.jpg" height="18" width="98" title="" border="0" /></span></span> was correct. This means that</p>
+<div class="informalequation" mathml="yes">
+<img src="figu292_5.jpg" />
+<br />
+
+</div>
+<p class="para">
+<a name="738"></a><a name="page2931C14020F-F9F5-4415-973A-D906072C1A72"></a>The smaller the innovation <span class="unicode">&nu;</span><i class="emphasis"><sub>ij</sub></i>, the more likely it is that the <i class="emphasis">i</i>th measurement corresponds to the <i class="emphasis">j</i>th landmark. We then can make a good guess of which landmark corresponds to the measurement by choosing the landmark that yields the smallest innovation. However, the notion of size must be weighted by the uncertainties in the predictions and measurements. Fortunately, these uncertainties are encoded in the matrix <i class="emphasis">S</i> from the Kalman filter update <a href="50.html#721" target="_parent" class="chapterjump">equation (8.31)</a>, and <i class="emphasis">S</i> can be used to create a Mahalanobis norm for <span class="unicode">&nu;</span><i class="emphasis"><sub>ij</sub></i> which indicates the size of the innovation in units of standard deviations. We write this measure of the innovation as</p>
+<div class="informalequation" mathml="yes">
+<img src="figu293_1.jpg" />
+<br />
+
+</div>
+<p class="para">where</p>
+<div class="informalequation" mathml="yes">
+<img src="figu293_2.jpg" />
+<br />
+
+</div>
+<p class="para">We then can build the data association function <i class="emphasis">a</i>() by setting <i class="emphasis">a</i>(<i class="emphasis">i</i>) equal to the value of <i class="emphasis">j</i> that minimizes <span class="unicode">&chi;</span><i class="emphasis"><sub>ij</sub></i>.</p>
+<p class="para">
+<a class="internaljump" href="#ch08fig081C14020F-F9F5-4415-973A-D906072C1A72">Figure 8.8</a> contains an example of localization using an extended Kalman filter. The actual path, i.e., ground truth, is displayed along with estimates of the robot's location and its uncertainty of that estimate as the robot moves along the path. Note that the estimate converges to the actual path as the robot moves along the path and as more measurements are taken. Also, note that the uncertainty of the estimate considerably decreases as well.</p>
+<div class="figure">
+<a name="739"></a><a name="ch08fig081C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1235','fig8-8_0.jpg','1000','526')" name="IMG_1235" target="_self"><img alt="Image from book" id="IMG_1235" src="fig8-8.jpg" height="184" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 8.8: </span>The dotted line displays the actual path of the Nomad Scout mobile robot. The triangles and ellipses correspond to the estimated location and variance, respectively, of the robot's location. The stars correspond to the measured location of the beacon, which also has an associated variance (due to noise) which is not displayed.</span>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="740"></a><a name="ch08lev2sec101C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">8.3.3 </span>EKF for Range-Only Localization</h3>
+<p class="first-para">
+<a name="741"></a><a name="page2941C14020F-F9F5-4415-973A-D906072C1A72"></a>The EKF solution to the problem of localization using range-only sensors is a trivial extension to the range and bearing case. The only difference is that the output equation will not contain any bearing information, so we simply remove the rows from <i class="emphasis">h</i> and <i class="emphasis">H</i> that correspond to the bearing measurements. The EKF equations are then applied in the usual manner.</p>
+</div>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="50.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="52.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

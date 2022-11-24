@@ -1,0 +1,515 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+10.4 Dynamics of a Rigid Body</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Chapter 10 - 
+ Robot Dynamics</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(3,7,93,41,4,0,36,7,94,56,81,14,76,31,86)
+var a1 = new Array(4,0,7)
+var a2 = new Array(13,6,3)
+var a3 = new Array(9,11,5)
+var a4 = new Array(1,8,14)
+var a5 = new Array(10,2,12)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="59.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=741008676"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="61.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:30:44 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:30:44 UTC-->
+<div class="chapter">
+<a name="ch101C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="910"></a><a name="ch10lev1sec41C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">10.4 </span>Dynamics of a Rigid Body</h2>
+<p class="first-para">Until now, we have been using freely the concepts of "center of mass" and "inertia about an axis" to get to the use of Lagrange's equations as quickly as possible. We now provide formal definitions of these quantities and apply them to the dynamics of a translating and rotating rigid body.</p>
+<p class="para">Let <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1497" src="figu361_4.jpg" height="15" width="13" title="" border="0" /></span></span> be a rigid body occupying a volume <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1498" src="figu361_5.jpg" height="18" width="63" title="" border="0" /></span></span>, <i class="emphasis">r</i> be a vector from the origin to a point in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1499" src="figu361_6.jpg" height="15" width="13" title="" border="0" /></span></span>, and <span class="unicode">&rho;</span>(<i class="emphasis">r</i>) be the mass density of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1500" src="figu361_7.jpg" height="15" width="13" title="" border="0" /></span></span> as a function of the location <i class="emphasis">r</i>. Then the mass of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1501" src="figu361_8.jpg" height="15" width="13" title="" border="0" /></span></span> is the volume integral of the mass density</p>
+<div class="informalequation" mathml="yes">
+<img src="figu361_9.jpg" />
+<br />
+
+</div>
+<p class="para">
+<a name="911"></a><a name="page3621C14020F-F9F5-4415-973A-D906072C1A72"></a>and the <i class="emphasis">center of mass</i> is the weighted average of the mass density</p>
+<div class="informalequation" mathml="yes">
+<img src="figu362_1.jpg" />
+<br />
+
+</div>
+<p class="para">When a body moves freely in space, it is convenient to describe the translational position of the body by the Cartesian coordinates <i class="emphasis">q</i> of the center of mass relative to a stationary inertial frame. The translational kinetic energy of the body can be written <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1504" src="figu362_2.jpg" height="25" width="203" title="" border="0" /></span></span>. Applying Lagrange's equations yields the familiar equation</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.29)&nbsp;</span></td><td valign="top"><img src="figu362_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">where <i class="emphasis">f</i> is the linear force applied to the body expressed in the inertial frame.</p>
+<div class="section">
+<h3 class="sect3-title">
+<a name="912"></a><a name="ch10lev2sec11C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">10.4.1 </span>Planar Rotation</h3>
+<p class="first-para">When a body moves in a plane, a single configuration variable <i class="emphasis">q</i> can be used to describe its orientation. Such motion occurs, for example, when the body rotates about a fixed axis, or when the body slides freely on a frictionless plane. In the former case, it is convenient to to define a stationary <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i> inertial frame with the <i class="emphasis">z</i>-axis along the axis of rotation. In the latter case, it will be convenient to define an <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i> inertial frame at the center of mass of the body, with the <i class="emphasis">z</i>-axis orthogonal to the plane of motion. (Since we are focusing on rotational motion only, the center of mass can be assumed stationary.)</p>
+<p class="para">The kinetic energy of a body rotating in the plane is the integral over the body of the differential kinetic energy at each point <i class="emphasis">r</i> = (<i class="emphasis">x</i>, <i class="emphasis">y</i>, <i class="emphasis">z</i>)<sup><i class="emphasis">T</i></sup>:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu362_4.jpg" />
+<br />
+
+</div>
+<p class="para">where <i class="emphasis">q</i> is the angle of the body, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1507" src="figu362_5.jpg" height="19" width="10" title="" border="0" /></span></span> is the angular velocity, and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1508" src="figu362_6.jpg" height="25" width="163" title="" border="0" /></span></span> is the linear velocity at <i class="emphasis">r</i>. Therefore we can write the kinetic energy in the form of <a href="58.html#890" target="_parent" class="chapterjump">equation (10.13)</a>,</p>
+<div class="equation" mathml="yes">
+<a name="913"></a><a name="ch10eqn301C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.30)&nbsp;</span></td><td valign="top"><img src="figu362_7.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">where</p>
+<div class="equation" mathml="yes">
+<a name="914"></a><a name="ch10eqn311C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.31)&nbsp;</span></td><td valign="top"><img src="figu362_8.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">
+<a name="915"></a><a name="page3631C14020F-F9F5-4415-973A-D906072C1A72"></a>is the inertia of the body about the <i class="emphasis">z</i>-axis. If the body is uniform density, <a class="internaljump" href="#ch10eqn311C14020F-F9F5-4415-973A-D906072C1A72">equation (10.31)</a> simplifies to</p>
+<div class="informalequation" mathml="yes">
+<img src="figu363_1.jpg" />
+<br />
+
+</div>
+<p class="para">where <i class="emphasis">m</i> is the mass of the body. Applying Lagrange's equations to <a class="internaljump" href="#ch10eqn301C14020F-F9F5-4415-973A-D906072C1A72">equation (10.30)</a>, we get</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.32)&nbsp;</span></td><td valign="top"><img src="figu363_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">where <span class="unicode">&tau;</span><sub><i class="emphasis">z</i></sub> is the torque about the <i class="emphasis">z</i>-axis.</p>
+<p class="para">If we choose a <i class="emphasis">z</i>-axis through the center of mass of the body and a parallel <i class="emphasis">z</i><span class="unicode">&prime;</span>-axis a distance <i class="emphasis">d</i> away, then the scalar inertias <i class="emphasis">I<sub>zz</sub></i> and <i class="emphasis">I</i><sub><i class="emphasis">z</i><span class="unicode">&prime;</span><i class="emphasis">z</i><span class="unicode">&prime;</span></sub> are related by the <i class="emphasis">parallel-axis theorem</i> for planar rotation:</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.33)&nbsp;</span></td><td valign="top"><img src="figu363_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="last-para">The proof of this theorem is straightforward and in fact is implicit in our derivation of the equations of motion of the RP arm.</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="916"></a><a name="ch10lev2sec21C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="section-titlelabel">10.4.2 </span>Spatial Rotation</h3>
+<p class="first-para">This section requires extra mathematical machinery, and can be safely skipped if the reader is not interested in the dynamics of a rotating spatial body.</p>
+<p class="para">In our Lagrangian formulation, we first choose a set of coordinates <i class="emphasis">q</i>,express the Lagrangian in terms of <i class="emphasis">q</i> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1514" src="figu363_4.jpg" height="19" width="10" title="" border="0" /></span></span>, and derive the equations of motion. To do this for a rotating spatial body, we can choose <i class="emphasis">q</i> to be three angles describing the orientation of the body in a world frame. Then we can express the kinetic energy of the body as a function of <i class="emphasis">q</i> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1515" src="figu363_5.jpg" height="19" width="10" title="" border="0" /></span></span> and proceed as before. If we do this, however, the inertia matrix <i class="emphasis">M</i>(<i class="emphasis">q</i>) will be extremely complex for any choice of <i class="emphasis">q</i>, providing little insight into the nature of the motion. The equations of motion are rarely written this way. Another problem is that no choice of three orientation variables can provide a smooth, global coordinatization of the space of orientations. In the same way that latitude and longitude coordinates for the Earth "go bad" at the poles, where the longitude changes discontinuously, any choice of three coordinates to represent orientations will have singularities. (For motions away from these bad orientations, however, three coordinates work just fine, so this is not the most serious problem. In fact, we have a similar problem representing a single angle by a real number, which requires the use of mod2<span class="unicode">&pi;</span> arithmetic.)</p>
+<p class="para">So we will not begin by choosing angular coordinates, and instead of defining the angular velocity as the time-derivative of coordinates, we define <span class="unicode">&omega;</span><sub><i class="emphasis">s</i></sub> = [<span class="unicode">&omega;</span><i class="emphasis"><sub>x<sub>s</sub></sub></i>, <span class="unicode">&omega;</span><i class="emphasis"><sub>y</sub><sub>s</sub></i>, <span class="unicode">&omega;</span><i class="emphasis"><sub>z</sub><sub>s</sub></i>]<sup>J</sup> to be the angular velocity of the body about the <i class="emphasis">x<sub>s</sub></i>-<i class="emphasis">y<sub>s</sub></i>-<i class="emphasis">z<sub>s</sub></i> axes of a stationary inertial frame at the center of mass of the body. The linear velocity at a point <i class="emphasis">r<sub>s</sub></i> = (<i class="emphasis">x<sub>s</sub></i>, <i class="emphasis">y<sub>s</sub></i>, <i class="emphasis">z<sub>s</sub></i>)<sup><i class="emphasis">T</i></sup> <a name="917"></a><a name="page3641C14020F-F9F5-4415-973A-D906072C1A72"></a>on the body is <span class="unicode">&omega;</span><sub><i class="emphasis">s</i></sub> &times; <i class="emphasis">r<sub>s</sub></i>. The total kinetic energy of the body can be written</p>
+<div class="equation" mathml="yes">
+<a name="918"></a><a name="ch10eqn341C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.34)&nbsp;</span></td><td valign="top"><img src="figu364_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">which can be simplified to</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.35)&nbsp;</span></td><td valign="top"><img src="figu364_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">or</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.36)&nbsp;</span></td><td valign="top"><img src="figu364_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">The matrix <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1519" src="figu364_4.jpg" height="18" width="14" title="" border="0" /></span></span> is the symmetric positive definite inertia matrix for the body written in the inertial frame. Because <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1520" src="figu364_5.jpg" height="18" width="14" title="" border="0" /></span></span> is defined in the stationary world frame, it changes as the body rotates.</p>
+<p class="para">The <i class="emphasis">angular momentum</i> of the body is <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1521" src="figu364_6.jpg" height="18" width="77" title="" border="0" /></span></span>, and the torque <span class="unicode">&tau;</span><sub><i class="emphasis">s</i></sub> = [<span class="unicode">&tau;</span><sub><i class="emphasis">xs</i></sub>, <span class="unicode">&tau;</span><sub><i class="emphasis">ys</i></sub>, <span class="unicode">&tau;</span><sub><i class="emphasis">zs</i></sub>]<sup><i class="emphasis">T</i></sup> acting on the body, expressed in the inertial frame, is the rate of change of <i class="emphasis">P</i>:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu364_7.jpg" />
+<br />
+
+</div>
+<p class="para">The density of the body is not changing as it rotates, so the change of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1523" src="figu364_8.jpg" height="19" width="82" title="" border="0" /></span></span>, is due only to the motion of the body in the world frame, giving <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1524" src="figu364_9.jpg" height="19" width="152" title="" border="0" /></span></span>. Plugging in, we get</p>
+<div class="equation" mathml="yes">
+<a name="919"></a><a name="ch10eqn371C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.37)&nbsp;</span></td><td valign="top"><img src="figu364_10.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">This is known as <i class="emphasis">Euler's equation</i> in the inertial frame.</p>
+<p class="para">To turn <a class="internaljump" href="#ch10eqn371C14020F-F9F5-4415-973A-D906072C1A72">equation (10.37)</a> into a matrix equation, we define the <i class="emphasis">skew-symmetric matrix representation</i> <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1526" src="figu364_11.jpg" height="19" width="19" title="" border="0" /></span></span> of the vector <span class="unicode">&omega;</span><sub><i class="emphasis">s</i></sub> = [<span class="unicode">&omega;</span><i class="emphasis"><sub>x<sub>s</sub></sub></i>, <span class="unicode">&omega;</span><i class="emphasis"><sub>y<sub>s</sub></sub></i>, <span class="unicode">&omega;</span><i class="emphasis"><sub>z<sub>s</sub></sub></i>]<sup><i class="emphasis">T</i></sup>:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu364_12.jpg" />
+<br />
+
+</div>
+<p class="para">We can now express <a class="internaljump" href="#ch10eqn371C14020F-F9F5-4415-973A-D906072C1A72">equation (10.37)</a> as the matrix equation</p>
+<div class="equation" mathml="yes">
+<a name="920"></a><a name="ch10eqn381C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.38)&nbsp;</span></td><td valign="top"><img src="figu364_13.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">We still do not have a representation of the orientation of the body in the world frame, however. We need an equation for the evolution of the body's orientation (the <a name="921"></a><a name="IDX-3651C14020F-F9F5-4415-973A-D906072C1A72"></a>kinematic equation) to go with <a class="internaljump" href="#ch10eqn381C14020F-F9F5-4415-973A-D906072C1A72">equation (10.38)</a> for the evolution of the velocity (the dynamic equation).</p>
+<p class="para">To do this, define a frame <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i> attached to the body at its center of mass. As described in <a href="12.html" target="_parent" class="chapterjump">Chapter 3</a>, our representation of the orientation of the body will be as a 3 &times; 3 rotation matrix</p>
+<div class="informalequation" mathml="yes">
+<img src="figu365_3.jpg" />
+<br />
+
+</div>
+<p class="para">where <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1530" src="figu365_4.jpg" height="20" width="146" title="" border="0" /></span></span> is the unit vector in the body <i class="emphasis">x</i>-direction expressed in the inertial coordinate frame. The vectors <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1531" src="figu365_5.jpg" height="18" width="11" title="" border="0" /></span></span> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1532" src="figu365_6.jpg" height="15" width="10" title="" border="0" /></span></span> are defined similarly (<a class="internaljump" href="#ch10fig041C14020F-F9F5-4415-973A-D906072C1A72">figure 10.4</a>).</p>
+<div class="figure">
+<a name="922"></a><a name="ch10fig041C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1535','fig10-4_0.jpg','661','643')" name="IMG_1535" target="_self"><img alt="Image from book" id="IMG_1535" src="fig10-4.jpg" height="340" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 10.4: </span>The rotation matrix for a body is obtained by expressing the unit vectors <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1533" src="figu365_1.jpg" height="16" width="33" title="" border="0" /></span></span>, and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1534" src="figu365_2.jpg" height="14" width="9" title="" border="0" /></span></span> of the body <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i> frame in the inertial frame <i class="emphasis">x<sub>s</sub></i>-<i class="emphasis">y<sub>s</sub></i>-<i class="emphasis">z<sub>s</sub></i>.</span>
+</div>
+<p class="para">Each column vector of <i class="emphasis">R</i> moves according to the angular velocity <span class="unicode">&omega;</span><sub><i class="emphasis">s</i></sub>,so the kinematics of the rotating rigid body can be written</p>
+<div class="equation" mathml="yes">
+<a name="923"></a><a name="ch10eqn391C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.39)&nbsp;</span></td><td valign="top"><img src="figu365_7.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Together, <a class="internaljump" href="#ch10eqn391C14020F-F9F5-4415-973A-D906072C1A72">equations (10.39)</a> and <a class="internaljump" href="#ch10eqn381C14020F-F9F5-4415-973A-D906072C1A72">(10.38)</a> describe the motion of a rotating rigid body in a spatial frame. The use of the rotation matrix representation of the orientation allows us to write the kinematics in a simple and globally correct fashion, which is not possible with any choice of three coordinates.<sup>[<a name="ch10fnt10_11C14020F-F9F5-4415-973A-D906072C1A72" href="#ftn.ch10fnt10_11C14020F-F9F5-4415-973A-D906072C1A72">1</a>]</sup>
+</p>
+<p class="para">
+<a name="925"></a><a name="page3661C14020F-F9F5-4415-973A-D906072C1A72"></a>One difficulty with the equations of motion in an inertial frame is that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1537" src="figu366_1.jpg" height="18" width="14" title="" border="0" /></span></span> changes as the body rotates. It would be more convenient and intuitive to define the equations of motion in a frame fixed to the body, where a <i class="emphasis">body inertia matrix</i> <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1538" src="figu366_2.jpg" height="15" width="8" title="" border="0" /></span></span> is unchanging. To do so, we use the coordinate frame <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i> attached to the body at its center of mass. The angular velocity in this frame is written <span class="unicode">&omega;</span> = [<span class="unicode">&omega;</span><sub><i class="emphasis">x</i></sub>, <span class="unicode">&omega;</span><sub><i class="emphasis">y</i></sub>, <span class="unicode">&omega;</span><sub><i class="emphasis">z</i></sub>]<sup><i class="emphasis">T</i></sup> and the external torque is written <span class="unicode">&tau;</span> = [<span class="unicode">&tau;</span><sub><i class="emphasis">x</i></sub>, <span class="unicode">&tau;</span><sub><i class="emphasis">y</i></sub>, <span class="unicode">&tau;</span><sub><i class="emphasis">z</i></sub>]<sup><i class="emphasis">T</i></sup>. These are related to <span class="unicode">&omega;</span><sub><i class="emphasis">s</i></sub> and <span class="unicode">&tau;</span><sub><i class="emphasis">s</i></sub> by the following equations:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu366_3.jpg" />
+<br />
+
+</div>
+<p class="para">The inertial frame coordinates <i class="emphasis">r<sub>s</sub></i> = [<i class="emphasis">x<sub>s</sub></i>, <i class="emphasis">y<sub>s</sub></i>, <i class="emphasis">z<sub>s</sub></i>]<sup><i class="emphasis">T</i></sup> of a point are related to its coordinates in the body frame <i class="emphasis">r</i> = [<i class="emphasis">x</i>, <i class="emphasis">y</i>, <i class="emphasis">z</i>]<sup><i class="emphasis">T</i></sup> by</p>
+<div class="informalequation" mathml="yes">
+<img src="figu366_4.jpg" />
+<br />
+
+</div>
+<p class="para">The kinematic equations in the two frames are related by</p>
+<div class="informalequation" mathml="yes">
+<img src="figu366_5.jpg" />
+<br />
+
+</div>
+<p class="para">Plugging these relations into <a class="internaljump" href="#ch10eqn341C14020F-F9F5-4415-973A-D906072C1A72">equation (10.34)</a> and simplifying, we find</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.40)&nbsp;</span></td><td valign="top"><img src="figu366_6.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.41)&nbsp;</span></td><td valign="top"><img src="figu366_7.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">where the symmetric positive definite body-fixed inertia matrix is given by</p>
+<div class="equation" mathml="yes">
+<a name="926"></a><a name="ch10eqn421C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.42)&nbsp;</span></td><td valign="top"><img src="figu366_8.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">The (possibly non-unique) eigenvectors of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1545" src="figu366_9.jpg" height="15" width="8" title="" border="0" /></span></span> define orthogonal <i class="emphasis">principal axes of inertia</i> of the body. If the body <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i> frame is chosen so that the axes are aligned with principal axes of inertia, then all off-diagonal terms of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1546" src="figu366_10.jpg" height="15" width="8" title="" border="0" /></span></span> are zero, and <i class="emphasis">I<sub>xx</sub></i>, <i class="emphasis">I<sub>yy</sub></i>, <i class="emphasis">I<sub>zz</sub></i> are the principal moments of inertia. In the general case, one principal axis is the axis of maximum inertia, one principal axis is the axis of minimum inertia, and the third principal axis (the intermediate axis of inertia) is orthogonal. Because of symmetries, however, the inertia about two or three of the principal axes might be identical. Often the principal axes of inertia of a body are evident from symmetries (<a class="internaljump" href="#ch10fig051C14020F-F9F5-4415-973A-D906072C1A72">figure 10.5</a>).</p>
+<div class="figure">
+<a name="927"></a><a name="ch10fig051C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1547','fig10-5_0.jpg','801','1000')" name="IMG_1547" target="_self"><img alt="Image from book" id="IMG_1547" src="fig10-5.jpg" height="437" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 10.5: </span>Inertias about principal axes of inertia for four different uniform density volumes. Note that the principal axes of inertia are not unique for the sphere and cylinder.</span>
+</div>
+<p class="para">To derive the dynamics in the body frame, we cannot simply take the time-derivative of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1548" src="figu366_11.jpg" height="15" width="22" title="" border="0" /></span></span>, since this is not defined in an inertial frame. (The time-derivative of the momentum <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1549" src="figu366_12.jpg" height="18" width="34" title="" border="0" /></span></span> is a generalized force, while the time-derivative of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1550" src="figu366_13.jpg" height="15" width="22" title="" border="0" /></span></span> is not.) Instead, <a name="928"></a><a name="IDX-3671C14020F-F9F5-4415-973A-D906072C1A72"></a>we begin with <a class="internaljump" href="#ch10eqn381C14020F-F9F5-4415-973A-D906072C1A72">equation (10.38)</a>,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu367_1.jpg" />
+<br />
+
+</div>
+<p class="para">and plug in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1552" src="figu367_2.jpg" height="20" width="259" title="" border="0" /></span></span>, and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1553" src="figu367_3.jpg" height="22" width="88" title="" border="0" /></span></span> to get</p>
+<div class="informalequation" mathml="yes">
+<img src="figu367_4.jpg" />
+<br />
+
+</div>
+<p class="para">
+<a name="929"></a><a name="IDX-3681C14020F-F9F5-4415-973A-D906072C1A72"></a>Recognizing from our identities that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1555" src="figu368_1.jpg" height="19" width="148" title="" border="0" /></span></span>, and premultiplying both sides by <i class="emphasis">R</i><sup>&minus;1</sup> = <i class="emphasis">R<sup>T</sup></i>, we get</p>
+<div class="informalequation" mathml="yes">
+<img src="figu368_2.jpg" />
+<br />
+
+</div>
+<p class="para">Plugging in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1557" src="figu368_3.jpg" height="18" width="82" title="" border="0" /></span></span> and noticing that <i class="emphasis">R<sup>T</sup> R</i> is the identity matrix, this simplifies to</p>
+<div class="informalequation" mathml="yes">
+<img src="figu368_4.jpg" />
+<br />
+
+</div>
+<p class="para">This is Euler's equation in the body frame. Note that it has the same form as Euler's equation in the spatial frame. Collecting together the kinematics and dynamics in one place, the equations of motion in the body frame are written</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.43)&nbsp;</span></td><td valign="top"><img src="figu368_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="930"></a><a name="ch10eqn441C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.44)&nbsp;</span></td><td valign="top"><img src="figu368_6.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">The big advantage of this form over the spatial equations is that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1561" src="figu368_7.jpg" height="15" width="8" title="" border="0" /></span></span> is constant.</p>
+<p class="para">If the body <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i> frame is aligned with the principal axes, making all off-diagonal terms of <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1562" src="figu368_8.jpg" height="18" width="10" title="" border="0" /></span></span> zero, <a class="internaljump" href="#ch10eqn441C14020F-F9F5-4415-973A-D906072C1A72">equation (10.44)</a> simplifies to</p>
+<div class="equation" mathml="yes">
+<a name="931"></a><a name="ch10eqn451C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.45)&nbsp;</span></td><td valign="top"><img src="figu368_9.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">One key implication of <a class="internaljump" href="#ch10eqn441C14020F-F9F5-4415-973A-D906072C1A72">equations (10.44)</a> and <a class="internaljump" href="#ch10eqn451C14020F-F9F5-4415-973A-D906072C1A72">(10.45)</a> is that <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1564" src="figu368_10.jpg" height="18" width="12" title="" border="0" /></span></span> may not be zero even if <span class="unicode">&tau;</span> is zero. Although the angular momentum and kinetic energy of a rotating body are constant when no external torques are applied, the angular velocity of the body may not be constant. For further interpretation of <a class="internaljump" href="#ch10eqn451C14020F-F9F5-4415-973A-D906072C1A72">equation (10.45)</a>, see the mechanics textbooks by Symon [407] and Marsden and Ratiu [308] or the robotic manipulation textbook by Mason [312].</p>
+<p class="para">When it is difficult to solve the integrals of <a class="internaljump" href="#ch10eqn421C14020F-F9F5-4415-973A-D906072C1A72">equation (10.42)</a> directly to find II, it may be possible to split the body into simpler components and solve for (or look up in a table) the inertia matrix at the center of mass of each component separately. If we then transform these inertia matrices to a common frame, we can simply add them to get the inertia matrix for the composite body in that common frame. This transformation can be accomplished by a translation followed by a rotation, as outlined below (see <a class="internaljump" href="#ch10fig061C14020F-F9F5-4415-973A-D906072C1A72">figure 10.6</a>).</p>
+<div class="figure">
+<a name="932"></a><a name="ch10fig061C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1566','fig10-6_0.jpg','926','576')" name="IMG_1566" target="_self"><img alt="Image from book" id="IMG_1566" src="fig10-6.jpg" height="218" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 10.6: </span>The inertia matrix of body <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1565" src="figu369_1.jpg" height="16" width="15" title="" border="0" /></span></span>, expressed in a frame <i class="emphasis">x<sub>i</sub></i>-<i class="emphasis">y<sub>i</sub></i>-<i class="emphasis">z<sub>i</sub></i> at the center of mass of the body, can be expressed in another frame <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i> by a translation and rotation.</span>
+</div>
+<p class="para">Let <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1567" src="figu368_11.jpg" height="18" width="12" title="" border="0" /></span></span> be the inertia matrix of the <i class="emphasis">i</i>th component, expressed in its own local coordinate frame <i class="emphasis">x<sub>i</sub></i>-<i class="emphasis">y<sub>i</sub></i>-<i class="emphasis">z<sub>i</sub></i> at its center of mass. Let <i class="emphasis">r<sub>i</sub></i> be the vector from the origin of the local frame to the origin of the common frame <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i>,expressed in the local frame. The inertia II<sub><i class="emphasis">i</i></sub> can be expressed in a frame aligned with <i class="emphasis">x<sub>i</sub></i>-<i class="emphasis">y<sub>i</sub></i>-<i class="emphasis">z<sub>i</sub></i>, but located at the <a name="933"></a><a name="page3691C14020F-F9F5-4415-973A-D906072C1A72"></a>origin of the common frame, using the <i class="emphasis">parallel-axis theorem</i>
+</p>
+<div class="equation" mathml="yes">
+<a name="934"></a><a name="ch10eqn461C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.46)&nbsp;</span></td><td valign="top"><img src="figu369_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">where <i class="emphasis">m<sub>i</sub></i> is the mass of the <i class="emphasis">i</i>th component and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1569" src="figu369_3.jpg" height="15" width="14" title="" border="0" /></span></span> is the 3 &times; 3 identity matrix. Now let <i class="emphasis">R<sub>i</sub></i> denote the rotation matrix describing the orientation of this translated local frame relative to the common frame. Rotating the inertia matrix into the common frame, we get</p>
+<div class="informalequation" mathml="yes">
+<img src="figu369_4.jpg" />
+<br />
+
+</div>
+<p class="para">The matrix <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1571" src="figu369_5.jpg" height="21" width="16" title="" border="0" /></span></span> is the inertia of the <i class="emphasis">i</i>th component expressed in the common frame. Performing this translation and rotation for all <i class="emphasis">k</i> components of the body, the total inertia of the body in the common frame is <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1572" src="figu369_6.jpg" height="21" width="143" title="" border="0" /></span></span>.</p>
+<div class="section">
+<h4 class="sect4-title">
+<a name="935"></a><a name="ch10lev3sec21C14020F-F9F5-4415-973A-D906072C1A72"></a>Lagrange's Equations Revisited</h4>
+<p class="first-para">We have gone to great lengths to avoid choosing three generalized coordinates and using Lagrange's equations! Now that we have done this work and developed some understanding of the body inertia matrix II, it will be easier to see how Lagrange's equations could be applied.</p>
+<p class="para">
+<a class="internaljump" href="#ch10fig071C14020F-F9F5-4415-973A-D906072C1A72">Figure 10.7</a> shows a choice of coordinates <i class="emphasis">q</i> = [<i class="emphasis">q</i><sub>1</sub>, <i class="emphasis">q</i><sub>2</sub>, <i class="emphasis">q</i><sub>3</sub>]<sup><i class="emphasis">T</i></sup> due to Euler. The body <i class="emphasis">x</i>-<i class="emphasis">y</i> plane intersects the spatial <i class="emphasis">x<sub>s</sub></i>-<i class="emphasis">y<sub>s</sub></i> plane along a line called the <i class="emphasis">line of nodes</i>. The coordinate <i class="emphasis">q</i><sub>1</sub> is the angle from the <i class="emphasis">x<sub>s</sub></i>-axis to the line of nodes, <i class="emphasis">q</i><sub>2</sub> is the angle from the line of nodes to the body <i class="emphasis">x</i>-axis, and <i class="emphasis">q</i><sub>3</sub> is the angle from the <i class="emphasis">z<sub>s</sub></i>-axis to the body <i class="emphasis">z</i>-axis. With some work, the angular velocity <span class="unicode">&omega;</span> = [<span class="unicode">&omega;</span><sub><i class="emphasis">x</i></sub>, <span class="unicode">&omega;</span><sub><i class="emphasis">y</i></sub>, <span class="unicode">&omega;</span><sub><i class="emphasis">z</i></sub>]<sup><i class="emphasis">T</i></sup> can be expressed in <a name="936"></a><a name="IDX-3701C14020F-F9F5-4415-973A-D906072C1A72"></a>terms of these coordinates:</p>
+<div class="equation" mathml="yes">
+<a name="937"></a><a name="ch10eqn471C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.47)&nbsp;</span></td><td valign="top"><img src="figu370_1.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="938"></a><a name="ch10eqn481C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.48)&nbsp;</span></td><td valign="top"><img src="figu370_2.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="939"></a><a name="ch10eqn491C14020F-F9F5-4415-973A-D906072C1A72"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(10.49)&nbsp;</span></td><td valign="top"><img src="figu370_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<div class="figure">
+<a name="940"></a><a name="ch10fig071C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1576','fig10-7_0.jpg','840','622')" name="IMG_1576" target="_self"><img alt="Image from book" id="IMG_1576" src="fig10-7.jpg" height="259" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 10.7: </span>Euler angles for a rotating body.</span>
+</div>
+<p class="para">Plugging these into the kinetic energy <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1577" src="figu370_4.jpg" height="26" width="111" title="" border="0" /></span></span>, we get the kinetic energy in the form <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1578" src="figu370_5.jpg" height="26" width="141" title="" border="0" /></span></span>, as we are used to. From there we can apply Lagrange's equations as before to get the dynamic equations of motion for generalized torques acting along the coordinates.</p>
+<p class="last-para">A good thing about this formulation is that we have used the fewest possible numbers to represent the orientation, and the kinematics are trivial. Significant drawbacks are the complexity of the equations, as well as the singularities in the coordinate representation.</p>
+</div>
+<div class="section">
+<h4 class="sect4-title">
+<a name="941"></a><a name="ch10lev1sec51C14020F-F9F5-4415-973A-D906072C1A72"></a>Problems</h4>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">Represent the configuration of a point mass in a plane by polar coordinates <i class="emphasis">q</i> = [<i class="emphasis">r</i>, <span class="unicode">&theta;</span>]<sup><i class="emphasis">T</i></sup> and use Lagrange's equations to find the equations of motion. Then write the inertia matrix <i class="emphasis">M</i>(<i class="emphasis">q</i>), derive the Christoffel symbols, and show that the dynamics of <a href="58.html#886" target="_parent" class="chapterjump">equation (10.10)</a> are equivalent to the equations you derived using the Lagrangian method.</p>
+</li>
+<li class="listitem">
+<p class="first-para">Use Lagrange's equations to derive the equations of motion of a 2R (two revolute joints) robot arm operating in a vertical plane. The first link has length <i class="emphasis">L</i><sub>1</sub>, mass <i class="emphasis">m</i><sub>1</sub>, and inertia <i class="emphasis">I</i><sub>1</sub> about the center of mass, and the center of mass is a distance <i class="emphasis">r</i><sub>1</sub> from the first joint. <a name="942"></a><a name="IDX-3711C14020F-F9F5-4415-973A-D906072C1A72"></a>For the second link, <i class="emphasis">m</i><sub>2</sub>, <i class="emphasis">I</i><sub>2</sub>, and <i class="emphasis">r</i><sub>2</sub> are defined similarly (<a class="internaljump" href="#ch10fig081C14020F-F9F5-4415-973A-D906072C1A72">figure 10.8</a>). Put the equations of motion in the standard form of <a href="58.html#882" target="_parent" class="chapterjump">equation (10.7)</a>.</p>
+<p class="figure">
+<a name="943"></a><a name="ch10fig081C14020F-F9F5-4415-973A-D906072C1A72"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_1579','fig10-8_0.jpg','697','615')" name="IMG_1579" target="_self"><img alt="Image from book" id="IMG_1579" src="fig10-8.jpg" height="309" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 10.8: </span>The 2R robot arm.</span>
+</p>
+</li>
+<li class="listitem">
+<p class="first-para">Find the eight Christoffel symbols for the mass matrix of problem 2.</p>
+</li>
+<li class="listitem">
+<p class="first-para">Use Lagrange's equations to find the equations of motion of a PR robot arm. Provide your own drawing and parameters and solve with these parameters. Put the equations in the standard form of <a href="58.html#882" target="_parent" class="chapterjump">equation (10.7)</a>.</p>
+</li>
+<li class="listitem">
+<p class="first-para">Find the inertia matrix of a round tube of length <i class="emphasis">L</i>, inner diameter <i class="emphasis">d</i><sub>1</sub>, outer diameter <i class="emphasis">d</i><sub>2</sub>, and density <span class="unicode">&rho;</span>. Choose a frame aligned with the principal axes of inertia. Remember that inertia matrices in a common frame can be added and subtracted.</p>
+</li>
+<li class="listitem">
+<p class="first-para">The inertia matrix of a body in a coordinate frame <i class="emphasis">x</i><sub>1</sub>-<i class="emphasis">y</i><sub>1</sub>-<i class="emphasis">z</i><sub>1</sub> at the center of mass of the body is <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1580" src="figu371_1.jpg" height="16" width="11" title="" border="0" /></span></span>. The orientation of this coordinate frame is <i class="emphasis">R</i><sub>1</sub> relative to a frame <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i>. The origin of <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i> is at <i class="emphasis">r</i><sub>1</sub> in the frame <i class="emphasis">x</i><sub>1</sub>-<i class="emphasis">y</i><sub>1</sub>-<i class="emphasis">z</i><sub>1</sub>. Transform the inertia matrix <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1581" src="figu371_2.jpg" height="16" width="12" title="" border="0" /></span></span> to an inertia matrix <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1582" src="figu371_3.jpg" height="13" width="6" title="" border="0" /></span></span> expressed in the <i class="emphasis">x</i>-<i class="emphasis">y</i>-<i class="emphasis">z</i> frame, where</p>
+<div class="informalequation" mathml="yes">
+<img src="figu371_4.jpg" />
+<br />
+
+</div>
+<p class="last-para">Also provide a drawing of the two frames showing their position and orientation relative to each other.</p>
+</li>
+<li class="listitem">
+<p class="first-para">Consider a barbell constructed of two spheres of radius 10 cm welded to the ends of a right circular cylinder bar of length 20 cm and radius 2 cm. Each body is a solid volume constructed of steel, with a mass density of 7850 kg/m<sup>3</sup>. Find the approximate inertia matrix in a principal-axis frame at the center of mass.<a name="944"></a><a name="IDX-3721C14020F-F9F5-4415-973A-D906072C1A72"></a>
+</p>
+</li>
+<li class="listitem">
+<p class="first-para">Prove the parallel-axis theorem [<a class="internaljump" href="#ch10eqn461C14020F-F9F5-4415-973A-D906072C1A72">equation (10.46)</a>].</p>
+</li>
+<li class="listitem">
+<p class="first-para">Derive <a class="internaljump" href="#ch10eqn471C14020F-F9F5-4415-973A-D906072C1A72">equations (10.47)</a>, <a class="internaljump" href="#ch10eqn481C14020F-F9F5-4415-973A-D906072C1A72">(10.48)</a>, and <a class="internaljump" href="#ch10eqn491C14020F-F9F5-4415-973A-D906072C1A72">(10.49)</a>.</p>
+</li>
+<li class="listitem">
+<p class="first-para">Write a program to simulate the tumbling motion of a rigid body in space.</p>
+</li>
+<li class="listitem">
+<p class="first-para">A point of mass <i class="emphasis">m</i> moves in three-dimensional space <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1584" src="figu372_1.jpg" height="15" width="19" title="" border="0" /></span></span>, actuated by three orthogonal thrusters, with equations of motion <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1585" src="figu372_2.jpg" height="16" width="65" title="" border="0" /></span></span> (no gravity). Now imagine that the mass (still with three thrusters) is constrained to move on a sphere of radius 1 centered at the origin of the inertial frame. Write the Pfaffian constraint and solve for <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_1586" src="figu372_3.jpg" height="16" width="9" title="" border="0" /></span></span> and the Lagrange multiplier <span class="unicode">&lambda;</span>.</p>
+</li>
+<li class="listitem">
+<p class="first-para">Find the projection matrix <i class="emphasis">P</i> for problem 11 and write the constrained equations of motion in the form of <a href="59.html#899" target="_parent" class="chapterjump">equation (10.20)</a>.</p>
+</li>
+<li class="listitem">
+<p class="first-para">In problem 11, it is possible to reduce the number of generalized coordinates from three to two and eliminate the Lagrange multiplier. Choose latitude (<i class="emphasis">q</i><sub>1</sub>) and longitude (<i class="emphasis">q</i><sub>2</sub>) coordinates to describe the position of the point on the sphere, and use Lagrange's equations to solve for the dynamics in these coordinates. Explain what the generalized forces are. Give the Christoffel symbols in these coordinates.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<div class="footnote">
+<p>
+<a name="924"></a><sup>[<a name="ftn.ch10fnt10_11C14020F-F9F5-4415-973A-D906072C1A72" href="#ch10fnt10_11C14020F-F9F5-4415-973A-D906072C1A72">1</a>]</sup>A globally correct representation of orientation can be achieved using only four numbers with quaternions (see <a href="82.html" target="_parent" class="chapterjump">appendix E</a>). We use the matrix representation because it allows the convenient use of matrix multiplications.</p>
+</div>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="59.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=741008676"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="61.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

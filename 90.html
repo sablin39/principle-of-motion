@@ -1,0 +1,228 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+F.5 Computing Distances between Polytopes in  and 
+</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Appendix F - 
+ Polyhedral Robots in Polyhedral Worlds</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(91,4,71,81,59,44,35,7,8,83,92,78,90,8,80)
+var a1 = new Array(1,7,13)
+var a2 = new Array(10,6,11)
+var a3 = new Array(12,5,9)
+var a4 = new Array(2,3,0)
+var a5 = new Array(14,4,8)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="89.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="91.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 10:52:27 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 10:52:28 UTC-->
+<div class="appendix">
+<a name="ap-f0946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="1325"></a><a name="ap-flev1sec50946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a><span class="section-titlelabel">F.5 </span>Computing Distances between Polytopes in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2635" src="figu509_1.jpg" height="21" width="26" title="" border="0" /></span></span> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2636" src="figu509_2.jpg" height="21" width="25" title="" border="0" /></span></span>
+</h2>
+<p class="first-para">
+<a name="1326"></a><a name="page5090946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>In many applications, it is useful to know the minimum distance between two objects in addition to knowing whether or not they are in contact. We have seen in <a href="8.html" target="_parent" class="chapterjump">chapter 2</a> that knowledge of distance is essential for implementing the Bug family of algorithms. Moreover, minimum distance calculations are essential for collision detection, which is merely a special case of minimum distance calculations: if the minimum distance between two objects is zero, then they are in contact. In this section, we present an algorithm originally described by Gilbert, Johnson and Keerthi for computing the distance between convex polytopes, commonly referred to as the GJK distance computation algorithm [163].</p>
+<p class="para">We define the distance between polytopes <i class="emphasis">A</i> and <i class="emphasis">B</i> as</p>
+<div class="equation" mathml="yes">
+<a name="1327"></a><a name="ap-feqn080946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(F.8)&nbsp;</span></td><td valign="top"><img src="figu509_3.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">We reformulate <a class="internaljump" href="#ap-feqn080946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">(F.8)</a> in terms of the Minkowski difference of two polytopes, i.e.,</p>
+<div class="equation" mathml="yes">
+<a name="1328"></a><a name="ap-feqn090946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(F.9)&nbsp;</span></td><td valign="top"><img src="figu509_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Using <a class="internaljump" href="#ap-feqn090946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">(F.9)</a> we can rewrite <a class="internaljump" href="#ap-feqn080946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">(F.8)</a> as</p>
+<div class="equation" mathml="yes">
+<a name="1329"></a><a name="ap-feqn100946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(F.10)&nbsp;</span></td><td valign="top"><img src="figu509_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">
+<a name="1330"></a><a name="page5100946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>and we have reduced the problem of computing the distance between two polytopes to the problem of computing the minimum distance from one polytope to the origin.</p>
+<p class="para">In <a href="88.html#1321" target="_parent" class="chapterjump">section F.3</a> we have seen an implementation of the Minkowski difference to construct the configuration space obstacle region. From this, it is easy to see that the Minkowski difference of two convex polytopes is itself a convex polytope. Since <i class="emphasis">Z</i> = <i class="emphasis">A</i> <span class="unicode">&#8854;</span> <i class="emphasis">B</i> is a convex set, and since the norm, ||<i class="emphasis">z</i>||, is a convex function, <i class="emphasis">z</i>* = arg min<sub><i class="emphasis">z</i><span class="unicode">&#8714;</span><i class="emphasis">Z</i></sub> ||<i class="emphasis">z</i>|| is unique. Thus, there is a unique solution to <a class="internaljump" href="#ap-feqn100946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">(F.10)</a>. Note that the values of <i class="emphasis">a</i> and <i class="emphasis">b</i> that achieve this minimum are <i class="emphasis">not</i> necessarily unique.</p>
+<p class="para">Although finding the distance from <i class="emphasis">Z</i> to the origin may seem simpler than computing the distance between <i class="emphasis">A</i> and <i class="emphasis">B</i>, it should be noted that this is actually the case only if the necessary computations to determine min<sub><i class="emphasis">z</i><span class="unicode">&#8714;</span><i class="emphasis">Z</i></sub> ||<i class="emphasis">z</i>|| are simpler than the computations required to compute <i class="emphasis">d</i>(<i class="emphasis">A, B</i>) directly. This turns out to be the case for the GJK algorithm. Before we examine how this algorithm can be applied to the Minkowski difference of <i class="emphasis">A</i> and <i class="emphasis">B</i>,we first describe the algorithm for the case of computing the distance from <i class="emphasis">Z</i> to the origin, for <i class="emphasis">Z</i> any convex polytope.</p>
+<p class="para">Suppose <i class="emphasis">Z</i> is a polytope in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2640" src="figu510_1.jpg" height="16" width="105" title="" border="0" /></span></span> (i.e., <i class="emphasis">n</i> = 2 for polygons, and <i class="emphasis">n</i> = 3 for polyhedra). The GJK algorithm iteratively constructs a sequence of polytopes, each of which is the convex hull of some subset of the vertices of <i class="emphasis">Z</i>, such that at each iteration the distance from the origin to the new polytope decreases. Before describing the algorithm more formally, we define some useful terminology and notation.</p>
+<p class="para">The <i class="emphasis">convex hull</i> of a set of points in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2641" src="figu510_2.jpg" height="15" width="22" title="" border="0" /></span></span> is the smallest convex set in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2642" src="figu510_3.jpg" height="15" width="22" title="" border="0" /></span></span> that contains those points. Efficient algorithms exist for computing the convex hull of general point sets, but for our purposes, we will not require such algorithms, since the GJK algorithm only deals with point sets of size three for polygons and size four for polyhedra. The convex hull of a set of three (noncollinear) points is the triangle defined by those points, and the convex hull of a set of four (noncoplanar) points is the tetrahedron defined by those points.</p>
+<p class="para">The GJK algorithm relies heavily on the notion of projection. In particular, for a convex set <i class="emphasis">Z</i> and a point <i class="emphasis">x</i>, the GJK algorithm computes the point <i class="emphasis">z</i> <span class="unicode">&#8714;</span> <i class="emphasis">Z</i> with maximal projection onto <i class="emphasis">x</i>. The value of this projection operation is defined by</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(F.11)&nbsp;</span></td><td valign="top"><img src="figu510_4.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">and the point <i class="emphasis">z</i>* that achieves this maximum is defined by</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(F.12)&nbsp;</span></td><td valign="top"><img src="figu510_5.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">The GJK algorithm for polygons is given as <a class="internaljump" href="#ap-fal230946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">Algorithm 23</a> below. In the first step, the working vertex set <i class="emphasis">V</i><sub>0</sub> is initialized to contain three arbitrarily selected vertices of the polygon, <i class="emphasis">Z</i>. At iteration <i class="emphasis">k</i>, the point <i class="emphasis">x<sub>k</sub></i> is determined as the point in the convex hull of the vertices in <i class="emphasis">V<sub>k</sub></i> that is nearest to the origin. Once <i class="emphasis">x<sub>k</sub></i> has been determined, <a name="1331"></a><a name="IDX-5110946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>in step 5 a new vertex <i class="emphasis">z<sub>k</sub></i> is chosen as the vertex of the original polygon, <i class="emphasis">Z</i>, whose projection onto <span class="unicode">&minus;</span><i class="emphasis">x<sub>k</sub></i> is maximal. The point <i class="emphasis">z<sub>k</sub></i> then replaces a vertex in the current working vertex set to obtain a new working vertex set, <i class="emphasis">V</i><sub><i class="emphasis">k</i>+1</sub>. The algorithm terminates (step 4) when <i class="emphasis">x<sub>k</sub></i> is itself the closest point in <i class="emphasis">Z</i> to the origin.</p>
+<div class="widecontent">
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">Algorithm 23: </span>GJK Algorithm</span><a name="1332"></a><a name="ap-fal230946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b> A polytope, <span class="inlinemediaobject"><img alt="Image from book" id="IMG_2645" src="figu511_1.jpg" height="18" width="64" title="" border="0" /></span>.
+<b class="bold">Output:</b> Minimal <span class="inlinemediaobject"><img alt="Image from book" id="IMG_2646" src="figu511_2.jpg" height="21" width="167" title="" border="0" /></span>
+1: <i class="emphasis">V</i><sub>0</sub> <span class="unicode">&larr;</span> {<i class="emphasis">y</i><sub>1</sub>, <i class="emphasis">y</i><sub>2</sub>, <i class="emphasis">y</i><sub>3</sub>} with <i class="emphasis">y<sub>i</sub></i> vertices of <i class="emphasis">Z</i>
+2: <i class="emphasis">k</i> <span class="unicode">&larr;</span> 0
+3: Compute <i class="emphasis">x<sub>k</sub></i>, the point in the convex hull of <i class="emphasis">V<sub>k</sub></i> that is nearest the origin, i.e., <i class="emphasis">x<sub>k</sub></i> =
+arg min<sub><i class="emphasis">x</i><span class="unicode">&#8714;</span><i class="emphasis">hull</i>(<i class="emphasis">V<sub>k</sub></i>)</sub> ||<i class="emphasis">x</i>||.
+4: Compute <i class="emphasis">h<sub>Z</sub></i> (-<i class="emphasis">x<sub>k</sub></i>), and terminate if ||<i class="emphasis">x<sub>k</sub></i>|| = <i class="emphasis">h<sub>Z</sub></i> (-<i class="emphasis">x<sub>k</sub></i>).
+5: <i class="emphasis">z<sub>k</sub></i> <span class="unicode">&larr;</span> <i class="emphasis">s<sub>Z</sub></i>(-<i class="emphasis">x<sub>k</sub></i>), i.e., the projection of <i class="emphasis">z<sub>k</sub></i> onto <i class="emphasis">x<sub>k</sub></i> is nearer the origin than the projection
+onto <i class="emphasis">x<sub>k</sub></i> of any other point in <i class="emphasis">Z</i>.
+6: <i class="emphasis">x<sub>k</sub></i> is contained in an edge of the convex hull of <i class="emphasis">V<sub>k</sub></i>. Let <i class="emphasis">V</i><sub><i class="emphasis">k</i>+1</sub> contain the two vertices
+that bound this edge and the point <i class="emphasis">z<sub>k</sub></i>.
+7: <i class="emphasis">k</i> <span class="unicode">&larr;</span> <i class="emphasis">k</i> + 1
+8: Go to 3.
+</pre>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="para">It is a fairly simple matter to extend the GJK algorithm (<a class="internaljump" href="#ap-fal230946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">Algorithm 23</a>) to the case in which <span class="inlinemediaobject"><img alt="Image from book" id="IMG_2647" src="figu511_3.jpg" height="16" width="105" title="" border="0" /></span>. Note that in the GJK algorithm, we never need an explicit representation of <i class="emphasis">Z</i>. We only need to compute two functions of <i class="emphasis">Z</i>: <i class="emphasis">h<sub>Z</sub></i>(<i class="emphasis">x</i>) and <i class="emphasis">s<sub>Z</sub></i>(<i class="emphasis">x</i>). Each of these can be computed without explicitly constructing <i class="emphasis">Z</i>. Let <span class="inlinemediaobject"><img alt="Image from book" id="IMG_2648" src="figu511_4.jpg" height="16" width="100" title="" border="0" /></span>. We can compute <span class="inlinemediaobject"><img alt="Image from book" id="IMG_2649" src="figu511_5.jpg" height="19" width="70" title="" border="0" /></span> as follows,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu511_6.jpg" />
+<br />
+
+</div>
+<div class="equation" mathml="yes">
+<a name="1333"></a><a name="ap-feqn130946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(F.13)&nbsp;</span></td><td valign="top"><img src="figu511_7.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">Now, suppose that <i class="emphasis">a</i>* achieves the value <i class="emphasis">h<sub>A</sub></i>(<i class="emphasis">x</i>) and <i class="emphasis">b</i>* achieves the value <i class="emphasis">h<sub>B</sub></i>(<span class="unicode">&minus;</span><i class="emphasis">x</i>). Then <i class="emphasis">z</i>* = <i class="emphasis">a</i>* <span class="unicode">&minus;</span> <i class="emphasis">b</i>*, and therefore we have</p>
+<div class="equation" mathml="yes">
+<a name="1334"></a><a name="ap-feqn140946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(F.14)&nbsp;</span></td><td valign="top"><img src="figu511_8.jpg" />
+<br />
+</td>
+</tr>
+</table>
+</div>
+<p class="para">
+<a name="1335"></a><a name="IDX-5120946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC"></a>Thus, we see that the GJK algorithm is easily extended to the case of the Minkowski difference of convex polygons. In steps 4 and 5, merely replace <i class="emphasis">h<sub>z</sub></i> and <i class="emphasis">s<sub>Z</sub></i> with the expressions <a class="internaljump" href="#ap-feqn130946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">(F.13)</a> and <a class="internaljump" href="#ap-feqn140946DC96-5AAB-4A6B-A3A0-E84EF6CB23CC">(F.14)</a>. To extend the algorithm to convex polyhedra, merely replace step 1 of the algorithm by</p>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">
+<i class="emphasis">V</i><sub>0</sub> <span class="unicode">&larr;</span> {<i class="emphasis">y</i><sub>1</sub>, <i class="emphasis">y</i><sub>2</sub>, <i class="emphasis">y</i><sub>3</sub>, <i class="emphasis">y</i><sub>4</sub>} with <i class="emphasis">y<sub>i</sub></i> vertices of <i class="emphasis">Z</i>
+</p>
+</li>
+</ol>
+<p class="para">and step 6 of the algorithm by</p>
+<ol class="orderedlist" start="6">
+<li class="first-listitem">
+<p class="first-para">
+<i class="emphasis">x<sub>k</sub></i> is contained in a face of the convex hull of <i class="emphasis">V<sub>k</sub></i>. Let <i class="emphasis">V</i><sub><i class="emphasis">k</i>+1</sub> contain the three vertices that bound this face and the point <i class="emphasis">z<sub>k</sub></i>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="89.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="91.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

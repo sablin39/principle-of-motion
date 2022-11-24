@@ -1,0 +1,317 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+5.1 Visibility Maps: The Visibility Graph</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Chapter 5 - 
+ Roadmaps</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(91,89,24,20,18,6,81,86,87,2,44,41,16,48,8)
+var a1 = new Array(9,14,5)
+var a2 = new Array(10,3,8)
+var a3 = new Array(2,4,12)
+var a4 = new Array(0,1,7)
+var a5 = new Array(13,11,6)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="30.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=687168681"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="32.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:pdf download link: Time:Sat, 24 Jan 2009 09:52:00 UTC--><div><!--XML Creation Time:Sat, 24 Jan 2009 09:52:00 UTC-->
+<div class="CHAPTER">
+<a name="ch05B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a>
+<div class="SECTION">
+<h2 class="FIRST-SECTION-TITLE">
+<a name="284"></a><a name="ch05lev1sec1B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a><span class="section-titlelabel">5.1 </span>Visibility Maps: The Visibility Graph</h2>
+<p class="first-para">The defining characteristics of a visibility map are that its nodes share an edge if they are within line of sight of each other, and that all points in the robot's free space are within line of sight of at least one node on the visibility map. This second statement implies that visibility maps, by definition, possess the properties of accessibility and departability. Connectivity must then be explicitly proved for each map for the structure to be a roadmap. In this section, we consider the simplest visibility map, called the <i class="EMPHASIS">visibility graph</i> [262,298].</p>
+<div class="SECTION">
+<h3 class="sect3-title">
+<a name="285"></a><a name="CH05LEV2SEC1B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a><span class="SECTION-TITLELABEL">5.1.1 </span>Visibility Graph Definition</h3>
+<p class="first-para">The standard visibility graph is defined in a two-dimensional polygonal configuration space (<a href="#ch05fig03" class="INTERNALJUMP">figure 5.3</a>). The nodes <span class="unicode">&nu;</span><sub><i class="EMPHASIS">i</i></sub> of the visibility graph include the start location, the goal location, and all the vertices of the configuration space obstacles. The graph edges <i class="EMPHASIS">e</i><sub><i class="EMPHASIS">ij</i></sub> are straight-line segments that connect two line-of-sight nodes <span class="UNICODE">&nu;</span><sub><i class="emphasis">i</i></sub> and <span class="unicode">&nu;</span><sub><i class="emphasis">j</i></sub>, i.e.,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu110_1.jpg" />
+<br />
+
+</div>
+<div class="FIGURE">
+<a name="286"></a><a name="CH05FIG03B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a><span class="FIGUREMEDIAOBJECT"><a name="img_442" href="javascript:PopImage('IMG_442','fig5-3_0.jpg','1000','577')" target="_self"><img alt="Image from book" border="0" id="IMG_442" height="202" title="Click To expand" src="fig5-3.jpg" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="FIGURE-TITLE"><span class="figure-titlelabel">Figure 5.3: </span>Polygonal configuration space with a start and goal.</span>
+</div>
+<p class="PARA">
+<a name="287"></a><a name="page111"></a>Note that we are embedding the nodes and edges in the free space and that edges of the polygonal obstacles also serve as edges in the visibility graph.</p>
+<p class="para">By definition, the visibility graph has the properties of accessibility and departability. We leave it to the reader as an exercise to prove the visibility graph is connected in a connected component of free space. Using the standard two-norm (Euclidean distance), the visibility graph can be searched for the shortest path (<a class="internaljump" href="#ch05fig04B1B5E075-1D23-4EFB-8E9E-C050601ACD33">figure 5.4</a>) [366]. The visibility graph can be defined for a three dimensional configuration space populated with polyhedral obstacles, but it does not necessarily contain the shortest paths in such a space.</p>
+<div class="FIGURE">
+<a name="288"></a><a name="CH05FIG04"></a><span class="FIGUREMEDIAOBJECT"><a name="img_443" href="javascript:PopImage('IMG_443','fig5-4_0.jpg','1000','569')" target="_self"><img alt="Image from book" border="0" id="IMG_443" height="199" title="Click To expand" src="fig5-4.jpg" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="FIGURE-TITLE"><span class="figure-titlelabel">Figure 5.4: </span>The thin solid lines delineate the edges of the visibility graph for the three obstacles represented as filled polygons. The thick dotted line represents the shortest path between the start and goal.</span>
+</div>
+<p class="para">Unfortunately, the visibility graph has many needless edges. The use of <i class="EMPHASIS">supporting</i> and <i class="emphasis">separating</i> lines can reduce the number of edges. A supporting line is tangent to two obstacles such that both obstacles lie on the same side of the line. For nonsmooth obstacles, such as polygons, a supporting line <i class="emphasis">l</i> can be tangent at a vertex <span class="unicode">&nu;</span><sub><i class="EMPHASIS">i</i></sub> if <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img border="0" alt="Image from book" height="17" id="IMG_444" src="figu111_1.jpg" title="" width="158" /></span></span>. A separating line is tangent to two obstacles such that the obstacles lie on opposite sides of the line. See <a class="INTERNALJUMP" href="#ch05fig05B1B5E075-1D23-4EFB-8E9E-C050601ACD33">figure 5.5</a> for an example of supporting and separating lines.</p>
+<div class="figure">
+<a name="289"></a><a name="ch05fig05B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a><span class="FIGUREMEDIAOBJECT"><a href="javascript:PopImage('IMG_445','fig5-5_0.jpg','904','892')" name="IMG_445" target="_self"><img alt="Image from book" border="0" height="345" id="IMG_445" title="Click To expand" src="fig5-5.jpg" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="FIGURE-TITLE"><span class="figure-titlelabel">Figure 5.5: </span>Supporting and separating line segments. Note that for polygonal obstacles, we use a nonsmooth notion of tangency.</span>
+</div>
+<p class="PARA">The <i class="EMPHASIS">reduced visibility graph</i> is soley constructed from supporting and separating lines. In other words, all edges of the original visibility graph that do not lie on a supporting or separating line are removed. <a href="#ch05fig06" class="INTERNALJUMP">Figure 5.6</a> contains the reduced visibility graph of the example in <a href="#ch05fig04B1B5E075-1D23-4EFB-8E9E-C050601ACD33" class="INTERNALJUMP">figure 5.4</a>. The notion of separating and supporting lines can be used to generalize the visibility graph method for curved obstacles [294].</p>
+<div class="FIGURE">
+<a name="290"></a><a name="ch05fig06B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a><span class="FIGUREMEDIAOBJECT"><a href="javascript:PopImage('IMG_446','fig5-6_0.jpg','1000','569')" name="IMG_446" target="_self"><img border="0" alt="Image from book" height="199" id="IMG_446" title="Click To expand" src="fig5-6.jpg" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="FIGURE-TITLE"><span class="figure-titlelabel">Figure 5.6: </span>Reduced visibility graph.</span>
+</div>
+<p class="para">
+<a name="291"></a><a name="idx-113B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a>At first, the definitions of the supporting and separating lines may seem to only apply to convex obstacles. However, this definition applies to nonconvex shapes as well. Here, we use the notion of local convexity. Recall that convex sets in the plane have the property that for all points on their boundary, there exists a line orthogonal to the surface normal that separates the convex set. This means that the set lies entirely on one side of the line. A set is <i class="EMPHASIS">locally convex</i> at a point <i class="EMPHASIS">c</i> if the hyperplane tangent to <i class="EMPHASIS">c</i> separates the points in a neighborhood of <i class="emphasis">c</i> on the boundary of the convex set <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img alt="Image from book" border="0" height="14" id="IMG_447" title="" src="figu113_1.jpg" width="29" /></span></span>. In other words, when <i class="emphasis">N</i> is the surface normal at <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="INLINEMEDIAOBJECT"><img border="0" alt="Image from book" height="14" id="IMG_448" title="" src="figu113_2.jpg" width="46" /></span></span> is locally convex at <i class="EMPHASIS">c</i> if for all <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img alt="Image from book" border="0" id="IMG_449" height="20" src="figu113_3.jpg" title="" width="400" /></span></span>. Convex obstacles are locally convex everywhere on the boundary of the set. <a class="INTERNALJUMP" href="#ch05fig07">Figure 5.7</a> contains a reduced visibility graph for a configuration space with nonconvex obstacles. The reduced visibility graph is beneficial because it has fewer edges making the search for the shortest path more efficient.</p>
+<div class="FIGURE">
+<a name="292"></a><a name="ch05fig07B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_450','fig5-7_0.jpg','1000','434')" name="img_450" target="_self"><img border="0" alt="Image from book" id="IMG_450" height="152" src="fig5-7.jpg" title="Click To expand" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 5.7: </span>Reduced visibility graph with nonconvex obstacles.</span>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="293"></a><a name="CH05LEV2SEC2"></a><span class="section-titlelabel">5.1.2 </span>Visibility Graph Construction</h3>
+<p class="FIRST-PARA">Let <i class="emphasis">V</i> ={?<sub>1</sub>, ..., <span class="unicode">&nu;</span><sub><i class="emphasis">n</i></sub>} be the set of vertices of the polygons in the configuration space as well as the start and goal configurations. To construct the visibility graph, for each <span class="unicode">&nu;</span> <span class="unicode">&#8714;</span> <i class="EMPHASIS">V</i> we must determine which other vertices are visible to <span class="UNICODE">&nu;</span>. The most obvious wayto make this determination is to test all line segments <span class="unicode">&nu;</span><span class="unicode">&nu;</span><sub><i class="emphasis">i</i></sub>, <span class="unicode">&nu;</span> <span class="unicode">&ne;</span> <span class="unicode">&nu;</span><sub><i class="emphasis">i</i></sub> to see if they intersect an edge of any polygon. For a particular <span class="unicode">&nu;</span><span class="UNICODE">&nu;</span><sub><i class="EMPHASIS">i</i></sub>, there are <i class="emphasis">O</i>(<i class="EMPHASIS">n</i>) intersections to check because there are <i class="emphasis">O</i>(<i class="EMPHASIS">n</i>) edges from the obstacles. Now, there are <i class="EMPHASIS">O</i>(<i class="emphasis">n</i>) potential segments emanating from <span class="unicode">&nu;</span>, so for a particular <span class="UNICODE">&nu;</span>, there are <i class="EMPHASIS">O</i>(<i class="emphasis">n</i><sup>2</sup>) tests to determine which vertices are indeed visible from <span class="UNICODE">&nu;</span>. This must be done for all <span class="unicode">&nu;</span> <span class="unicode">&#8714;</span> <i class="EMPHASIS">V</i> and thus the construction of the visibility graph would have complexity <i class="EMPHASIS">O</i>(<i class="emphasis">n</i><sup>3</sup>).</p>
+<p class="para">
+<a name="294"></a><a name="PAGE114B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a>There is a more efficient way to compute the set of vertices that are visible from <span class="UNICODE">&nu;</span>. Imagine a rotating beam of light emanating from a lighthouse beacon. At any moment, the beam illuminates the object that is closest to the lighthouse. Furthermore, as the beam rotates, the obstacle that is illuminated changes only at a finite number of orientations of the beam. If the obstacles in the space are polygons, these orientations occur when the beam is incident on a vertex of some polygon. This insight motivates a class of algorithms known in the computational geometry literature as <i class="emphasis">plane sweep algorithms</i>.</p>
+<p class="para">A plane sweep algorithm solves a problem by sweeping a line, called the <i class="emphasis">sweep line</i>, across the plane, pausing at each of the vertices of the obstacles. At each vertex, the algorithm updates a partial solution to the problem. Plane sweep algorithms are used to efficiently compute the intersections of a set of line segments in the plane, to compute intersections of polygons, and to solve many other computational geometry problems.</p>
+<p class="para">For the problem of computing the set of vertices visible from <span class="unicode">&nu;</span>, we will let the sweep line, <i class="emphasis">l</i>, bea half-line emanating from <span class="unicode">&nu;</span>, and we will use a rotational sweep, rotating <i class="emphasis">l</i> from 0 to 2<span class="unicode">&pi;</span>. The key to this algorithm is to incrementally maintain the set of edges that intersect <i class="emphasis">l</i>, sorted in order of increasing distance from <span class="unicode">&nu;</span>.If a vertex <span class="unicode">&nu;</span><sub><i class="emphasis">i</i></sub> is visible to <span class="unicode">&nu;</span>, then it should be added to the visibility graph (<a href="#ch05al05B1B5E075-1D23-4EFB-8E9E-C050601ACD33" class="internaljump">algorithm 5</a>). It is <a name="295"></a><a name="idx-115B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a>straightforward to determine if <span class="unicode">&nu;</span><sub><i class="emphasis">i</i></sub> is visible to <span class="unicode">&nu;</span>. Let <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" border="0" id="IMG_451" height="12" title="" src="figu115_1.jpg" width="10" /></span></span> be the sorted list of edges that intersects the half-line emanating from <span class="unicode">&nu;</span>; the set <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" border="0" id="IMG_452" height="12" title="" src="figu115_2.jpg" width="10" /></span></span> is incrementally constructed as the algorithm runs. If the line segment <span class="UNICODE">&nu;</span><span class="unicode">&nu;</span><sub><i class="EMPHASIS">i</i></sub> does not intersect the closest edge in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img border="0" alt="Image from book" id="IMG_453" height="12" src="figu115_3.jpg" title="" width="10" /></span></span>, and if <i class="emphasis">l</i> does not lie between the two edges incident on <span class="unicode">&nu;</span> (the sweep line does not intersect the interior of the obstacle at <span class="UNICODE">&nu;</span>), then <span class="UNICODE">&nu;</span><sub><i class="emphasis">i</i></sub> is visible from <span class="UNICODE">&nu;</span>.</p>
+<div class="WIDECONTENT">
+<div class="example">
+<span class="EXAMPLE-TITLE"><span class="example-titlelabel">Algorithm 5: </span>Rotational Plane Sweep Algorithm</span><a name="296"></a><a name="CH05AL05B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a>
+<div class="FORMALBODY">
+<table cellpadding="0" border="0" class="BLUELINE" cellspacing="0" width="100%">
+<tr>
+<td class="BLUECELL" bgcolor="000080"><font color="010100" face="Arial" size="2"><b><img alt="Image from book" border="0" height="2" src="_.gif" width="1" title="Start example" /></b></font></td>
+</tr>
+</table>
+<pre class="programlisting">
+<b class="bold">Input:</b> A set of vertices {<span class="unicode">&nu;</span><sub><i class="emphasis">i</i></sub>} (whose edges do not intersect) and a vertex <span class="unicode">&nu;</span>
+<b class="bold">Output:</b> A subset of vertices from {<span class="UNICODE">&nu;</span><sub><i class="EMPHASIS">i</i></sub>} that are within line of sight of <span class="UNICODE">&nu;</span>
+1: For each vertex <i class="emphasis">v</i><sub><i class="EMPHASIS">i</i></sub>, calculate <span class="unicode">&alpha;</span><sub><i class="EMPHASIS">i</i></sub>, the angle from the horizontal axis to the line segment
+<span class="unicode">&nu;</span><span class="unicode">&nu;</span><sub><i class="emphasis">i</i></sub>.
+2: Create the vertex list <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="INLINEMEDIAOBJECT"><img border="0" alt="Image from book" height="12" id="IMG_454" title="" src="figu114_1.jpg" width="10" /></span></span>, containing the <span class="UNICODE">&alpha;</span><sub><i class="emphasis">i</i></sub> 's sorted in increasing order.
+3: Create the active list <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img alt="Image from book" border="0" id="IMG_455" height="12" title="" src="figu114_2.jpg" width="10" /></span></span>, containing the sorted list of edges that intersect the horizontal
+half-line emanating from <span class="unicode">&nu;</span>.
+4: <b class="BOLD">for all</b> <span class="unicode">&alpha;</span><sub><i class="emphasis">i</i></sub> <b class="bold">do</b>
+5:   <b class="BOLD">if</b> <span class="UNICODE">&nu;</span><sub><i class="emphasis">i</i></sub> is visible to <span class="UNICODE">&nu;</span> <b class="bold">then</b>
+6:      Add the edge (<span class="unicode">&nu;</span>, <span class="UNICODE">&nu;</span><sub><i class="EMPHASIS">i</i></sub> )to the visibility graph.
+7:   <b class="BOLD">end if</b>
+8:   <b class="bold">if</b> <span class="UNICODE">&nu;</span><sub><i class="EMPHASIS">i</i></sub> is the beginning of an edge, <i class="EMPHASIS">E</i>, not in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="INLINEMEDIAOBJECT"><img border="0" alt="Image from book" height="12" id="IMG_456" title="" src="figu114_3.jpg" width="10" /></span></span> <b class="bold">then</b>
+9:      Insert the <i class="EMPHASIS">E</i> into <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="INLINEMEDIAOBJECT"><img alt="Image from book" border="0" height="12" id="IMG_457" src="figu114_4.jpg" title="" width="10" /></span></span>.
+10:   <b class="bold">end if</b>
+11:   <b class="bold">if</b> <span class="unicode">&nu;</span><sub><i class="EMPHASIS">i</i></sub> is the end of an edge in <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="INLINEMEDIAOBJECT"><img alt="Image from book" border="0" height="12" id="IMG_458" src="figu114_5.jpg" title="" width="10" /></span></span> <b class="bold">then</b>
+12:      Delete the edge from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img alt="Image from book" border="0" id="IMG_459" height="12" src="figu114_6.jpg" title="" width="10" /></span></span>.
+13:   <b class="bold">end if</b>
+14:  <b class="BOLD">end for</b>
+</pre>
+<table border="0" cellpadding="0" cellspacing="0" class="BLUELINE" width="100%">
+<tr>
+<td bgcolor="000080" class="BLUECELL"><font color="010100" face="Arial" size="2"><b><img border="0" alt="Image from book" src="_.gif" height="2" title="End example" width="1" /></b></font></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="BLANKSPACE" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<p class="para">
+<a class="INTERNALJUMP" href="#ch05fig08B1B5E075-1D23-4EFB-8E9E-C050601ACD33">Figure 5.8</a> shows an example configuration space containing two obstacles with vertices <span class="UNICODE">&nu;</span><sub>1</sub>, ..., <span class="unicode">&nu;</span><sub>8</sub>. <a class="internaljump" href="#ch05table01B1B5E075-1D23-4EFB-8E9E-C050601ACD33">Table 5.1</a> shows how the data structures are updated as the algorithm proceeds from initialization to termination. Step 1 of the algorithm determines the angles, <span class="unicode">&alpha;</span><sub><i class="emphasis">i</i></sub> 's, at which the line <i class="emphasis">l</i> will pause; such angles correspond to the vertices of the obstacles. In step 2 of the algorithm, these angles are used to construct the vertex list, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" border="0" height="12" id="IMG_460" title="" src="figu115_4.jpg" width="10" /></span></span>, and in step 3 the active list <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img alt="Image from book" border="0" id="IMG_461" height="12" src="figu115_5.jpg" title="" width="10" /></span></span> is initialized. After initialization, <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img border="0" alt="Image from book" height="12" id="IMG_462" src="figu115_6.jpg" title="" width="10" /></span></span> and <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img border="0" alt="Image from book" height="12" id="IMG_463" title="" src="figu115_7.jpg" width="10" /></span></span> are the sorted lists:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu115_8.jpg" />
+<br />
+
+</div>
+<div class="FIGURE">
+<a name="297"></a><a name="ch05fig08B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a><span class="figuremediaobject"><a name="img_465" href="javascript:PopImage('IMG_465','fig5-8_0.jpg','1000','813')" target="_self"><img alt="Image from book" border="0" height="285" id="IMG_465" src="fig5-8.jpg" title="Click To expand" width="350" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 5.8: </span>An example of the sweep line algorithm at work for an environment containing two rectangular obstacles.</span>
+</div>
+<a name="298"></a><a name="ch05table01B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a>
+<table border="1" class="table" id="ch05table01" linktabletoexcel="yes">
+<caption class="table-title">
+<span class="TABLE-TITLE"><span class="TABLE-TITLELABEL">Table 5.1: </span>Table showing the progress of the rotational plane sweep algorithm for the environment of <a class="internaljump" href="#ch05fig08">figure 5.8</a>.</span>
+<br />
+
+</caption>
+<thead>
+<tr valign="top">
+<th align="center" class="th" scope="col">
+<p class="TABLE-PARA">Vertex</p>
+</th><th align="center" class="TH" scope="col">
+<p class="table-para">New <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="INLINEMEDIAOBJECT"><img alt="Image from book" border="0" height="12" id="IMG_466" src="figu116_1.jpg" title="" width="10" /></span></span>
+</p>
+</th><th align="left" class="TH" scope="col">
+<p class="table-para">Actions</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td align="center" class="TD">
+<p class="table-para">Initialization</p>
+</td> <td align="center" class="td">
+<p class="TABLE-PARA">{<i class="EMPHASIS">E</i><sub>4</sub>, <i class="emphasis">E</i><sub>2</sub>, <i class="emphasis">E</i><sub>8</sub>, <i class="EMPHASIS">E</i><sub>6</sub>}</p>
+</td><td align="left" class="TD">
+<p class="table-para">Sort edges intersecting horizontal half-line</p>
+</td>
+</tr>
+<tr valign="top">
+<td align="center" class="td">
+<p class="table-para">
+<span class="unicode">&alpha;</span><sub>3</sub>
+</p>
+</td> <td align="center" class="td">
+<p class="table-para">{<i class="emphasis">E</i><sub>4</sub>, <i class="emphasis">E</i><sub>3</sub>, <i class="emphasis">E</i><sub>8</sub>, <i class="emphasis">E</i><sub>6</sub>}</p>
+</td><td align="left" class="td">
+<p class="table-para">Delete <i class="emphasis">E</i><sub>2</sub> from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" border="0" id="IMG_467" height="12" src="figu116_2.jpg" title="" width="10" /></span></span>. Add <i class="emphasis">E</i><sub>3</sub> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img border="0" alt="Image from book" height="12" id="IMG_468" src="figu116_3.jpg" title="" width="10" /></span></span>.</p>
+</td>
+</tr>
+<tr valign="top">
+<td align="center" class="td">
+<p class="table-para">
+<span class="unicode">&alpha;</span><sub>7</sub>
+</p>
+</td> <td class="td" align="center">
+<p class="table-para">{<i class="emphasis">E</i><sub>4</sub>, <i class="EMPHASIS">E</i><sub>3</sub>, <i class="emphasis">E</i><sub>8</sub>, <i class="EMPHASIS">E</i><sub>7</sub>}</p>
+</td><td class="TD" align="left">
+<p class="table-para">Delete <i class="emphasis">E</i><sub>6</sub> from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="INLINEMEDIAOBJECT"><img border="0" alt="Image from book" id="IMG_469" height="12" src="figu116_4.jpg" title="" width="10" /></span></span>. Add <i class="EMPHASIS">E</i><sub>7</sub> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="INLINEMEDIAOBJECT"><img alt="Image from book" border="0" id="IMG_470" height="12" title="" src="figu116_5.jpg" width="10" /></span></span>.</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="TD" align="center">
+<p class="table-para">
+<span class="UNICODE">&alpha;</span><sub>4</sub>
+</p>
+</td> <td class="td" align="center">
+<p class="TABLE-PARA">{<i class="EMPHASIS">E</i><sub>8</sub>, <i class="EMPHASIS">E</i><sub>7</sub>}</p>
+</td> <td align="left" class="TD">
+<p class="table-para">Delete <i class="emphasis">E</i><sub>3</sub> from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" border="0" height="12" id="IMG_471" src="figu116_6.jpg" title="" width="10" /></span></span>. Delete <i class="emphasis">E</i><sub>4</sub> from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="INLINEMEDIAOBJECT"><img border="0" alt="Image from book" id="IMG_472" height="12" title="" src="figu116_7.jpg" width="10" /></span></span>. ADD (<span class="UNICODE">&nu;</span>, <span class="UNICODE">&nu;</span><sub>4</sub>)to visibility graph</p>
+</td>
+</tr>
+<tr valign="top">
+<td align="center" class="td">
+<p class="TABLE-PARA">
+<span class="unicode">&alpha;</span><sub>8</sub>
+</p>
+</td><td class="TD" align="center">
+<p class="table-para">{}</p>
+</td> <td align="left" class="td">
+<p class="table-para">Delete <i class="EMPHASIS">E</i><sub>7</sub> from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="INLINEMEDIAOBJECT"><img alt="Image from book" border="0" height="12" id="IMG_473" src="figu116_8.jpg" title="" width="10" /></span></span>. Delete <i class="emphasis">E</i><sub>8</sub> from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img border="0" alt="Image from book" id="IMG_474" height="12" src="figu116_9.jpg" title="" width="10" /></span></span>. ADD (<span class="unicode">&nu;</span>, <span class="UNICODE">&nu;</span><sub>8</sub>)to visibility graph</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="center">
+<p class="table-para">
+<span class="unicode">&alpha;</span><sub>1</sub>
+</p>
+</td><td align="center" class="TD">
+<p class="TABLE-PARA">{<i class="emphasis">E</i><sub>1</sub>, <i class="EMPHASIS">E</i><sub>4</sub>}</p>
+</td> <td align="left" class="td">
+<p class="table-para">Add <i class="EMPHASIS">E</i><sub>4</sub> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="INLINEMEDIAOBJECT"><img alt="Image from book" border="0" height="12" id="IMG_475" src="figu116_10.jpg" title="" width="10" /></span></span>. Add <i class="emphasis">E</i><sub>1</sub> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="INLINEMEDIAOBJECT"><img border="0" alt="Image from book" height="12" id="IMG_476" title="" src="figu116_11.jpg" width="10" /></span></span>. ADD (<span class="UNICODE">&nu;</span>, <span class="UNICODE">&nu;</span><sub>1</sub>)to visibility graph</p>
+</td>
+</tr>
+<tr valign="top">
+<td align="center" class="TD">
+<p class="table-para">
+<span class="UNICODE">&alpha;</span><sub>5</sub>
+</p>
+</td> <td align="center" class="TD">
+<p class="TABLE-PARA">{<i class="emphasis">E</i><sub>4</sub>, <i class="emphasis">E</i><sub>1</sub>, <i class="emphasis">E</i><sub>8</sub>, <i class="EMPHASIS">E</i><sub>5</sub>}</p>
+</td><td class="TD" align="left">
+<p class="TABLE-PARA">Add <i class="emphasis">E</i><sub>8</sub> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img border="0" alt="Image from book" height="12" id="IMG_477" title="" src="figu116_12.jpg" width="10" /></span></span>. Add <i class="emphasis">E</i><sub>5</sub> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="INLINEMEDIAOBJECT"><img border="0" alt="Image from book" id="IMG_478" height="12" title="" src="figu116_13.jpg" width="10" /></span></span>.</p>
+</td>
+</tr>
+<tr valign="top">
+<td align="center" class="TD">
+<p class="TABLE-PARA">
+<span class="unicode">&alpha;</span><sub>2</sub>
+</p>
+</td><td class="TD" align="center">
+<p class="TABLE-PARA">{<i class="emphasis">E</i><sub>4</sub>, <i class="emphasis">E</i><sub>2</sub>, <i class="emphasis">E</i><sub>8</sub>, <i class="emphasis">E</i><sub>5</sub>}</p>
+</td><td class="td" align="left">
+<p class="table-para">Delete <i class="emphasis">E</i><sub>1</sub> from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="INLINEQUATION"><span class="inlinemediaobject"><img alt="Image from book" border="0" height="12" id="IMG_479" src="figu116_14.jpg" title="" width="10" /></span></span>. Add <i class="EMPHASIS">E</i><sub>2</sub> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img border="0" alt="Image from book" id="IMG_480" height="12" src="figu116_15.jpg" title="" width="10" /></span></span>.</p>
+</td>
+</tr>
+<tr valign="top">
+<td class="td" align="center">
+<p class="table-para">
+<span class="unicode">&alpha;</span><sub>6</sub>
+</p>
+</td><td align="center" class="TD">
+<p class="TABLE-PARA">{<i class="emphasis">E</i><sub>4</sub>, <i class="emphasis">E</i><sub>2</sub>, <i class="emphasis">E</i><sub>8</sub>, <i class="emphasis">E</i><sub>6</sub>}</p>
+</td> <td align="left" class="td">
+<p class="table-para">Delete <i class="emphasis">E</i><sub>5</sub> from <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="INLINEMEDIAOBJECT"><img border="0" alt="Image from book" id="IMG_481" height="12" title="" src="figu116_16.jpg" width="10" /></span></span>. Add <i class="EMPHASIS">E</i><sub>6</sub> to <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="INLINEMEDIAOBJECT"><img border="0" alt="Image from book" id="IMG_482" height="12" src="figu116_17.jpg" title="" width="10" /></span></span>.</p>
+</td>
+</tr>
+<tr valign="top">
+<td align="center" class="td">
+<p class="TABLE-PARA">Termination</p>
+</td><td align="center" class="TD">&nbsp;</td><td align="left" class="td">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p class="para">
+<a name="299"></a><a name="IDX-116B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a>At termination, the algorithm has added three new edges to the visibility graph: (<span class="UNICODE">&nu;</span>, <span class="unicode">&nu;</span><sub>4</sub>), (<span class="UNICODE">&nu;</span>, <span class="unicode">&nu;</span><sub>8</sub>), and (<span class="unicode">&nu;</span>, <span class="UNICODE">&nu;</span><sub>1</sub>).</p>
+<p class="PARA">The complexity of <a class="internaljump" href="#ch05al05">algorithm 5</a> is <i class="emphasis">O</i>(<i class="EMPHASIS">n</i><sup>2</sup> log <i class="EMPHASIS">n</i>). The time required by step 1 is <i class="emphasis">O</i>(<i class="emphasis">n</i>), since each vertex must be visited exactly once. For step 2, the required time is <i class="emphasis">O</i>(<i class="emphasis">n</i> log <i class="emphasis">n</i>), since this is the time required to sort a list of <i class="emphasis">n</i> elements. For step 3, the set of active edges can be computed in <i class="emphasis">O</i>(<i class="emphasis">n</i>) time by merely testing each edge to see if it intersects the horizontal axis. In the worst case, if every edge were to intersect the horizontal axis, this set could be sorted in time <i class="emphasis">O</i>(<i class="emphasis">n</i> log <i class="emphasis">n</i>). The main loop of the program (step 4) iterates <i class="emphasis">n</i> times (once for each vertex). At each iteration, the algorithm must perform basic bookkeeping operations (insert or delete), but these can be done in time <i class="emphasis">O</i>(log <i class="emphasis">n</i>)ifan appropriate data structure, such as a balanced tree, is used to maintain <span xmlns:mml="http://www.w3.org/1998/Math/MathML" class="inlinequation"><span class="inlinemediaobject"><img alt="Image from book" border="0" id="IMG_483" height="12" src="figu116_18.jpg" title="" width="10" /></span></span> Thus, the time required by step 4 is <i class="emphasis">O</i>(<i class="emphasis">n</i> log <i class="emphasis">n</i>), and therefore the total time complexity of the algorithm is <i class="emphasis">O</i>(<i class="emphasis">n</i><sup>2</sup> log <i class="emphasis">n</i>).</p>
+<p class="last-para">Finally, we have not considered here the case when <i class="emphasis">l</i> may simultaneously intersect multiple vertices. In order for this to occur, three vertices must be collinear. When this does occur, the problem can be resolved by slightly perturbing the position of one of <a name="300"></a><a name="IDX-117B1B5E075-1D23-4EFB-8E9E-C050601ACD33"></a>the three vertices. When no three vertices are collinear, we say that the polygons are in <i class="emphasis">general position</i>, and the general position assumption is common for computational geometry algorithms. It is also possible to modify the visibility test to account for nongeneral configurations, and this is addressed in [124].</p>
+</div>
+</div>
+</div> </div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="30.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" href="viewer.asp?bookid=10749&amp;chunkid=687168681"><img width="1" height="1" hspace="1" border="0" alt="" src="images/_.gif" /></a><a border="0" accesskey="N" href="32.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>

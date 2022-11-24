@@ -1,0 +1,616 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>
+12.4 Simple Mechanical Control Systems</title>
+<script language="JavaScript1.2" src="dui.js"></script>
+<script language="JavaScript1.2" src="chaptertoc.js"></script>
+<script type="text/JavaScript" language="JavaScript1.2" src="recommendMe.js"></script>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="zapplication.css" type="text/css" />
+<link rel="stylesheet" href="zshowkeywords.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="ns.content.books24x7.css" />
+</head>
+<body leftmargin="20" topmargin="5" rightmargin="0" bgcolor="#FFFFFF">
+<a href="#content" tabindex="1"><img src="images/_.gif" width="1" height="1" alt="Skip Navigation" title="Skip Navigation" border="0" /></a><div style="position:absolute;display:none;" id="thebubblediv"> <?xml version='1.0' encoding='utf-8'?><table id="bubbledown" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="left" class="b24-bubbleoutside" background="images/di_legend_nw_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td align="center" class="b24-bubbleoutside" background="images/di_legend_n_d.gif" width="165" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td align="right" class="b24-bubbleoutside" background="images/di_legend_ne_d.gif" width="32" height="32"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbledownicons"><tr id="d0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="d1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="d2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="d4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="d8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="d16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="d524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="d1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="d2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="d32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="d64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="d128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="d256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="d2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="d4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="d262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="d4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="d8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="d33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e_d.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="left" background="images/di_legend_sw_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td><td class="b24-bubbleoutside" align="center" background="images/di_legend_s_d.gif" width="165" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="165" /></td><td class="b24-bubbleoutside" align="right" background="images/di_legend_se_d.gif" width="32" height="70"><img src="images/_.gif" alt="" border="0" height="70" width="32" /></td></tr></table><table id="bubbleup" border="0" cellpadding="0" cellspacing="0" xmlns:dc="http://purl.org/dc/elements/1.0/"><tr><td align="LEFT" class="b24-bubbleoutside" background="images/di_legend_nw.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td><td align="CENTER" class="b24-bubbleoutside" background="images/di_legend_n.gif" width="165" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="165" /></td><td align="RIGHT" class="b24-bubbleoutside" background="images/di_legend_ne.gif" width="32" height="71" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="71" width="32" /></td></tr><tr><td class="b24-bubbleoutside" background="images/di_legend_w.gif" width="32" height="1" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td><td class="b24-boxcontent" bgcolor="#ffffff"><table border="0" cellpadding="0" cellspacing="5" width="195" id="bubbleupicons"><tr id="u0"><td colspan="2"><span class="b24-bubblelegendheader">Icon Legend</span></td></tr><tr valign="TOP" id="u1"><td><img width="16" height="16" border="0" src="images/i_bookreview.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a review.</span></td></tr><tr valign="TOP" id="u2"><td><img width="16" height="16" border="0" src="images/i_summary.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a summary.</span></td></tr><tr valign="TOP" id="u4"><td><img width="16" height="16" border="0" src="images/i_blueprint.gif" /></td><td><span class="b24-bubblelegendtext">Content type is an ExecBlueprint.</span></td></tr><tr valign="TOP" id="u8"><td><img width="16" height="16" border="0" src="images/i_reportb.gif" /></td><td><span class="b24-bubblelegendtext">Content type is a report.</span></td></tr><tr valign="TOP" id="u16"><td><img width="16" height="16" border="0" src="images/i_video.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is video program.  Video programs are viewed using Adobe Flash 8 or newer.</span></td></tr><tr valign="TOP" id="u524288"><td><img width="16" height="16" border="0" src="images/i_recorded.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a recorded session</span></td></tr><tr valign="TOP" id="u1048576"><td><img width="16" height="16" border="0" src="images/i_journal_b.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a journal.</span></td></tr><tr valign="TOP" id="u2097152"><td><img width="16" height="16" border="0" src="images/i_newsletter.gif" /></td><td align="LEFT"><span class="b24-bubblelegendtext">Content type is a newsletter.</span></td></tr><tr valign="TOP" id="u32"><td><img width="16" height="16" border="0" src="images/i_companion.gif" /></td><td><span class="b24-bubblelegendtext">Includes companion files which can be downloaded by clicking on the links found at the bottom of the launch page for programs. </span></td></tr><tr valign="TOP" id="u64"><td><img width="16" height="16" border="0" src="images/i_book.gif" /></td><td><span class="b24-bubblelegendtext">Title is in personal folders</span></td></tr><tr valign="TOP" id="u128"><td><img width="16" height="16" border="0" src="images/i_notes.gif" /></td><td><span class="b24-bubblelegendtext">Contains a bookmark which can be found by clicking the link on the Table of Contents page. </span></td></tr><tr valign="TOP" id="u256"><td><img width="16" height="16" border="0" src="images/i_corporatenotes.gif" /></td><td><span class="b24-bubblelegendtext">Corporate Annotations</span></td></tr><tr valign="TOP" id="u2048"><td><img width="16" height="16" border="0" src="images/i_cdcontent.gif" /></td><td><span class="b24-bubblelegendtext">Includes supplemental CD content which can be downloaded by clicking the link found on the Table of Contents page</span></td></tr><tr valign="TOP" id="u4096"><td><img width="16" height="16" border="0" src="images/i_sound.gif" /></td><td><span class="b24-bubblelegendtext">Offers an audio MP3 file which can be retrieved by clicking the audio download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16384"><td><img width="16" height="16" border="0" src="images/i_lit.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft Reader file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u32768"><td><img width="16" height="16" border="0" src="images/i_palm.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Palm file which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u8192"><td><img width="16" height="16" border="0" src="images/i_pdf.gif" /></td><td><span class="b24-bubblelegendtext">Offers a full text Adobe PDF which can be retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u65536"><td><img width="16" height="16" border="0" src="images/i_chapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Supports downloadable chapters which can only be downloaded by clicking the download tool when viewing a content page. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u131072"><td><img width="16" height="16" border="0" src="images/i_starchapterpdf.gif" /></td><td><span class="b24-bubblelegendtext">Includes Chapters to Go. These premium downloadable chapters are retrieved by clicking the download tool. </span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u16777216"><td><img width="16" height="16" border="0" src="images/i_ppt.gif" /></td><td><span class="b24-bubblelegendtext">Offers a downloadable Microsoft PowerPoint file which can be retrieved by clicking the download tool.</span><img width="12" height="12" border="0" src="images/dui_tool_download.gif" /></td></tr><tr valign="TOP" id="u262144"><td><img width="16" height="16" border="0" src="images/i_bookintopic.gif" /></td><td><span class="b24-bubblelegendtext">Title is in corporate topics</span></td></tr><tr valign="TOP" id="u4194304"><td><img width="16" height="16" border="0" src="images/i_checkmark_yes.gif" /></td><td><span class="b24-bubblelegendtext">I recommend this title.  If many users recommend this title a Yes! seal will appear on top left corner of the title graphic. </span><img width="26" height="27" border="0" src="images/best_reads_sm.seal.png" /></td></tr><tr valign="TOP" id="u8388608"><td><img width="16" height="16" border="0" src="images/i_checkmark_no.gif" /></td><td><span class="b24-bubblelegendtext">I do not recommend this title.</span></td></tr><tr valign="TOP" id="u33554432"><td><img width="16" height="16" border="0" src="images/i_mp4.gif" /></td><td><span class="b24-bubblelegendtext">Offers a MP4 video file which can be retrieved by clicking on the MP4 Video Download link in the Play Options box.</span></td></tr></table></td><td class="b24-bubbleoutside" background="images/di_legend_e.gif" width="32" height="1"><img src="images/_.gif" alt="" border="0" height="1" width="32" /></td></tr><tr><td class="b24-bubbleoutside" align="LEFT" background="images/di_legend_sw.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td><td class="b24-bubbleoutside" align="CENTER" background="images/di_legend_s.gif" width="165" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="165" /></td><td class="b24-bubbleoutside" align="RIGHT" background="images/di_legend_se.gif" width="32" height="32" alt="" border="0"><img src="images/_.gif" alt="" border="0" height="32" width="32" /></td></tr></table> </div> <div id="overlay" class="b24-download_overlay" onclick="javascript:SunDown();"></div> <div id="download" class="b24-download_bubble"></div> <?xml version='1.0' encoding='utf-8'?><span id="b24-booktype-10749" style="display:none" xmlns:dc="http://purl.org/dc/elements/1.0/">0</span><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/"><table border="0" cellpadding="0" cellspacing="2" class="b24-folderbook1"><tr><td valign="TOP" align="LEFT" height="109" width="98"><a border="0" href="1.html"><div><img border="0" align="Left" id="COVERIMAGE10749" src="0262033275.gif" height="99" width="88" alt="The Coverimage" title="The Coverimage" /></div><br /></a></td><td width="2" valign="TOP" height="109"></td><td valign="Top" align="Left"><table border="0" cellpadding="0" cellspacing="4" width="100%" height="109"><tr><td valign="TOP" align="Left" nowrap="1" colspan="2"><a border="0"><span id="b24-chaptertitle" class="b24-bookchaptertitle">Chapter 12 - 
+ Nonholonomic and Underactuated Systems</span></a></td></tr><tr><td valign="Top" align="Left" colspan="2"><span id="b24-booktitle-10749">Principles of Robot Motion: Theory, Algorithms, and Implementation</span></td></tr><tr><td valign="TOP" align="Left" colspan="2"><span id="b24-bookauthor-10749" class="b24-bookauthor">by <a class="b24-bookauthor">Howie Choset</a> et al.</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2"><a><span id="b24-bookimprint-10749" class="b24-bookimprint">The MIT Press</span></a><span id="b24-bookrights-10749" class="b24-bookcwdate"> © 2005</span> </td></tr><tr><td valign="TOP" align="Left" colspan="2" id="ID10749"></td></tr><tr><td colspan="2" valign="TOP" align="LEFT"></td></tr></table></td></tr><tr><td valign="TOP" align="Center" colspan="3" height="10"><img src="images/_.gif" width="1" border="0" alt="" height="10" /></td></tr></table></div>
+<script language="JavaScript">
+<!--
+function Next(item) {
+var cm = new Array(28,27,82,96,77,71,1,64,31,0,20,16,80,9,4)
+var a1 = new Array(6,13,14)
+var a2 = new Array(12,3,7)
+var a3 = new Array(8,1,10)
+var a4 = new Array(4,0,2)
+var a5 = new Array(11,5,9)
+var b1="00"+cm[a1[item]]; b1= b1.substr(b1.length-2,2)
+var b2="00"+cm[a2[item]]; b2= b2.substr(b2.length-2,2)
+var b3="00"+cm[a3[item]]; b3= b3.substr(b3.length-2,2)
+var b4="00"+cm[a4[item]]; b4= b4.substr(b4.length-2,2)
+var b5="00"+cm[a5[item]]; b5= b5.substr(b5.length-2,2)
+var h ='viewer.asp?bookid=10749\46chunkid='+b1+b2+b3+b4+b5;
+this.location=h}
+//  -->
+</script>
+<?xml version='1.0' encoding='utf-8'?><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="Center"><table cellspacing="5" cellpadding="0" border="0" width="85%"></table></td></tr><tr><td bgcolor="#000000"><img src="images/transdot.gif" width="1" height="1" border="0" alt="" /></td></tr></table><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="69.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="71.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<div class="chapter">
+<a name="ch12"></a>
+<div class="section">
+<h2 class="first-section-title">
+<a name="1102"></a><a name="ch12lev1sec4"></a><span class="section-titlelabel">12.4 </span>Simple Mechanical Control Systems</h2>
+<p class="first-para">This section discusses second-order mechanical control systems in greater depth, leading to simplified controllability tests and ideas that lead to reduced-complexity motion planning. We introduce the minimal set of ideas from Riemannian geometry that allows us to do this. We do not attempt to be rigorous or thorough in our treatment of mechanical systems from a geometric viewpoint. The motivated reader is instead referred to the books by Abraham and Marsden [10], do Carmo [131], Marsden and Ratiu [308], Bloch [50], Bullo and Lewis [77], and Boothby [60] for further study of differential geometry in mechanics and control. The results of this section are used in <a href="71.html#1211" class="chapterjump">subsection 12.5.7</a>, but otherwise this section can be skipped without affecting the reading of the rest of the chapter.</p>
+<p class="para">In <a href="57.html" class="chapterjump">chapter 10</a> we derived equations of motion of the form</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.7) </span></td><td valign="top"><img src="figu424_2.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">where <i class="emphasis">f</i> is a generalized force vector, <i class="emphasis">T</i>(<i class="emphasis">q</i>) defines the action of <i class="emphasis">f</i> on the coordinates, <i class="emphasis">M</i>(<i class="emphasis">q</i>) is the inertia matrix, <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2127" src="figu424_3.jpg" height="19" width="74" title="" border="0" /></span></span> are Coriolis and centrifugal terms, and <i class="emphasis">g</i>(<i class="emphasis">q</i>) are potential terms. Recall that <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2128" src="figu424_4.jpg" height="22" width="179" title="" border="0" /></span></span>, where <span class="unicode">&#915;</span>(<i class="emphasis">q</i>) is the set of <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2129" src="figu424_5.jpg" height="24" width="22" title="" border="0" /></span></span> Christoffel symbols of the inertia matrix <i class="emphasis">M</i>(<i class="emphasis">q</i>), and the computation <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2130" src="figu424_6.jpg" height="22" width="75" title="" border="0" /></span></span> is <a name="1103"></a><a name="page425"></a>described in <a href="57.html" class="chapterjump">chapter 10</a>.<sup>[<a name="ch12fnt12_2" href="#ftn.ch12fnt12_2">2</a>]</sup> We restrict our discussion in this section to <i class="emphasis">simple mechanical control systems</i> of this form with <i class="emphasis">g</i>(<i class="emphasis">q</i>) = 0.</p>
+<p class="para">Since we are considering underactuated systems, we can write <i class="emphasis">f</i> = [<i class="emphasis">u</i><sup><i class="emphasis">T</i></sup>, 0<sup><i class="emphasis">T</i></sup>]<sup><i class="emphasis">T</i></sup>, where <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2132" src="figu425_1.jpg" height="15" width="60" title="" border="0" /></span></span> is the control vector and 0 is an <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2133" src="figu425_2.jpg" height="19" width="76" title="" border="0" /></span></span>-vector of zeros. In this case, <i class="emphasis">T</i>(<i class="emphasis">q</i>) can be written as an <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2134" src="figu425_3.jpg" height="15" width="63" title="" border="0" /></span></span> matrix, and the equations are</p>
+<div class="equation" mathml="yes">
+<a name="1105"></a><a name="ch12eqn08"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.8) </span></td><td valign="top"><img src="figu425_4.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">Premultiplying both sides by <i class="emphasis">M</i><sup>&#8722;1</sup>(<i class="emphasis">q</i>) (assuming full rank) and rearranging, we get</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.9) </span></td><td valign="top"><img src="figu425_5.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">Writing the <i class="emphasis">m</i> columns of <i class="emphasis">M</i><sup>&#8722;1</sup>(<i class="emphasis">q</i>)<i class="emphasis">T</i>(<i class="emphasis">q</i>) as <i class="emphasis">Y<sub>i</sub></i>(<i class="emphasis">q</i>), <i class="emphasis">i</i> = 1 <span class="unicode">&#8230;</span> <i class="emphasis">m</i>, we get</p>
+<div class="equation" mathml="yes">
+<a name="1106"></a><a name="ch12eqn10"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.10) </span></td><td valign="top"><img src="figu425_6.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">In other words, <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2138" src="figu425_7.jpg" height="18" width="10" title="" border="0" /></span></span> is the sum of a drift term due to Coriolis and centrifugal effects and a term due to the controls. According to the development so far, the control system can be expressed in the form of <a href="68.html#1076" class="chapterjump">equation (12.6)</a> by writing the state, drift vector field, and control vector fields as</p>
+<div class="informalequation" mathml="yes">
+<img src="figu425_8.jpg" /><br />
+</div>
+<p class="para">and expressing the control system as</p>
+<div class="equation" mathml="yes">
+<a name="1107"></a><a name="ch12eqn11"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.11) </span></td><td valign="top"><img src="figu425_9.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">We can then apply controllability tests as previously described.</p>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1108"></a><a name="ch12lev2sec6"></a><span class="section-titlelabel">12.4.1 </span>Simplified Controllability Tests</h3>
+<p class="first-para">The approach described above, while correct, ignores some structure of the equations of motion of a simple mechanical control system. Lewis and Murray [285,286] have studied the Lie bracket structure of simple mechanical control systems to derive simplified controllability tests at equilibrium states. These tests take advantage of the Lie bracket structure to reduce the number of computations. In the rest of this section, we will assume the control set <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2141" src="figu425_10.jpg" height="15" width="15" title="" border="0" /></span></span> belongs to the class <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2142" src="figu425_11.jpg" height="18" width="24" title="" border="0" /></span></span>.</p>
+<p class="para">
+<a name="1109"></a><a name="page426"></a>The key simplification is that we will study vector fields <i class="emphasis">only on the configuration space</i> <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2143" src="figu426_1.jpg" height="17" width="14" title="" border="0" /></span></span>, <i class="emphasis">not the full state space</i> <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2144" src="figu426_2.jpg" height="17" width="87" title="" border="0" /></span></span>. This will be possible because <i class="emphasis">M</i>(<i class="emphasis">q</i>), <span class="unicode">&#915;</span>(<i class="emphasis">q</i>), and <i class="emphasis">T</i>(<i class="emphasis">q</i>) all depend on <i class="emphasis">q</i> only, not <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2145" src="figu426_3.jpg" height="19" width="10" title="" border="0" /></span></span>. To study dynamics, however, we must be able to define derivatives (accelerations) of vector fields on <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2146" src="figu426_4.jpg" height="17" width="14" title="" border="0" /></span></span>. In particular, we need a definition of how a vector field <i class="emphasis">Y</i><sub>2</sub>(<i class="emphasis">q</i>)on <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2147" src="figu426_5.jpg" height="17" width="14" title="" border="0" /></span></span> is changing (accelerating) along the direction of another vector field <i class="emphasis">Y</i><sub>1</sub>(<i class="emphasis">q</i>). This is called the <i class="emphasis">covariant derivative</i> of <i class="emphasis">Y</i><sub>2</sub>(<i class="emphasis">q</i>) with respect to <i class="emphasis">Y</i><sub>1</sub>(<i class="emphasis">q</i>), and it is also a vector field on <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2148" src="figu426_6.jpg" height="17" width="14" title="" border="0" /></span></span>.</p>
+<p class="para">To define the covariant derivative, we need to define the acceleration of a curve <i class="emphasis">q</i>(<i class="emphasis">t</i>). Often we think of <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2149" src="figu426_7.jpg" height="19" width="33" title="" border="0" /></span></span> as the "coordinate" acceleration, but by this definition, whether the system is accelerating or not depends on the choice of coordinates, as we will see shortly. The vector <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2150" src="figu426_8.jpg" height="19" width="33" title="" border="0" /></span></span> is not generally contained in the tangent space <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2151" src="figu426_9.jpg" height="21" width="53" title="" border="0" /></span></span>, and the misalignment is caused by nonzero Christoffel symbols of <i class="emphasis">M</i>(<i class="emphasis">q</i>), which define how the configuration space "curves" in the coordinates <i class="emphasis">q</i>.Toexpress the acceleration as an element of the tangent space, so that an observer living on <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2152" src="figu426_10.jpg" height="17" width="14" title="" border="0" /></span></span> can "see" it in the tangent space, we use the Christoffel symbols (i.e., the Coriolis terms) to project the coordinate acceleration <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2153" src="figu426_11.jpg" height="18" width="10" title="" border="0" /></span></span> back to the tangent space:</p>
+<div class="equation" mathml="yes">
+<a name="1110"></a><a name="ch12eqn12"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.12) </span></td><td valign="top"><img src="figu426_12.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">This is an "intrinsic" definition of acceleration independent of the coordinates chosen.</p>
+<p class="para">As a first example, imagine a point mass moving in a one-dimensional configuration space <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2155" src="figu426_13.jpg" height="20" width="71" title="" border="0" /></span></span>, visualized as a unit circle in <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2156" src="figu426_14.jpg" height="17" width="22" title="" border="0" /></span></span>. If the position is described by <i class="emphasis">q</i> = [<i class="emphasis">x</i>, <i class="emphasis">y</i>]<sup><i class="emphasis">T</i></sup> in Cartesian coordinates and <span class="unicode">&#952;</span> in polar coordinates, we have</p>
+<div class="informalequation" mathml="yes">
+<img src="figu426_15.jpg" /><br />
+</div>
+<p class="para">with second derivative</p>
+<div class="informalequation" mathml="yes">
+<img src="figu426_16.jpg" /><br />
+</div>
+<p class="para">The <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2159" src="figu426_17.jpg" height="18" width="18" title="" border="0" /></span></span> term in <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2160" src="figu426_18.jpg" height="18" width="10" title="" border="0" /></span></span> enforces the constraint that the point mass stays on the unit circle. The <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2161" src="figu426_19.jpg" height="18" width="9" title="" border="0" /></span></span> term expresses the change in speed tangent to the circle, and this is the only acceleration visible to an observer in <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2162" src="figu426_20.jpg" height="17" width="14" title="" border="0" /></span></span> who cannot see the <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2163" src="figu426_21.jpg" height="17" width="22" title="" border="0" /></span></span> space it is embedded in. The <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2164" src="figu426_22.jpg" height="18" width="9" title="" border="0" /></span></span> term is the intrinsic definition of acceleration we are looking for. We subtract the <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2165" src="figu426_23.jpg" height="19" width="18" title="" border="0" /></span></span> term [the centripetal acceleration, corresponding to the negative of the velocity product term in <a class="internaljump" href="#ch12eqn12">equation (12.12)</a>] from <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2166" src="figu426_24.jpg" height="18" width="10" title="" border="0" /></span></span> to project <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2167" src="figu426_25.jpg" height="18" width="10" title="" border="0" /></span></span> to the tangent space (see <a class="internaljump" href="#ch12fig16">figure 12.16</a>).</p>
+<div class="figure">
+<a name="1111"></a><a name="ch12fig16"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2169','fig12-16_0.jpg','968','795')" name="IMG_2169" target="_self"><img alt="Image from book" id="IMG_2169" src="fig12-16.jpg" height="287" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.16: </span>Subtracting the centripetal acceleration vector (pointing toward the center of the circle) from <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2168" src="figu427_1.jpg" height="20" width="93" title="" border="0" /></span></span> of a point mass moving around a circle gives an acceleration tangent to the circle.</span>
+</div>
+<p class="para">For an example that does not use a manifold embedded in a higher-dimensional space, consider a point mass <i class="emphasis">m</i> moving in the plane with no forces applied to it. We can write the equations of motion in either Cartesian coordinates (<i class="emphasis">x, y</i>)or polar <a name="1112"></a><a name="page427"></a>coordinates (<i class="emphasis">r</i>, <span class="unicode">&#952;</span>):</p>
+<div class="informalequation" mathml="yes">
+<img src="figu427_2.jpg" /><br />
+</div>
+<p class="para">In Cartesian coordinates <i class="emphasis">q</i> = [<i class="emphasis">x, y</i>]<sup><i class="emphasis">T</i></sup>, the mass moves such that <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2171" src="figu427_3.jpg" height="19" width="96" title="" border="0" /></span></span>. If we represent the configuration with polar coordinates <i class="emphasis">q</i> = [<i class="emphasis">r</i>, <span class="unicode">&#952;</span>]<sup><i class="emphasis">T</i></sup>, however, the same motions of the mass will have <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2172" src="figu427_4.jpg" height="22" width="121" title="" border="0" /></span></span>. So is the mass accelerating or not? The answer is that we should not think of <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2173" src="figu427_5.jpg" height="18" width="10" title="" border="0" /></span></span> as an acceleration; instead, we should think of the acceleration as being the inverse of the inertia matrix <i class="emphasis">M</i><sup>&#8722;1</sup>(<i class="emphasis">q</i>) times the force. In both cases, then, since the force is zero, the acceleration is zero. The second time-derivatives <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2174" src="figu427_6.jpg" height="13" width="10" title="" border="0" /></span></span> and <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2175" src="figu427_7.jpg" height="18" width="9" title="" border="0" /></span></span> are not zero due to the nonzero Christoffel symbols of the inertia matrix in this choice of coordinates, as discussed in <a href="57.html" class="chapterjump">chapter 10</a>.</p>
+<p class="para">
+<a class="internaljump" href="#ch12fig17">Figure 12.17</a> shows paths of the point mass as it moves with zero force applied to it, shown in both Cartesian coordinates and polar coordinates. We say that each path in <a class="internaljump" href="#ch12fig17">figure 12.17</a> is a <i class="emphasis">shortest path</i>, and the tangent vectors to these paths are <i class="emphasis">orthogonal</i> to each other at any intersection point. The notions of shortest paths (straight lines) and orthogonality are clear in our usual understanding of Euclidean geometry for the Cartesian coordinate case, but less clear in the polar coordinate case. In the polar coordinate case we need an inner product so we can define orthogonality. The inner <a name="1113"></a><a name="page428"></a>product also defines the distance metric, allowing us to talk about shortest paths between two points. For example, the length of each side of each grid "box" in the Cartesian plot of <a class="internaljump" href="#ch12fig17">figure 12.17</a> is equivalent, just as the length of each side of a "box" in the polar plot is equivalent by its distance metric. Also, the "areas" of the "boxes" in the polar coordinate plot of <a class="internaljump" href="#ch12fig17">figure 12.17</a> are equivalent, just as they are equivalent for each box in the Cartesian coordinate plot.</p>
+<div class="figure">
+<a name="1114"></a><a name="ch12fig17"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2176','fig12-17_0.jpg','1000','721')" name="IMG_2176" target="_self"><img alt="Image from book" id="IMG_2176" src="fig12-17.jpg" height="252" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.17: </span>Example unforced motions of a point mass in the plane, represented in Cartesian coordinates (<i class="emphasis">x, y</i>) and polar coordinates (<i class="emphasis">r</i>, <span class="unicode">&#952;</span>).</span>
+</div>
+<p class="para">An inner product maps two tangent vectors <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2177" src="figu428_1.jpg" height="21" width="73" title="" border="0" /></span></span> to <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2178" src="figu428_2.jpg" height="15" width="15" title="" border="0" /></span></span>. We write this inner product <span class="unicode">&#12296;</span><i class="emphasis">v</i><sub>1</sub>, <i class="emphasis">v</i><sub>2</sub><span class="unicode">&#12297;</span>, and <i class="emphasis">v</i><sub>1</sub> and <i class="emphasis">v</i><sub>2</sub> are orthogonal if <span class="unicode">&#12296;</span><i class="emphasis">v</i><sub>1</sub>, <i class="emphasis">v</i><sub>2</sub><span class="unicode">&#12297;</span> = 0. The inner product is associated with a metric <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2179" src="figu428_3.jpg" height="17" width="150" title="" border="0" /></span></span> measuring the distance between two points. The metric and the inner product are related by the fact that the shortest path or <i class="emphasis">geodesic</i> between <i class="emphasis">q</i><sub>0</sub> and <i class="emphasis">q<sub>f</sub></i> occurs for trajectories <i class="emphasis">q</i>(<i class="emphasis">t</i>) minimizing the path length</p>
+<div class="informalequation" mathml="yes">
+<img src="figu428_4.jpg" /><br />
+</div>
+<p class="para">out of all possible trajectories connecting <i class="emphasis">q</i>(<i class="emphasis">t</i><sub>0</sub>) = <i class="emphasis">q</i><sub>0</sub> and <i class="emphasis">q</i>(<i class="emphasis">t<sub>f</sub></i>) = <i class="emphasis">q<sub>f</sub></i>. This relation allows us to call the inner product itself a metric.</p>
+<p class="para">
+<a name="1115"></a><a name="page429"></a>As an example, the familiar Euclidean metric states that geodesics are straight lines, and the familiar inner product or "dot product" associated with the Euclidean metric is <span class="unicode">&#12296;</span><i class="emphasis">v</i><sub>1</sub>, <i class="emphasis">v</i><sub>2</sub><span class="unicode">&#12297;</span> = <i class="emphasis">v</i><sub>1</sub> · <i class="emphasis">v</i><sub>2</sub> = <i class="emphasis">v</i><sup><i class="emphasis">T</i></sup><sub>1</sub> <i class="emphasis">v</i><sub>2</sub>. In the Euclidean metric, the rate of change of <i class="emphasis">Y</i><sub>2</sub>(<i class="emphasis">q</i>) along the direction of <i class="emphasis">Y</i><sub>1</sub>(<i class="emphasis">q</i>), i.e., the covariant derivative of <i class="emphasis">Y</i><sub>2</sub>(<i class="emphasis">q</i>) with respect to <i class="emphasis">Y</i><sub>1</sub>(<i class="emphasis">q</i>), is simply (<span class="unicode">&#8706;</span><i class="emphasis">Y</i><sub>2</sub>/<span class="unicode">&#8706;</span><i class="emphasis">q</i>)<i class="emphasis">Y</i><sub>1</sub>, i.e., the partial of <i class="emphasis">Y</i><sub>2</sub> projected to the direction <i class="emphasis">Y</i><sub>1</sub>.</p>
+<p class="para">The Euclidean metric is natural for thinking about the motion of a point in space with standard Cartesian coordinates. Appropriate metrics for other systems are less obvious. For example, for a 2R robot arm, what does it mean for two velocities to be orthogonal? At a particular configuration of the arm, if <i class="emphasis">v</i><sub>1</sub> and <i class="emphasis">v</i><sub>2</sub> are Cartesian velocity vectors at the end-effector and <i class="emphasis">w</i><sub>1</sub> and <i class="emphasis">w</i><sub>2</sub> are the corresponding joint velocity vectors, then the condition <i class="emphasis">v<sup>T</sup></i><sub>1</sub> <i class="emphasis">v</i><sub>2</sub> = 0 is not the same as <i class="emphasis">w<sub>T</sub></i><sub>1</sub> <i class="emphasis">w</i><sub>2</sub> = 0. These conditions imply diffrent and somewhat arbitrary metrics.</p>
+<p class="para">For the second-order mechanical systems we are interested in, the inertia matrix <i class="emphasis">M</i>(<i class="emphasis">q</i>) defines a physically meaningful metric and inner product. This is sometimes called the kinetic energy metric, since it is associated with the kinetic energy <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2181" src="figu429_1.jpg" height="25" width="91" title="" border="0" /></span></span>. The inner product defined by <i class="emphasis">M</i>(<i class="emphasis">q</i>) is</p>
+<div class="informalequation" mathml="yes">
+<img src="figu429_2.jpg" /><br />
+</div>
+<p class="para">The result has units of energy, which is physically meaningful and independent of the choice of coordinates. This metric is an example of a <i class="emphasis">Riemannian metric</i>, as it is bilinear (linear in each of <i class="emphasis">v</i><sub>1</sub> and <i class="emphasis">v</i><sub>2</sub>) and symmetric and positive definite (because <i class="emphasis">M</i>(<i class="emphasis">q</i>) is symmetric and positive definite). The kinetic energy metric defines a two- form, as it takes two elements of <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2183" src="figu429_3.jpg" height="21" width="35" title="" border="0" /></span></span> and returns a real number linear in each of the two elements. When <i class="emphasis">M</i>(<i class="emphasis">q</i>) is the identity matrix, the Euclidean metric is obtained.</p>
+<p class="para">The metric defines an <i class="emphasis">affine connection</i> <span class="unicode">&#8711;</span>, which allows us to define the derivatives of vector fields in non-Euclidean spaces. For the affine connection <span class="unicode">&#8711;</span> associated with <i class="emphasis">M</i>(<i class="emphasis">q</i>), the covariant derivative of <i class="emphasis">Y</i><sub>2</sub>(<i class="emphasis">q</i>) with respect to <i class="emphasis">Y</i><sub>1</sub>(<i class="emphasis">q</i>) is the vector field <span class="unicode">&#8711;</span><sub><i class="emphasis">Y</i><sub>1</sub>(<i class="emphasis">q</i>)</sub><i class="emphasis">Y</i><sub>2</sub>(<i class="emphasis">q</i>),</p>
+<div class="informalequation" mathml="yes">
+<img src="figu429_4.jpg" /><br />
+</div>
+<p class="para">where the Christoffel symbols <span class="unicode">&#915;</span>(<i class="emphasis">q</i>) describe how geodesics of the mechanical system "bend" in this choice of coordinates. For the Euclidean metric, the Christoffel symbols are zero.</p>
+<p class="para">The covariant derivative allows us to write the acceleration as an element of the tangent space to the configuration space, <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2185" src="figu429_5.jpg" height="21" width="149" title="" border="0" /></span></span>. We can write the equations <a name="1116"></a><a name="page430"></a>of motion <a class="internaljump" href="#ch12eqn10">(12.10)</a> in the following equivalent form:</p>
+<div class="equation" mathml="yes">
+<a name="1117"></a><a name="ch12eqn13"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.13) </span></td><td valign="top"><img src="figu430_1.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">
+<a class="internaljump" href="#ch12eqn13">Equation (12.13)</a> is the familiar <i class="emphasis">a</i> = <i class="emphasis">M</i><sup>&#8722;1</sup> <i class="emphasis">f</i>&#8212;acceleration is equal to the inverse of the mass times the force. Here, however, the acceleration <i class="emphasis">a</i> is not just the second derivative of the coordinates <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2187" src="figu430_2.jpg" height="18" width="10" title="" border="0" /></span></span>, but <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2188" src="figu430_3.jpg" height="22" width="127" title="" border="0" /></span></span>, accounting for the noninertial coordinates. We have <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2189" src="figu430_4.jpg" height="18" width="54" title="" border="0" /></span></span> only if the Christoffel symbols are zero, which is the case if the inertia matrix has no dependence on the configuration <i class="emphasis">q</i>.</p>
+<p class="para">Unforced motions <i class="emphasis">q</i>(<i class="emphasis">t</i>), i.e., motions satisfying</p>
+<div class="informalequation" mathml="yes">
+<img src="figu430_5.jpg" /><br />
+</div>
+<p class="para">are geodesics of <span class="unicode">&#8711;</span>.</p>
+<p class="para">The covariant derivative also allows us to define the <i class="emphasis">symmetric product</i> of <i class="emphasis">Y</i><sub>1</sub> and <i class="emphasis">Y</i><sub>2</sub>, the vector field</p>
+<div class="informalequation" mathml="yes">
+<img src="figu430_6.jpg" /><br />
+</div>
+<p class="para">which is useful in controllability calculations. But why should this be so? After all, we have already seen in <a class="internaljump" href="#ch12eqn11">equation (12.11)</a> that a <i class="emphasis">Y<sub>i</sub></i>(<i class="emphasis">q</i>) from <a class="internaljump" href="#ch12eqn10">equation (12.10)</a> can be turned into a control vector field <i class="emphasis">g<sub>i</sub></i>(<i class="emphasis">x</i>)on the full state space <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2192" src="figu430_7.jpg" height="17" width="83" title="" border="0" /></span></span>, and that the drift can be expressed as <i class="emphasis">g</i><sub>0</sub>(<i class="emphasis">x</i>), allowing us to take Lie brackets as before to test controllability. If we assume the system begins from rest, however, we notice that symmetric products of the <i class="emphasis">Y<sub>i</sub></i> (<i class="emphasis">q</i>) appear again and again in the bracket terms. In particular, we can identify the following patterns in the calculations for <i class="emphasis">i, j</i> = 1,<span class="unicode">&#8230;</span>,<i class="emphasis">m</i>:</p>
+<div class="informalequation" mathml="yes">
+<img src="figu430_8.jpg" /><br />
+</div>
+<p class="para">The first shows that no new motion directions will be created if the drift field is not included in the Lie bracket. The second shows that Lie bracketing the drift with a control vector field has the effect of taking the "acceleration" direction of the control vector field to a velocity direction (this only holds at zero velocity). The <a name="1118"></a><a name="page431"></a>last shows that iterated Lie brackets including the drift field can be evaluated by calculating lower-degree symmetric products of the <i class="emphasis">Y<sub>i</sub></i>(<i class="emphasis">q</i>). An added benefit is that the symmetric product operates on vector fields with half as many elements.</p>
+<p class="para">The key point is, for controllability computations for simple mechanical control systems beginning from rest, the symmetric product allows us to think of <i class="emphasis">Y<sub>i</sub></i>(<i class="emphasis">q</i>) <i class="emphasis">as a control vector field on the system configuration space</i> <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2194" src="figu431_1.jpg" height="18" width="16" title="" border="0" /></span></span>, <i class="emphasis">without constructing a higher-dimensional vector field g<sub>i</sub></i>(<i class="emphasis">q</i>) <i class="emphasis">on the full state manifold</i> <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2195" src="figu431_2.jpg" height="17" width="93" title="" border="0" /></span></span>. The symmetric product captures the effect of drift in the controllability computations.</p>
+<p class="para">For a control system <a class="internaljump" href="#ch12eqn13">(12.13)</a> consisting of a set of control vector fields <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2196" src="figu431_3.jpg" height="19" width="153" title="" border="0" /></span></span>, let the <i class="emphasis">symmetric closure</i> <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2197" src="figu431_4.jpg" height="22" width="68" title="" border="0" /></span></span> be the distribution defined by <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2198" src="figu431_5.jpg" height="18" width="15" title="" border="0" /></span></span> and the iterated symmetric products of these vector fields. In this sense, the symmetric closure by the symmetric product is defined similarly to the involutive closure by the Lie bracket. Also, we can define the degree of a symmetric product to be the number of the original vector fields <i class="emphasis">Y<sub>i</sub></i> appearing in the expression. A symmetric product is <i class="emphasis">bad</i> if each of the vector fields appears an even number of times, and is <i class="emphasis">good</i> otherwise. With these definitions, Lewis and Murray [285, 286] proved the following theorem, building on <a href="69.html#1092" class="chapterjump">theorem 12.3.3</a>.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">THEOREM 12.4.1</span></span><a name="1119"></a><a name="ch12th04_1"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Beginning from an equilibrium state <i class="emphasis">x</i> = [<i class="emphasis">q</i><sup><i class="emphasis">T</i></sup>, 0<sup><i class="emphasis">T</i></sup>]<sup><i class="emphasis">T</i></sup>, the system <a class="internaljump" href="#ch12eqn13">(12.13)</a> is</p>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">STLA from <i class="emphasis">x</i> if and only if <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2199" src="figu431_6.jpg" height="24" width="163" title="" border="0" /></span></span>, and</p>
+</li>
+<li class="listitem">
+<p class="first-para">STLC from <i class="emphasis">x</i> if <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2200" src="figu431_7.jpg" height="24" width="156" title="" border="0" /></span></span> and every bad symmetric product can be expressed as a linear combination of good symmetric products of lower degree.</p>
+</li>
+</ol>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">Beginning from an equilibrium state <i class="emphasis">x</i> = [<i class="emphasis">q</i><sup><i class="emphasis">T</i></sup>, 0<sup><i class="emphasis">T</i></sup>]<sup><i class="emphasis">T</i></sup>, it is sometimes of interest to understand the locally reachable set of configurations irrespective of the velocities at those configurations. Lewis and Murray define a system to be <i class="emphasis">small-time locally configuration accessible</i> (<i class="emphasis">STLCA</i>) from <i class="emphasis">q</i> if the locally reachable set is full-dimensional on <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2201" src="figu431_8.jpg" height="17" width="14" title="" border="0" /></span></span>, and <i class="emphasis">small-time locally configuration controllable</i> (<i class="emphasis">STLCC</i>) from <i class="emphasis">q</i> if the locally reachable set on <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2202" src="figu431_9.jpg" height="17" width="14" title="" border="0" /></span></span> contains <i class="emphasis">q</i> in the interior. A stronger condition than STLCC is <i class="emphasis">small-time local equilibrium controllability</i> (<i class="emphasis">STLEC</i>) from <i class="emphasis">q</i> if the locally reachable set contains zero velocity states forming a neighborhood of <i class="emphasis">q</i> on <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2203" src="figu431_10.jpg" height="17" width="18" title="" border="0" /></span></span>. STLEC is stronger than STLCC, as STLEC demands that nearby configurations be reachable at zero velocity, while STLCC says nothing about the velocity. Finally, the system is <i class="emphasis">equilibrium controllable</i> if the system can reach any equilibrium state from any other equilibrium state.</p>
+<p class="para">Note that STLEC is a weaker property than STLC, as STLC requires that the locally reachable <i class="emphasis">states</i> contain a neighborhood of <i class="emphasis">x</i> on <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2204" src="figu431_11.jpg" height="17" width="29" title="" border="0" /></span></span>, while STLEC only requires that <a name="1120"></a><a name="IDX-432"></a>the locally reachable <i class="emphasis">configurations</i> (at zero velocity) contain a neighborhood of <i class="emphasis">q</i> on <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2205" src="figu432_1.jpg" height="21" width="14" title="" border="0" /></span></span>. STLEC is particularly relevant to systems subject to velocity constraints, which may be equilibrium controllable despite being confined to a reachable space of dimension less than <i class="emphasis">n</i>.</p>
+<p class="para">The following theorem, due to Lewis and Murray [285, 286], provides tests for STLCA, STLCC, STLEC, and equilibrium controllability.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">THEOREM 12.4.2</span></span><a name="1121"></a><a name="ch12th04_2"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Beginning from an equilibrium state <i class="emphasis">x</i> = [<i class="emphasis">q</i><sup><i class="emphasis">T</i></sup>, 0<sup><i class="emphasis">T</i></sup>]<sup><i class="emphasis">T</i></sup>, the system <a class="internaljump" href="#ch12eqn13">(12.13)</a> is</p>
+<ol class="orderedlist">
+<li class="first-listitem">
+<p class="first-para">STLCA from <i class="emphasis">q</i> if and only if <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2206" src="figu432_2.jpg" height="24" width="213" title="" border="0" /></span></span>, and</p>
+</li>
+<li class="listitem">
+<p class="first-para">both STLCC and STLEC from <i class="emphasis">q</i> if <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2207" src="figu432_3.jpg" height="24" width="213" title="" border="0" /></span></span> and if every bad symmetric product can be expressed as a linear combination of good symmetric products of lower degree. If these conditions are satisfied at all <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2208" src="figu432_4.jpg" height="19" width="58" title="" border="0" /></span></span>, then the system is equilibrium controllable.</p>
+</li>
+</ol>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">Roughly speaking, <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2209" src="figu432_5.jpg" height="22" width="95" title="" border="0" /></span></span> corresponds to the reachable velocity directions from [<i class="emphasis">q<sup>T</sup></i>, 0<sup><i class="emphasis">T</i></sup>]<sup><i class="emphasis">T</i></sup>, and <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2210" src="figu432_6.jpg" height="22" width="139" title="" border="0" /></span></span> corresponds to the reachable configuration directions from [<i class="emphasis">q<sup>T</sup></i>, 0<sup><i class="emphasis">T</i></sup>]<sup><i class="emphasis">T</i></sup>.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">EXAMPLE 12.4.3: </span>PBWT (cont.)</span><a name="1122"></a><a name="ch12ex04_3"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">The dynamics of the PBWT can be written</p>
+<div class="informalequation" mathml="yes">
+<img src="figu432_7.jpg" /><br />
+</div>
+<p class="para">where <i class="emphasis">M</i><sup>&#8722;1</sup>(<i class="emphasis">q</i>) is the 3 × 3 identity matrix, <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2212" src="figu432_8.jpg" height="19" width="113" title="" border="0" /></span></span> (the Christoffel symbols are all zero), <i class="emphasis">u</i> = [<i class="emphasis">u</i><sub>1</sub>, <i class="emphasis">u</i><sub>2</sub>]<sup><i class="emphasis">T</i></sup>, and</p>
+<div class="informalequation" mathml="yes">
+<img src="figu432_9.jpg" /><br />
+</div>
+<p class="para">The control vector fields <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2214" src="figu432_10.jpg" height="19" width="161" title="" border="0" /></span></span> are the two columns of <i class="emphasis">M</i><sup>&#8722;1</sup>(<i class="emphasis">q</i>)<i class="emphasis">T</i>(<i class="emphasis">q</i>) = <i class="emphasis">T</i>(<i class="emphasis">q</i>). Calculating the symmetric product of <i class="emphasis">Y</i><sub>1</sub>(<i class="emphasis">q</i>) and <i class="emphasis">Y</i><sub>2</sub>(<i class="emphasis">q</i>), we get</p>
+<div class="informalequation" mathml="yes">
+<img src="figu432_11.jpg" /><br />
+</div>
+<p class="para">We see that rank(<i class="emphasis">Y</i><sub>1</sub> <i class="emphasis">Y</i><sub>2</sub> <span class="unicode">&#12296;</span><i class="emphasis">Y</i><sub>1</sub> : <i class="emphasis">Y</i><sub>2</sub><span class="unicode">&#12297;</span>) = 3 for all <i class="emphasis">q</i>, so <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2216" src="figu432_12.jpg" height="24" width="140" title="" border="0" /></span></span> for all <i class="emphasis">q</i>, and the system is STLA by <a class="internaljump" href="#ch12th04_1">theorem 12.4.1</a>. The bad products are <span class="unicode">&#12296;</span><i class="emphasis">Y</i><sub>1</sub> : <i class="emphasis">Y</i><sub>1</sub><span class="unicode">&#12297;</span> = 0 and <span class="unicode">&#12296;</span><i class="emphasis">Y</i><sub>2</sub> : <i class="emphasis">Y</i><sub>2</sub><span class="unicode">&#12297;</span> = [<i class="emphasis">d</i> cos <i class="emphasis">q</i><sub>3</sub>, <i class="emphasis">d</i> sin<i class="emphasis">q</i><sub>3</sub>, 0]<sup><i class="emphasis">T</i></sup>, which is neutralized by <i class="emphasis">Y</i><sub>1</sub>, so the system is also STLC by <a class="internaljump" href="#ch12th04_1">theorem 12.4.1</a>. This confirms our previous result.</p>
+<p class="last-para">
+<a name="1123"></a><a name="page433"></a>The reader may also wish to verify that <i class="emphasis">rank</i>(<i class="emphasis">Y</i><sub>2</sub> <span class="unicode">&#12296;</span><i class="emphasis">Y</i><sub>2</sub> : <i class="emphasis">Y</i><sub>2</sub><span class="unicode">&#12297;</span> <span class="unicode">&#12296;</span><i class="emphasis">Y</i><sub>2</sub> : <span class="unicode">&#12296;</span><i class="emphasis">Y</i><sub>2</sub> : <i class="emphasis">Y</i><sub>2</sub><span class="unicode">&#12297;</span><span class="unicode">&#12297;</span>) = 3, so the PBWT is STLA with the single thruster <i class="emphasis">u</i><sub>2</sub> by <a class="internaljump" href="#ch12th04_1">theorem 12.4.1</a>. This also confirms our previous result.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">EXAMPLE 12.4.4: </span>Hopper example.</span><a name="1124"></a><a name="ch12ex04_4"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Consider a simple model of a planar single-leg hopping robot in flight, ignoring the translational motion of the body. We will model the body of the hopper as a rigid body pinned to a wall by a revolute joint at its center of mass. The inertia of the body is I about its center of mass. An extensible massless leg is attached to the center of mass of the body, and the foot of the leg is a point mass <i class="emphasis">m</i>. The configuration of the system is <i class="emphasis">q</i> = [<i class="emphasis">q</i><sub>1</sub>, <i class="emphasis">q</i><sub>2</sub>, <i class="emphasis">q</i><sub>3</sub>]<sup><i class="emphasis">T</i></sup>, where <i class="emphasis">q</i><sub>1</sub> is the angle of the body relative to an inertial frame, <i class="emphasis">q</i><sub>2</sub> is the angle of the leg relative to the inertial frame, and <i class="emphasis">q</i><sub>3</sub> &gt; 0 is the extension of the leg (<a class="internaljump" href="#ch12fig18">figure 12.18</a>). The leg has two actuators, one providing a torque to control the orientation of the leg relative to the body, and the other providing a force to control the extension of the leg. We would like to know if it is possible to control the configuration <i class="emphasis">q</i> using only these two actuators.</p>
+<p class="para">
+<div class="figure">
+<a name="1125"></a><a name="ch12fig18"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2217','fig12-18_0.jpg','485','541')" name="IMG_2217" target="_self"><img alt="Image from book" id="IMG_2217" src="fig12-18.jpg" height="325" width="291" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.18: </span>A simple single-leg hopping robot.</span>
+</div>
+</p>
+<p class="para">This system is subject to a velocity constraint: the total angular momentum of the system is zero throughout the motion (problem 27). This constraint implies that the dimension of the reachable state space can be no more than five, while <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2218" src="figu433_1.jpg" height="19" width="103" title="" border="0" /></span></span>. This rules out the possibility of STLA and STLC, so instead we focus on the reachable configurations.</p>
+<p class="para">The system mass matrix and its inverse are</p>
+<div class="informalequation" mathml="yes">
+<img src="figu433_2.jpg" /><br />
+</div>
+<p class="para">
+<a name="1126"></a><a name="IDX-434"></a>and the only nonzero Christoffel symbols are <span class="unicode">&#915;</span><sup>2</sup><sub>23</sub> = <span class="unicode">&#915;</span><sub>2</sub><sub>32</sub> = <i class="emphasis">mq</i><sub>3</sub> and <span class="unicode">&#915;</span><sup>3</sup><sub>22</sub> = <span class="unicode">&#8722;</span><i class="emphasis">mq</i><sub>3</sub>. The matrix <i class="emphasis">T</i>(<i class="emphasis">q</i>) describing the generalized forces from the actuators is</p>
+<div class="informalequation" mathml="yes">
+<img src="figu434_1.jpg" /><br />
+</div>
+<p class="para">and <i class="emphasis">Y</i><sub>1</sub>(<i class="emphasis">q</i>) = [1/<i class="emphasis">I</i>, <span class="unicode">&#8722;</span>1/<i class="emphasis">mq</i><sup>2</sup><sub>3</sub>, 0]<sup><i class="emphasis">T</i></sup>, <i class="emphasis">Y</i><sub>2</sub>(<i class="emphasis">q</i>) = [0, 0, 1/<i class="emphasis">m</i>]<sup><i class="emphasis">T</i></sup>. Calculations show that</p>
+<div class="informalequation" mathml="yes">
+<img src="figu434_2.jpg" /><br />
+</div>
+<p class="last-para">We see that <i class="emphasis">Y</i><sub>1</sub>, <i class="emphasis">Y</i><sub>2</sub>, and [<i class="emphasis">Y</i><sub>1</sub>, <i class="emphasis">Y</i><sub>2</sub>] <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2222" src="figu434_3.jpg" height="21" width="37" title="" border="0" /></span></span> for all <i class="emphasis">q</i> with <i class="emphasis">q</i><sub>3</sub> &gt; 0. Also, the bad symmetric product <span class="unicode">&#12296;</span><i class="emphasis">Y</i><sub>1</sub> : <i class="emphasis">Y</i><sub>1</sub><span class="unicode">&#12297;</span> is nuetralized by <i class="emphasis">Y</i><sub>2</sub> and the bad symmetric product <span class="unicode">&#12296;</span><i class="emphasis">Y</i><sub>2</sub> : <i class="emphasis">Y</i><sub>2</sub><span class="unicode">&#12297;</span> is zero. Therefore, by <a class="internaljump" href="#ch12th04_2">theorem 12.4.2</a>, the system is STLEC at all <i class="emphasis">q</i> and equilibrium controllable. We also see that the distribution <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2223" src="figu434_4.jpg" height="22" width="68" title="" border="0" /></span></span> is only two-dimensional, so the system is not STLA by <a class="internaljump" href="#ch12th04_1">theorem 12.4.1</a>.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1127"></a><a name="ch12lev2sec7"></a><span class="section-titlelabel">12.4.2 </span>Kinematic Reductions for Motion Planning</h3>
+<p class="first-para">In the controllability tests above, the symmetric product essentially allows us to treat the <i class="emphasis">Y<sub>i</sub></i> like velocity vector fields on a configuration space, thus halving the dimension of the vector fields in our controllability calculations. It is also sometimes possible to plan trajectories for underactuated mechanical systems as if they were kinematic systems. This reduction decreases the dimension of the search space by a factor of two. Since many search algorithms run in time exponential in the dimension of the search space, this reduction can greatly speed up motion planning.</p>
+<p class="para">Consider the original second-order mechanical system</p>
+<div class="equation" mathml="yes">
+<a name="1128"></a><a name="ch12eqn14"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.14) </span></td><td valign="top"><img src="figu434_5.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">and a first-order driftless kinematic system</p>
+<div class="equation" mathml="yes">
+<a name="1129"></a><a name="ch12eqn15"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.15) </span></td><td valign="top"><img src="figu434_6.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">where the set of control (velocity) vector fields is written <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2226" src="figu434_7.jpg" height="16" width="126" title="" border="0" /></span></span>. We make the extra stipulation that <i class="emphasis">w</i>(<i class="emphasis">t</i>) be continuous because discontinuous velocities would require infinite forces. Also, in this section on kinematic reductions, the control sets are taken to be unbounded for simplicity.</p>
+<p class="para">
+<a name="1130"></a><a name="page435"></a>A kinematic system <a class="internaljump" href="#ch12eqn15">(12.15)</a> is a <i class="emphasis">kinematic reduction</i> of a mechanical system <a class="internaljump" href="#ch12eqn14">(12.14)</a> if all feasible trajectories for the kinematic system are also feasible for the second- order system. We further say that a mechanical system <a class="internaljump" href="#ch12eqn14">(12.14)</a> is <i class="emphasis">maximally reducible to a kinematic system</i> if there exists a kinematic reduction such that all feasible trajectories of the mechanical system, starting with an initial velocity in span(<span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2227" src="figu435_1.jpg" height="18" width="29" title="" border="0" /></span></span>), are also trajectories of the kinematic reduction. For example, all fully actuated mechanical systems are maximally reducible to kinematic systems&#8212;we can equivalently assume the controls are either (continuous) velocities or forces.</p>
+<p class="para">Some underactuated mechanical systems are also maximally reducible to kinematic systems. The test is given by the following theorem due to Lewis [283].</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">THEOREM 12.4.5</span></span><a name="1131"></a><a name="ch12th04_5"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">A second-order mechanical system <a class="internaljump" href="#ch12eqn14">(12.14)</a> is maximally reducible to a kinematic system if and only if <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2228" src="figu435_2.jpg" height="22" width="162" title="" border="0" /></span></span>.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">EXAMPLE 12.4.6: </span>Hopper (cont.)</span><a name="1132"></a><a name="ch12ex04_6"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Our previous calculations showed that <span class="unicode">&#12296;</span><i class="emphasis">Y</i><sub>1</sub> : <i class="emphasis">Y</i><sub>2</sub><span class="unicode">&#12297;</span> = <span class="unicode">&#12296;</span><i class="emphasis">Y</i><sub>2</sub> : <i class="emphasis">Y</i><sub>2</sub><span class="unicode">&#12297;</span> = 0 and <span class="unicode">&#12296;</span><i class="emphasis">Y</i><sub>1</sub> : <i class="emphasis">Y</i><sub>1</sub><span class="unicode">&#12297;</span> <span class="unicode">&#8714;</span> span(<i class="emphasis">Y</i><sub>2</sub>). Therefore <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2229" src="figu435_3.jpg" height="22" width="172" title="" border="0" /></span></span> and the hopper is maximally reducible to a kinematic system with <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2230" src="figu435_4.jpg" height="15" width="51" title="" border="0" /></span></span>. Intuitively, this is because the underactuation constraint of the hopper can be integrated to a velocity constraint: conservation of angular momentum. Therefore, any motion possible by controlling force on the leg extension and torque on the leg rotation is also possible by driving the kinematic reduction with <i class="emphasis">Y</i><sub>1</sub> and <i class="emphasis">Y</i><sub>2</sub> as velocity vector fields.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">A maximal kinematic reduction that generates all trajectories of the mechanical system [with initial velocity in <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2231" src="figu435_5.jpg" height="16" width="25" title="" border="0" /></span></span> could be called a <i class="emphasis">rank m kinematic reduction</i>, as the controlled velocities of the reduction form an <i class="emphasis">m</i>-dimensional distribution <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2232" src="figu435_6.jpg" height="17" width="17" title="" border="0" /></span></span> with <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2233" src="figu435_7.jpg" height="19" width="124" title="" border="0" /></span></span>. The class of underactuated systems admitting rank <i class="emphasis">m</i> kinematic reductions is relatively small, however, so we would like to explore kinematic reductions for more general underactuated systems. In particular, a system that is not maximally reducible to a kinematic system may nonetheless admit a <i class="emphasis">rank</i> 1 <i class="emphasis">kinematic reduction</i> <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2234" src="figu435_8.jpg" height="19" width="133" title="" border="0" /></span></span>. A rank 1 kinematic reduction has a single control vector field <i class="emphasis">V</i><sub>1</sub>, also known as a <i class="emphasis">decoupling vector field</i>. (The word "decoupling" stems from the fact that trajectory planning for the second-order system along an integral curve of such a vector field can be decoupled into choosing the distance traveled along the integral curve, followed by time-scaling the path according to actuator limits. This brings to mind the decoupled trajectory planning approach for fully actuated systems in the <a href="61.html" class="chapterjump">previous chapter</a>.)</p>
+<p class="para">An underactuated mechanical system can follow the integral curve of a decoupling vector field <i class="emphasis">V</i><sub>1</sub>(<i class="emphasis">q</i>) at any speed and acceleration, i.e., for any continuous <i class="emphasis">w</i><sub>1</sub>(<i class="emphasis">t</i>). A second-order mechanical system <a class="internaljump" href="#ch12eqn14">(12.14)</a> can have no more than <i class="emphasis">m</i> linearly <a name="1133"></a><a name="IDX-436"></a>independent decoupling vector fields at any <i class="emphasis">q</i>. For a maximally reducible mechanical system, every vector field in <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2235" src="figu436_1.jpg" height="18" width="28" title="" border="0" /></span></span> is a decoupling vector field.</p>
+<p class="para">How do we know if a proposed decoupling vector field <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2236" src="figu436_2.jpg" height="19" width="110" title="" border="0" /></span></span> is actually decoupling? The following theorem provides the answer (Bullo and Lynch [79]).</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">THEOREM 12.4.7</span></span><a name="1134"></a><a name="ch12th04_7"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">A vector field <i class="emphasis">V</i> is a decoupling vector field of the second-order mechanical system <a class="internaljump" href="#ch12eqn14">(12.14)</a> if and only if <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2237" src="figu436_3.jpg" height="19" width="107" title="" border="0" /></span></span> and <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2238" src="figu436_4.jpg" height="19" width="134" title="" border="0" /></span></span>.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">Stated another way, from the definition of the kinematic reduction <a class="internaljump" href="#ch12eqn15">(12.15)</a> for the single control vector field <i class="emphasis">V</i>(<i class="emphasis">q</i>), we have</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.16) </span></td><td valign="top"><img src="figu436_5.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="1135"></a><a name="ch12eqn17"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.17) </span></td><td valign="top"><img src="figu436_6.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">and plugging these into the equations of motion <a class="internaljump" href="#ch12eqn08">(12.8)</a>, we see that <i class="emphasis">V</i>(<i class="emphasis">q</i>) is decoupling if and only if there exists a <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2241" src="figu436_7.jpg" height="15" width="62" title="" border="0" /></span></span> satisfying the equations of motion <a class="internaljump" href="#ch12eqn08">(12.8)</a> for all <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2242" src="figu436_8.jpg" height="18" width="86" title="" border="0" /></span></span>.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">EXAMPLE 12.4.8: </span>PBWT (cont.)</span><a name="1136"></a><a name="ch12ex04_8"></a>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">Decoupling vector fields for the PBWT are <i class="emphasis">V</i><sub>1</sub> = [cos <i class="emphasis">q</i><sub>3</sub>, sin <i class="emphasis">q</i><sub>3</sub>, 0]<sup><i class="emphasis">T</i></sup> and <i class="emphasis">V</i><sub>2</sub> = [<span class="unicode">&#8722;</span> sin <i class="emphasis">q</i><sub>3</sub>, cos <i class="emphasis">q</i><sub>3</sub>, <span class="unicode">&#8722;</span><i class="emphasis">d</i>]<sup><i class="emphasis">T</i></sup>. To verify this by <a class="internaljump" href="#ch12th04_7">theorem 12.4.7</a>, we see that <i class="emphasis">V</i><sub>1</sub> = <i class="emphasis">Y</i><sub>1</sub>, <i class="emphasis">V</i><sup>2</sup> = <i class="emphasis">Y</i><sub>2</sub>, <span class="unicode">&#8711;</span><sub><i class="emphasis">V</i><sub>1</sub></sub> <i class="emphasis">V</i><sub>1</sub> = 0, and <span class="unicode">&#8711;</span><sub><i class="emphasis">V</i><sub>2</sub></sub> <i class="emphasis">V</i><sub>2</sub> = [<i class="emphasis">d</i> cos <i class="emphasis">q</i><sub>3</sub>, <i class="emphasis">d</i> sin <i class="emphasis">q</i><sub>3</sub>, 0] <span class="unicode">&#8714;</span> (<i class="emphasis">Y</i><sub>1</sub>). Note, however, that <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2243" src="figu436_9.jpg" height="19" width="170" title="" border="0" /></span></span>, so the PBWT is not maximally reducible to a kinematic system; i.e., linear combinations of <i class="emphasis">V</i><sub>1</sub> and <i class="emphasis">V</i><sub>2</sub> are not decoupling vector fields.</p>
+<p class="para">Consider the physical meaning of these decoupling vector fields (<a class="internaljump" href="#ch12fig19">figure 12.19</a>). The vector field <i class="emphasis">V</i><sub>1</sub> is pure translation of the PBWT along the line of action of the thruster <i class="emphasis">u</i><sub>1</sub>. It is clear that translation in this direction is possible at any speed and acceleration by proper choice of the thrust. The vector field <i class="emphasis">V</i><sub>2</sub> corresponds to rotation of the PBWT about a point fixed relative to the body, the <i class="emphasis">center of percussion</i> or <i class="emphasis">center of oscillation</i> of the PBWT relative to the line of action of thruster <i class="emphasis">u</i><sub>2</sub>. The center of percussion is the instantaneously unaccelerated point for nonzero thrust <i class="emphasis">u</i><sub>2</sub>. This point is a distance 1/<i class="emphasis">d</i> from the center of mass on a line through the center of mass and perpendicular to the line of action of <i class="emphasis">u</i><sub>2</sub>. (In the case that the PBWT has nonunit mass m and nonunit inertia <i class="emphasis">I</i>, the center of percussion is a distance <i class="emphasis">I</i>/<i class="emphasis">md</i> from the center of mass.) Rotation about this point is possible at any speed and acceleration by using <i class="emphasis">u</i><sub>2</sub> to provide the torque to rotate the PBWT and using <i class="emphasis">u</i><sub>1</sub> to keep the center of percussion stationary.</p>
+<p class="last-para">
+<div class="figure">
+<a name="1137"></a><a name="ch12fig19"></a><span class="figuremediaobject"><a href="javascript:PopImage('IMG_2244','fig12-19_0.jpg','1000','541')" name="IMG_2244" target="_self"><img alt="Image from book" id="IMG_2244" src="fig12-19.jpg" height="189" width="350" title="Click To expand" border="0" /></a></span>
+<br style="line-height: 1" />
+<span class="figure-title"><span class="figure-titlelabel">Figure 12.19: </span>The decoupling vector fields <i class="emphasis">V</i><sub>1</sub> and <i class="emphasis">V</i><sub>2</sub> for the PBWT: translation along the line of action of <i class="emphasis">u</i><sub>1</sub>, and rotation about the center of percussion with respect to <i class="emphasis">u</i><sub>2</sub>. An example motion following these decoupling vector fields is shown.</span>
+</div>
+</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+<p class="para">In some cases the decoupling vector fields for a second-order system are apparent by inspection. In other cases it is possible to calculate the decoupling vector fields by <a name="1138"></a><a name="page437"></a>solving a system of quadratic equations. To see this, recognize that any decoupling vector field <i class="emphasis">V</i>(<i class="emphasis">q</i>) is contained in <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2245" src="figu437_1.jpg" height="19" width="66" title="" border="0" /></span></span>, so can be written in the form</p>
+<div class="informalequation" mathml="yes">
+<img src="figu437_2.jpg" /><br />
+</div>
+<p class="para">The problem is to solve for functions <i class="emphasis">h<sub>i</sub></i>(<i class="emphasis">q</i>) such that <span class="unicode">&#12296;</span><i class="emphasis">X<sup>c</sup></i>, <span class="unicode">&#8711;</span><sup><i class="emphasis">V</i></sup> <i class="emphasis">V</i><span class="unicode">&#12297;</span> = 0 at all <i class="emphasis">q</i>, where the <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2247" src="figu437_3.jpg" height="19" width="206" title="" border="0" /></span></span>, are linearly independent basis vectors of <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2248" src="figu437_4.jpg" height="15" width="31" title="" border="0" /></span></span> that are orthogonal [according to <i class="emphasis">M</i>(<i class="emphasis">q</i>)] to <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2249" src="figu437_5.jpg" height="19" width="41" title="" border="0" /></span></span> at all <i class="emphasis">q</i>.</p>
+<p class="para">Kinematic reductions allow us to plan a path using a kinematic system, then "lift" this path to a trajectory for the full second-order system. One important issue is to understand the locally reachable configurations of the kinematic reductions. Beginning from an equilibrium state [<i class="emphasis">q<sup>T</sup></i>, 0<sup><i class="emphasis">T</i></sup>]<sup><i class="emphasis">T</i></sup>, we say that a second-order mechanical system <a class="internaljump" href="#ch12eqn14">(12.14)</a> is <i class="emphasis">small-time locally kinematically controllable</i> (<i class="emphasis">STLKC</i>) from <i class="emphasis">q</i> if there exists a set of decoupling vector fields <i class="emphasis">V</i><sub>1</sub>, <span class="unicode">&#8230;</span>, <i class="emphasis">V<sub>p</sub></i> such that lie({V<sub>1</sub>, <span class="unicode">&#8230;</span>, V<sub>p</sub>})(<i class="emphasis">q</i>) = <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2250" src="figu437_6.jpg" height="21" width="38" title="" border="0" /></span></span>. This means that a kinematic system that can only move along these decoupling vector fields is STLC at <i class="emphasis">q</i>.If this holds for all <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2251" src="figu437_7.jpg" height="19" width="57" title="" border="0" /></span></span>, the second-order system is <i class="emphasis">kinematically controllable</i>, meaning that it is equilibrium controllable by using only decoupling vector fields. These decoupling vector fields can therefore be used as primitives in a <i class="emphasis">kinematic</i> motion planner, reducing the complexity of the search for a feasible trajectory. A planned path would then consist of the concatenation of integral curves of the decoupling vector fields. Switches between decoupling vector fields must occur at zero velocity. Note that both STLC and STLKC imply STLEC, but no other implications hold generally.</p>
+<p class="last-para">The reader may easily verify that both the PBWT and the hopper are STLKC by two decoupling vector fields. For the PBWT, e.g., any configuration is reachable by concatenating integral curves of <i class="emphasis">V</i><sub>2</sub>, <i class="emphasis">V</i><sub>1</sub>, and <i class="emphasis">V</i><sub>2</sub> (rotation, translation, and rotation).</p>
+</div>
+<div class="section">
+<h3 class="sect3-title">
+<a name="1139"></a><a name="ch12lev2sec8"></a><span class="section-titlelabel">12.4.3 </span>Simple Mechanical Systems with Nonholonomic Constraints</h3>
+<p class="first-para">
+<a name="1140"></a><a name="page438"></a>The ideas discussed here also apply to second-order mechanical systems subject to nonholonomic constraints, such as rolling without slipping [78]. Such systems can be expressed as</p>
+<div class="equation" mathml="yes">
+<a name="1141"></a><a name="ch12eqn18"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.18) </span></td><td valign="top"><img src="figu438_1.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<div class="equation" mathml="yes">
+<a name="1142"></a><a name="ch12eqn19"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.19) </span></td><td valign="top"><img src="figu438_2.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">where <i class="emphasis">A</i>(<i class="emphasis">q</i>) is a <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2254" src="figu438_3.jpg" height="18" width="61" title="" border="0" /></span></span> matrix describing the <i class="emphasis">k</i> Pfaffian constraints <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2255" src="figu438_4.jpg" height="19" width="99" title="" border="0" /></span></span> and therefore the distribution of feasible velocities <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2256" src="figu438_5.jpg" height="15" width="18" title="" border="0" /></span></span>, and <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2257" src="figu438_6.jpg" height="22" width="120" title="" border="0" /></span></span> is a set of constraint forces, where <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2258" src="figu438_7.jpg" height="18" width="58" title="" border="0" /></span></span> is a vector of Lagrange multipliers. As described in <a href="57.html" class="chapterjump">chapter 10</a>, we can eliminate <span class="unicode">&#955;</span> from <a class="internaljump" href="#ch12eqn18">equation (12.18)</a> using the matrix</p>
+<div class="informalequation" mathml="yes">
+<img src="figu438_8.jpg" /><br />
+</div>
+<p class="para">to project general motions to motions satisfying the nonholonomic constraints. We replace <a class="internaljump" href="#ch12eqn18">equation (12.18)</a> with the <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2260" src="figu438_9.jpg" height="19" width="58" title="" border="0" /></span></span> independent equations</p>
+<div class="equation" mathml="yes">
+<a name="1143"></a><a name="ch12eqn20"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.20) </span></td><td valign="top"><img src="figu438_10.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">In the notation of <a class="internaljump" href="#ch12eqn13">equation (12.13)</a>, we equivalently write</p>
+<div class="equation" mathml="yes">
+<a name="1144"></a><a name="ch12eqn21"></a>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.21) </span></td><td valign="top"><img src="figu438_11.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">For the constrained system of <a class="internaljump" href="#ch12eqn19">equations (12.19)</a> and <a class="internaljump" href="#ch12eqn20">(12.20)</a>, we can define the <i class="emphasis">constrained affine connection</i> <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2263" src="figu438_12.jpg" height="20" width="14" title="" border="0" /></span></span>, and rewrite <a class="internaljump" href="#ch12eqn21">(12.21)</a> as</p>
+<div class="equation" mathml="yes">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><span class="equation-label">(12.22) </span></td><td valign="top"><img src="figu438_13.jpg" /><br /></td>
+</tr>
+</table>
+</div>
+<p class="para">where <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2265" src="figu438_14.jpg" height="23" width="79" title="" border="0" /></span></span>. For vector fields <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2266" src="figu438_15.jpg" height="23" width="96" title="" border="0" /></span></span>, the constrained affine connection <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2267" src="figu438_16.jpg" height="20" width="14" title="" border="0" /></span></span> is defined</p>
+<div class="informalequation" mathml="yes">
+<img src="figu438_17.jpg" /><br />
+</div>
+<p class="para">Using the constrained affine connection <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2269" src="figu438_18.jpg" height="20" width="14" title="" border="0" /></span></span> and the constrained vector fields <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2270" src="figu438_19.jpg" height="25" width="156" title="" border="0" /></span></span> instead of <span class="unicode">&#8711;</span> and <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2271" src="figu438_20.jpg" height="18" width="17" title="" border="0" /></span></span>, we can use the same simplified controllability tests and conditions for kinematic reductions that we used for unconstrained systems. Keep in mind that reachable velocities are confined to an <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2272" src="figu438_21.jpg" height="18" width="68" title="" border="0" /></span></span>-dimensional distribution <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2273" src="figu438_22.jpg" height="15" width="16" title="" border="0" /></span></span> due to the <i class="emphasis">k</i> velocity constraints. Therefore, the most we can hope for is STLEC and <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2274" src="figu438_23.jpg" height="25" width="113" title="" border="0" /></span></span>.</p>
+<p class="para">Although we will not use these here, a formula for calculating the Christoffel symbols <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2275" src="figu438_24.jpg" height="20" width="12" title="" border="0" /></span></span> of <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2276" src="figu438_25.jpg" height="20" width="14" title="" border="0" /></span></span> is given by Lewis [284], which also holds for vector fields not <a name="1145"></a><a name="IDX-439"></a>restricted to <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2277" src="figu439_1.jpg" height="15" width="18" title="" border="0" /></span></span>. Bullo and Zefran [80] give a computationally simpler formulation for vector fields restricted to <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2278" src="figu439_2.jpg" height="15" width="18" title="" border="0" /></span></span>. Their formulation uses an orthogonal basis of vector fields of the distribution <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2279" src="figu439_3.jpg" height="15" width="16" title="" border="0" /></span></span> to construct modified Christoffel symbols. Choosing a basis of vector fields for the free motions of a nonholonomically constrained system is analogous to choosing a coordinate basis for the reachable configuration space of a holonomically constrained system, as discussed in <a href="57.html" class="chapterjump">chapter 10</a>.</p>
+<div class="example">
+<span class="example-title"><span class="example-titlelabel">EXAMPLE 12.4.9</span></span>
+<div class="formalbody">
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="Start example" border="0" /></b></font></td>
+</tr>
+</table>
+<p class="first-para">In <a href="57.html" class="chapterjump">chapter 10</a> we considered the example of a knife-edge sliding on a plane. For this system, the inertia matrix <i class="emphasis">M</i>(<i class="emphasis">q</i>) and the constraint matrix <i class="emphasis">A</i>(<i class="emphasis">q</i>) are given by</p>
+<div class="informalequation" mathml="yes">
+<img src="figu439_4.jpg" /><br />
+</div>
+<p class="para">Assume that the available controls are <i class="emphasis">u</i><sub>1</sub>, a force in the <i class="emphasis">q</i><sub>1</sub> direction, and <i class="emphasis">u</i><sub>3</sub>, a torque along <i class="emphasis">q</i><sub>3</sub>. Then</p>
+<div class="informalequation" mathml="yes">
+<img src="figu439_5.jpg" /><br />
+</div>
+<p class="para">and <i class="emphasis">Y</i><sub>1</sub> = [1/<i class="emphasis">m</i>, 0, 0]<sup><i class="emphasis">T</i></sup>, <i class="emphasis">Y</i><sub>2</sub> = [0, 0, 1/<i class="emphasis">I</i>]<sup><i class="emphasis">T</i></sup>. Using the projection matrix <i class="emphasis">P</i> defined by <i class="emphasis">A</i> and <i class="emphasis">M</i>,</p>
+<div class="informalequation" mathml="yes">
+<img src="figu439_6.jpg" /><br />
+</div>
+<p class="para">we get</p>
+<div class="informalequation" mathml="yes">
+<img src="figu439_7.jpg" /><br />
+</div>
+<p class="para">
+<a name="1146"></a><a name="page440"></a>We see that <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2284" src="figu440_1.jpg" height="25" width="277" title="" border="0" /></span></span>, so the system is maximally reducible to a kinematic system by <a class="internaljump" href="#ch12th04_5">theorem 12.4.5</a>. The control (velocity) vector fields of the kinematic reduction are <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2285" src="figu440_2.jpg" height="23" width="19" title="" border="0" /></span></span>, motion along straight lines (when <i class="emphasis">q</i><sub>3</sub> <span class="unicode">&#8800;</span> ±<span class="unicode">&#960;</span>/2), and <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2286" src="figu440_3.jpg" height="23" width="20" title="" border="0" /></span></span> spinning in place.</p>
+<p class="para">The distribution and filtration defined by <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2287" src="figu440_4.jpg" height="24" width="68" title="" border="0" /></span></span> are not regular, as <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2288" src="figu440_5.jpg" height="23" width="19" title="" border="0" /></span></span> vanishes at <i class="emphasis">q</i><sub>3</sub> = ±<span class="unicode">&#960;</span>/2. We also see that</p>
+<div class="informalequation" mathml="yes">
+<img src="figu440_6.jpg" /><br />
+</div>
+<p class="para">so we cannot conclude STLCA at all <i class="emphasis">q</i> until we construct <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2290" src="figu440_7.jpg" height="23" width="112" title="" border="0" /></span></span> and see</p>
+<div class="informalequation" mathml="yes">
+<img src="figu440_8.jpg" /><br />
+</div>
+<p class="last-para">so the system is STLCA and STLEC at all <i class="emphasis">q</i> by <a class="internaljump" href="#ch12th04_2">theorem 12.4.2</a>.</p>
+<table class="BlueLine" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td bgcolor="000080" class="bluecell"><font size="2" face="Arial" color="010100"><b><img alt="Image from book" src="_.gif" width="1" height="2" title="End example" border="0" /></b></font></td>
+</tr>
+</table>
+<table class="BlankSpace" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<div class="footnote">
+<p>
+<a name="1104"></a><sup>[<a name="ftn.ch12fnt12_2" href="#ch12fnt12_2">2</a>]</sup>Most works in the differential geometry literature define a slightly different set of Christoffel symbols <span class="unicode">&#915;</span>* that have the inverse of the inertia matrix embedded in them, such that <span class="inlinequation" xmlns:mml="http://www.w3.org/1998/Math/MathML"><span class="inlinemediaobject"><img alt="Image from book" id="IMG_2131" src="figu425_12.jpg" height="17" width="138" title="" border="0" /></span></span>. We instead use the same definition used in <a href="57.html" class="chapterjump">chapter 10</a>.</p>
+</div>
+</div>
+</div><table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+<tr>
+<td class="b24-chunknavigate" width="25%" align="left"><a border="0" accesskey="P" href="69.html"><img src="images/arrow_readprevious.gif" width="94" height="22" hspace="0" alt="Previous Section" title="Previous Section" border="0" /></a></td>
+<td class="b24-chunknavigate" width="75%" align="center">
+<table cellpadding="0" cellspacing="0" border="0">
+</table>
+</td>
+<td class="b24-chunknavigate" width="25%" align="right"><a border="0" accesskey="N" href="71.html"><img src="images/arrow_readnext.gif" width="94" height="22" hspace="0" alt="Next Section" title="Next Section" border="0" /></a></td>
+</tr>
+<tr>
+<td colspan="3" height="5"><img src="images/_.gif" width="1" alt="" border="0" height="5" /></td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF" height="50">
+<tr><td bgcolor="#000000"><img src="images/_.gif" width="1" height="1" alt="" border="0" /></td></tr>
+<tr><td><?xml version='1.0' encoding='utf-8'?><table border="0" width="100%" cellspacing="0" cellpadding="0"><tr><td width="99%" valign="Top" class="footer"><b>TeamUnknown Release</b></td></tr></table></td></tr>
+<div id="download" class="b24-download_bubble"></div>
+</table></body>
+</html>
